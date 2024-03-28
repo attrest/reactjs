@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+.custom-slide {
+  z-index: 1;
+}
+.custom-slide .swiper-wrapper {
+  padding-bottom: 52px;
+}
+.custom-slide .swiper-slide {
+  padding-right: 0;
+  width: auto;
+}
+.custom-slide .swiper-slide:last-child {
+  padding-right: 0;
+}
+.custom-slide .swiper-horizontal > .swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal {
+  width: calc(100% - 100px);
+  height: 1px;
+  left: 100px;
+  bottom: 15px;
+  background: #999;
+}
+.custom-slide .swiper-scrollbar-drag {
+  background: #fff;
+  height: 1px;
+}

@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+    app:
+        image: 'michelangolf-ui-app:latest'
+        build:
+            context: .
+            dockerfile: Dockerfile
+        environment:
+            NODE_ENV: ${NODE_ENV}
+        restart: always
+        ports:
+            - '3001:3001'
+        container_name: michelangolf-ui-app
+

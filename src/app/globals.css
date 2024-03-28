@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --swiper-pagination-bottom: 27px;
+    --swiper-pagination-bullet-width: 6px;
+    --swiper-pagination-bullet-height: 6px;
+    --swiper-pagination-bullet-inactive-color: #EBEBEB;
+    --swiper-pagination-bullet-inactive-opacity: 1;
+    --swiper-pagination-color:#EBEBEB;
+    --swiper-pagination-bullet-horizontal-gap: 8px;
+  }
