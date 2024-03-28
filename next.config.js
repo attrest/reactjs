@@ -2,17 +2,15 @@
 const nextConfig = {
   images: {
     remotePatterns: [
-      { protocol: "http", hostname: "localhost", },
-      { protocol: "http", hostname: "127.0.0.1", },
-      { protocol: "http", hostname: "211.56.253.184", },
-      { protocol: "https", hostname: "api.michelangolf.co.kr", },
-      { protocol: "https", hostname: "michelangolf.co.kr", }
+      { protocol: "http", hostname: "localhost" },
+      { protocol: "http", hostname: "127.0.0.1" },
+      { protocol: "https", hostname: "mindcrashdev.cafe24.com" },
     ],
-    formats: ['image/webp'],
+    formats: ["image/webp"],
     minimumCacheTTL: 31536000,
   },
-  output: 'standalone',
-  reactStrictMode: false
-}
+  output: "export",
+  reactStrictMode: false,
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev -p 3001",
     "build": "next build",
+    "export": "next build && next export",
     "start": "next start -p 3001",
     "lint": "next lint"
   },
@@ -37,7 +38,7 @@
     "aos": "^2.3.4",
     "axios": "^1.6.2",
     "class-variance-authority": "^0.7.0",
-    "clsx": "^2.0.0",
+    "clsx": "^2.1.0",
     "date-fns": "^2.30.0",
     "html-entities": "^2.4.0",
     "lucide-react": "^0.299.0",
@@ -59,7 +60,7 @@
   "devDependencies": {
     "@types/node": "^20",
     "@types/qs": "^6.9.11",
-    "@types/react": "^18",
+    "@types/react": "^18.2.73",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
