@@ -5,6 +5,7 @@ import Header from "./header";
 import ReactQueryProvider from "@/features/react-query/Context";
 import { DialogProvider } from "@/components/modals/DialogContext";
 import { Metadata } from "next";
+import "@/features/convention/content-style.scss";
 
 const nanumMyeongjo = Nanum_Myeongjo({
   subsets: ["latin"],

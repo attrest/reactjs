@@ -248,11 +248,11 @@ import EventBanner from '../../event_banner01.jpg'
 &lt;input type="text" id="user_id" title="사용자" class="input-txt" style="width:100px"&gt;</pre>
   </div>
   <h5>애트리뷰트의 선언 순서</h5>
-  <ul>
-    <li>type / src</li>
-    <li>id / title / name</li>
-    <li>class</li>
-    <li>style</li>
+  <ul class="no-style">
+    <li>1. type / src</li>
+    <li>2. id / title / name</li>
+    <li>3. class</li>
+    <li>4. style</li>
   </ul>
   <h5>Boolean 애트리뷰트</h5>
   <p>

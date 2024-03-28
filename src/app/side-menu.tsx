@@ -31,7 +31,7 @@ interface MenuItemProps {
   type?: "pc" | "mo";
 }
 
-const SideBar = ({ menu }: MenuProps) => {
+const SideMenu = ({ menu }: MenuProps) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -52,7 +52,7 @@ const MenuItem = ({ name, id, subRoot = "", current, onClick, type = "pc" }: Men
   selectedId[1] === id ? (current = true) : (current = false);
   // console.log("selectedId => ", selectedId);
 
-  const pathname = usePathname();
+  // const pathname = usePathname();
   // console.log("submenu path name => ", pathname, currentDomain);
 
   const deviceType = {
@@ -92,18 +92,25 @@ const MenuItem = ({ name, id, subRoot = "", current, onClick, type = "pc" }: Men
         href={currentDomain + subRoot + "/" + id}
         className={clsx(
           isCurrentMenu
-            ? `relative after:absolute after:block after:content-[''] after:left-0 after:-bottom-0 after:w-full after:h-[1px] after:bg-white`
+            ? `relative after:absolute after:block after:content-[''] after:left-0 after:-bottom-0 after:w-full`
             : "",
-          `relative min-h-8 pb-[7px] lg:hover:after:absolute lg:hover:after:block lg:hover:after:content-[''] lg:hover:after:left-0 hover:after:-bottom-0 lg:hover:after:w-full lg:hover:after:h-[1px] lg:hover:after:animate-hoverLine`
+          `relative min-h-8 pb-[7px] lg:hover:after:absolute lg:hover:after:block lg:hover:after:content-[''] lg:hover:after:left-0 hover:after:-bottom-0 lg:hover:after:w-full lg:hover:after:h-[1px] lg:hover:after:animate-hoverLine mb-4`
         )}
         onClick={onClick}
       >
-        <span className={clsx(type && deviceType[type])}>{name}</span>
+        <span
+          className={clsx(
+            type && !isCurrentMenu && deviceType[type],
+            isCurrentMenu && "text-yellow text-18 leading-6 font-bold underline decoration-1"
+          )}
+        >
+          {name}
+        </span>
       </a>
       {contentNav && isCurrentMenu && (
-        <div className="flex flex-col fixed top-[100px] right-0 bottom-0 bg-white p-10 text-black">
-          {contentNav.map(({ id, title }) => (
-            <a key={id} href={`#${id}`}>
+        <div className="flex flex-col fixed top-[100px] right-0 bottom-0 bg-white p-10 text-black overflow-y-auto">
+          {contentNav.map(({ id, title, tag }) => (
+            <a key={id} href={`#${id}`} className={clsx("mb-3", tag === "h4" && "ml-5", tag === "h5" && "ml-10")}>
               {title}
             </a>
           ))}
@@ -113,4 +120,4 @@ const MenuItem = ({ name, id, subRoot = "", current, onClick, type = "pc" }: Men
   );
 };
 
-export default SideBar;
+export default SideMenu;

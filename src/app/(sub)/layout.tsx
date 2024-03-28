@@ -7,6 +7,8 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import SideMenu from "../side-menu";
 import Footer from "../footer";
+import TwContentContainer from "@/components/tailwind-preset/TwContentContainer";
+
 export interface InfoProps {
   id?: string;
   title?: string;
@@ -41,53 +43,52 @@ const SubLayout = ({ children }: { children: React.ReactNode }) => {
   const [info, setInfo] = useState<InfoProps>();
   const segment = useSelectedLayoutSegments();
   const selectedId = useSelectedLayoutSegment();
-  const [isBoard, setIsBoard] = useState<boolean>(false);
   const pathname = usePathname();
 
   const subMenuForConvention = [
-    { name: "Why Convention", id: "convention" },
-    { name: "HTML Guide", id: "html-guide", subRoot: "/convention" },
-    { name: "CSS Guide", id: "css-guide", subRoot: "/convention" },
-    { name: "SCSS Guide", id: "scss-guide", subRoot: "/convention" },
+    { name: "Convention이란?", id: "convention" },
+    { name: "HTML Guide", id: "html-guide", subRoot: "/convention", description: "HTML 스타일 가이드 입니다." },
+    { name: "CSS Guide", id: "css-guide", subRoot: "/convention", description: "CSS 스타일 가이드 입니다." },
+    { name: "SCSS Guide", id: "scss-guide", subRoot: "/convention", description: "SCSS 스타일 가이드 입니다." },
   ];
+
+  const [subData, setSubData] = useState<any>();
 
   useEffect(() => {
     const target = infoArray.find((item) => item.id === selectedId);
     if (target) {
       if (target) {
         setInfo(target);
+        if (segment.length > 1) {
+          const currentSubData = subMenuForConvention.find((item) => item.id === segment[segment.length - 1]);
+          setSubData(currentSubData);
+        }
       }
-    }
-
-    if (selectedId === "gallery" || selectedId === "review" || selectedId === "notice") {
-      setIsBoard(true);
-    } else {
-      setIsBoard(false);
     }
   }, [selectedId]);
 
-  // console.log("segment => ", segment, info);
+  console.log("segment => ", segment, info);
 
   return (
-    <>
-      <div className={clsx(isBoard && "max-w-[1460px] mx-auto px-0 sm:px-6", "mt-[80px] lg:mt-[150px]")}>
-        <div className={clsx(isBoard && "px-6 sm:px-0 pb-140px")}>
-          {segment.length >= 1 && info && (
-            <div className={clsx(isBoard ? "border-0 lg:border-b lg:border-gray" : "max-w-[1200px] mx-auto px-6")}>
-              <Breadcrumb {...info} />
-              <div className="bg-white py-15">
-                <h2 className="text-[26px] lg:text-[44px] font-semibold tracking-tight text-black">{info.title}</h2>
-                <p className="text-base mt-[10px] lg:mt-4 text-gray font-pretendard ">{info.description}</p>
-              </div>
+    <TwContentContainer customClass="mt-[80px] lg:mt-[150px]">
+      <div className={clsx("px-6 sm:px-0 pb-140px")}>
+        {segment.length >= 1 && info && (
+          <TwContentContainer>
+            <Breadcrumb {...info} />
+            <div className="bg-white py-15">
+              <h2 className="text-[26px] lg:text-[44px] font-semibold tracking-tight text-black">
+                {segment.length === 1 ? info.title : subData.name}
+              </h2>
+              <p className="text-base mt-[10px] lg:mt-4 text-gray font-pretendard ">
+                {segment.length === 1 ? info.description : subData.description}
+              </p>
             </div>
-          )}
-          {segment.length > 1 && <Breadcrumb {...info} />}
-          {pathname.indexOf("convention") > -1 && <SideMenu menu={subMenuForConvention} />}
-          {children}
-        </div>
+          </TwContentContainer>
+        )}
+        {pathname.indexOf("convention") > -1 && <SideMenu menu={subMenuForConvention} />}
+        {children}
       </div>
-      {/* <Footer /> */}
-    </>
+    </TwContentContainer>
   );
 };
 

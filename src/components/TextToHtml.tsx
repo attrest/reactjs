@@ -5,9 +5,9 @@ export interface TextToHtmlProps {
   className?: string;
 }
 
-const TextToHtmlProps = (props: TextToHtmlProps) => {
+const TextToHtml = (props: TextToHtmlProps) => {
   const { html, className } = props;
   return <div {...(className ? { className: className } : {})} dangerouslySetInnerHTML={{ __html: html }}></div>;
 };
 
-export default TextToHtmlProps;
+export default TextToHtml;
