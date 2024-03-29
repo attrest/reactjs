@@ -16,6 +16,17 @@ export interface InfoProps {
   imgUrl?: string;
 }
 
+interface SubMenu {
+  name: string;
+  id: string;
+  subRoot?: string;
+  description?: string;
+}
+
+interface SubMenuList {
+  [key: string]: SubMenu[]; // 모든 문자열 키는 SubMenu 타입의 배열을 반환
+}
+
 const SubLayout = ({ children }: { children: React.ReactNode }) => {
   const infoArray: InfoProps[] = [
     {
@@ -25,7 +36,7 @@ const SubLayout = ({ children }: { children: React.ReactNode }) => {
     },
     {
       id: "fsd",
-      title: "기능 분할 설계",
+      title: "기능 분할 설계(FSD)",
       description: "복잡한 시스템을 보다 관리하기 쉬운 작은 단위로 나누어 설계하는 방법입니다.",
     },
     {
@@ -45,12 +56,24 @@ const SubLayout = ({ children }: { children: React.ReactNode }) => {
   const selectedId = useSelectedLayoutSegment();
   const pathname = usePathname();
 
-  const subMenuForConvention = [
-    { name: "Convention이란?", id: "convention" },
-    { name: "HTML Guide", id: "html-guide", subRoot: "/convention", description: "HTML 스타일 가이드 입니다." },
-    { name: "CSS Guide", id: "css-guide", subRoot: "/convention", description: "CSS 스타일 가이드 입니다." },
-    { name: "SCSS Guide", id: "scss-guide", subRoot: "/convention", description: "SCSS 스타일 가이드 입니다." },
-  ];
+  const subMenuList: SubMenuList = {
+    convention: [
+      { name: "Convention이란?", id: "convention" },
+      { name: "HTML Guide", id: "html-guide", subRoot: "/convention", description: "HTML 스타일 가이드 입니다." },
+      { name: "CSS Guide", id: "css-guide", subRoot: "/convention", description: "CSS 스타일 가이드 입니다." },
+      { name: "SCSS Guide", id: "scss-guide", subRoot: "/convention", description: "SCSS 스타일 가이드 입니다." },
+    ],
+    fsd: [{ name: "Feature-Sliced Design", id: "fsd" }],
+    tailwind: [
+      { name: "Tailwind Guide", id: "tailwind" },
+      {
+        name: "Derectives & Functions",
+        id: "derectives-functions",
+        subRoot: "/tailwind",
+        description: "Tailwind CSS 프로젝트에서 더 효율적으로 작업할 수 있게 도와주는 도구들입니다.",
+      },
+    ],
+  };
 
   const [subData, setSubData] = useState<any>();
 
@@ -60,7 +83,7 @@ const SubLayout = ({ children }: { children: React.ReactNode }) => {
       if (target) {
         setInfo(target);
         if (segment.length > 1) {
-          const currentSubData = subMenuForConvention.find((item) => item.id === segment[segment.length - 1]);
+          const currentSubData = subMenuList[segment[0]].find((item) => item.id === segment[segment.length - 1]);
           setSubData(currentSubData);
         }
       }
@@ -85,7 +108,7 @@ const SubLayout = ({ children }: { children: React.ReactNode }) => {
             </div>
           </TwContentContainer>
         )}
-        {pathname.indexOf("convention") > -1 && <SideMenu menu={subMenuForConvention} />}
+        <SideMenu menu={subMenuList[segment[0]]} />
         {children}
       </div>
     </TwContentContainer>

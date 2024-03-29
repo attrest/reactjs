@@ -65,7 +65,7 @@ const MenuItem = ({ name, id, subRoot = "", current, onClick, type = "pc" }: Men
   const [contentNav, setContentNav] = useState<any[]>([]);
 
   useEffect(() => {
-    const containerClass = ".section__convention-guide";
+    const containerClass = "section";
     const headings = document.querySelectorAll(`${containerClass} h3, ${containerClass} h4, ${containerClass} h5`);
 
     const domain = `${window.location.protocol}//${window.location.host}`;

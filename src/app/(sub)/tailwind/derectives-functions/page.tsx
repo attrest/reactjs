@@ -4,9 +4,9 @@ import React from "react";
 import Image from "next/image";
 import TextToHtml from "@/components/TextToHtml";
 import TwContentContainer from "@/components/tailwind-preset/TwContentContainer";
-import { contentHtml } from "@/features/tailwind/guide/content-html";
+import { contentHtml } from "@/features/tailwind/derectives-functions/content-html";
 
-const Fsd = () => {
+const DerectivesFunctions = () => {
   return (
     <TwContentContainer customClass="lg:mb-[223px]">
       <TextToHtml html={contentHtml} />
@@ -14,4 +14,4 @@ const Fsd = () => {
   );
 };
 
-export default Fsd;
+export default DerectivesFunctions;

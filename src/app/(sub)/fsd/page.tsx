@@ -2,12 +2,15 @@
 
 import React from "react";
 import Image from "next/image";
+import TextToHtml from "@/components/TextToHtml";
+import TwContentContainer from "@/components/tailwind-preset/TwContentContainer";
+import { contentHtml } from "@/features/fsd/content-html";
 
 const Fsd = () => {
   return (
-    <>
-      <div className="max-w-[1460px] mx-auto px-6 lg:mb-[223px]">Fsd</div>
-    </>
+    <TwContentContainer customClass="lg:mb-[223px]">
+      <TextToHtml html={contentHtml} />
+    </TwContentContainer>
   );
 };
 
