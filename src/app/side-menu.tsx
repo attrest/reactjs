@@ -35,7 +35,7 @@ const SideMenu = ({ menu }: MenuProps) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <aside className={clsx("w-[15rem] bg-black", "fixed top-[100px] left-0 bottom-0")}>
+    <aside className={clsx("w-[18rem] bg-black", "fixed top-[100px] left-0 bottom-0")}>
       <div className="flex flex-col mx-auto py-5 lg:py-8 px-6">
         <div className={clsx("flex flex-col text-white hidden lg:flex lg:gap-x-[50px] pr-5")}>
           {menu.map((item) => (

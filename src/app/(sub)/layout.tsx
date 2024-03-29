@@ -108,7 +108,7 @@ const SubLayout = ({ children }: { children: React.ReactNode }) => {
             </div>
           </TwContentContainer>
         )}
-        <SideMenu menu={subMenuList[segment[0]]} />
+        <SideMenu menu={subMenuList[segment[0]] ?? []} />
         {children}
       </div>
     </TwContentContainer>

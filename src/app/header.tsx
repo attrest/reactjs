@@ -40,7 +40,7 @@ const Header = () => {
       <div className="flex items-center justify-between mx-auto py-5 lg:py-8 px-6">
         <div className="flex lg:flex-1">
           <a href="/">
-            <h1 className={clsx("text-white text-3xl font-bold")}>ACS Docs</h1>
+            <h1 className={clsx("text-white text-3xl font-bold")}>ACS FE Docs</h1>
             {/* <span className="sr-only">ACS Docs</span>
             <LogoSvg className="w-[92px] lg:w-[120px]" color={isMainPage ? "white" : "default"} /> */}
           </a>
