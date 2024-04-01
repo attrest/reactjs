@@ -1,5 +1,19 @@
 @charset "UTF-8";
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --swiper-pagination-bottom: 27px;
+  --swiper-pagination-bullet-width: 6px;
+  --swiper-pagination-bullet-height: 6px;
+  --swiper-pagination-bullet-inactive-color: #ebebeb;
+  --swiper-pagination-bullet-inactive-opacity: 1;
+  --swiper-pagination-color: #ebebeb;
+  --swiper-pagination-bullet-horizontal-gap: 8px;
+}
+
 section {
   $sentenceSpacing: 1.5rem;
   font-size: 1.15rem;

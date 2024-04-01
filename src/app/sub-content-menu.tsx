@@ -2,11 +2,11 @@
 
 import clsx from "clsx";
 import { useSelector } from "react-redux";
-import { RootState } from "@/hooks/store/store";
+import { RootState } from "@/hooks/store";
 
 const SubContentMenu = () => {
   const contentMenuList = useSelector((state: RootState) => state.contentMenu.menus);
-  console.log("contentMenuList => ", contentMenuList);
+  // console.log("contentMenuList => ", contentMenuList);
   return (
     <div className="flex flex-col fixed top-[100px] right-0 bottom-0 bg-white p-10 text-black overflow-y-auto">
       {contentMenuList.map(({ id, title, tag }) => (

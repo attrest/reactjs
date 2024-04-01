@@ -9,7 +9,7 @@ import { useSelectedLayoutSegments } from "next/navigation";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { UseDispatch, useDispatch } from "react-redux";
-import { resetMenus } from "@/features/sub-content/subContentSlice";
+import { resetMenus } from "@/hooks/store/subContentSlice/subContentSlice";
 // import LogoSvg from "@/components/ui/logo";
 
 // const menu: MenuItemProps[] = [

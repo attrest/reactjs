@@ -8,11 +8,7 @@ import { usePathname } from "next/navigation";
 import SubMenu from "../sub-menu";
 import SubContentMenu from "../sub-content-menu";
 import Footer from "../footer";
-import TwContentContainer from "@/components/tailwind-preset/TwContentContainer";
-
-import { useSelector, useDispatch } from "react-redux";
-import { Provider } from "react-redux";
-import { store } from "@/hooks/store/store";
+import TwDom from "@/components/tw-tag/TwTag";
 
 export interface InfoProps {
   id?: string;
@@ -98,28 +94,26 @@ const SubLayout = ({ children }: { children: React.ReactNode }) => {
   // console.log("segment => ", segment, info);
 
   return (
-    <Provider store={store}>
-      <TwContentContainer className="sub-content" customClass="mt-[80px] lg:mt-[150px]">
-        <div className={clsx("px-6 sm:px-0 pb-140px")}>
-          <SubMenu menu={subMenuList[segment[0]] ?? []} />
-          {segment.length >= 1 && info && (
-            <TwContentContainer className="sub-header">
-              <Breadcrumb {...info} />
-              <div className="bg-white py-15">
-                <h2 className="text-[26px] lg:text-[44px] font-semibold tracking-tight text-black">
-                  {segment.length === 1 ? info.title : subData.name}
-                </h2>
-                <p className="text-base mt-[10px] lg:mt-4 text-gray font-pretendard ">
-                  {segment.length === 1 ? info.description : subData.description}
-                </p>
-              </div>
-            </TwContentContainer>
-          )}
-          {children}
-          <SubContentMenu />
-        </div>
-      </TwContentContainer>
-    </Provider>
+    <TwDom className="sub-content" type="content-container" customClass="mt-[80px] lg:mt-[150px]">
+      <div className={clsx("px-6 sm:px-0 pb-140px")}>
+        <SubMenu menu={subMenuList[segment[0]] ?? []} />
+        {segment.length >= 1 && info && (
+          <TwDom className="sub-header">
+            <Breadcrumb {...info} />
+            <div className="bg-white py-15">
+              <h2 className="text-[26px] lg:text-[44px] font-semibold tracking-tight text-black">
+                {segment.length === 1 ? info.title : subData.name}
+              </h2>
+              <p className="text-base mt-[10px] lg:mt-4 text-gray font-pretendard ">
+                {segment.length === 1 ? info.description : subData.description}
+              </p>
+            </div>
+          </TwDom>
+        )}
+        {children}
+        <SubContentMenu />
+      </div>
+    </TwDom>
   );
 };
 

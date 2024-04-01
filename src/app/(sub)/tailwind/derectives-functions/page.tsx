@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import TextToHtml from "@/components/TextToHtml";
-import TwContentContainer from "@/components/tailwind-preset/TwContentContainer";
+import TwContentContainer from "@/components/tw-tag/TwTag";
 import { contentHtml } from "@/features/tailwind/derectives-functions/content-html";
 
 const DerectivesFunctions = () => {

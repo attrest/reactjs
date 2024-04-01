@@ -1,13 +1,17 @@
 import { Nanum_Myeongjo } from "next/font/google";
 import localFont from "next/font/local";
-import "./globals.css";
 import Header from "./header";
+import Container from "./container";
 import ReactQueryProvider from "@/features/react-query/Context";
 import { DialogProvider } from "@/components/modals/DialogContext";
 import { Metadata } from "next";
+import { store } from "@/hooks/store";
+import "@/style/globals.scss";
 
-import { preset } from "@/lib/presets";
-import "@/features/contentStyle.scss";
+const siteName = store.getState().global.name;
+export const metadata: Metadata = {
+  title: siteName,
+};
 
 const nanumMyeongjo = Nanum_Myeongjo({
   subsets: ["latin"],
@@ -43,18 +47,14 @@ const pretendard = localFont({
   preload: false,
 });
 
-export const metadata: Metadata = {
-  title: preset.name,
-};
-
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="ko">
       <body className={`${pretendard.className} ${pretendard.variable}`}>
         <ReactQueryProvider>
           <DialogProvider>
-            <Header />
-            {children}
+            <Header siteName={siteName} />
+            <Container>{children}</Container>
           </DialogProvider>
         </ReactQueryProvider>
       </body>

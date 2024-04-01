@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import "swiper/css";
 import "swiper/css/pagination";
-import "./fullpage.css";
+import "@/style/fullpage.css";
 import VisualSlide from "@/features/main/VisualSlide";
 import AboutContents from "@/features/main/AboutContents";
 import GalleryContents from "@/features/main/GalleryContents";
