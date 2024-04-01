@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
-import globalReducers from "@/hooks/store/globalSlice/globalSlice";
-import contentNavReducer from "@/hooks/store/subContentSlice/subContentSlice";
+import globalReducers from "@/hooks/store/globalSlice";
+import contentNavReducer from "@/hooks/store/subContentSlice";
 
 export const store = configureStore({
   reducer: {

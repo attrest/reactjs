@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+// 페이지 콘텐츠 네이게이션 스타일
+.content-nav {
+  $borderColor: #c5c5c5;
+  .ml-10 {
+    position: relative;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+    }
+    &::before {
+      top: -5px;
+      left: -20px;
+      bottom: -5px;
+      border-left: 1px dotted $borderColor;
+    }
+    &::after {
+      top: 11px;
+      left: -20px;
+      width: 10px;
+      border-bottom: 1px solid $borderColor;
+    }
+  }
+}

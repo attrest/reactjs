@@ -5,8 +5,8 @@ import clsx from "clsx";
 import { useSelectedLayoutSegment, useSelectedLayoutSegments } from "next/navigation";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import SubMenu from "../sub-menu";
-import SubContentMenu from "../sub-content-menu";
+import SubMenu from "../SubMenu";
+import SubContentMenu from "../subContentMenu";
 import Footer from "../footer";
 import TwDom from "@/components/tw-tag/TwTag";
 
@@ -94,26 +94,32 @@ const SubLayout = ({ children }: { children: React.ReactNode }) => {
   // console.log("segment => ", segment, info);
 
   return (
-    <TwDom className="sub-content" type="content-container" customClass="mt-[80px] lg:mt-[150px]">
-      <div className={clsx("px-6 sm:px-0 pb-140px")}>
+    <div className="w-full">
+      <div className="flex space-between">
         <SubMenu menu={subMenuList[segment[0]] ?? []} />
-        {segment.length >= 1 && info && (
-          <TwDom className="sub-header">
-            <Breadcrumb {...info} />
-            <div className="bg-white py-15">
-              <h2 className="text-[26px] lg:text-[44px] font-semibold tracking-tight text-black">
-                {segment.length === 1 ? info.title : subData.name}
-              </h2>
-              <p className="text-base mt-[10px] lg:mt-4 text-gray font-pretendard ">
-                {segment.length === 1 ? info.description : subData.description}
-              </p>
-            </div>
-          </TwDom>
-        )}
-        {children}
+        <div className="w-full scroll-hidden">
+          <div className="max-h-screen-100 overflow-y-auto">
+            <TwDom type="content-container">
+              {segment.length >= 1 && info && (
+                <TwDom className="sub-header">
+                  <Breadcrumb {...info} />
+                  <div className="bg-white py-15">
+                    <h2 className="text-[26px] lg:text-[44px] font-semibold tracking-tight text-black">
+                      {segment.length === 1 ? info.title : subData.name}
+                    </h2>
+                    <p className="text-base mt-[10px] lg:mt-4 text-gray font-pretendard ">
+                      {segment.length === 1 ? info.description : subData.description}
+                    </p>
+                  </div>
+                </TwDom>
+              )}
+              {children}
+            </TwDom>
+          </div>
+        </div>
         <SubContentMenu />
       </div>
-    </TwDom>
+    </div>
   );
 };
 

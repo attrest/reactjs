@@ -9,7 +9,8 @@ import { useSelectedLayoutSegments } from "next/navigation";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { UseDispatch, useDispatch } from "react-redux";
-import { resetMenus } from "@/hooks/store/subContentSlice/subContentSlice";
+import { resetMenus } from "@/hooks/store/subContentSlice";
+import TwTag from "@/components/tw-tag/TwTag";
 // import LogoSvg from "@/components/ui/logo";
 
 // const menu: MenuItemProps[] = [
@@ -35,7 +36,7 @@ interface MenuItemProps {
 
 const SubMenu = ({ menu }: MenuProps) => {
   return (
-    <aside className={clsx("w-[18rem] bg-black", "fixed top-[100px] left-0 bottom-0")}>
+    <TwTag tag="aside" type="side-menu" className="bg-black">
       <div className="flex flex-col mx-auto py-5 lg:py-8 px-6">
         <div className={clsx("flex flex-col text-white hidden lg:flex lg:gap-x-[50px] pr-5")}>
           {menu.map((item) => (
@@ -43,7 +44,7 @@ const SubMenu = ({ menu }: MenuProps) => {
           ))}
         </div>
       </div>
-    </aside>
+    </TwTag>
   );
 };
 

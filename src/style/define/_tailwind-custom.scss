@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+.max-h-screen-100 {
+  max-height: calc(100vh - 100px);
+}
+
+.scroll-hidden {
+  overflow: hidden;
+  .overflow-y-auto {
+    margin-right: -17px;
+  }
+}

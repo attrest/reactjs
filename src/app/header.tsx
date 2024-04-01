@@ -22,8 +22,6 @@ const menu: MenuItemProps[] = [
       window.open("http://localhost:6006/", "_blank");
     },
   },
-  // { name: "후기 게시판", id: "review" },
-  // { name: "공지사항", id: "notice" },
 ];
 
 interface MenuItemProps {
@@ -47,7 +45,7 @@ const Header = ({ siteName }: headerProps) => {
   const isErrorPage = pathname === "/not-found"; // error page check
 
   return (
-    <header className={clsx("bg-black", "fixed w-full z-10 top-0 group-[.footer-on]:bg-headerBg transition")}>
+    <header className={clsx("w-full h-[100px] transition bg-black")}>
       <div className="flex items-center justify-between mx-auto py-5 lg:py-8 px-6">
         <div className="flex lg:flex-1">
           <a href="/">
