@@ -80,7 +80,7 @@ const MenuItem = ({ name, id, subRoot = "", current, onClick, type = "pc" }: Men
     });
 
     dispatch(resetMenus(newContentNav)); // 콘텐츠 메뉴 업데이트
-  }, []);
+  }, [dispatch]);
 
   return (
     <>

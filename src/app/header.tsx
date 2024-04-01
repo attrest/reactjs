@@ -15,7 +15,13 @@ const menu: MenuItemProps[] = [
   { name: "Convention", id: "convention" },
   { name: "FSD", id: "fsd" },
   { name: "Tailwind", id: "tailwind" },
-  { name: "Component", id: "component" },
+  {
+    name: "Components",
+    id: "components",
+    onClick: () => {
+      window.open("http://localhost:6006/", "_blank");
+    },
+  },
   // { name: "후기 게시판", id: "review" },
   // { name: "공지사항", id: "notice" },
 ];
@@ -105,6 +111,13 @@ const MenuItem = ({ name, id, current, onClick, type = "pc" }: MenuItemProps) =>
     mo: clsx("block pb-4 text-xl leading-7", current ? "text-gold font-semibold" : "text-white font-normal"),
   };
 
+  const menuHandler = (event: React.MouseEvent) => {
+    if (onClick) {
+      event.preventDefault();
+      onClick();
+    }
+  };
+
   return (
     <a
       key={id}
@@ -115,7 +128,7 @@ const MenuItem = ({ name, id, current, onClick, type = "pc" }: MenuItemProps) =>
           : "",
         `relative min-h-8 pb-[7px] lg:hover:after:absolute lg:hover:after:block lg:hover:after:content-[''] lg:hover:after:left-0 hover:after:-bottom-0 lg:hover:after:w-full lg:hover:after:h-[1px] lg:hover:after:animate-hoverLine`
       )}
-      onClick={onClick}
+      onClick={menuHandler}
     >
       <span className={clsx(type && deviceType[type])}>{name}</span>
     </a>
