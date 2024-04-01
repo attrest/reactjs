@@ -6,7 +6,7 @@ import { useSelectedLayoutSegment, useSelectedLayoutSegments } from "next/naviga
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import SubMenu from "../SubMenu";
-import SubContentMenu from "../subContentMenu";
+import SubContentMenu from "../SubContentMenu";
 import Footer from "../footer";
 import TwDom from "@/components/tw-tag/TwTag";
 

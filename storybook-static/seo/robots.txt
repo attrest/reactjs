@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Host: https://michelangolf.co.kr
+Sitemap: https://michelangolf.co.kr/sitemap.xml

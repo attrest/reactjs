@@ -1,18 +1,17 @@
-
-import Dimm from '@/components/modals/Dimm'
-import { useEffect, useState } from 'react'
-import { Button } from '../ui/button'
+import Dimm from "@/components/modals/Dimm";
+import { useEffect, useState } from "react";
+import { Button } from "../ui/button";
 
 export interface DialogProps {
-  show: boolean
-  onClose?: () => void
-  content?: string
-  description?: string
-  onConfirm?: () => void | Promise<void> | undefined
-  dimmClick?: boolean
-  onConfirmText?: string
-  onCancelText?: string
-  closeOnEsc?: boolean
+  show: boolean;
+  onClose?: () => void;
+  content?: string;
+  description?: string;
+  onConfirm?: () => void | Promise<void> | undefined;
+  dimmClick?: boolean;
+  onConfirmText?: string;
+  onCancelText?: string;
+  closeOnEsc?: boolean;
 }
 
 const Dialog = ({
@@ -22,46 +21,46 @@ const Dialog = ({
   description,
   onConfirm,
   dimmClick = false,
-  onConfirmText = '확인',
-  onCancelText = '취소',
+  onConfirmText = "확인",
+  onCancelText = "취소",
 }: /* closeOnEsc = !onConfirm, */
 DialogProps) => {
-  const [isDialogVisible, setIsDialogVisible] = useState<boolean>(show)
+  const [isDialogVisible, setIsDialogVisible] = useState<boolean>(show);
 
   useEffect(() => {
-    setIsDialogVisible(show)
+    setIsDialogVisible(show);
     if (show) {
-      document.body.style.overflow = 'hidden'
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset'
+      document.body.style.overflow = "unset";
     }
 
     /* if (closeOnEsc) { */
     const handleEscKey = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        onClose()
+      if (event.key === "Escape") {
+        onClose();
       }
-      if (event.key === 'Enter' && onConfirm) {
-        onConfirm()
+      if (event.key === "Enter" && onConfirm) {
+        onConfirm();
       }
-    }
-    document.addEventListener('keydown', handleEscKey)
+    };
+    document.addEventListener("keydown", handleEscKey);
     return () => {
-      document.body.style.overflow = 'unset'
-      document.removeEventListener('keydown', handleEscKey)
-    }
+      document.body.style.overflow = "unset";
+      document.removeEventListener("keydown", handleEscKey);
+    };
     /* } else {
       return () => {
         document.body.style.overflow = 'unset'
       }
     } */
-  }, [show, onClose])
+  }, [show, onClose]);
 
   const handleDimmClick = () => {
     if (dimmClick) {
-      onClose()
+      onClose();
     }
-  }
+  };
 
   return (
     <>
@@ -97,7 +96,7 @@ DialogProps) => {
         </div>
       )}
     </>
-  )
-}
+  );
+};
 
-export default Dialog
+export default Dialog;
