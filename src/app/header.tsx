@@ -9,6 +9,7 @@ import { useRouter, useSelectedLayoutSegments } from "next/navigation";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import LogoSvg from "@/components/ui/logo";
+import { preset } from "@/lib/presets";
 
 const menu: MenuItemProps[] = [
   { name: "Convention", id: "convention" },
@@ -29,7 +30,7 @@ interface MenuItemProps {
 }
 
 const Header = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileMenuState, setMobileMenuState] = useState(false);
   const pathname = usePathname();
 
   const isMainPage = pathname === "/"; // main page check
@@ -40,7 +41,7 @@ const Header = () => {
       <div className="flex items-center justify-between mx-auto py-5 lg:py-8 px-6">
         <div className="flex lg:flex-1">
           <a href="/">
-            <h1 className={clsx("text-white text-3xl font-bold")}>ACS FE Docs</h1>
+            <h1 className={preset.header.h1}>{preset.name}</h1>
             {/* <span className="sr-only">ACS Docs</span>
             <LogoSvg className="w-[92px] lg:w-[120px]" color={isMainPage ? "white" : "default"} /> */}
           </a>
@@ -50,7 +51,7 @@ const Header = () => {
             <button
               type="button"
               className={clsx("text-white inline-flex items-center justify-center -mr-1.5")}
-              onClick={() => setMobileMenuOpen(true)}
+              onClick={() => setMobileMenuState(true)}
             >
               <span className="sr-only">Open menu</span>
               <Bars3Icon className="h-6 w-6" aria-hidden="true" />
@@ -65,15 +66,14 @@ const Header = () => {
         </div>
       </div>
 
-      {/* <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
+      <Dialog as="div" className="lg:hidden" open={mobileMenuState} onClose={setMobileMenuState}>
         <div className="fixed inset-0 z-10 " />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-[#052010] px-6 py-5 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 ">
           <div className="flex items-center justify-between">
             <a href="/" className="outline-none outline-0">
-              <span className="sr-only">미켈란 골프 투어</span>
-              <LogoSvg className="w-[92px] lg:w-[120px]" color={"white"} />
+              <h1 className={preset.header.h1}>{preset.name}</h1>
             </a>
-            <button type="button" className="-mr-1.5 text-white" onClick={() => setMobileMenuOpen(false)}>
+            <button type="button" className="-mr-1.5 text-white" onClick={() => setMobileMenuState(false)}>
               <span className="sr-only">Close menu</span>
               <CloseIcon className="w-6 h-6" aria-hidden="true" />
             </button>
@@ -89,7 +89,7 @@ const Header = () => {
           </div>
           <div className="absolute bottom-0 left-5 w-[1px] h-[32%] bg-white"></div>
         </Dialog.Panel>
-      </Dialog> */}
+      </Dialog>
     </header>
   );
 };

@@ -8,6 +8,8 @@ import clsx from "clsx";
 import { useSelectedLayoutSegments } from "next/navigation";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import { UseDispatch, useDispatch } from "react-redux";
+import { resetMenus } from "@/features/sub-content/subContentSlice";
 // import LogoSvg from "@/components/ui/logo";
 
 // const menu: MenuItemProps[] = [
@@ -31,9 +33,7 @@ interface MenuItemProps {
   type?: "pc" | "mo";
 }
 
-const SideMenu = ({ menu }: MenuProps) => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
+const SubMenu = ({ menu }: MenuProps) => {
   return (
     <aside className={clsx("w-[18rem] bg-black", "fixed top-[100px] left-0 bottom-0")}>
       <div className="flex flex-col mx-auto py-5 lg:py-8 px-6">
@@ -49,9 +49,8 @@ const SideMenu = ({ menu }: MenuProps) => {
 
 const MenuItem = ({ name, id, subRoot = "", current, onClick, type = "pc" }: MenuItemProps) => {
   const selectedId = useSelectedLayoutSegments();
+  const dispatch = useDispatch();
   selectedId[1] === id ? (current = true) : (current = false);
-  // console.log("selectedId => ", selectedId);
-
   // const pathname = usePathname();
   // console.log("submenu path name => ", pathname, currentDomain);
 
@@ -62,7 +61,6 @@ const MenuItem = ({ name, id, subRoot = "", current, onClick, type = "pc" }: Men
 
   const isCurrentMenu = current || (selectedId.length === 1 && selectedId[0] === id);
   const [currentDomain, setCurrentDomain] = useState<string>("");
-  const [contentNav, setContentNav] = useState<any[]>([]);
 
   useEffect(() => {
     const containerClass = "section";
@@ -81,8 +79,7 @@ const MenuItem = ({ name, id, subRoot = "", current, onClick, type = "pc" }: Men
       };
     });
 
-    // 상태 업데이트
-    setContentNav(newContentNav);
+    dispatch(resetMenus(newContentNav)); // 콘텐츠 메뉴 업데이트
   }, []);
 
   return (
@@ -107,17 +104,8 @@ const MenuItem = ({ name, id, subRoot = "", current, onClick, type = "pc" }: Men
           {name}
         </span>
       </a>
-      {contentNav && isCurrentMenu && (
-        <div className="flex flex-col fixed top-[100px] right-0 bottom-0 bg-white p-10 text-black overflow-y-auto">
-          {contentNav.map(({ id, title, tag }) => (
-            <a key={id} href={`#${id}`} className={clsx("mb-3", tag === "h4" && "ml-5", tag === "h5" && "ml-10")}>
-              {title}
-            </a>
-          ))}
-        </div>
-      )}
     </>
   );
 };
 
-export default SideMenu;
+export default SubMenu;

@@ -5,7 +5,9 @@ import Header from "./header";
 import ReactQueryProvider from "@/features/react-query/Context";
 import { DialogProvider } from "@/components/modals/DialogContext";
 import { Metadata } from "next";
-import "@/features/convention/content-style.scss";
+
+import { preset } from "@/lib/presets";
+import "@/features/contentStyle.scss";
 
 const nanumMyeongjo = Nanum_Myeongjo({
   subsets: ["latin"],
@@ -42,13 +44,13 @@ const pretendard = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "ACS Docs",
+  title: preset.name,
 };
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="ko">
-      <body className={`${nanumMyeongjo.className} ${nanumMyeongjo.variable} ${pretendard.variable}`}>
+      <body className={`${pretendard.className} ${pretendard.variable}`}>
         <ReactQueryProvider>
           <DialogProvider>
             <Header />

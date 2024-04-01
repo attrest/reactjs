@@ -35,3 +35,35 @@ pnpm dev
 API
 
 - local : http://211.56.253.184:10000/swagger-ui/index.html
+
+# Storybook 설치 및 초기화
+
+```bash
+npx sb inint
+```
+
+## Storybook 업그레이드
+
+- https://storybook.js.org/docs/get-started
+
+```bash
+npx sb@next upgrade
+```
+
+## 설치 오류 시
+
+```bash
+npx --legacy-peer-deps sb init
+```
+
+## Storybook 실행
+
+```bash
+pnpm sb
+```
+
+## Storyboom 빌드
+
+```bash
+pnpm sb-build
+```
