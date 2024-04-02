@@ -9,17 +9,10 @@ import { useRouter, useSelectedLayoutSegments } from "next/navigation";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 // import LogoSvg from "@/components/ui/logo";
-import TwTag from "@/components/tw-tag/TwTag";
-import { useLocalCheck } from "@/hooks/useHooks";
 
-interface MenuItemProps {
-  name: string;
-  id: string;
-  current?: boolean;
-  className?: string;
-  onClick?: () => void;
-  type?: "pc" | "mo";
-}
+import TwTag from "@/components/tw-tag/TwTag";
+import MenuItem from "./MenuItem";
+import { store } from "@/hooks/store";
 
 interface headerProps {
   siteName: string;
@@ -31,20 +24,7 @@ const Header = ({ siteName }: headerProps) => {
 
   const isMainPage = pathname === "/"; // main page check
   const isErrorPage = pathname === "/not-found"; // error page check
-
-  const isLocal = useLocalCheck();
-  const menu: MenuItemProps[] = [
-    { name: "Convention", id: "convention" },
-    { name: "FSD", id: "fsd" },
-    { name: "Tailwind", id: "tailwind" },
-    {
-      name: "Components",
-      id: "components",
-      onClick: () => {
-        window.open(isLocal ? "http://localhost:6006/" : "/storybook/", "_blank");
-      },
-    },
-  ];
+  const menu = store.getState().global.headerMenu;
 
   return (
     <header className={clsx("w-full h-[80px] xl:h-[100px] transition bg-black")}>
@@ -91,52 +71,13 @@ const Header = ({ siteName }: headerProps) => {
             </button>
           </div>
           <div className="flow-root pt-10">
-            <div className="">
-              <div className="">
-                {menu.map((item) => (
-                  <MenuItem key={item.id} {...item} type="mo" />
-                ))}
-              </div>
-            </div>
+            {menu.map((item) => (
+              <MenuItem key={item.id} {...item} type="mo" />
+            ))}
           </div>
         </Dialog.Panel>
       </Dialog>
     </header>
-  );
-};
-
-const MenuItem = ({ name, id, current, onClick, type = "pc" }: MenuItemProps) => {
-  const isMainPage = usePathname() === "/"; // 현재 페이지가 메인페이지인지 확인
-  const selectedId = useSelectedLayoutSegments();
-
-  selectedId[1] === id ? (current = true) : (current = false);
-
-  const deviceType = {
-    pc: clsx("text-18 leading-6 font-semibold", current ? "text-gold" : "text-white"),
-    mo: clsx("block mb-4 text-xl leading-7", current ? "text-gold font-semibold" : "text-white font-normal"),
-  };
-
-  const menuHandler = (event: React.MouseEvent) => {
-    if (onClick) {
-      event.preventDefault();
-      onClick();
-    }
-  };
-
-  return (
-    <a
-      key={id}
-      href={"/" + id}
-      className={clsx(
-        current
-          ? `relative after:absolute after:block after:content-[''] after:left-0 after:-bottom-0 after:w-full after:h-[1px] after:bg-gold`
-          : "",
-        `relative min-h-8 pb-[7px] lg:hover:after:absolute lg:hover:after:block lg:hover:after:content-[''] lg:hover:after:left-0 hover:after:-bottom-0 lg:hover:after:w-full lg:hover:after:h-[1px] lg:hover:after:animate-hoverLine`
-      )}
-      onClick={menuHandler}
-    >
-      <span className={clsx(type && deviceType[type])}>{name}</span>
-    </a>
   );
 };
 
