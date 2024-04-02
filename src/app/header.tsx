@@ -24,7 +24,7 @@ const Header = ({ siteName }: headerProps) => {
 
   const isMainPage = pathname === "/"; // main page check
   const isErrorPage = pathname === "/not-found"; // error page check
-  const menu = store.getState().global.headerMenu;
+  const menu = store.getState().global.mainMenu;
 
   return (
     <header className={clsx("w-full h-[80px] xl:h-[100px] transition bg-black")}>

@@ -19,7 +19,7 @@ import MenuItem from "./MenuItem";
 
 export default function Main() {
   const [mainSlide, setMainSlide] = useState<SwiperClass>();
-  const menu = useSelector((state: RootState) => state.global.headerMenu);
+  const menu = useSelector((state: RootState) => state.global.mainMenu);
 
   const onSwiper = (swiper: SwiperClass) => {
     setMainSlide(swiper);
