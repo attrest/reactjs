@@ -4,9 +4,12 @@
   max-height: calc(100vh - 100px);
 }
 
+// 스크롤 숨김 처리
 .scroll-hidden {
-  overflow: hidden;
-  .overflow-y-auto {
-    margin-right: -17px;
+  &:not(.mobile-device) {
+    overflow: hidden;
+    .overflow-y-auto {
+      margin-right: -17px;
+    }
   }
 }

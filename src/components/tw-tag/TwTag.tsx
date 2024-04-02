@@ -26,7 +26,7 @@ const TwTag = ({
     "header-h1": "text-white text-3xl font-bold",
     "content-container": "max-w-[960px] mx-auto px-6 xl:px-16",
     "side-menu":
-      "w-full min-w-[18rem] max-w-[25rem] flex-1 overflow-y-auto fixed top-[80px] bottom-0 z-10 xl:static xl:max-h-screen-100",
+      "w-full min-w-[18rem] max-w-[25rem] flex-1 overflow-y-auto fixed top-[80px] bottom-0 z-10 max-h-screen-100 xl:static",
     "floating-button":
       "fixed bottom-3 right-3 z-10 bg-black text-white rounded-full w-10 h-10 inline-flex justify-center items-center",
   };

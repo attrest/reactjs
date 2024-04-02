@@ -10,20 +10,7 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 // import LogoSvg from "@/components/ui/logo";
 import TwTag from "@/components/tw-tag/TwTag";
-
-const isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
-const menu: MenuItemProps[] = [
-  { name: "Convention", id: "convention" },
-  { name: "FSD", id: "fsd" },
-  { name: "Tailwind", id: "tailwind" },
-  {
-    name: "Components",
-    id: "components",
-    onClick: () => {
-      window.open(isLocal ? "http://localhost:6006/" : "/storybook/", "_blank");
-    },
-  },
-];
+import { useLocalCheck } from "@/hooks/useHooks";
 
 interface MenuItemProps {
   name: string;
@@ -44,6 +31,20 @@ const Header = ({ siteName }: headerProps) => {
 
   const isMainPage = pathname === "/"; // main page check
   const isErrorPage = pathname === "/not-found"; // error page check
+
+  const isLocal = useLocalCheck();
+  const menu: MenuItemProps[] = [
+    { name: "Convention", id: "convention" },
+    { name: "FSD", id: "fsd" },
+    { name: "Tailwind", id: "tailwind" },
+    {
+      name: "Components",
+      id: "components",
+      onClick: () => {
+        window.open(isLocal ? "http://localhost:6006/" : "/storybook/", "_blank");
+      },
+    },
+  ];
 
   return (
     <header className={clsx("w-full h-[80px] xl:h-[100px] transition bg-black")}>
@@ -111,7 +112,7 @@ const MenuItem = ({ name, id, current, onClick, type = "pc" }: MenuItemProps) =>
   selectedId[1] === id ? (current = true) : (current = false);
 
   const deviceType = {
-    pc: clsx("text-white text-18 leading-6 font-semibold"),
+    pc: clsx("text-18 leading-6 font-semibold", current ? "text-gold" : "text-white"),
     mo: clsx("block mb-4 text-xl leading-7", current ? "text-gold font-semibold" : "text-white font-normal"),
   };
 

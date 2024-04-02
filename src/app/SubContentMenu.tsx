@@ -25,8 +25,8 @@ const SubContentMenu = ({ className }: SubContentMenuProps) => {
   };
 
   return (
-    <TwTag tag="aside" type="side-menu" className={cn(className, "content-nav p-4 right-0")}>
-      <div className="flex flex-col pt-5 pb-5 pl-7 pr-7 bg-[#f5f5f5] rounded-xl min-h-full shadow-lg">
+    <TwTag tag="aside" type="side-menu" className={cn(className, "content-nav right-0")}>
+      <div className="flex flex-col pt-8 pb-8 pl-6 pr-6 bg-white min-h-full">
         {contentMenuList.map(({ id, title, tag }) => (
           <a
             key={id}

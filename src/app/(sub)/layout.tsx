@@ -1,6 +1,7 @@
 "use client";
 
 import Breadcrumb from "@/components/Breadcrumb";
+import { cn } from "@/lib/utils";
 import clsx from "clsx";
 import { useSelectedLayoutSegment, useSelectedLayoutSegments } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -9,8 +10,7 @@ import SubMenu from "../SubMenu";
 import SubContentMenu from "../SubContentMenu";
 import Footer from "../footer";
 import TwDom from "@/components/tw-tag/TwTag";
-import { useSelector } from "react-redux";
-import { RootState } from "@/hooks/store";
+import { useMobileCheck, useMobileDeviceCheck } from "@/hooks/useHooks";
 import { EllipsisHorizontalIcon, EllipsisVerticalIcon, ListBulletIcon, XMarkIcon } from "@heroicons/react/20/solid";
 
 export interface InfoProps {
@@ -32,9 +32,10 @@ interface SubMenuList {
 }
 
 const SubLayout = ({ children }: { children: React.ReactNode }) => {
-  const isMobile = useSelector((state: RootState) => state.global.isMobile);
-  const [subMenuState, setSubMenuState] = useState(isMobile ? "hidden" : "");
-  const [subTreeMenuState, setSubTreeMenuState] = useState(isMobile ? "hidden" : "");
+  const isMobile = useMobileCheck();
+  const isMobileDevice = useMobileDeviceCheck();
+  const [subMenuState, setSubMenuState] = useState<string>("");
+  const [subTreeMenuState, setSubTreeMenuState] = useState<string>("");
   const infoArray: InfoProps[] = [
     {
       id: "convention",
@@ -86,6 +87,10 @@ const SubLayout = ({ children }: { children: React.ReactNode }) => {
   const [subData, setSubData] = useState<any>();
 
   useEffect(() => {
+    const menuState = isMobile ? "hidden" : "";
+    setSubMenuState(menuState);
+    setSubTreeMenuState(menuState);
+
     const target = infoArray.find((item) => item.id === selectedId);
     if (target) {
       if (target) {
@@ -96,7 +101,7 @@ const SubLayout = ({ children }: { children: React.ReactNode }) => {
         }
       }
     }
-  }, [selectedId]);
+  }, [selectedId, isMobile]);
 
   console.log("segment => ", segment, ", info => ", info);
 
@@ -119,7 +124,7 @@ const SubLayout = ({ children }: { children: React.ReactNode }) => {
           </TwDom>
         )}
 
-        <div className="w-full scroll-hidden">
+        <div className={cn("w-full scroll-hidden", isMobileDevice && "mobile-device")}>
           <div className="max-h-screen-100 overflow-y-auto">
             <TwDom type="content-container">
               {segment.length >= 1 && info && (

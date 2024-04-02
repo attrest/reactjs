@@ -2,7 +2,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  name: "ACS FE Docs",
+  name: "ADC FE Docs",
   isMobile: false,
 };
 
