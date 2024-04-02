@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   name: "ACS FE Docs",
+  isMobile: false,
 };
 
 const globalSlice = createSlice({
@@ -12,8 +13,11 @@ const globalSlice = createSlice({
     setName: (state, action) => {
       state.name = action.payload;
     },
+    setMobileState: (state, action) => {
+      state.isMobile = action.payload;
+    },
   },
 });
 
-export const { setName } = globalSlice.actions;
+export const { setName, setMobileState } = globalSlice.actions;
 export default globalSlice.reducer;

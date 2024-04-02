@@ -11,6 +11,7 @@ import { usePathname } from "next/navigation";
 // import LogoSvg from "@/components/ui/logo";
 import TwTag from "@/components/tw-tag/TwTag";
 
+const isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
 const menu: MenuItemProps[] = [
   { name: "Convention", id: "convention" },
   { name: "FSD", id: "fsd" },
@@ -19,7 +20,7 @@ const menu: MenuItemProps[] = [
     name: "Components",
     id: "components",
     onClick: () => {
-      window.open("http://localhost:6006/", "_blank");
+      window.open(isLocal ? "http://localhost:6006/" : "/storybook/", "_blank");
     },
   },
 ];
@@ -45,7 +46,7 @@ const Header = ({ siteName }: headerProps) => {
   const isErrorPage = pathname === "/not-found"; // error page check
 
   return (
-    <header className={clsx("w-full h-[100px] transition bg-black")}>
+    <header className={clsx("w-full h-[80px] xl:h-[100px] transition bg-black")}>
       <div className="flex items-center justify-between mx-auto py-5 lg:py-8 px-6">
         <div className="flex lg:flex-1">
           <a href="/">
@@ -76,7 +77,7 @@ const Header = ({ siteName }: headerProps) => {
 
       <Dialog as="div" className="lg:hidden" open={mobileMenuState} onClose={setMobileMenuState}>
         <div className="fixed inset-0 z-10 " />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-[#052010] px-6 py-5 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 ">
+        <Dialog.Panel className="fixed inset-y-0 right-0 z-20 w-full overflow-y-auto bg-[#052010] px-6 py-5 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 ">
           <div className="flex items-center justify-between">
             <a href="/" className="outline-none outline-0">
               <TwTag tag="h1" type="header-h1">
@@ -88,7 +89,7 @@ const Header = ({ siteName }: headerProps) => {
               <CloseIcon className="w-6 h-6" aria-hidden="true" />
             </button>
           </div>
-          <div className="flow-root pt-44">
+          <div className="flow-root pt-10">
             <div className="">
               <div className="">
                 {menu.map((item) => (
@@ -97,7 +98,6 @@ const Header = ({ siteName }: headerProps) => {
               </div>
             </div>
           </div>
-          <div className="absolute bottom-0 left-5 w-[1px] h-[32%] bg-white"></div>
         </Dialog.Panel>
       </Dialog>
     </header>
@@ -112,7 +112,7 @@ const MenuItem = ({ name, id, current, onClick, type = "pc" }: MenuItemProps) =>
 
   const deviceType = {
     pc: clsx("text-white text-18 leading-6 font-semibold"),
-    mo: clsx("block pb-4 text-xl leading-7", current ? "text-gold font-semibold" : "text-white font-normal"),
+    mo: clsx("block mb-4 text-xl leading-7", current ? "text-gold font-semibold" : "text-white font-normal"),
   };
 
   const menuHandler = (event: React.MouseEvent) => {
@@ -128,7 +128,7 @@ const MenuItem = ({ name, id, current, onClick, type = "pc" }: MenuItemProps) =>
       href={"/" + id}
       className={clsx(
         current
-          ? `relative after:absolute after:block after:content-[''] after:left-0 after:-bottom-0 after:w-full after:h-[1px] after:bg-white`
+          ? `relative after:absolute after:block after:content-[''] after:left-0 after:-bottom-0 after:w-full after:h-[1px] after:bg-gold`
           : "",
         `relative min-h-8 pb-[7px] lg:hover:after:absolute lg:hover:after:block lg:hover:after:content-[''] lg:hover:after:left-0 hover:after:-bottom-0 lg:hover:after:w-full lg:hover:after:h-[1px] lg:hover:after:animate-hoverLine`
       )}

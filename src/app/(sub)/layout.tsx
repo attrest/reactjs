@@ -9,6 +9,9 @@ import SubMenu from "../SubMenu";
 import SubContentMenu from "../SubContentMenu";
 import Footer from "../footer";
 import TwDom from "@/components/tw-tag/TwTag";
+import { useSelector } from "react-redux";
+import { RootState } from "@/hooks/store";
+import { EllipsisHorizontalIcon, EllipsisVerticalIcon, ListBulletIcon, XMarkIcon } from "@heroicons/react/20/solid";
 
 export interface InfoProps {
   id?: string;
@@ -29,6 +32,9 @@ interface SubMenuList {
 }
 
 const SubLayout = ({ children }: { children: React.ReactNode }) => {
+  const isMobile = useSelector((state: RootState) => state.global.isMobile);
+  const [subMenuState, setSubMenuState] = useState(isMobile ? "hidden" : "");
+  const [subTreeMenuState, setSubTreeMenuState] = useState(isMobile ? "hidden" : "");
   const infoArray: InfoProps[] = [
     {
       id: "convention",
@@ -56,6 +62,7 @@ const SubLayout = ({ children }: { children: React.ReactNode }) => {
   const segment = useSelectedLayoutSegments();
   const selectedId = useSelectedLayoutSegment();
   const pathname = usePathname();
+  const iconSizeClass = "x-5 h-5";
 
   const subMenuList: SubMenuList = {
     convention: [
@@ -91,23 +98,38 @@ const SubLayout = ({ children }: { children: React.ReactNode }) => {
     }
   }, [selectedId]);
 
-  // console.log("segment => ", segment, info);
+  console.log("segment => ", segment, ", info => ", info);
 
   return (
     <div className="w-full">
       <div className="flex space-between">
-        <SubMenu menu={subMenuList[segment[0]] ?? []} />
+        <SubMenu menu={subMenuList[segment[0]] ?? []} className={subMenuState} />
+        {isMobile && (
+          <TwDom
+            tag="button"
+            type="floating-button"
+            className="bottom-[3.75rem]"
+            onClick={() => setSubMenuState(subMenuState ? "" : "hidden")}
+          >
+            {subMenuState !== "" ? (
+              <EllipsisHorizontalIcon className={iconSizeClass} aria-hidden="true" />
+            ) : (
+              <EllipsisVerticalIcon className={iconSizeClass} />
+            )}
+          </TwDom>
+        )}
+
         <div className="w-full scroll-hidden">
           <div className="max-h-screen-100 overflow-y-auto">
             <TwDom type="content-container">
               {segment.length >= 1 && info && (
                 <TwDom className="sub-header">
                   <Breadcrumb {...info} />
-                  <div className="bg-white py-15">
-                    <h2 className="text-[26px] lg:text-[44px] font-semibold tracking-tight text-black">
+                  <div className="bg-white py-10 xl:py-15">
+                    <h2 className="text-[44px] font-semibold tracking-tight text-black">
                       {segment.length === 1 ? info.title : subData.name}
                     </h2>
-                    <p className="text-base mt-[10px] lg:mt-4 text-gray font-pretendard ">
+                    <p className="text-base mt-[5px] lg:mt-4 text-gray font-pretendard ">
                       {segment.length === 1 ? info.description : subData.description}
                     </p>
                   </div>
@@ -117,7 +139,20 @@ const SubLayout = ({ children }: { children: React.ReactNode }) => {
             </TwDom>
           </div>
         </div>
-        <SubContentMenu />
+        <SubContentMenu className={subTreeMenuState} />
+        {isMobile && (
+          <TwDom
+            tag="button"
+            type="floating-button"
+            onClick={() => setSubTreeMenuState(subTreeMenuState ? "" : "hidden")}
+          >
+            {subTreeMenuState !== "" ? (
+              <ListBulletIcon className={iconSizeClass} />
+            ) : (
+              <XMarkIcon className={iconSizeClass} />
+            )}
+          </TwDom>
+        )}
       </div>
     </div>
   );

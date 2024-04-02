@@ -3,6 +3,7 @@
 // import { Dialog } from "@headlessui/react";
 // import { Bars3Icon } from "@heroicons/react/20/solid";
 // import { CloseIcon } from "@/components/Svg";
+import { cn } from "@/lib/utils";
 import clsx from "clsx";
 // import Link from "next/link";
 import { useSelectedLayoutSegments } from "next/navigation";
@@ -22,6 +23,7 @@ import TwTag from "@/components/tw-tag/TwTag";
 
 interface MenuProps {
   menu: MenuItemProps[];
+  className?: string;
 }
 
 interface MenuItemProps {
@@ -29,16 +31,15 @@ interface MenuItemProps {
   id: string;
   subRoot?: string;
   current?: boolean;
-  className?: string;
   onClick?: () => void;
   type?: "pc" | "mo";
 }
 
-const SubMenu = ({ menu }: MenuProps) => {
+const SubMenu = ({ menu, className = "" }: MenuProps) => {
   return (
-    <TwTag tag="aside" type="side-menu" className="bg-black">
+    <TwTag tag="aside" type="side-menu" className={cn(className, "bg-black left-0")}>
       <div className="flex flex-col mx-auto py-5 lg:py-8 px-6">
-        <div className={clsx("flex flex-col text-white hidden lg:flex lg:gap-x-[50px] pr-5")}>
+        <div className={clsx("flex flex-col text-white lg:gap-x-[50px] pr-5")}>
           {menu.map((item) => (
             <MenuItem key={item.id} {...item} />
           ))}
