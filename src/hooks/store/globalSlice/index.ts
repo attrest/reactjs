@@ -43,6 +43,7 @@ const initialState: InitialStateType = {
     { name: "Convention", id: "convention" },
     { name: "FSD", id: "fsd" },
     { name: "Tailwind", id: "tailwind" },
+    { name: "Tools", id: "tools" },
     { name: "Components", id: "components" },
   ],
   subInfo: [
@@ -60,6 +61,11 @@ const initialState: InitialStateType = {
       id: "tailwind",
       title: "테일윈드 CSS",
       description: "유틸리티 중심의 CSS 프레임워크로, 빠르고 유연한 웹 디자인을 가능하게 합니다.",
+    },
+    {
+      id: "tools",
+      title: "Tailwind Converter",
+      description: "Tailwind 클래스를 CSS 스타일로 변환하여 빠르게 스타일을 확인할 수 있습니다.",
     },
     {
       id: "component",
@@ -96,6 +102,15 @@ const initialState: InitialStateType = {
         id: "derectives-functions",
         subRoot: "/tailwind",
         description: "Tailwind CSS 프로젝트에서 더 효율적으로 작업할 수 있게 도와주는 도구들입니다.",
+      },
+    ],
+    tools: [
+      { name: "Tailwind Converter", id: "tools" },
+      {
+        name: "Storybook Guide",
+        id: "storybook-guide",
+        subRoot: "/tools",
+        description: "컴포넌트를 체계적으로 관리할 수 있는 Storybook 설치 및 사용 가이드입니다.",
       },
     ],
   },

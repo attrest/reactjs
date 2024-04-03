@@ -71,7 +71,7 @@ const SubLayout = ({ children }: { children: React.ReactNode }) => {
         )}
 
         <div className={cn("w-full scroll-hidden", isMobileDevice && "mobile-device")}>
-          <div className="max-h-screen-100 overflow-y-auto">
+          <div className="h-screen-100 overflow-y-auto">
             <TwDom type="content-container">
               {segment.length >= 1 && info && (
                 <TwDom className="sub-header">

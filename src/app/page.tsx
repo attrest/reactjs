@@ -52,7 +52,7 @@ export default function Main() {
 
   return (
     <div id="mainFullPage" className="">
-      <div className="w-screen h-screen flex items-center justify-between flex-col max-h-screen-100">
+      <div className="w-screen h-screen flex items-center justify-between flex-col h-screen-100">
         <div className="flex items-center justify-center h-full w-full">
           <div className="flex flex-wrap max-w-[25rem] justify-center">
             {menu.map((item) => (

@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
-.max-h-screen-100 {
-  max-height: calc(100vh - 100px);
+.h-screen-100 {
+  height: calc(100vh - 100px);
 }
 
 // 스크롤 숨김 처리

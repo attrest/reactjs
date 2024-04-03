@@ -1,8 +1,8 @@
 "use client";
 
-import { InfoProps } from "@/app/(sub)/layout";
+import { SubInfoItemType } from "@/hooks/store/globalSlice";
 
-const Breadcrumb = (data: InfoProps) => {
+const Breadcrumb = (data: SubInfoItemType) => {
   return (
     <nav className="font-pretendard text-sm mt-7.5 flex" aria-label="Breadcrumb">
       <ol role="list" className="flex space-x-4">
