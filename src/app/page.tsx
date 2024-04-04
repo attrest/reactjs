@@ -12,14 +12,17 @@ import LocationContents from "@/features/main/LocationContents";
 import Footer from "./footer";
 import ReactFullpage, { Item } from "@fullpage/react-fullpage";
 import clsx from "clsx";
+import { cn } from "@/lib/utils";
 import { SwiperClass } from "swiper/react";
 import { useSelector } from "react-redux";
 import { RootState } from "@/hooks/store";
 import MenuItem from "./MenuItem";
+import { useMobileCheck } from "@/hooks/useHooks";
 
 export default function Main() {
   const [mainSlide, setMainSlide] = useState<SwiperClass>();
   const menu = useSelector((state: RootState) => state.global.mainMenu);
+  const isMobile = useMobileCheck();
 
   const onSwiper = (swiper: SwiperClass) => {
     setMainSlide(swiper);
@@ -52,7 +55,12 @@ export default function Main() {
 
   return (
     <div id="mainFullPage" className="">
-      <div className="w-screen h-screen flex items-center justify-between flex-col h-screen-100">
+      <div
+        className={cn(
+          "w-screen h-screen flex items-center justify-between flex-col",
+          isMobile ? "h-screen-80" : "h-screen-100"
+        )}
+      >
         <div className="flex items-center justify-center h-full w-full">
           <div className="flex flex-wrap max-w-[25rem] justify-center">
             {menu.map((item) => (

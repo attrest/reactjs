@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+.h-screen-80 {
+  height: calc(100vh - 80px);
+}
+
 .h-screen-100 {
   height: calc(100vh - 100px);
 }

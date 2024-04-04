@@ -14,6 +14,7 @@ type TwMappingClassesType = {
 
 const Tools = () => {
   const [currentClasses, setCurrentClasses] = useState<string[]>([]);
+  const [currentActionType, setCurrentActionType] = useState<string>("");
   const exam1 = "text-[44px] font-semibold tracking-tight text-black";
   const exam2 =
     "font-size: 44px;\nfont-weight: 600;\ncolor: #000000;\ndisplay: flex;\nalign-items: center;\njustify-content: center;\nflex-direction: column;";
@@ -50,6 +51,7 @@ const Tools = () => {
     const convertCssStyles = tailwindToCss(twMappingAllArray, inputValue);
     setCssString(convertCssStyles.css.map((cls: string) => cls).join("\n"));
     setCssStringRef(convertCssStyles.ref);
+    setCurrentActionType("tw");
   };
 
   // CSS to Tailwind
@@ -59,6 +61,7 @@ const Tools = () => {
     setCurrentClasses(convertTwClasses.class);
     setTwString(convertTwClasses.class.map((rule: string) => rule).join(" "));
     setTwStringRef(convertTwClasses.ref);
+    setCurrentActionType("css");
   };
 
   // 포커스 이동시 클립보드 복사
@@ -81,8 +84,8 @@ const Tools = () => {
     sectionContainer: "border border-[#ccc] p-6 rounded-2xl",
     container: "flex border rounded-lg overflow-hidden",
     example: "flex mt-4 p-3",
-    preContainer: "bg-[#f5f5f5] mt-4 p-4 rounded-lg",
-    linkButton: "bg-[orange] py-1 px-3 rounded-md mr-1 text-white text-sm hover:bg-red",
+    preContainer: "bg-[#f5f5f5] mt-4 p-4 rounded-lg overflow-x-auto",
+    linkButton: "bg-[orange] py-1 px-3 rounded-md mr-1 mb-1 text-white text-sm hover:bg-red",
   };
 
   return (
@@ -107,15 +110,16 @@ const Tools = () => {
           <>
             <pre className={twDomClasses.preContainer}>{cssString}</pre>
             <div className="flex flex-wrap mt-4">
-              {cssStringRef.map((url: string, idx: number) => {
-                if (url !== "/* No ref */") {
-                  return (
-                    <a href={url} key={idx} className={twDomClasses.linkButton}>
-                      {currentClasses[idx]}
-                    </a>
-                  );
-                }
-              })}
+              {currentActionType === "tw" &&
+                cssStringRef.map((url: string, idx: number) => {
+                  if (url !== "/* No ref */") {
+                    return (
+                      <a href={url} target="_blank" key={idx} className={twDomClasses.linkButton}>
+                        {currentClasses[idx]}
+                      </a>
+                    );
+                  }
+                })}
             </div>
           </>
         )}
@@ -146,16 +150,17 @@ const Tools = () => {
           <>
             <pre className={twDomClasses.preContainer}>{twString}</pre>
             <div className="flex flex-wrap mt-4">
-              {twStringRef.map((url: string, idx: number) => {
-                console.log("url => ", url);
-                if (url !== "/* No ref */") {
-                  return (
-                    <a href={url} key={idx} className={twDomClasses.linkButton}>
-                      {currentClasses[idx]}
-                    </a>
-                  );
-                }
-              })}
+              {currentActionType === "css" &&
+                twStringRef.map((url: string, idx: number) => {
+                  console.log("url => ", url);
+                  if (url !== "/* No ref */") {
+                    return (
+                      <a href={url} target="_blank" key={idx} className={twDomClasses.linkButton}>
+                        {currentClasses[idx]}
+                      </a>
+                    );
+                  }
+                })}
             </div>
           </>
         )}

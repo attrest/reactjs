@@ -9,7 +9,7 @@ export const tailwindToCss = (array: any[], tailwindClasses: string): { [key: st
     console.log("tailwindInfo => ", tailwindInfo, cls);
 
     // text-[..] 형태의 스타일 검사
-    const regex = /(text|m(?:l|r|t|b)?|p(?:l|r|t|b)?|t|l|r|b)-\[(\d+(?:\.\d+)?(?:px|em|rem|vw|vh|%))\]/;
+    const regex = /(text|m(?:l|r|t|b)?|p(?:l|r|t|b)?|t|l|r|b|leading)-\[(\d+(?:\.\d+)?(?:px|em|rem|vw|vh|%)?)\]/;
     let match = cls.match(regex);
     if (tailwindInfo.length === 0 && match) {
       const twProp = match[1];
@@ -30,6 +30,7 @@ export const tailwindToCss = (array: any[], tailwindClasses: string): { [key: st
         if (_prop === "l") return "left";
         if (_prop === "r") return "right";
         if (_prop === "b") return "bottom";
+        if (_prop === "leading") return "line-height";
       };
       cls = `${cssPropConverter(twProp)}: ${twSize};`;
     }
@@ -61,7 +62,7 @@ export const cssToTailwind = (array: any[], css: string): { [key: string]: strin
 
     // {size-prop}: .. 형태의 스타일 검사
     const regex =
-      /(font-size|margin(?:-left|-right|-top|-bottom)?|padding(?:-left|-right|-top|-bottom)?|top|left|right|bottom)\s*:\s*(\d+(?:\.\d+)?(?:px|em|rem|vw|vh|%));/;
+      /(font-size|margin(?:-left|-right|-top|-bottom)?|padding(?:-left|-right|-top|-bottom)?|top|left|right|bottom|line-height)\s*:\s*(\d+(?:\.\d+)?(?:px|em|rem|vw|vh|%)?);/;
     let match = rule.match(regex);
     if (tailwindInfo.length === 0 && match) {
       const clsProp = match[1];
@@ -82,6 +83,7 @@ export const cssToTailwind = (array: any[], css: string): { [key: string]: strin
         if (_prop === "left") return "l";
         if (_prop === "right") return "r";
         if (_prop === "bottom") return "b";
+        if (_prop === "line-height") return "leading";
       };
       rule = `${twPropConverter(clsProp)}-[${clsSize}]`;
     }

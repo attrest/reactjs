@@ -60,7 +60,7 @@ const SubLayout = ({ children }: { children: React.ReactNode }) => {
           <TwDom
             tag="button"
             type="floating-button"
-            className="bottom-[3.75rem]"
+            {...(pathname !== "/tools" && { className: "bottom-[3.75rem]" })}
             onClick={() => setSubMenuState(subMenuState ? "" : "hidden")}
           >
             {subMenuState !== "" ? (
@@ -72,16 +72,16 @@ const SubLayout = ({ children }: { children: React.ReactNode }) => {
         )}
 
         <div className={cn("w-full scroll-hidden", isMobileDevice && "mobile-device")}>
-          <div className="h-screen-100 overflow-y-auto">
+          <div className={cn("overflow-y-auto", isMobile ? "h-screen-80" : "h-screen-100")}>
             <TwDom type="content-container" {...(pathname === "/tools" && { className: "max-w-[1280px]" })}>
               {segment.length >= 1 && info && (
                 <TwDom className="sub-header">
                   <Breadcrumb {...info} />
                   <div className="bg-white py-10 xl:py-15">
-                    <h2 className="text-[44px] font-semibold tracking-tight text-black">
+                    <h2 className="text-[44px] font-semibold tracking-tight text-black leading-none">
                       {segment.length === 1 ? info.title : subData.name}
                     </h2>
-                    <p className="text-base mt-[5px] lg:mt-4 text-gray font-pretendard ">
+                    <p className="text-base mt-2 lg:mt-4 text-gray font-pretendard ">
                       {segment.length === 1 ? info.description : subData.description}
                     </p>
                   </div>
@@ -91,19 +91,23 @@ const SubLayout = ({ children }: { children: React.ReactNode }) => {
             </TwDom>
           </div>
         </div>
-        {pathname !== "/tools" && <SubContentMenu className={subTreeMenuState} />}
-        {isMobile && (
-          <TwDom
-            tag="button"
-            type="floating-button"
-            onClick={() => setSubTreeMenuState(subTreeMenuState ? "" : "hidden")}
-          >
-            {subTreeMenuState !== "" ? (
-              <ListBulletIcon className={iconSizeClass} />
-            ) : (
-              <XMarkIcon className={iconSizeClass} />
+        {pathname !== "/tools" && (
+          <>
+            <SubContentMenu className={subTreeMenuState} />
+            {isMobile && (
+              <TwDom
+                tag="button"
+                type="floating-button"
+                onClick={() => setSubTreeMenuState(subTreeMenuState ? "" : "hidden")}
+              >
+                {subTreeMenuState !== "" ? (
+                  <ListBulletIcon className={iconSizeClass} />
+                ) : (
+                  <XMarkIcon className={iconSizeClass} />
+                )}
+              </TwDom>
             )}
-          </TwDom>
+          </>
         )}
       </div>
     </div>
