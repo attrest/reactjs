@@ -1,59 +1,87 @@
-function inferCssFromTailwindClass(twClass: string): string {
-  type BaseStyle = {
-    [key: string]: string;
-  };
+// Tailwind to CSS
+export const tailwindToCss = (array: any[], tailwindClasses: string): { [key: string]: string[] } => {
+  const classesArray = tailwindClasses.split(" ");
+  const cssStrings: string[] = [];
+  const tailwindRefUrls: string[] = [];
 
-  type Side = {
-    [key: string]: string;
-  };
+  classesArray.forEach((cls) => {
+    const tailwindInfo = getValueByKey(array, cls);
+    console.log("tailwindInfo => ", tailwindInfo, cls);
 
-  const baseStyles: BaseStyle = {
-    m: "margin",
-    p: "padding",
-    rounded: "border-radius",
-    border: "border-width",
-  };
-
-  let cssProperty: string = "";
-  let value: string = "";
-
-  // Split class by hyphens to analyze
-  const parts: string[] = twClass.split("-");
-  const base: string = parts[0];
-
-  // Infer CSS property
-  if (base in baseStyles) {
-    cssProperty = baseStyles[base];
-
-    // Tailwind uses 't', 'r', 'b', 'l' for directional properties
-    const sides: Side = { t: "top", r: "right", b: "bottom", l: "left" };
-    if (parts.length > 1 && parts[1] in sides) {
-      cssProperty += `-${sides[parts[1]]}`;
+    // text-[..] 형태의 스타일 검사
+    const regex = /text-\[(\d+px)\]/; // text-[..] 매칭 검사
+    let match = cls.match(regex);
+    if (tailwindInfo.length === 0 && match) {
+      const twSize = match[1]; // match 배열의 두 번째 요소에는 숫자와 단위가 포함된 부분이 저장
+      cls = `font-size: ${twSize};`;
     }
 
-    // Infer value
-    if (parts[0] === "rounded") {
-      // Example: rounded-lg => larger radius
-      value = parts[1] === "lg" ? "0.5rem" : parts[1] === "xl" ? "1rem" : "0.25rem";
-    } else if (parts[0] === "border") {
-      // Border width, example: border-2 => 2px
-      value = parts.length > 1 ? `${parts[1]}px` : "1px";
-    } else {
-      // Margins and paddings, example: m-2 => 0.5rem
-      const size: number = parseInt(parts[1], 10);
-      value = isNaN(size) ? "" : `${size * 0.25}rem`;
+    const isMatchingWord = tailwindInfo.length > 0 || (tailwindInfo.length === 0 && match);
+    const cssEquivalent = isMatchingWord ? `${match ? cls : tailwindInfo[0]}` : `/* No direct match for ${cls} */`;
+    cssStrings.push(cssEquivalent.trim());
+    tailwindRefUrls.push(tailwindInfo.length > 0 ? tailwindInfo[1] : "/* No ref */");
+  });
+
+  return {
+    css: cssStrings,
+    ref: tailwindRefUrls,
+  };
+};
+
+// CSS to Tailwind
+export const cssToTailwind = (array: any[], css: string): { [key: string]: string[] } => {
+  const rules = css
+    .split("\n")
+    .map((rule) => rule.trim())
+    .filter((rule) => rule);
+  const tailwindClasses: string[] = [];
+  const tailwindRefUrls: string[] = [];
+
+  rules.forEach((rule) => {
+    // This is a simplified approach; you might need to parse CSS more effectively.
+    const tailwindInfo = getKeyByValue(array, rule);
+
+    // font-size: .. 형태의 스타일 검사
+    const regex = /font-size: (\d+px);/; // font-size: .. 매칭 검사
+    let match = rule.match(regex);
+    if (tailwindInfo.length === 0 && match) {
+      const twSize = match[1]; // match 배열의 두 번째 요소에는 숫자와 단위가 포함된 부분이 저장
+      rule = `text-${twSize};`;
+    }
+
+    const isMatchingWord = tailwindInfo.length > 0 || (tailwindInfo.length === 0 && match);
+    const tailwindClass = isMatchingWord ? `${match ? rule : tailwindInfo[0]}` : `/* No direct match for ${rule} */`;
+
+    tailwindClasses.push(tailwindClass.trim());
+    tailwindRefUrls.push(tailwindInfo.length > 0 ? tailwindInfo[1] : "/* No ref */");
+  });
+
+  return {
+    class: tailwindClasses,
+    ref: tailwindRefUrls,
+  };
+};
+
+// Json 배열에서 일치하는 키 찾기
+function getValueByKey(arr: any[], key: string): string[] {
+  for (const obj of arr) {
+    if (key in obj) {
+      return [obj[key], obj["ref"]];
     }
   }
-
-  return cssProperty && value ? `${cssProperty}: ${value};` : "";
+  return []; // 해당 키를 찾을 수 없는 경우
 }
 
-export function generateStylesFromTailwindClasses(tailwindClassesString: string): string {
-  const tailwindClasses = tailwindClassesString.split(" ");
-  return tailwindClasses
-    .map((twClass) => {
-      const cssCode: string = inferCssFromTailwindClass(twClass);
-      return cssCode ? `.${twClass} { ${cssCode} }` : `/* Could not infer CSS for: .${twClass} */`;
-    })
-    .join("\n");
+// Json 배열에서 일치하는 밸류 찾기
+function getKeyByValue(arr: { [key: string]: string }[], targetValue: string): string[] {
+  const keyArr: string[] = [];
+  arr.filter((obj) => {
+    for (const key in obj) {
+      if (obj.hasOwnProperty(key) && obj[key] === targetValue) {
+        keyArr.push(key);
+        keyArr.push(obj["ref"]);
+      }
+    }
+  });
+  return keyArr;
 }

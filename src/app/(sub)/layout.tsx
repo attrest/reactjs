@@ -49,7 +49,7 @@ const SubLayout = ({ children }: { children: React.ReactNode }) => {
     }
   }, [selectedId, isMobile]);
 
-  console.log("segment => ", segment, ", info => ", info);
+  // console.log("segment => ", segment, ", info => ", info);
 
   return (
     <div className="w-full">
