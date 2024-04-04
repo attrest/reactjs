@@ -9,11 +9,29 @@ export const tailwindToCss = (array: any[], tailwindClasses: string): { [key: st
     console.log("tailwindInfo => ", tailwindInfo, cls);
 
     // text-[..] 형태의 스타일 검사
-    const regex = /text-\[(\d+px)\]/; // text-[..] 매칭 검사
+    const regex = /(text|m(?:l|r|t|b)?|p(?:l|r|t|b)?|t|l|r|b)-\[(\d+(?:\.\d+)?(?:px|em|rem|vw|vh|%))\]/;
     let match = cls.match(regex);
     if (tailwindInfo.length === 0 && match) {
-      const twSize = match[1]; // match 배열의 두 번째 요소에는 숫자와 단위가 포함된 부분이 저장
-      cls = `font-size: ${twSize};`;
+      const twProp = match[1];
+      const twSize = match[2]; // match 배열의 두 번째 요소에는 숫자와 단위가 포함된 부분이 저장
+      const cssPropConverter = (_prop: string) => {
+        if (_prop === "text") return "font-size";
+        if (_prop === "m") return "margin";
+        if (_prop === "mt") return "margin-top";
+        if (_prop === "ml") return "margin-left";
+        if (_prop === "mr") return "margin-right";
+        if (_prop === "mb") return "margin-bottom";
+        if (_prop === "p") return "padding";
+        if (_prop === "pt") return "padding-top";
+        if (_prop === "pl") return "padding-left";
+        if (_prop === "pr") return "padding-right";
+        if (_prop === "pb") return "padding-bottom";
+        if (_prop === "t") return "top";
+        if (_prop === "l") return "left";
+        if (_prop === "r") return "right";
+        if (_prop === "b") return "bottom";
+      };
+      cls = `${cssPropConverter(twProp)}: ${twSize};`;
     }
 
     const isMatchingWord = tailwindInfo.length > 0 || (tailwindInfo.length === 0 && match);
@@ -41,12 +59,31 @@ export const cssToTailwind = (array: any[], css: string): { [key: string]: strin
     // This is a simplified approach; you might need to parse CSS more effectively.
     const tailwindInfo = getKeyByValue(array, rule);
 
-    // font-size: .. 형태의 스타일 검사
-    const regex = /font-size: (\d+px);/; // font-size: .. 매칭 검사
+    // {size-prop}: .. 형태의 스타일 검사
+    const regex =
+      /(font-size|margin(?:-left|-right|-top|-bottom)?|padding(?:-left|-right|-top|-bottom)?|top|left|right|bottom)\s*:\s*(\d+(?:\.\d+)?(?:px|em|rem|vw|vh|%));/;
     let match = rule.match(regex);
     if (tailwindInfo.length === 0 && match) {
-      const twSize = match[1]; // match 배열의 두 번째 요소에는 숫자와 단위가 포함된 부분이 저장
-      rule = `text-${twSize};`;
+      const clsProp = match[1];
+      const clsSize = match[2]; // match 배열의 두 번째 요소에는 숫자와 단위가 포함된 부분이 저장
+      const twPropConverter = (_prop: string) => {
+        if (_prop === "font-size") return "text";
+        if (_prop === "margin") return "m";
+        if (_prop === "margin-top") return "mt";
+        if (_prop === "margin-left") return "ml";
+        if (_prop === "margin-right") return "mr";
+        if (_prop === "margin-bottom") return "mb";
+        if (_prop === "padding") return "p";
+        if (_prop === "padding-top") return "pt";
+        if (_prop === "padding-left") return "pl";
+        if (_prop === "padding-right") return "pr";
+        if (_prop === "padding-bottom") return "pb";
+        if (_prop === "top") return "t";
+        if (_prop === "left") return "l";
+        if (_prop === "right") return "r";
+        if (_prop === "bottom") return "b";
+      };
+      rule = `${twPropConverter(clsProp)}-[${clsSize}]`;
     }
 
     const isMatchingWord = tailwindInfo.length > 0 || (tailwindInfo.length === 0 && match);

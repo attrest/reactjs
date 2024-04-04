@@ -53,6 +53,7 @@ const Tools = () => {
   return (
     <div>
       <div id="Tailwind_to_CSS">
+        <h3>Tailwind to CSS Rules</h3>
         <div className="flex border">
           <input
             type="text"
@@ -75,6 +76,7 @@ const Tools = () => {
       </div>
 
       <div id="CSS_to_Tailwind" className="mt-10">
+        <h3>CSS Rules to Tailwind</h3>
         <div className="flex border">
           <textarea
             className="w-full p-3"
