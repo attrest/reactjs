@@ -51,13 +51,12 @@ export const tailwindToCss = (array: any[], tailwindClasses: string): { [key: st
 export const cssToTailwind = (array: any[], css: string): { [key: string]: string[] } => {
   const rules = css
     .split("\n")
-    .map((rule) => rule.trim())
+    .map((rule) => (rule.indexOf(";") > -1 ? rule.trim() : `${rule.trim()};`))
     .filter((rule) => rule);
   const tailwindClasses: string[] = [];
   const tailwindRefUrls: string[] = [];
 
   rules.forEach((rule) => {
-    // This is a simplified approach; you might need to parse CSS more effectively.
     const tailwindInfo = getKeyByValue(array, rule);
 
     // {size-prop}: .. 형태의 스타일 검사
