@@ -1568,7 +1568,43 @@
       "rounded-tr-xl": "border-top-right-radius: 0.75rem;",
       "ref": "https://tailwind.build/classes/borders/rounded-tr-xl"
     },
-    { "rounded-xl": "border-radius: 0.75rem;", "ref": "https://tailwind.build/classes/borders/rounded-xl" }
+    { "rounded-xl": "border-radius: 0.75rem;", "ref": "https://tailwind.build/classes/borders/rounded-xl" },
+    {
+      "rounded-none": "border-radius: 0px;",
+      "ref": "https://tailwindcss.com/docs/border-radius"
+    },
+    {
+      "rounded-sm": "border-radius: 0.125rem;",
+      "ref": "https://tailwindcss.com/docs/border-radius"
+    },
+    {
+      "rounded-md": "border-radius: 0.375rem;",
+      "ref": "https://tailwindcss.com/docs/border-radius"
+    },
+    {
+      "rounded-lg": "border-radius: 0.5rem;",
+      "ref": "https://tailwindcss.com/docs/border-radius"
+    },
+    {
+      "tailwind-classname": "rounded-xl",
+      "css-rule": "border-radius: 0.75rem;",
+      "ref": "https://tailwindcss.com/docs/border-radius"
+    },
+    {
+      "tailwind-classname": "rounded-2xl",
+      "css-rule": "border-radius: 1rem;",
+      "ref": "https://tailwindcss.com/docs/border-radius"
+    },
+    {
+      "tailwind-classname": "rounded-3xl",
+      "css-rule": "border-radius: 1.5rem;",
+      "ref": "https://tailwindcss.com/docs/border-radius"
+    },
+    {
+      "tailwind-classname": "rounded-full",
+      "css-rule": "border-radius: 9999px;",
+      "ref": "https://tailwindcss.com/docs/border-radius"
+    }
   ],
   "Box": [
     {

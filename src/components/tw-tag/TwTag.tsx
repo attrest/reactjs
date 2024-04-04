@@ -29,6 +29,7 @@ const TwTag = ({
       "w-full min-w-[18rem] max-w-[25rem] flex-1 overflow-y-auto fixed top-[80px] bottom-0 z-10 h-screen-100 xl:static",
     "floating-button":
       "fixed bottom-3 right-3 z-10 bg-black text-white rounded-full w-10 h-10 inline-flex justify-center items-center",
+    "primary-button": "inline-flex items-center justify-center text-xl px-4 h-20 bg-black text-white min-w-20",
   };
   return (
     <Component
