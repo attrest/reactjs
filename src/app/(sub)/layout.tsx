@@ -15,6 +15,8 @@ import { EllipsisHorizontalIcon, EllipsisVerticalIcon, ListBulletIcon, XMarkIcon
 import { useSelector } from "react-redux";
 import { RootState } from "@/hooks/store";
 import { SubInfoItemType } from "@/hooks/store/globalSlice";
+import { jsPDF } from "jspdf";
+import { malgunBase64, malgunBoldBase64 } from "@/lib/font-base64";
 
 const SubLayout = ({ children }: { children: React.ReactNode }) => {
   const isMobile = useMobileCheck();
@@ -52,6 +54,136 @@ const SubLayout = ({ children }: { children: React.ReactNode }) => {
   // console.log("segment => ", segment, ", info => ", info);
   // console.log("pathname => ", pathname);
 
+  const generatePDF = () => {
+    const doc = new jsPDF();
+
+    // Virtual File System에 폰트 파일 추가
+    const fontNameNormal = "malgunBase64.ttf";
+    const fontNameBold = "malgunBoldBase64.ttf";
+
+    // 맑은 고딕 - normal
+    (doc as any).addFileToVFS(fontNameNormal, malgunBase64);
+    doc.addFont(fontNameNormal, "malgun", "normal");
+
+    // 맑은 고딕 - bold
+    (doc as any).addFileToVFS(fontNameBold, malgunBoldBase64);
+    doc.addFont(fontNameBold, "malgunBold", "normal");
+
+    const docWidth = doc.internal.pageSize.getWidth();
+    const docHeight = doc.internal.pageSize.getHeight();
+    const margin = 20;
+    const fontSize = 12;
+    const lineHeight = fontSize * 0.75;
+    const maxWidth = docWidth - margin * 2;
+    const maxHeight = docHeight - margin * 2;
+    let startY = margin;
+    // const docMargin = {
+    //   top: margin,
+    //   left: margin,
+    //   right: docWidth - margin, // 오른쪽 마진
+    //   bottom: docHeight - margin, // 아래쪽 마진
+    // };
+    // console.log("docWidth => ", docWidth, " / docHeight => ", docHeight);
+    // console.log("docMargin => ", docMargin);
+
+    const lineMaxLength = (maxWidth / fontSize) * 3.2;
+    console.log("lineMaxLength => ", lineMaxLength, lineHeight);
+
+    // ** 긴 문장 텍스트 분할
+    const splitSentenceToLine = (_text: string, _lineLength: number) => {
+      const txt = _text.replace(/\s+/g, " ").trim();
+      const lines: string[] = [];
+      for (let i = 0; i < txt.length; i += _lineLength) {
+        lines.push(txt.substring(i, i + _lineLength));
+      }
+      return lines;
+    };
+
+    // ** PDF에 텍스트 추가
+    const appendDocText = (_text: string, _tagName?: string) => {
+      if (_tagName) {
+        if (_tagName.startsWith("H")) {
+          doc.setFont("malgunBold");
+        }
+
+        if (_tagName === "H3") {
+          doc.setFontSize(fontSize + 6);
+        } else if (_tagName === "H4") {
+          doc.setFontSize(fontSize + 4);
+        } else if (_tagName === "H5") {
+          doc.setFontSize(fontSize + 2);
+        } else {
+          doc.setFont("malgun");
+          doc.setFontSize(fontSize);
+        }
+      }
+
+      // 긴 텍스트 분할
+      const lines = _tagName !== "PRE" ? splitSentenceToLine(_text, lineMaxLength) : _text.split("\n");
+      // const lines = doc.splitTextToSize(content, maxWidth);
+      lines.forEach((line: string) => {
+        if (startY + lineHeight > maxHeight + margin) {
+          doc.addPage();
+          startY = margin; // 새 페이지 상단 마진으로 재설정
+        }
+
+        // console.log(line);
+        doc.text(line, margin, startY, { maxWidth: maxWidth });
+        startY = startY + lineHeight;
+      });
+
+      // 공백 라인 추가
+      doc.text(" ", margin, startY);
+      startY = startY + lineHeight;
+    };
+
+    const docTitle = document.querySelector("h2.font-semibold.tracking-tight");
+    const docDescription = document.querySelector("h2.font-semibold.tracking-tight + p");
+
+    doc.setFont("malgunBold");
+    doc.setFontSize(24);
+    if (docTitle && docTitle.textContent) doc.text(docTitle.textContent, margin, startY);
+    startY = startY + 10;
+
+    doc.setFont("malgun");
+    doc.setFontSize(10);
+    if (docDescription && docDescription.textContent) doc.text(docDescription.textContent, margin, startY);
+    startY = startY + 20;
+
+    // 본문 폰트 설정
+    doc.setFontSize(fontSize);
+
+    const htmlElements: NodeList = document.querySelectorAll("section > *");
+    for (const htmlDom of htmlElements) {
+      if (htmlDom instanceof Element) {
+        if (htmlDom.textContent && htmlDom.tagName !== "DIV") {
+          appendDocText(htmlDom.textContent); // 문서에 텍스트 추가
+        }
+
+        if (htmlDom.tagName === "DIV") {
+          const divElements: NodeList = htmlDom.querySelectorAll("h3, h4, h5, p, blockquote, pre, li");
+          for (const element of divElements) {
+            if (element instanceof Element) {
+              if (element.textContent) {
+                const tagName = element.tagName;
+                // 텍스트 색상 설정
+                if (tagName === "PRE") {
+                  doc.setTextColor("#0000FF");
+                } else {
+                  doc.setTextColor("#000000");
+                }
+
+                appendDocText(element.textContent, tagName); // 문서에 텍스트 추가
+              }
+            }
+          }
+        }
+      }
+    }
+
+    doc.save("sample.pdf");
+  };
+
   return (
     <div className="w-full">
       <div className="flex space-between">
@@ -78,10 +210,16 @@ const SubLayout = ({ children }: { children: React.ReactNode }) => {
                 <TwDom className="sub-header">
                   <Breadcrumb {...info} />
                   <div className="bg-white py-10 xl:py-15">
-                    <h2 className="text-[44px] font-semibold tracking-tight text-black leading-none">
+                    <h2 className="flex flex-col items-center text-[44px] font-semibold tracking-tight text-black leading-none xl:flex-row xl:justify-between">
                       {segment.length === 1 ? info.title : subData.name}
+                      <button
+                        className="min-w-[8rem] border px-4 py-2 rounded-lg bg-orange-500 text-white text-sm font-normal mt-2 xl:mt-0"
+                        onClick={generatePDF}
+                      >
+                        PDF Download
+                      </button>
                     </h2>
-                    <p className="text-base mt-2 lg:mt-4 text-gray font-pretendard ">
+                    <p className="text-base mt-2 lg:mt-4 text-gray font-pretendard text-center xl:text-left">
                       {segment.length === 1 ? info.description : subData.description}
                     </p>
                   </div>
