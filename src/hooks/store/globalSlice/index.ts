@@ -76,8 +76,14 @@ const initialState: InitialStateType = {
   subMenu: {
     convention: [
       { name: "Convention이란?", id: "convention" },
-      { name: "HTML Guide", id: "html-guide", subRoot: "/convention", description: "HTML 스타일 가이드 입니다." },
+      { name: "HTML Guide", id: "html-guide", subRoot: "/convention", description: "HTML 코딩 가이드 입니다." },
       { name: "CSS Guide", id: "css-guide", subRoot: "/convention", description: "CSS 스타일 가이드 입니다." },
+      {
+        name: "A11y Guide",
+        id: "a11y-guide",
+        subRoot: "/convention",
+        description: "웹접근성 CSS 스타일 가이드 입니다.",
+      },
       { name: "SCSS Guide", id: "scss-guide", subRoot: "/convention", description: "SCSS 스타일 가이드 입니다." },
     ],
     fsd: [
