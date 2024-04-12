@@ -83,6 +83,9 @@ dependencies:
   '@types/aos':
     specifier: ^3.0.7
     version: 3.0.7
+  '@types/gsap':
+    specifier: ^3.0.0
+    version: 3.0.0
   '@types/react-table':
     specifier: ^7.7.18
     version: 7.7.20
@@ -101,6 +104,9 @@ dependencies:
   date-fns:
     specifier: ^2.30.0
     version: 2.30.0
+  gsap:
+    specifier: ^3.12.5
+    version: 3.12.5
   html-entities:
     specifier: ^2.4.0
     version: 2.5.2
@@ -4253,6 +4259,13 @@ packages:
     resolution: {integrity: sha512-JcTwzkxskR8DN/nnX96Pie3gGN3WHiPpuxzuQ9z3516o1bB243d8w8DHUJ8BohuzoT1o3HUFta2ns/mkZC8KRw==}
     dev: false
 
+  /@types/gsap@3.0.0:
+    resolution: {integrity: sha512-BbWLi4WRHGze4C8NV7U7yRevuBFiPkPZZyGa0rryanvh/9HPUFXTNBXsGQxJZJq7Ix7j4RXMYodP3s+OsqCErg==}
+    deprecated: This is a stub types definition. gsap provides its own type definitions, so you do not need this installed.
+    dependencies:
+      gsap: 3.12.5
+    dev: false
+
   /@types/hast@3.0.4:
     resolution: {integrity: sha512-WPs+bbQw5aCj+x6laNGWLH3wviHtoCv/P3+otBhbOhJgG8qtpdAMlTCxLtsTWA7LH1Oh/bFCHsBn0TPS5m30EQ==}
     dependencies:
@@ -7524,6 +7537,10 @@ packages:
   /graphemer@1.4.0:
     resolution: {integrity: sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==}
     dev: true
+
+  /gsap@3.12.5:
+    resolution: {integrity: sha512-srBfnk4n+Oe/ZnMIOXt3gT605BX9x5+rh/prT2F1SsNJsU1XuMiP0E2aptW481OnonOGACZWBqseH5Z7csHxhQ==}
+    dev: false
 
   /gunzip-maybe@1.4.2:
     resolution: {integrity: sha512-4haO1M4mLO91PW57BMsDFf75UmwoRX0GkdD+Faw+Lr+r/OZrOCS0pIBwOL1xCKQqnQzbNFGgK2V2CpBUPeFNTw==}

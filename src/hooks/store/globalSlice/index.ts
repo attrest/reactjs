@@ -113,10 +113,22 @@ const initialState: InitialStateType = {
     tools: [
       { name: "Tailwind Converter", id: "tools" },
       {
+        name: "Responsive Sync Plugin",
+        id: "responsive-sync",
+        subRoot: "/tools",
+        description: "반응형 웹 작업을 위한 크롬 전용 동기화 플러그인입니다.",
+      },
+      {
         name: "Storybook Guide",
         id: "storybook-guide",
         subRoot: "/tools",
         description: "컴포넌트를 체계적으로 관리할 수 있는 Storybook 설치 및 사용 가이드입니다.",
+      },
+      {
+        name: "GSAP Guide",
+        id: "gsap-guide",
+        subRoot: "/tools",
+        description: "React와 Vue에서 사용 가능한 범용 애니메이션 라이브러리입니다.",
       },
     ],
   },
