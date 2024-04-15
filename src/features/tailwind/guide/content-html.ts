@@ -194,8 +194,8 @@ export const contentHtml = `<section>
     <b>배경 색상</b>을 매우 쉽게 지정할 수 있습니다.
   </p>
   <ul>
-    <li><b>텍스트 색상:</b> text-color-name-number</li>
-    <li><b>배경 색상:</b> bg-color-name-number</li>
+    <li> <b>텍스트 색상:</b> text-color-name-number</li>
+    <li> <b>배경 색상:</b> bg-color-name-number</li>
   </ul>
   <p>
     예를 들어, 아래의 코드는 넓이를 전체로, 높이를 10으로 설정하고, 배경을 red-400으로, 텍스트 색상을 blue-200으로

@@ -130,6 +130,12 @@ const initialState: InitialStateType = {
         subRoot: "/tools",
         description: "React와 Vue에서 사용 가능한 범용 애니메이션 라이브러리입니다.",
       },
+      {
+        name: "Design System",
+        id: "design-system",
+        subRoot: "/tools",
+        description: "디자인 시스템의 성공적인 구축과 운영을 위한 전략에 대한 정리입니다.",
+      },
     ],
   },
 };

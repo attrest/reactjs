@@ -377,10 +377,10 @@ box-shadow: 0 1px 2px rgba(0, 0, 0, .15);
   <h4>BEM 네이밍 규칙</h4>
   <p>BEM 방법론에 따른 기본 네이밍 규칙은 다음과 같습니다:</p>
   <ul>
-    <li><b>Syntax:</b> &lt;BLOCK&gt;[__&lt;ELEMENT&gt;][--&lt;MODIFIER&gt;][.is|has-&lt;STATE&gt;]</li>
-    <li><b>BLOCK:</b> 독립적인 구성요소를 나타냅니다.</li>
-    <li><b>ELEMENT:</b> BLOCK 내부의 구성요소를 나타냅니다.(__, Double Underbar를 사용하여 BLOCK과 연결)</li>
-    <li><b>MODIFIER:</b> BLOCK 또는 ELEMENT의 변형을 나타냅니다. (--, Double Hyphen을 사용하여 연결)</li>
+    <li> <b>Syntax:</b> &lt;BLOCK&gt;[__&lt;ELEMENT&gt;][--&lt;MODIFIER&gt;][.is|has-&lt;STATE&gt;]</li>
+    <li> <b>BLOCK:</b> 독립적인 구성요소를 나타냅니다.</li>
+    <li> <b>ELEMENT:</b> BLOCK 내부의 구성요소를 나타냅니다.(__, Double Underbar를 사용하여 BLOCK과 연결)</li>
+    <li> <b>MODIFIER:</b> BLOCK 또는 ELEMENT의 변형을 나타냅니다. (--, Double Hyphen을 사용하여 연결)</li>
     <li>
       <b>STATE:</b> 상태 클래스는 modifier에서 분리하여 따로 관리합니다. (.is- 또는 .has-를 사용하여 상태를 표현)
     </li>
@@ -397,11 +397,11 @@ box-shadow: 0 1px 2px rgba(0, 0, 0, .15);
   </div>
   <p>여기서 사용된 클래스명은 다음과 같은 구조를 가집니다:</p>
   <ul>
-    <li><code>.widget</code>는 BLOCK을 나타냅니다.</li>
-    <li><code>.widget__wrapper</code>는 <b>BLOCK</b> 내부의 <b>ELEMENT</b>를 나타냅니다.</li>
-    <li><code>.widget__wrapper--dark</code>는 <b>ELEMENT</b>의 <b>MODIFIER</b>를 나타냅니다.</li>
-    <li><code>.btn.is-disabled</code>는 <b>BLOCK</b>의 <b>STATE</b>를 나타냅니다.</li>
-    <li><code>.btn--submit</code>은 <b>BLOCK</b>의 다른 <b>MODIFIER</b>를 나타냅니다.</li>
+    <li> <code>.widget</code>는 BLOCK을 나타냅니다.</li>
+    <li> <code>.widget__wrapper</code>는 <b>BLOCK</b> 내부의 <b>ELEMENT</b>를 나타냅니다.</li>
+    <li> <code>.widget__wrapper--dark</code>는 <b>ELEMENT</b>의 <b>MODIFIER</b>를 나타냅니다.</li>
+    <li> <code>.btn.is-disabled</code>는 <b>BLOCK</b>의 <b>STATE</b>를 나타냅니다.</li>
+    <li> <code>.btn--submit</code>은 <b>BLOCK</b>의 다른 <b>MODIFIER</b>를 나타냅니다.</li>
     <li>
       <code>.btn--submit.is-disabled</code>는 <b>MODIFIER</b>가 <b>특정 STATE</b>에 있는 <b>BLOCK</b>을
       나타냅니다.

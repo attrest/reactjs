@@ -5,7 +5,7 @@ export const contentHtml = `<section>
   아토믹 디자인 패턴에 매칭해보겠습니다.
 </p>
 <div>
-  <h3>App</h3>
+  <h4>App</h4>
   <ul>
     <li> 아토믹 디자인에서 템플릿 또는 페이지</li>
     <li>
@@ -16,7 +16,7 @@ export const contentHtml = `<section>
   </ul>
 </div>
 <div>
-  <h3>Pages</h3>
+  <h4>Pages</h4>
   <ul>
     <li> 아토믹 디자인에서 페이지</li>
     <li>
@@ -27,7 +27,7 @@ export const contentHtml = `<section>
   </ul>
 </div>
 <div>
-  <h3>Widgets</h3>
+  <h4>Widgets</h4>
   <ul>
     <li> 아토믹 디자인에서 분자 또는 유기체</li>
     <li>
@@ -38,7 +38,7 @@ export const contentHtml = `<section>
   </ul>
 </div>
 <div>
-  <h3>Features</h3>
+  <h4>Features</h4>
   <ul>
     <li> 아토믹 디자인에서 유기체</li>
     <li>
@@ -48,7 +48,7 @@ export const contentHtml = `<section>
   </ul>
 </div>
 <div>
-  <h3>Entities</h3>
+  <h4>Entities</h4>
   <ul>
     <li> 아토믹 디자인에서 페이지 또는 템플릿의 데이터 모델</li>
     <li>
@@ -59,7 +59,7 @@ export const contentHtml = `<section>
   </ul>
 </div>
 <div>
-  <h3>Shared</h3>
+  <h4>Shared</h4>
   <ul>
     <li> 아토믹 디자인에서 원자 또는 분자</li>
     <li>
@@ -69,6 +69,41 @@ export const contentHtml = `<section>
     </li>
   </ul>
 </div>
+<table>
+  <caption>디자인 시스템 계층 비교</caption>
+  <thead>
+    <tr>
+      <th>FSD</th>
+      <th>ADS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>App</td>
+      <td>Template or Page</td>
+    </tr>
+    <tr>
+      <td>Pages</td>
+      <td>Page</td>
+    </tr>
+    <tr>
+      <td>Widgets</td>
+      <td>Molecules or Organisms</td>
+    </tr>
+    <tr>
+      <td>Features</td>
+      <td>Organisms</td>
+    </tr>
+    <tr>
+      <td>Entities</td>
+      <td>Data Model (Page or Template)</td>
+    </tr>
+    <tr>
+      <td>Shared</td>
+      <td>Atoms or Molecules</td>
+    </tr>
+  </tbody>
+</table>
 <p>
   이렇게 FSD의 각 레이어는 아토믹 디자인의 다양한 단계와 매칭될 수 있으며, 각각의 역할과 목적에 따라 그에 맞는
   아토믹 디자인의 요소로 연결될 수 있습니다.

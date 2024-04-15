@@ -184,6 +184,8 @@ const SubLayout = ({ children }: { children: React.ReactNode }) => {
   //   doc.save("sample.pdf");
   // };
 
+  console.log("pathname => ", pathname);
+  const isWide = pathname === "/tools" || pathname === "/tools/" || pathname === "/tools/responsive-sync";
   return (
     <div className="w-full">
       <div className="flex space-between">
@@ -192,7 +194,7 @@ const SubLayout = ({ children }: { children: React.ReactNode }) => {
           <TwDom
             tag="button"
             type="floating-button"
-            {...(pathname !== "/tools" && { className: "bottom-[3.75rem]" })}
+            {...(!isWide && { className: "bottom-[3.75rem]" })}
             onClick={() => setSubMenuState(subMenuState ? "" : "hidden")}
           >
             {subMenuState !== "" ? (
@@ -205,7 +207,7 @@ const SubLayout = ({ children }: { children: React.ReactNode }) => {
 
         <div className={cn("w-full scroll-hidden", isMobileDevice && "mobile-device")}>
           <div className={cn("overflow-y-auto", isMobile ? "h-screen-80" : "h-screen-100")}>
-            <TwDom type="content-container" {...(pathname === "/tools" && { className: "max-w-[1280px]" })}>
+            <TwDom type="content-container" {...(isWide && { className: "max-w-[1280px]" })}>
               {segment.length >= 1 && info && (
                 <TwDom className="sub-header">
                   <Breadcrumb {...info} />
@@ -229,7 +231,7 @@ const SubLayout = ({ children }: { children: React.ReactNode }) => {
             </TwDom>
           </div>
         </div>
-        {pathname !== "/tools" && (
+        {!isWide && (
           <>
             <SubContentMenu className={subTreeMenuState} />
             {isMobile && (

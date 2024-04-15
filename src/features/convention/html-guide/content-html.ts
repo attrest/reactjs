@@ -6,18 +6,18 @@ export const contentHtml = `<section class="section__convention-guide">
 <div>
   <h3>1. 용어</h3>
   <ul>
-    <li><b>엘리먼트(Element):</b> HTML 문서를 구성하는 요소(태그)를 의미합니다.</li>
-    <li><b>애트리뷰트(Attribute):</b> 엘리먼트에 부여할 수 있는 특성을 의미합니다.</li>
-    <li><b>선택자(Selector):</b> 엘리먼트를 식별할 수 있는 이름을 의미합니다.</li>
+    <li> <b>엘리먼트(Element):</b> HTML 문서를 구성하는 요소(태그)를 의미합니다.</li>
+    <li> <b>애트리뷰트(Attribute):</b> 엘리먼트에 부여할 수 있는 특성을 의미합니다.</li>
+    <li> <b>선택자(Selector):</b> 엘리먼트를 식별할 수 있는 이름을 의미합니다.</li>
     <li>
-      <b>스타일(Style):</b> 엘리먼트에 부여할 <span data-spell-viewer="Style Sheet">스타일 시트</span>를 의미하며,
+      <b> 스타일(Style):</b> 엘리먼트에 부여할 <span data-spell-viewer="Style Sheet">스타일 시트</span>를 의미하며,
       <span data-spell-viewer="Inline Style">인라인 스타일</span>,
       <span data-spell-viewer="Internal Style">내부 스타일</span>,
       <span data-spell-viewer="External Style">외부 스타일</span>, CSS의 네가지로 구분합니다.
     </li>
-    <li><b>프로퍼티(Property):</b> 스타일과 관련된 문맥일 경우 스타일 시트의 속성을 의미합니다.</li>
-    <li><b>프리픽스(Prefix)와 서픽스(Suffix):</b> 네이밍 시 사용되는 접두사, 접미사를 의미합니다.</li>
-    <li><b>컴포넌트(Component):</b> 하나 이상의 기능 또는 역할을 가진 컨텐츠 단위의 UI 구성요소를 의미합니다.</li>
+    <li> <b>프로퍼티(Property):</b> 스타일과 관련된 문맥일 경우 스타일 시트의 속성을 의미합니다.</li>
+    <li> <b>프리픽스(Prefix)와 서픽스(Suffix):</b> 네이밍 시 사용되는 접두사, 접미사를 의미합니다.</li>
+    <li> <b>컴포넌트(Component):</b> 하나 이상의 기능 또는 역할을 가진 컨텐츠 단위의 UI 구성요소를 의미합니다.</li>
   </ul>
 </div>
 <div>
@@ -35,7 +35,7 @@ export const contentHtml = `<section class="section__convention-guide">
       <b>모든 애트리뷰트 값은 큰 따옴표(")로 감싸세요:</b> 이는 HTML 표준 규칙을 따르는 것으로, 값의 시작과 끝을
       명확하게 합니다.
     </li>
-    <li><b>닫는 태그가 선택적이라도 생략하지 마세요:</b> 이 규칙은 HTML 문서의 정확성을 보장합니다.</li>
+    <li> <b>닫는 태그가 선택적이라도 생략하지 마세요:</b> 이 규칙은 HTML 문서의 정확성을 보장합니다.</li>
   </ul>
   <h4>주석 표시</h4>
   <p>
@@ -116,13 +116,13 @@ export const contentHtml = `<section class="section__convention-guide">
     <code>&lt;head&gt;</code> 엘리먼트의 자식 엘리먼트는 아래의 순서대로 작성하는 것이 좋습니다:
   </p>
   <ul>
-    <li>Charset</li>
-    <li>X-UA-Compatible</li>
-    <li>Viewport</li>
-    <li>Title</li>
-    <li>Meta</li>
-    <li>Style</li>
-    <li>JavaScript</li>
+    <li> Charset</li>
+    <li> X-UA-Compatible</li>
+    <li> Viewport</li>
+    <li> Title</li>
+    <li> Meta</li>
+    <li> Style</li>
+    <li> JavaScript</li>
   </ul>
   <p>
     이 순서는 웹 페이지가 로드될 때 필수 정보들이 우선적으로 처리되도록 하며, 효율적인 페이지 로딩과 렌더링을

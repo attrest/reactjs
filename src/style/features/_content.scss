@@ -101,6 +101,13 @@ section {
     }
   }
 
+  dt {
+    font-weight: 700;
+  }
+  dd + dt {
+    margin-top: 1rem;
+  }
+
   figure {
     margin: 3rem auto;
     text-align: center;
@@ -118,8 +125,16 @@ section {
   }
 
   table {
+    width: 100%;
     border-collapse: collapse;
     margin: 3rem auto;
+    caption-side: bottom;
+    caption {
+      font-size: 80%;
+      font-weight: 700;
+      margin-top: 0.5rem;
+      color: orange;
+    }
     th {
       background-color: #f9f9f9;
     }
