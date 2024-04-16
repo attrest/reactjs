@@ -33,7 +33,7 @@ const ProgressBar = ({ containerRef }: ProgressBarProps) => {
   }, []);
 
   return (
-    <div className="absolute top-6 bottom-6 right-0 z-10">
+    <div className="absolute top-1 bottom-3 right-0 z-10 xl:top-6 xl:bottom-6">
       <div className="bg-gray7 m-1 rounded-lg overflow-hidden h-full">
         <div className="w-[1px] progress-bar bg-black" style={{ height: `${scrollProgress}%` }}></div>
       </div>

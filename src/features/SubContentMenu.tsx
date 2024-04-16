@@ -31,16 +31,10 @@ const SubContentMenu = ({ className }: SubContentMenuProps) => {
           <a
             key={id}
             href={`#${id}`}
-            className={clsx(
-              "mb-3",
-              tag === "h3" && "font-semibold",
-              tag === "h4" && "ml-5",
-              tag === "h5" && "ml-10",
-              "truncate"
-            )}
+            className={clsx("mb-3", tag === "h3" && "font-semibold", tag === "h4" && "ml-5", tag === "h5" && "ml-10")}
             onClick={scrollHandler(id)}
           >
-            {title}
+            <span className="block truncate">{title}</span>
           </a>
         ))}
       </div>

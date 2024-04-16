@@ -192,11 +192,11 @@ npm run storybook</pre>
 </div>
 <p class="attr_p">이 명령을 실행하면, 설치한 Storybook이 구동되고, 브라우저에서는 앞서 설치 과정에서 생성된 <b>src/stories</b> 디렉토리 안에 있는 여러 개의 예시 스토리들을 확인할 수 있습니다. 이 예시들은 Storybook의 기능과 컴포넌트를 어떻게 문서화할 수 있는지를 보여줍니다.</p>
 <figure class="attr_figure bordered">
-<img class="attr_img" src="/wp-resource/resources/articles/2024/04/storybook-installation-and-usage-guide-01.png" alt="" loading="lazy" />
+<img class="attr_img" src="/img/storybook/storybook-installation-and-usage-guide-01.png" alt="" loading="lazy" />
 <figcaption class="attr_caption"><cite>스토리북 실행화면</cite></figcaption>
 </figure>
 <figure class="attr_figure bordered">
-<img class="attr_img" src="/wp-resource/resources/articles/2024/04/storybook-installation-and-usage-guide-02.png" alt="" loading="lazy" />
+<img class="attr_img" src="/img/storybook/storybook-installation-and-usage-guide-02.png" alt="" loading="lazy" />
 <figcaption class="attr_caption"><cite>스토리북 컴포넌트 예제</cite></figcaption>
 </figure>
 <h4 class="attr_title">컴포넌트의 기본 구조</h4>

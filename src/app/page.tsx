@@ -16,7 +16,7 @@ import { cn } from "@/lib/utils";
 import { SwiperClass } from "swiper/react";
 import { useSelector } from "react-redux";
 import { RootState } from "@/hooks/store";
-import MenuItem from "./MenuItem";
+import MenuItem from "../features/MenuItem";
 import { useMobileCheck } from "@/hooks/useHooks";
 
 export default function Main() {

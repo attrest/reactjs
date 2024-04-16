@@ -11,7 +11,7 @@ import { usePathname } from "next/navigation";
 // import LogoSvg from "@/components/ui/logo";
 
 import TwTag from "@/components/tw-tag/TwTag";
-import MenuItem from "./MenuItem";
+import MenuItem from "../features/MenuItem";
 import { store } from "@/hooks/store";
 
 interface headerProps {
