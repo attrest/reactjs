@@ -91,6 +91,7 @@ section {
           border-radius: 50%;
           background: #000;
           margin-left: -0.65rem;
+          margin-right: 0.4rem;
           position: relative;
           top: -5px;
         }
@@ -148,5 +149,12 @@ section {
 
   a:hover {
     text-decoration: underline;
+  }
+
+  hr {
+    border-color: #ddd;
+    margin: 5rem auto;
+    display: block;
+    max-width: 10rem;
   }
 }

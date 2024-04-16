@@ -4,7 +4,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import { cn } from "@/lib/utils";
 import clsx from "clsx";
 import { useSelectedLayoutSegment, useSelectedLayoutSegments } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { usePathname } from "next/navigation";
 import SubMenu from "../SubMenu";
 import SubContentMenu from "../SubContentMenu";
@@ -15,6 +15,7 @@ import { EllipsisHorizontalIcon, EllipsisVerticalIcon, ListBulletIcon, XMarkIcon
 import { useSelector } from "react-redux";
 import { RootState } from "@/hooks/store";
 import { SubInfoItemType } from "@/hooks/store/globalSlice";
+import ProgressBar from "@/components/ProgressBar";
 // import { jsPDF } from "jspdf";
 // import { malgunBase64, malgunBoldBase64 } from "@/lib/font-base64";
 
@@ -33,6 +34,8 @@ const SubLayout = ({ children }: { children: React.ReactNode }) => {
   const selectedId = useSelectedLayoutSegment();
   const pathname = usePathname();
   const iconSizeClass = "x-5 h-5";
+
+  const containerRef = useRef(null); // 컨테이너 참조 생성
 
   useEffect(() => {
     const menuState = isMobile ? "hidden" : "";
@@ -205,8 +208,9 @@ const SubLayout = ({ children }: { children: React.ReactNode }) => {
           </TwDom>
         )}
 
-        <div className={cn("w-full scroll-hidden", isMobileDevice && "mobile-device")}>
-          <div className={cn("overflow-y-auto", isMobile ? "h-screen-80" : "h-screen-100")}>
+        <div className={cn("relative w-full scroll-hidden", isMobileDevice && "mobile-device")}>
+          <div ref={containerRef} className={cn("overflow-y-auto", isMobile ? "h-screen-80" : "h-screen-100")}>
+            {!isWide && <ProgressBar containerRef={containerRef} />}
             <TwDom type="content-container" {...(isWide && { className: "max-w-[1280px]" })}>
               {segment.length >= 1 && info && (
                 <TwDom className="sub-header">
