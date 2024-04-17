@@ -2,9 +2,9 @@
 
 import React from "react";
 import Image from "next/image";
-import TextToHtml from "@/components/TextToHtml";
-import TwTag from "@/components/tw-tag/TwTag";
-import { contentHtml } from "@/features/tailwind/guide/content-html";
+import TextToHtml from "@/widgets/TextToHtml";
+import TwTag from "@/widgets/tw-tag/TwTag";
+import { contentHtml } from "@/features/tailwind/tailwind-guide/content-html";
 
 const Fsd = () => {
   return (

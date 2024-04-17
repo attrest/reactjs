@@ -3,9 +3,9 @@ import localFont from "next/font/local";
 import Header from "./header";
 import Container from "./container";
 import ReactQueryProvider from "@/features/react-query/Context";
-import { DialogProvider } from "@/components/modals/DialogContext";
+import { DialogProvider } from "@/widgets/modals/DialogContext";
 import { Metadata } from "next";
-import { store } from "@/hooks/store";
+import { store } from "@/entities/store";
 import "@/style/globals.scss";
 
 const siteName = store.getState().global.name;

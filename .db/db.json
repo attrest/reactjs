@@ -1,0 +1,19 @@
+{
+  "todos": [
+    {
+      "id": "1",
+      "description": "Json Server 테스트하기",
+      "isCompleted": true
+    },
+    {
+      "id": "2",
+      "description": "Next.js 셋팅 적용하기",
+      "isCompleted": true
+    },
+    {
+      "id": "3",
+      "description": "Build 테스트 하기",
+      "isCompleted": false
+    }
+  ]
+}

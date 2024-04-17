@@ -2,17 +2,17 @@
 
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon } from "@heroicons/react/20/solid";
-import { CloseIcon } from "@/components/Svg";
+import { CloseIcon } from "@/widgets/Svg";
 import clsx from "clsx";
 // import Link from "next/link";
 import { useRouter, useSelectedLayoutSegments } from "next/navigation";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-// import LogoSvg from "@/components/ui/logo";
+// import LogoSvg from "@/widgets/ui/logo";
 
-import TwTag from "@/components/tw-tag/TwTag";
+import TwTag from "@/widgets/tw-tag/TwTag";
 import MenuItem from "../features/MenuItem";
-import { store } from "@/hooks/store";
+import { store } from "@/entities/store";
 
 interface headerProps {
   siteName: string;

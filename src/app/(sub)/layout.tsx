@@ -1,7 +1,7 @@
 "use client";
 
-import Breadcrumb from "@/components/Breadcrumb";
-import { cn } from "@/lib/utils";
+import Breadcrumb from "@/widgets/Breadcrumb";
+import { cn } from "@/shared/libs/utils";
 import clsx from "clsx";
 import { useSelectedLayoutSegment, useSelectedLayoutSegments } from "next/navigation";
 import { useEffect, useState, useRef } from "react";
@@ -9,15 +9,15 @@ import { usePathname } from "next/navigation";
 import SubMenu from "../../features/SubMenu";
 import SubContentMenu from "../../features/SubContentMenu";
 import Footer from "../footer";
-import TwDom from "@/components/tw-tag/TwTag";
-import { useMobileCheck, useMobileDeviceCheck } from "@/hooks/useHooks";
+import TwDom from "@/widgets/tw-tag/TwTag";
+import { useMobileCheck, useMobileDeviceCheck } from "@/entities/useHooks";
 import { EllipsisHorizontalIcon, EllipsisVerticalIcon, ListBulletIcon, XMarkIcon } from "@heroicons/react/20/solid";
 import { useSelector } from "react-redux";
-import { RootState } from "@/hooks/store";
-import { SubInfoItemType } from "@/hooks/store/globalSlice";
-import ProgressBar from "@/components/ProgressBar";
+import { RootState } from "@/entities/store";
+import { SubInfoItemType } from "@/entities/store/globalSlice";
+import ProgressBar from "@/widgets/ProgressBar";
 // import { jsPDF } from "jspdf";
-// import { malgunBase64, malgunBoldBase64 } from "@/lib/font-base64";
+// import { malgunBase64, malgunBoldBase64 } from "@/shared/libs/font-base64";
 
 const SubLayout = ({ children }: { children: React.ReactNode }) => {
   const isMobile = useMobileCheck();

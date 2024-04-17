@@ -1,94 +1,92 @@
-'use client'
+"use client";
 
-import { useDialog } from "@/components/modals/DialogContext"
-import PopupModal from "@/components/modals/PopupModal"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { useReviews } from "@/hooks/api/review"
-import { XMarkIcon } from "@heroicons/react/20/solid"
-import { useParams, useRouter } from "next/navigation"
-import { useState } from "react"
+import { useDialog } from "@/widgets/modals/DialogContext";
+import PopupModal from "@/widgets/modals/PopupModal";
+import { Button } from "@/widgets/ui/button";
+import { Input } from "@/widgets/ui/input";
+import { useReviews } from "@/entities/api/review";
+import { XMarkIcon } from "@heroicons/react/20/solid";
+import { useParams, useRouter } from "next/navigation";
+import { useState } from "react";
 
 interface PasswordPopProps {
-  data?: string
-  active: boolean
-  onClose: () => void
-  actionType?: string
+  data?: string;
+  active: boolean;
+  onClose: () => void;
+  actionType?: string;
 }
 
 const PasswordPopup = ({ active, onClose, actionType }: PasswordPopProps) => {
-  const params = useParams()
-  const router = useRouter()
-  const [ password, setPassword ] = useState<string>('')
-  const { deleteMutation, atuhChkMutation } = useReviews()
-  const { showDialog, closeDialog, } = useDialog()
+  const params = useParams();
+  const router = useRouter();
+  const [password, setPassword] = useState<string>("");
+  const { deleteMutation, atuhChkMutation } = useReviews();
+  const { showDialog, closeDialog } = useDialog();
 
   const onPasswordChk = () => {
     const payload = {
-      id:params.id[0],
-      password: password
-    }
+      id: params.id[0],
+      password: password,
+    };
 
-    if(password.length === 0 ) {
+    if (password.length === 0) {
       showDialog({
         content: `비밀번호를 입력해주세요.`,
-      })
-    }else if(password.length < 4){
+      });
+    } else if (password.length < 4) {
       showDialog({
         content: `숫자 4자리 입력해주세요.`,
-      })
+      });
     } else {
       atuhChkMutation.mutate(payload, {
         onSuccess: (data) => {
-          if(actionType === 'delete') {
+          if (actionType === "delete") {
             showDialog({
               content: `게시글을 삭제 하시겠습니까?`,
               onConfirm: () => {
-                onDelete(data.data.verifyToken)
-                closeDialog()
-                setPassword('')
+                onDelete(data.data.verifyToken);
+                closeDialog();
+                setPassword("");
               },
-            })
-          }else {
-            router.push(`/review/write/${payload.id}`)
-            localStorage.setItem('id',payload.id)
-            localStorage.setItem('token',data.data.verifyToken)
+            });
+          } else {
+            router.push(`/review/write/${payload.id}`);
+            localStorage.setItem("id", payload.id);
+            localStorage.setItem("token", data.data.verifyToken);
           }
         },
-        onError: (error:any) => {
-          const errorData = error.response.data
-          if(errorData.code === 'FORBIDDEN_EXCEED_COUNT'){
+        onError: (error: any) => {
+          const errorData = error.response.data;
+          if (errorData.code === "FORBIDDEN_EXCEED_COUNT") {
             showDialog({
               content: `비밀번호 입력 오류가 5회 이상으로 10분 동안 사용이 제한되었습니다.`,
               onClose: () => {
-                onClose()
-                closeDialog()
-              }
-            })
-          }else {
+                onClose();
+                closeDialog();
+              },
+            });
+          } else {
             showDialog({
               content: `비밀번호가 틀립니다.`,
-            })
+            });
           }
-          
-        }
-      })
+        },
+      });
     }
-  }
+  };
 
-  const onDelete = (token:string) => {
+  const onDelete = (token: string) => {
+    const formData = new FormData();
 
-    const formData = new FormData
-
-    formData.append('id', params.id[0])
-    formData.append('token', token)
+    formData.append("id", params.id[0]);
+    formData.append("token", token);
 
     deleteMutation.mutate(formData, {
       onSuccess: () => {
-        router.push(`/review`)
+        router.push(`/review`);
       },
-    })
-  }
+    });
+  };
 
   // const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
   //   if (e.key === 'Enter') {
@@ -121,19 +119,23 @@ const PasswordPopup = ({ active, onClose, actionType }: PasswordPopProps) => {
             maxLength={4}
             variant="password"
             value={password}
-            onChange={(e) => setPassword(e.target.value.replace(/[^0-9]/g, ''))}
+            onChange={(e) => setPassword(e.target.value.replace(/[^0-9]/g, ""))}
             // onKeyDown={handleKeyDown}
           />
         </div>
         <div className="space-y-2.5 lg:space-y-2">
-          <p className="relative pl-2.5 lg:pl-4 text-light-gray text-xs lg:text-sm"><span className="absolute top-0 left-0">※</span>비밀번호 5회 이상 오류 시 10분 동안 사용이 제한됩니다.</p>
+          <p className="relative pl-2.5 lg:pl-4 text-light-gray text-xs lg:text-sm">
+            <span className="absolute top-0 left-0">※</span>비밀번호 5회 이상 오류 시 10분 동안 사용이 제한됩니다.
+          </p>
         </div>
       </div>
       <div className="mt-10 text-center">
-        <Button type="button" variant="color" className="px-15 lg:text-base" onClick={onPasswordChk}>확인</Button>
+        <Button type="button" variant="color" className="px-15 lg:text-base" onClick={onPasswordChk}>
+          확인
+        </Button>
       </div>
     </PopupModal>
-  )
-}
+  );
+};
 
-export default PasswordPopup
+export default PasswordPopup;

@@ -1,19 +1,18 @@
-'use client'
+"use client";
 
-import React from 'react';
-import { Swiper, SwiperSlide } from "swiper/react"
-import { Scrollbar } from 'swiper/modules';
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Scrollbar } from "swiper/modules";
 import { useState } from "react";
-import 'swiper/css'
-import 'swiper/css/scrollbar';
-import './slide.css'
-import { Button } from "@/components/ui/button";
-import { LeftIcon, RightIcon } from "@/components/Svg";
-import { GalleryItem } from "@/types/gallery";
-import Image from 'next/image';
+import "swiper/css";
+import "swiper/css/scrollbar";
+import "./slide.css";
+import { Button } from "@/widgets/ui/button";
+import { LeftIcon, RightIcon } from "@/widgets/Svg";
+import { GalleryItem } from "@/shared/types/gallery";
+import Image from "next/image";
 
-const GallerySlide = ({ galleryList }: {galleryList: GalleryItem[]}) => {
-
+const GallerySlide = ({ galleryList }: { galleryList: GalleryItem[] }) => {
   const [swiperRef, setSwiperRef] = useState<any>();
 
   const prevHandler = () => {
@@ -23,13 +22,13 @@ const GallerySlide = ({ galleryList }: {galleryList: GalleryItem[]}) => {
   const nextHandler = () => {
     swiperRef.slideNext();
   };
-  
+
   return (
     <>
       <div className="block lg:hidden relative w-full pr-0 pl-6">
         <Swiper
           className="custom-slide"
-          slidesPerView={'auto'}
+          slidesPerView={"auto"}
           spaceBetween={16}
           loop={true}
           modules={[Scrollbar]}
@@ -41,34 +40,34 @@ const GallerySlide = ({ galleryList }: {galleryList: GalleryItem[]}) => {
         >
           {galleryList.map((gallery, index) => (
             <SwiperSlide key={index} className="w-full">
-              {gallery.files.length > 0 && 
+              {gallery.files.length > 0 && (
                 <div className="block lg:hidden text-[0] relative w-[315px] h-[193px] overflow-hidden">
                   <Image
                     src={`${process.env.NEXT_PUBLIC_FILE_PATH}/${gallery.files[0].fileId}`}
                     width={540}
                     height={296}
                     alt=""
-                    className="absolute top-[50%] -translate-y-1/2 w-full" 
+                    className="absolute top-[50%] -translate-y-1/2 w-full"
                   />
                 </div>
-              }
+              )}
             </SwiperSlide>
           ))}
         </Swiper>
 
         <div className="absolute bottom-0 left-5 z-[1]">
           <Button onClick={prevHandler} size="icon">
-            <LeftIcon color={['#fff','#fff']} sizeW="20" sizeH="20"/>
+            <LeftIcon color={["#fff", "#fff"]} sizeW="20" sizeH="20" />
             <span className="sr-only">Prev</span>
           </Button>
-          <Button onClick={nextHandler}  size="icon">
-            <RightIcon color={['#fff','#fff']} sizeW="20" sizeH="20"/>
+          <Button onClick={nextHandler} size="icon">
+            <RightIcon color={["#fff", "#fff"]} sizeW="20" sizeH="20" />
             <span className="sr-only">next</span>
           </Button>
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default GallerySlide
+export default GallerySlide;

@@ -1,10 +1,10 @@
 "use client";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/shared/libs/utils";
 import clsx from "clsx";
 import { useSelectedLayoutSegments } from "next/navigation";
 import { usePathname } from "next/navigation";
-import { useLocalCheck } from "@/hooks/useHooks";
+import { useLocalCheck } from "@/entities/useHooks";
 
 interface MenuItemProps {
   name: string;

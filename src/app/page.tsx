@@ -12,12 +12,12 @@ import LocationContents from "@/features/main/LocationContents";
 import Footer from "./footer";
 import ReactFullpage, { Item } from "@fullpage/react-fullpage";
 import clsx from "clsx";
-import { cn } from "@/lib/utils";
+import { cn } from "@/shared/libs/utils";
 import { SwiperClass } from "swiper/react";
 import { useSelector } from "react-redux";
-import { RootState } from "@/hooks/store";
+import { RootState } from "@/entities/store";
 import MenuItem from "../features/MenuItem";
-import { useMobileCheck } from "@/hooks/useHooks";
+import { useMobileCheck } from "@/entities/useHooks";
 
 export default function Main() {
   const [mainSlide, setMainSlide] = useState<SwiperClass>();

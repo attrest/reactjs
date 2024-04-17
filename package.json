@@ -9,7 +9,8 @@
     "start": "next start -p 3001",
     "lint": "next lint",
     "sb": "storybook dev -p 6006",
-    "sb-build": "storybook build"
+    "sb-build": "storybook build",
+    "server-start": "json-server --watch .db/db.json --port 3009"
   },
   "dependencies": {
     "@fullpage/react-fullpage": "^0.1.40",
@@ -41,7 +42,7 @@
     "@types/gsap": "^3.0.0",
     "@types/react-table": "^7.7.18",
     "aos": "^2.3.4",
-    "axios": "^1.6.2",
+    "axios": "^1.6.8",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "date-fns": "^2.30.0",

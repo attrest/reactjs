@@ -93,7 +93,7 @@ dependencies:
     specifier: ^2.3.4
     version: 2.3.4
   axios:
-    specifier: ^1.6.2
+    specifier: ^1.6.8
     version: 1.6.8
   class-variance-authority:
     specifier: ^0.7.0

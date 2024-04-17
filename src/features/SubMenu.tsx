@@ -2,17 +2,17 @@
 
 // import { Dialog } from "@headlessui/react";
 // import { Bars3Icon } from "@heroicons/react/20/solid";
-// import { CloseIcon } from "@/components/Svg";
-import { cn } from "@/lib/utils";
+// import { CloseIcon } from "@/widgets/Svg";
+import { cn } from "@/shared/libs/utils";
 import clsx from "clsx";
 // import Link from "next/link";
 import { useSelectedLayoutSegments } from "next/navigation";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { UseDispatch, useDispatch } from "react-redux";
-import { resetMenus } from "@/hooks/store/subContentSlice";
-import TwTag from "@/components/tw-tag/TwTag";
-// import LogoSvg from "@/components/ui/logo";
+import { resetMenus } from "@/entities/store/subContentSlice";
+import TwTag from "@/widgets/tw-tag/TwTag";
+// import LogoSvg from "@/widgets/ui/logo";
 
 // const menu: MenuItemProps[] = [
 //   { name: "Why Convention", id: "why-convention" },

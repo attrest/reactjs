@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/widgets/ui/button";
 // If your directory structure is different, adjust the import path accordingly
 
 const meta: Meta<typeof Button> = {

@@ -1,10 +1,10 @@
 "use client";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/shared/libs/utils";
 import clsx from "clsx";
 import { useSelector } from "react-redux";
-import { RootState } from "@/hooks/store";
-import TwTag from "@/components/tw-tag/TwTag";
+import { RootState } from "@/entities/store";
+import TwTag from "@/widgets/tw-tag/TwTag";
 
 interface SubContentMenuProps {
   className?: string;

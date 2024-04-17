@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Provider } from "react-redux";
-import { store } from "@/hooks/store";
+import { store } from "@/entities/store";
 
 interface ContainerProps {
   children: React.ReactNode;

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { SvgIcon01, SvgIcon02, SvgIcon03, SvgIcon04, SvgIcon05, SvgIcon06 } from "@/components/ReservationSvg";
+import { SvgIcon01, SvgIcon02, SvgIcon03, SvgIcon04, SvgIcon05, SvgIcon06 } from "@/widgets/ReservationSvg";
 
 const meta: Meta = {
   title: "Components/SvgIcons",

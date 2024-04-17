@@ -3,9 +3,9 @@
 import React, { useEffect, useState } from "react";
 import { tailwindToCss, cssToTailwind } from "@/features/tools/tailwindConverter";
 import twMappingJson from "@/features/tools/tailwind_to_css.json";
-import TwTag from "@/components/tw-tag/TwTag";
+import TwTag from "@/widgets/tw-tag/TwTag";
 import { CheckIcon } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/shared/libs/utils";
 import { error } from "console";
 
 type TwMappingClassesType = {
@@ -81,7 +81,7 @@ const Tools = () => {
 
   const twDomClasses = {
     title: "text-3xl font-bold mb-4",
-    sectionContainer: "border border-[#ccc] p-6 rounded-2xl",
+    sectionContainer: "border #ccc] p-6 rounded-2xl",
     container: "flex border rounded-lg overflow-hidden",
     example: "flex mt-4 p-3",
     preContainer: "bg-[#f5f5f5] mt-4 p-4 rounded-lg overflow-x-auto",

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Calendar, CalendarProps } from "@/components/ui/calender";
+import { Calendar, CalendarProps } from "@/widgets/ui/calender";
 // If your directory structure is different, adjust the import path accordingly
 
 const meta: Meta<typeof Calendar> = {

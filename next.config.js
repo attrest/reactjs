@@ -10,7 +10,7 @@ const nextConfig = {
     minimumCacheTTL: 31536000,
   },
   output: "export",
-  reactStrictMode: false,
+  reactStrictMode: true, // 권장 설정
 };
 
 module.exports = nextConfig;
