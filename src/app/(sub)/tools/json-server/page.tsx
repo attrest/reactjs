@@ -8,9 +8,15 @@ import TwTag from "@/widgets/tw-tag/TwTag";
 import TextToHtml from "@/widgets/TextToHtml";
 import { contentHtml } from "@/features/fsd/design-system/content-html";
 
-const JsonServer = () => {
-  const baseUrl = "http://localhost:3009/todos";
+const baseUrl = "http://localhost:3009/todos";
 
+type todoListProps = {
+  id: string;
+  description: string;
+  isCompleted: boolean;
+};
+
+const JsonServer = () => {
   // 데이터 추가하기
   const [description, setDescription] = useState("");
   const handleSubmit = async () => {
@@ -55,12 +61,6 @@ const JsonServer = () => {
       await readList();
     })();
   }, []);
-
-  type todoListProps = {
-    id: string;
-    description: string;
-    isCompleted: boolean;
-  };
 
   return (
     <>

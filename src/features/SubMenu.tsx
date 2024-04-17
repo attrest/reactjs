@@ -23,25 +23,27 @@ import TwTag from "@/widgets/tw-tag/TwTag";
 
 interface MenuProps {
   menu: MenuItemProps[];
+  segment: string;
   className?: string;
 }
 
 interface MenuItemProps {
   name: string;
-  id: string;
+  id?: string;
   subRoot?: string;
   current?: boolean;
   onClick?: () => void;
   type?: "pc" | "mo";
 }
 
-const SubMenu = ({ menu, className = "" }: MenuProps) => {
+const SubMenu = ({ menu, segment, className = "" }: MenuProps) => {
+  console.log("menu => ", menu);
   return (
     <TwTag tag="aside" type="side-menu" className={cn(className, "bg-black left-0")}>
       <div className="flex flex-col mx-auto py-5 lg:py-8 px-6">
         <div className={clsx("flex flex-col text-white lg:gap-x-[50px] pr-5")}>
           {menu.map((item) => (
-            <MenuItem key={item.id} {...item} />
+            <MenuItem key={item.id} subRoot={`/${segment}`} {...item} />
           ))}
         </div>
       </div>
@@ -88,7 +90,7 @@ const MenuItem = ({ name, id, subRoot = "", current, onClick, type = "pc" }: Men
     <>
       <a
         key={id}
-        href={currentDomain + subRoot + "/" + id}
+        href={currentDomain + subRoot + `${id ? `/${id}` : ""}`}
         className={clsx(
           isCurrentMenu
             ? `relative after:absolute after:block after:content-[''] after:left-0 after:-bottom-0 after:w-full`

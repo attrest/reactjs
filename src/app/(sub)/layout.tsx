@@ -189,10 +189,12 @@ const SubLayout = ({ children }: { children: React.ReactNode }) => {
 
   console.log("pathname => ", pathname);
   const isWide = pathname === "/tools" || pathname === "/tools/" || pathname === "/tools/responsive-sync";
+
+  console.log("subMenuList => ", subMenuList[segment[0]], segment[0]);
   return (
     <div className="w-full">
       <div className="flex space-between">
-        <SubMenu menu={subMenuList[segment[0]] ?? []} className={subMenuState} />
+        <SubMenu menu={subMenuList[segment[0]] ?? []} segment={segment[0]} className={subMenuState} />
         {isMobile && (
           <TwDom
             tag="button"
