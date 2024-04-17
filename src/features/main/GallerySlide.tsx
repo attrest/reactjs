@@ -9,7 +9,7 @@ import "swiper/css/scrollbar";
 import "./slide.css";
 import { Button } from "@/widgets/ui/button";
 import { LeftIcon, RightIcon } from "@/widgets/Svg";
-import { GalleryItem } from "@/shared/types/gallery";
+import { GalleryItem } from "@/shared/types/__deprecated/gallery";
 import Image from "next/image";
 
 const GallerySlide = ({ galleryList }: { galleryList: GalleryItem[] }) => {

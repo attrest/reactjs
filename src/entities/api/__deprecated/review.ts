@@ -2,7 +2,7 @@ import { DataItem } from "@/shared/types/common";
 import { Api } from "./Api";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { addMonths, format } from "date-fns";
-import { ReviewItem } from "@/shared/types/review";
+import { ReviewItem } from "@/shared/types/__deprecated/review";
 
 /* 리뷰 목록 조회 */
 export const useReviewsList = (page?: number, searchKeyword?: string, searchType?: string) => {

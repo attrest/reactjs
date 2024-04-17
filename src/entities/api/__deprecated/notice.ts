@@ -1,7 +1,7 @@
 import { DataItem } from "@/shared/types/common";
 import { Api } from "./Api";
 import { useQuery } from "@tanstack/react-query";
-import { NoticeDetailResponse, NoticeItem } from "@/shared/types/notice";
+import { NoticeDetailResponse, NoticeItem } from "@/shared/types/__deprecated/notice";
 
 /* 공지사항 목록 조회 */
 export const useNotices = (page?: number, searchKeyword?: string, searchType?: string, size?: number) => {

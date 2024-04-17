@@ -43,7 +43,7 @@ const initialState: InitialStateType = {
     { name: "코딩 컨벤션", id: "convention" },
     { name: "디자인 설계", id: "fsd" },
     { name: "프레임워크 & 모션", id: "tailwind" },
-    { name: "상태 관리", id: "state-management" },
+    { name: "상태 관리", id: "state" },
     { name: "개발 툴", id: "tools" },
     { name: "스토리북", id: "components" },
   ],
@@ -64,10 +64,9 @@ const initialState: InitialStateType = {
       description: "유틸리티 중심의 CSS 프레임워크로, 빠르고 유연한 웹 디자인을 가능하게 합니다.",
     },
     {
-      id: "state-management",
-      title: "State Management",
-      description:
-        "프론트엔드에서 상태는 렌더링하는데 있어서 영향을 미칠 수 있는 값으로, 상태를 어떻게 관리하느냐에 따라 웹의 성능에 영향을 미칠 수 있습니다.",
+      id: "state",
+      title: "Redux",
+      description: "Redux는 React를 위해 설계된 예측 가능한 상태 컨테이너입니다.",
     },
     {
       id: "tools",
@@ -82,16 +81,16 @@ const initialState: InitialStateType = {
   ],
   subMenu: {
     convention: [
-      { name: "Convention이란?", id: "convention" },
-      { name: "HTML Guide", id: "html-guide", subRoot: "/convention", description: "HTML 코딩 가이드 입니다." },
-      { name: "CSS Guide", id: "css-guide", subRoot: "/convention", description: "CSS 스타일 가이드 입니다." },
+      { name: "코딩 컨벤션이란?", id: "convention" },
+      { name: "HTML 작성 가이드", id: "html-guide", subRoot: "/convention", description: "HTML 코딩 가이드 입니다." },
+      { name: "CSS 작성 가이드", id: "css-guide", subRoot: "/convention", description: "CSS 스타일 가이드 입니다." },
       {
-        name: "A11y Guide",
+        name: "A11y 작성 가이드",
         id: "a11y-guide",
         subRoot: "/convention",
         description: "웹접근성 CSS 스타일 가이드 입니다.",
       },
-      { name: "SCSS Guide", id: "scss-guide", subRoot: "/convention", description: "SCSS 스타일 가이드 입니다." },
+      { name: "SCSS 작성 가이드", id: "scss-guide", subRoot: "/convention", description: "SCSS 스타일 가이드 입니다." },
     ],
     fsd: [
       { name: "Feature-Sliced Design", id: "fsd" },
@@ -108,43 +107,44 @@ const initialState: InitialStateType = {
         description: "기능 분할 설계와 아토믹 디자인의 계층 비교 자료입니다.",
       },
       {
-        name: "Design System",
+        name: "디자인 시스템 가이드",
         id: "design-system",
         subRoot: "/fsd",
         description: "디자인 시스템의 성공적인 구축과 운영을 위한 전략에 대한 정리입니다.",
       },
     ],
     tailwind: [
-      { name: "Tailwind Guide", id: "tailwind" },
+      { name: "Tailwind 가이드", id: "tailwind" },
       {
-        name: "Tailwind Tools",
+        name: "Tailwind 추가 기능들",
         id: "derectives-functions",
         subRoot: "/tailwind",
         description: "Tailwind CSS 프로젝트에서 더 효율적으로 작업할 수 있게 도와주는 도구들입니다.",
       },
       {
-        name: "GSAP Guide",
+        name: "GSAP 가이드",
         id: "gsap-guide",
         subRoot: "/tailwind",
         description: "React와 Vue에서 사용 가능한 범용 애니메이션 라이브러리입니다.",
       },
     ],
+    state: [{ name: "Redux 가이드", id: "state" }],
     tools: [
-      { name: "Tailwind Converter", id: "tools" },
+      { name: "Tailwind-css 변환기", id: "tools" },
       {
-        name: "Responsive Sync Plugin",
+        name: "Responsive Sync 플러그인",
         id: "responsive-sync",
         subRoot: "/tools",
         description: "반응형 웹 작업을 위한 크롬 전용 동기화 플러그인입니다.",
       },
       {
-        name: "Storybook Guide",
+        name: "Storybook 가이드",
         id: "storybook-guide",
         subRoot: "/tools",
         description: "컴포넌트를 체계적으로 관리할 수 있는 Storybook 설치 및 사용 가이드입니다.",
       },
       {
-        name: "Json Server",
+        name: "Json Server 가이드",
         id: "json-server",
         subRoot: "/tools",
         description: "개발 단계에서 프로토타입 데이터를 빠르게 생성하여 RESTful API를 테스트할 수 있습니다.",

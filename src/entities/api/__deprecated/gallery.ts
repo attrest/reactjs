@@ -1,7 +1,7 @@
 import { DataItem } from "@/shared/types/common";
 import { Api } from "./Api";
 import { useQuery } from "@tanstack/react-query";
-import { GalleryDetailResponse, GalleryItem } from "@/shared/types/gallery";
+import { GalleryDetailResponse, GalleryItem } from "@/shared/types/__deprecated/gallery";
 
 /* 갤러리 목록 조회 */
 export const useGallerys = (page?: number, size?: number) => {

@@ -1,6 +1,6 @@
 "use client";
 
-import { ReviewItem } from "@/shared/types/review";
+import { ReviewItem } from "@/shared/types/__deprecated/review";
 import { format } from "date-fns";
 import { useRouter } from "next/navigation";
 import { useState } from "react";

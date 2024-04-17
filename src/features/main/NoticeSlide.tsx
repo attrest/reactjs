@@ -9,7 +9,7 @@ import "swiper/css/scrollbar";
 import "./slide.css";
 import { Button } from "@/widgets/ui/button";
 import { LeftIcon, RightIcon } from "@/widgets/Svg";
-import { NoticeItem } from "@/shared/types/notice";
+import { NoticeItem } from "@/shared/types/__deprecated/notice";
 import Link from "next/link";
 import { format } from "date-fns";
 import { decode } from "html-entities";

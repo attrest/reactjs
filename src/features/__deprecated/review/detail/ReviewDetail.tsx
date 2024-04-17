@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ReviewItem } from "@/shared/types/review";
+import { ReviewItem } from "@/shared/types/__deprecated/review";
 import { format } from "date-fns";
 import { ReviewCharacter } from "@/widgets/Svg";
 import { StarIcon } from "../CardList";
