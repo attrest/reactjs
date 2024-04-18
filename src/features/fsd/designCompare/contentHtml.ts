@@ -1,5 +1,9 @@
 export const contentHtml = `<section class="attr_section">
 <p class="attr_p">아토믹 디자인은 웹 개발과 인터페이스 설계에서 매우 인기 있는 방법론 중 하나로, 작은 단위(원자)로 시작하여 점차 복잡한 구조(분자, 유기체, 템플릿, 페이지)를 구축하는 방식입니다. FSD(Feature-Sliced Design)의 각 레이어층을 아토믹 디자인 패턴에 매칭해보겠습니다.</p>
+<figure class="attr_figure">
+<img class="attr_img" src="/img/fsd/fsd-layer.png" alt="" loading="lazy" />
+<figcaption class="attr_caption"><cite>FSD 패턴으로 생성된 폴더 구조</cite></figcaption>
+</figure>
 <table class="attr_table a__table">
 <caption>디자인 시스템 계층 비교</caption>
 <colgroup>
@@ -67,6 +71,5 @@ export const contentHtml = `<section class="attr_section">
 <li>아토믹 디자인에서 <b>원자</b> 또는 <b>분자</b></li>
 <li><b>Shared 레이어는 재사용 가능한 컴포넌트와 유틸리티를 포함</b>합니다. 이는 아토믹 디자인의 <b>원자(가장 기본적인 구성 요소)</b> 또는 <b>분자(여러 원자의 결합)</b>에 해당할 수 있습니다. <b>코드의 재사용성과 유지보수를 위한 기반 요소로 활용</b>됩니다.</li>
 </ul>
-<hr />
 <p class="attr_p">이렇게 FSD의 각 레이어는 아토믹 디자인의 다양한 단계와 매칭될 수 있으며, 각각의 역할과 목적에 따라 그에 맞는 아토믹 디자인의 요소로 연결될 수 있습니다.</p>
 </section>`;
