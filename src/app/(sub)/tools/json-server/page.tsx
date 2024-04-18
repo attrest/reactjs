@@ -6,7 +6,11 @@ import { cn } from "@/shared/libs/utils";
 
 import TwTag from "@/widgets/tw-tag/TwTag";
 import TextToHtml from "@/widgets/TextToHtml";
-import { contentHtml } from "@/features/fsd/design-system/content-html";
+import { contentHtml } from "@/features/fsd/designSystem/contentHtml";
+
+import ReactExample01 from "@/features/state/reactQuery/ReactExample01";
+import ReactExample02 from "@/features/state/reactQuery/ReactExample02";
+import ReactExample03 from "@/features/state/reactQuery/ReactExample03";
 
 const baseUrl = "http://localhost:3009/todos";
 
@@ -20,7 +24,7 @@ const JsonServer = () => {
   // 데이터 추가하기
   const [description, setDescription] = useState("");
   const handleSubmit = async () => {
-    const { data } = await axios.post(baseUrl, {
+    const { data } = await axios.post(`${process.env.NEXT_PUBLIC_TODOS}`, {
       description,
       isCompleted: false, // db의 isCompleted 속성 업데이트
     });
@@ -33,7 +37,7 @@ const JsonServer = () => {
   const [todoList, setTodoList] = useState([]);
   const readList = async () => {
     const { data } = await axios.get(baseUrl);
-    console.log("setTodaList => ", todoList);
+    // console.log("setTodaList => ", todoList);
     setTodoList(data);
   };
 
@@ -53,9 +57,9 @@ const JsonServer = () => {
 
   useEffect(() => {
     // data 요청 테스트
-    fetch(baseUrl)
-      .then((response) => response.json())
-      .then((json) => console.log("json => ", json));
+    // fetch(baseUrl)
+    //   .then((response) => response.json())
+    //   .then((json) => console.log("json => ", json));
 
     (async () => {
       await readList();
@@ -64,6 +68,9 @@ const JsonServer = () => {
 
   return (
     <>
+      {/* <ReactExample01 /> */}
+      {/* <ReactExample02 /> */}
+      <ReactExample03 />
       <div className="w-full mb-20">
         <div className="flex w-full">
           <input

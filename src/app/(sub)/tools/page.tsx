@@ -2,11 +2,10 @@
 
 import React, { useEffect, useState } from "react";
 import { tailwindToCss, cssToTailwind } from "@/features/tools/tailwindConverter";
-import twMappingJson from "@/features/tools/tailwind_to_css.json";
+import twMappingJson from "@/features/tools/tailwindToCss.json";
 import TwTag from "@/widgets/tw-tag/TwTag";
 import { CheckIcon } from "lucide-react";
 import { cn } from "@/shared/libs/utils";
-import { error } from "console";
 
 type TwMappingClassesType = {
   [key: string]: any[];

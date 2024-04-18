@@ -3,12 +3,12 @@
 import React, { useState } from "react";
 import "swiper/css";
 import "swiper/css/pagination";
-import "@/style/fullpage.css";
-import VisualSlide from "@/features/main/VisualSlide";
-import AboutContents from "@/features/main/AboutContents";
-import GalleryContents from "@/features/main/GalleryContents";
-import NoticeContents from "@/features/main/NoticeContents";
-import LocationContents from "@/features/main/LocationContents";
+// import "@/style/fullpage.css";
+import VisualSlide from "@/features/__deprecated/main/VisualSlide";
+import AboutContents from "@/features/__deprecated/main/AboutContents";
+import GalleryContents from "@/features/__deprecated/main/GalleryContents";
+import NoticeContents from "@/features/__deprecated/main/NoticeContents";
+import LocationContents from "@/features/__deprecated/main/LocationContents";
 import Footer from "./footer";
 import ReactFullpage, { Item } from "@fullpage/react-fullpage";
 import clsx from "clsx";

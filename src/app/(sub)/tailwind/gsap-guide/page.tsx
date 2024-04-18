@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import TextToHtml from "@/widgets/TextToHtml";
 import TwTag from "@/widgets/tw-tag/TwTag";
-import { contentHtml } from "@/features/tailwind/gsap/content-html";
+import { contentHtml } from "@/features/tailwind/gsap/contentHtml";
 import { GsapBasic, GsapTextEffect } from "@/features/tailwind/gsap/GsapExample";
 import gsap from "gsap";
 

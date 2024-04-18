@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import TextToHtml from "@/widgets/TextToHtml";
 import TwTag from "@/widgets/tw-tag/TwTag";
-import { contentHtml } from "@/features/tools/storybook/content-html";
+import { contentHtml } from "@/features/tools/storybook/contentHtml";
 
 const CssGuide = () => {
   return (

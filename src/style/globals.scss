@@ -15,8 +15,8 @@
 }
 
 // define
-@import "./define/tailwind-custom"; // 커스텀 테일윈드 클래스 정의
+@import "./define/tailwindCustom"; // 커스텀 테일윈드 클래스 정의
 
 // features
 @import "./features/content"; // 콘텐츠 스타일
-@import "./features/content-nav"; // 콘텐츠 네비게이션 스타일
+@import "./features/contentNav"; // 콘텐츠 네비게이션 스타일

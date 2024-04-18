@@ -4,8 +4,8 @@ import React from "react";
 import Image from "next/image";
 import TextToHtml from "@/widgets/TextToHtml";
 import TwTag from "@/widgets/tw-tag/TwTag";
-import ConventionContentStyle from "@/features/convention/convention-content-style";
-import { contentHtml } from "@/features/convention/why-convention/content-html";
+import ConventionContentStyle from "@/features/convention/conventionContentStyle";
+import { contentHtml } from "@/features/convention/whyConvention/contentHtml";
 
 const ScssGuide = () => {
   return (

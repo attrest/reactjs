@@ -187,10 +187,10 @@ const SubLayout = ({ children }: { children: React.ReactNode }) => {
   //   doc.save("sample.pdf");
   // };
 
-  console.log("pathname => ", pathname);
+  // console.log("pathname => ", pathname);
+  // console.log("subMenuList => ", subMenuList[segment[0]], segment[0]);
   const isWide = pathname === "/tools" || pathname === "/tools/" || pathname === "/tools/responsive-sync";
 
-  console.log("subMenuList => ", subMenuList[segment[0]], segment[0]);
   return (
     <div className="w-full">
       <div className="flex space-between">

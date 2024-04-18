@@ -2,7 +2,7 @@ import { Nanum_Myeongjo } from "next/font/google";
 import localFont from "next/font/local";
 import Header from "./header";
 import Container from "./container";
-import ReactQueryProvider from "@/features/react-query/Context";
+import ReactQueryProvider from "@/features/reactQuery/Context";
 import { DialogProvider } from "@/widgets/modals/DialogContext";
 import { Metadata } from "next";
 import { store } from "@/entities/store";

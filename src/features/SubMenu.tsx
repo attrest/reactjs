@@ -1,25 +1,13 @@
 "use client";
 
-// import { Dialog } from "@headlessui/react";
-// import { Bars3Icon } from "@heroicons/react/20/solid";
-// import { CloseIcon } from "@/widgets/Svg";
 import { cn } from "@/shared/libs/utils";
 import clsx from "clsx";
-// import Link from "next/link";
 import { useSelectedLayoutSegments } from "next/navigation";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { UseDispatch, useDispatch } from "react-redux";
 import { resetMenus } from "@/entities/store/subContentSlice";
 import TwTag from "@/widgets/tw-tag/TwTag";
-// import LogoSvg from "@/widgets/ui/logo";
-
-// const menu: MenuItemProps[] = [
-//   { name: "Why Convention", id: "why-convention" },
-//   { name: "HTML Guide", id: "html-guide" },
-//   { name: "CSS Guide", id: "css-guide" },
-//   { name: "SCSS Guide", id: "scss-guide" },
-// ];
 
 interface MenuProps {
   menu: MenuItemProps[];
@@ -37,13 +25,13 @@ interface MenuItemProps {
 }
 
 const SubMenu = ({ menu, segment, className = "" }: MenuProps) => {
-  console.log("menu => ", menu);
+  // console.log("menu => ", menu);
   return (
     <TwTag tag="aside" type="side-menu" className={cn(className, "bg-black left-0")}>
       <div className="flex flex-col mx-auto py-5 lg:py-8 px-6">
         <div className={clsx("flex flex-col text-white lg:gap-x-[50px] pr-5")}>
-          {menu.map((item) => (
-            <MenuItem key={item.id} subRoot={`/${segment}`} {...item} />
+          {menu.map((item, idx) => (
+            <MenuItem key={item.id ? item.id : `item_${idx}`} subRoot={`/${segment}`} {...item} />
           ))}
         </div>
       </div>
