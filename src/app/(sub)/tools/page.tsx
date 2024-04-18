@@ -79,9 +79,9 @@ const Tools = () => {
   };
 
   const twDomClasses = {
-    title: "text-3xl font-bold mb-4",
-    sectionContainer: "border #ccc] p-6 rounded-2xl",
-    container: "flex border rounded-lg overflow-hidden",
+    title: "text-2xl font-bold mb-4",
+    sectionContainer: "bg-[#f2f2f2] p-6 rounded-2xl",
+    container: "flex",
     example: "flex mt-4 p-3",
     preContainer: "bg-[#f5f5f5] mt-4 p-4 rounded-lg overflow-x-auto",
     linkButton: "bg-[orange] py-1 px-3 rounded-md mr-1 mb-1 text-white text-sm hover:bg-red",
@@ -94,12 +94,12 @@ const Tools = () => {
         <div className={twDomClasses.container}>
           <input
             type="text"
-            className="w-full p-3"
+            className="w-full p-3 rounded-tl-lg rounded-bl-lg"
             value={inputValue}
             onChange={inutChangeHandler}
             placeholder="Tailwind CSS를 입력하세요"
           />
-          <TwTag tag="button" type="primary-button" onClick={onInputHandler}>
+          <TwTag tag="button" type="primary-button" className="rounded-tr-lg rounded-br-lg" onClick={onInputHandler}>
             <CheckIcon />
           </TwTag>
         </div>
@@ -125,7 +125,7 @@ const Tools = () => {
 
         <div className={twDomClasses.example}>
           <strong className="mr-2">Ex:</strong>
-          <input type="text" className="w-full" defaultValue={exam1} onClick={onClipboardHandler} />
+          <input type="text" className="w-full bg-transparent" defaultValue={exam1} onClick={onClipboardHandler} />
         </div>
       </div>
 
@@ -133,13 +133,18 @@ const Tools = () => {
         <h3 className={twDomClasses.title}>CSS Rules to Tailwind</h3>
         <div className={twDomClasses.container}>
           <textarea
-            className="w-full p-4"
+            className="w-full p-4 rounded-tl-lg rounded-bl-lg"
             value={textAreaValue}
             rows={7}
             onChange={textAreaChangeHandler}
             placeholder="CSS 규칙을 한줄에 하나씩 입력하세요"
           />
-          <TwTag tag="button" type="primary-button" className="h-auto" onClick={onTextAreaHandler}>
+          <TwTag
+            tag="button"
+            type="primary-button"
+            className="h-auto rounded-tr-lg rounded-br-lg"
+            onClick={onTextAreaHandler}
+          >
             <CheckIcon />
           </TwTag>
         </div>
@@ -166,7 +171,7 @@ const Tools = () => {
 
         <div className={twDomClasses.example}>
           <strong className="mr-2">Ex:</strong>
-          <textarea className="w-full" defaultValue={exam2} rows={7} onClick={onClipboardHandler} />
+          <textarea className="w-full bg-transparent" defaultValue={exam2} rows={7} onClick={onClipboardHandler} />
         </div>
       </div>
     </div>
