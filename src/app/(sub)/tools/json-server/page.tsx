@@ -8,11 +8,7 @@ import TwTag from "@/widgets/tw-tag/TwTag";
 import TextToHtml from "@/widgets/TextToHtml";
 import { contentHtml } from "@/features/fsd/designSystem/contentHtml";
 
-import ReactExample01 from "@/features/state/reactQuery/ReactExample01";
-import ReactExample02 from "@/features/state/reactQuery/ReactExample02";
-import ReactExample03 from "@/features/state/reactQuery/ReactExample03";
-
-const baseUrl = "http://localhost:3009/todos";
+const baseUrl = `${process.env.NEXT_PUBLIC_TODOS}`;
 
 type todoListProps = {
   id: string;
@@ -24,7 +20,7 @@ const JsonServer = () => {
   // 데이터 추가하기
   const [description, setDescription] = useState("");
   const handleSubmit = async () => {
-    const { data } = await axios.post(`${process.env.NEXT_PUBLIC_TODOS}`, {
+    const { data } = await axios.post(baseUrl, {
       description,
       isCompleted: false, // db의 isCompleted 속성 업데이트
     });
@@ -68,9 +64,6 @@ const JsonServer = () => {
 
   return (
     <>
-      {/* <ReactExample01 /> */}
-      {/* <ReactExample02 /> */}
-      <ReactExample03 />
       <div className="w-full mb-20">
         <div className="flex w-full">
           <input

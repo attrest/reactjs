@@ -4,9 +4,9 @@ import React from "react";
 import Image from "next/image";
 import TextToHtml from "@/widgets/TextToHtml";
 import TwTag from "@/widgets/tw-tag/TwTag";
-import { contentHtml } from "@/features/tailwind/tailwindTools/contentHtml";
+import { contentHtml } from "@/features/tailwind/shadcn/contentHtml";
 
-const DerectivesFunctions = () => {
+const Fsd = () => {
   return (
     <TwTag className="lg:mb-[223px]">
       <TextToHtml html={contentHtml} />
@@ -14,4 +14,4 @@ const DerectivesFunctions = () => {
   );
 };
 
-export default DerectivesFunctions;
+export default Fsd;

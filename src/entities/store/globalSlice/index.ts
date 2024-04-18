@@ -81,7 +81,7 @@ const initialState: InitialStateType = {
   ],
   subMenu: {
     convention: [
-      { name: "코딩 컨벤션이란?" },
+      { name: "코딩 컨벤션이란?", id: "convention" },
       { name: "HTML 작성 가이드", id: "html-guide", description: "HTML 코딩 가이드 입니다." },
       { name: "CSS 작성 가이드", id: "css-guide", description: "CSS 스타일 가이드 입니다." },
       {
@@ -92,7 +92,7 @@ const initialState: InitialStateType = {
       { name: "SCSS 작성 가이드", id: "scss-guide", description: "SCSS 스타일 가이드 입니다." },
     ],
     fsd: [
-      { name: "Feature-Sliced Design" },
+      { name: "Feature-Sliced Design", id: "fsd" },
       {
         name: "Atomic Design System",
         id: "atomic-design",
@@ -110,20 +110,26 @@ const initialState: InitialStateType = {
       },
     ],
     tailwind: [
-      { name: "Tailwind 가이드" },
+      { name: "Tailwind 가이드", id: "tailwind" },
       {
-        name: "Tailwind 추가 기능들",
-        id: "derectives-functions",
+        name: "Radix UI 가이드",
+        id: "radix",
+        description:
+          "Radix UI는 일명 Headless UI 라이브러리라고 불리는 개발 툴로, 디자인 없이 기능만을 제공하는 라이브러리입니다.",
+      },
+      {
+        name: "Shadcn UI 가이드",
+        id: "shadcn",
         description: "Tailwind CSS 프로젝트에서 더 효율적으로 작업할 수 있게 도와주는 도구들입니다.",
       },
       {
-        name: "GSAP 가이드",
+        name: "[모션] GSAP 가이드",
         id: "gsap-guide",
         description: "React와 Vue에서 사용 가능한 범용 애니메이션 라이브러리입니다.",
       },
     ],
     state: [
-      { name: "Redux 가이드" },
+      { name: "Redux 가이드", id: "state" },
       {
         name: "Zustand 가이드",
         id: "zustand",
@@ -136,7 +142,7 @@ const initialState: InitialStateType = {
       },
     ],
     tools: [
-      { name: "Tailwind-css 변환기" },
+      { name: "Tailwind-css 변환기", id: "tools" },
       {
         name: "Responsive Sync 플러그인",
         id: "responsive-sync",

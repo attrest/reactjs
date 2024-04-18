@@ -30,8 +30,8 @@ const SubMenu = ({ menu, segment, className = "" }: MenuProps) => {
     <TwTag tag="aside" type="side-menu" className={cn(className, "bg-black left-0")}>
       <div className="flex flex-col mx-auto py-5 lg:py-8 px-6">
         <div className={clsx("flex flex-col text-white lg:gap-x-[50px] pr-5")}>
-          {menu.map((item, idx) => (
-            <MenuItem key={item.id ? item.id : `item_${idx}`} subRoot={`/${segment}`} {...item} />
+          {menu.map((item) => (
+            <MenuItem key={item.id} subRoot={`/${segment}`} {...item} />
           ))}
         </div>
       </div>
