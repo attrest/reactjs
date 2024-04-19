@@ -6,7 +6,7 @@ import "swiper/css/pagination";
 // import Footer from "./footer";
 import ReactFullpage, { Item } from "@fullpage/react-fullpage";
 import clsx from "clsx";
-import { cn } from "@/shared/libs/utils";
+import { cn } from "@/shared/utils/utils";
 import { SwiperClass } from "swiper/react";
 import { useSelector } from "react-redux";
 import { RootState } from "@/entities/store";

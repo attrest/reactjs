@@ -1,14 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import LogoSvg from "@/widgets/ui/logo";
+// import LogoSvg from "@/widgets/ui/logo";
 
 const Footer = ({ className }: { className?: string }) => {
   return (
     <footer className="footer bg-stone-900 font-pretendard text-sm font-medium lg:font-normal leading-tight text-center lg:text-left">
       <div className="py-7.5 lg:py-[80px] lg:px-[5.21%] mx-auto flex items-center justify-center flex-col lg:block">
         <Link href="/" className="block">
-          <LogoSvg className="w-[120px] lg:w-[162px]" color={"white"} />
+          {/* <LogoSvg className="w-[120px] lg:w-[162px]" color={"white"} /> */}
         </Link>
         <div className="mt-8 lg:mt-10 block lg:flex justify-start items-center text-white">
           <span className="relative pr-5 after:absolute after:content-[''] after:block after:w-[1px] after:h-[10px] after:top-[50%] after:-mt-[5px] after:right-[10px] after:bg-white">

@@ -2,7 +2,7 @@
 
 import React, { useEffect } from "react";
 import { PlayIcon, StopIcon } from "@heroicons/react/20/solid";
-import { cn } from "@/shared/libs/utils";
+import { cn } from "@/shared/utils/utils";
 import "./gaspExample.scss";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";

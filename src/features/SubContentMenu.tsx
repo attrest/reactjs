@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@/shared/libs/utils";
+import { cn } from "@/shared/utils/utils";
 import clsx from "clsx";
 import { useSelector } from "react-redux";
 import { RootState } from "@/entities/store";

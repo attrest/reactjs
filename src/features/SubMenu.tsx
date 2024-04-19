@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@/shared/libs/utils";
+import { cn } from "@/shared/utils/utils";
 import clsx from "clsx";
 import { useSelectedLayoutSegments } from "next/navigation";
 import { useEffect, useState } from "react";

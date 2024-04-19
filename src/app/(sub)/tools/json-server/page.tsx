@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { cn } from "@/shared/libs/utils";
+import { cn } from "@/shared/utils/utils";
 
 import TwTag from "@/widgets/tw-tag/TwTag";
 import TextToHtml from "@/widgets/TextToHtml";

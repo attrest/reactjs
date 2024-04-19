@@ -10,7 +10,9 @@ export const contentHtml = `<section class="attr_section">
 <p class="attr_p"><span class="set-check-note">Shadcn UI는 Next.js 프로젝트에 Tailwind CSS가 설치된 상태에서 사용할 수 있는 컴포넌트 라이브러리입니다.</span> 이 라이브러리를 통해 개발자들은 쉽고 빠르게 UI 컴포넌트를 자신의 프로젝트에 통합할 수 있습니다. 설치를 시작하려면, 다음 명령을 실행하세요:</p>
 <div class="attr_pre_container">
 <pre class="attr_pre" data-lang="javascript">
-npx shadcn-ui@latest init</pre>
+npx shadcn-ui@latest init
+or
+pnpm dlx shadcn-ui@latest init</pre>
 </div>
 <h4 class="attr_title">components.json 설정하기</h4>
 <p class="attr_p">설치 후, <b>components.json</b> 파일을 구성하는 여러 옵션이 제시됩니다. 여러 설정 중 기본 옵션을 선택하는 과정은 아래와 같습니다:</p>
@@ -72,8 +74,10 @@ export function cn(...classes: ClassValue[]) {
    --foreground: 213 31% 91%;
    ...
  }
-}
-
+}</pre>
+</div>
+<div class="attr_pre_container">
+<pre class="attr_pre" data-lang="javascript">
 // tailwind.config.js
 module.exports = {
  theme: {
@@ -86,6 +90,37 @@ module.exports = {
    }
  }
 }</pre>
+</div>
+<h4 class="attr_title">shadcn-ui 컴포넌트 설치하기</h4>
+<p class="attr_p">shadcn-ui 컴포넌트는 아래의 명령어를 사용해서 개별 설치할 수 있습니다.</p>
+<div class="attr_pre_container">
+<pre class="attr_pre" data-lang="javascript">
+npx shadcn-ui@latest add [component]
+or
+pnpm dlx shadcn-ui@latest add [component]</pre>
+</div>
+<p class="attr_p">만약 컴포넌트를 선택해서 설치하고 싶다면 아래와 같이 컴포넌트를 지정하지 않으면 됩니다.</p>
+<div class="attr_pre_container">
+<pre class="attr_pre" data-lang="javascript">
+npx shadcn-ui@latest add</pre>
+</div>
+<p class="attr_p">위와 같이 입력하면, 아래와 같이 컴포넌트를 선택할 수 있는 <span data-spell="prompt">프롬프트</span>가 표시됩니다.</p>
+<div class="attr_pre_container">
+<pre class="attr_pre" data-lang="javascript">
+Which components would you like to add? › Space to select. A to toggle all.
+Enter to submit.
+
+◯  accordion
+◯  alert
+◯  alert-dialog
+◯  aspect-ratio
+◯  avatar
+◯  badge
+◯  button
+◯  calendar
+◯  card
+◯  checkbox
+...</pre>
 </div>
 </div>
 <div class="attr_div">

@@ -1,5 +1,5 @@
 import React from "react";
-import { cn } from "@/shared/libs/utils";
+import { cn } from "@/shared/utils/utils";
 import { clsx, type ClassValue } from "clsx";
 import { useMobileCheck } from "@/entities/useHooks";
 // import { twMerge } from "tailwind-merge";

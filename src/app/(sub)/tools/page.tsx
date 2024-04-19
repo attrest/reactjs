@@ -5,7 +5,7 @@ import { tailwindToCss, cssToTailwind } from "@/features/tools/tailwindConverter
 import twMappingJson from "@/features/tools/tailwindToCss.json";
 import TwTag from "@/widgets/tw-tag/TwTag";
 import { CheckIcon } from "lucide-react";
-import { cn } from "@/shared/libs/utils";
+import { cn } from "@/shared/utils/utils";
 
 type TwMappingClassesType = {
   [key: string]: any[];

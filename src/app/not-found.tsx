@@ -4,7 +4,7 @@ import type { NextPage } from "next";
 import { useRouter } from "next/navigation";
 import { Button } from "@/widgets/ui/button";
 import { ErrorIcon } from "@/widgets/Svg";
-import Footer from "./footer";
+// import Footer from "./footer";
 
 const Error404: NextPage = () => {
   const router = useRouter();
@@ -22,15 +22,15 @@ const Error404: NextPage = () => {
           다른 페이지로 변경되었습니다.
         </p>
         <div className="mt-15 flex justify-center items-center gap-4 text-center">
-          <Button variant="border" size="lg" onClick={() => router.push("/")}>
+          <Button size="lg" onClick={() => router.push("/")}>
             메인으로
           </Button>
-          <Button variant="color" size="lg" onClick={() => router.back()}>
+          <Button size="lg" onClick={() => router.back()}>
             이전페이지
           </Button>
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };
