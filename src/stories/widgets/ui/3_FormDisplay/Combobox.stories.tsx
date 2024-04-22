@@ -14,7 +14,7 @@ const meta: Meta<typeof Combobox> = {
     },
   },
   argTypes: {
-    data: {
+    items: {
       control: "object",
       description:
         '콤보박스에서 사용할 데이터 배열입니다. 배열의 각 객체는 {"value": string, "label": string } 형태입니다.',
@@ -26,7 +26,7 @@ export default meta;
 
 export const Default: StoryObj<typeof Combobox> = {
   args: {
-    data: [
+    items: [
       {
         value: "next.js",
         label: "Next.js",

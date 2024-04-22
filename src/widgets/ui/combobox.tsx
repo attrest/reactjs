@@ -14,10 +14,10 @@ interface ComboboxDataProps {
 }
 
 interface ComboboxProps {
-  data: ComboboxDataProps[];
+  items: ComboboxDataProps[];
 }
 
-export function Combobox({ data = [] }: ComboboxProps) {
+export function Combobox({ items = [] }: ComboboxProps) {
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState("");
 
@@ -25,7 +25,7 @@ export function Combobox({ data = [] }: ComboboxProps) {
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <Button variant="outline" role="combobox" aria-expanded={open} className="w-[200px] justify-between">
-          {value ? data.find((d) => d.value === value)?.label : "Select framework..."}
+          {value ? items.find((d) => d.value === value)?.label : "Select framework..."}
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
@@ -35,18 +35,18 @@ export function Combobox({ data = [] }: ComboboxProps) {
           <CommandEmpty>No framework found.</CommandEmpty>
           <CommandList>
             <CommandGroup>
-              {Array.isArray(data) &&
-                data.map((d) => (
+              {Array.isArray(items) &&
+                items.map((item) => (
                   <CommandItem
-                    key={d.value}
-                    value={d.value}
+                    key={item.value}
+                    value={item.value}
                     onSelect={(currentValue) => {
                       setValue(currentValue === value ? "" : currentValue);
                       setOpen(false);
                     }}
                   >
-                    <Check className={cn("mr-2 h-4 w-4", value === d.value ? "opacity-100" : "opacity-0")} />
-                    {d.label}
+                    <Check className={cn("mr-2 h-4 w-4", value === item.value ? "opacity-100" : "opacity-0")} />
+                    {item.label}
                   </CommandItem>
                 ))}
             </CommandGroup>
