@@ -20,7 +20,7 @@ const meta: Meta<typeof AlertDialog> = {
     layout: "centered", // Changed from "fullscreen" to "centered" for better button display
     docs: {
       description: {
-        story: "https://ui.shadcn.com/docs/components/alert-dialog",
+        story: "사용자 결정이 필요한 정보를 제공합니다.<br>https://ui.shadcn.com/docs/components/alert-dialog",
       },
     },
   },

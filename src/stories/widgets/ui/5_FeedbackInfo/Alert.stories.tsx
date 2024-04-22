@@ -11,8 +11,15 @@ const meta: Meta<typeof Alert> = {
     layout: "centered", // Changed from "fullscreen" to "centered" for better button display
     docs: {
       description: {
-        story: "https://ui.shadcn.com/docs/components/alert",
+        story: "사용자에게 경고나 정보를 전달합니다.<br>https://ui.shadcn.com/docs/components/alert",
       },
+    },
+  },
+  argTypes: {
+    variant: {
+      control: "select",
+      options: ["default", "destructive"],
+      description: "버튼의 스타일 변형을 선택합니다.",
     },
   },
 } satisfies Meta<typeof Alert>;
@@ -20,9 +27,10 @@ const meta: Meta<typeof Alert> = {
 export default meta;
 
 export const Default: StoryObj<typeof Alert> = {
-  render: () => {
+  args: {},
+  render: (args) => {
     return (
-      <Alert>
+      <Alert {...args}>
         <TerminalIcon className="h-4 w-4" />
         <AlertTitle>Heads up!</AlertTitle>
         <AlertDescription>You can add components and dependencies to your app using the cli.</AlertDescription>
