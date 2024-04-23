@@ -72,7 +72,7 @@ const SubContentMenu = ({ className, containerRef }: SubContentMenuProps) => {
             href={`#${id}`}
             className={clsx(
               "mb-3",
-              currentLinkId === id ? "font-bold" : "text-gray-500",
+              currentLinkId === id ? "font-bold" : "text-gray-400",
               tag === "h4" && "ml-5",
               tag === "h5" && "ml-10"
             )}
