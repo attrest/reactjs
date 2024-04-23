@@ -210,7 +210,7 @@ const SubLayout = ({ children }: { children: React.ReactNode }) => {
           </TwDom>
         )}
 
-        <div className={cn("relative w-full scroll-hidden", isMobileDevice && "mobile-device")}>
+        <div className={cn("section-container relative w-full scroll-hidden", isMobileDevice && "mobile-device")}>
           <div ref={containerRef} className={cn("overflow-y-auto", isMobile ? "h-screen-80" : "h-screen-100")}>
             {!isWide && <ProgressBar containerRef={containerRef} />}
             <TwDom type="content-container" {...(isWide && { className: "max-w-[1280px]" })}>
@@ -239,7 +239,7 @@ const SubLayout = ({ children }: { children: React.ReactNode }) => {
         </div>
         {!isWide && (
           <>
-            <SubContentMenu className={subTreeMenuState} />
+            <SubContentMenu className={subTreeMenuState} containerRef={containerRef} />
             {isMobile && (
               <TwDom
                 tag="button"
