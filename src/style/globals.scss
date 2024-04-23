@@ -68,6 +68,8 @@
   }
 }
 
+$red: var(--border);
+
 @layer base {
   * {
     @apply border-border;
@@ -88,7 +90,7 @@
 }
 
 // define
-@import "./define/tailwindCustom"; // 커스텀 테일윈드 클래스 정의
+@import "./define/common"; // 공통 클래스 추가 정의
 
 // features
 @import "./features/content"; // 콘텐츠 스타일

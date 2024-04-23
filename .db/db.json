@@ -16,7 +16,7 @@
       "isCompleted": false
     }
   ],
-  "reactQuery": [
+  "react": [
     {
       "id": "1",
       "title": "리액트 쿼리 테스트"
