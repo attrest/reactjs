@@ -9,7 +9,7 @@ const meta: Meta<typeof Textarea> = {
     layout: "centered", // Changed from "fullscreen" to "centered" for better button display
     docs: {
       description: {
-        story: "https://ui.shadcn.com/docs/components/textarea",
+        story: "여러 줄의 텍스트를 입력할 수 있는 필드입니다.<br>https://ui.shadcn.com/docs/components/textarea",
       },
     },
   },

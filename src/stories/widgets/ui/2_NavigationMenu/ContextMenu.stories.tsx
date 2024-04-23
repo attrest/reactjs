@@ -9,7 +9,8 @@ const meta: Meta<typeof ContextMenu> = {
     layout: "centered", // Changed from "fullscreen" to "centered" for better button display
     docs: {
       description: {
-        story: "https://ui.shadcn.com/docs/components/context-menu",
+        story:
+          "마우스 오른쪽 버튼을 눌렀을 때 나타나는 메뉴입니다.<br>https://ui.shadcn.com/docs/components/context-menu",
       },
     },
   },

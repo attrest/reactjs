@@ -9,7 +9,7 @@ const meta: Meta<typeof Table> = {
     layout: "centered", // Changed from "fullscreen" to "centered" for better button display
     docs: {
       description: {
-        story: "https://ui.shadcn.com/docs/components/table",
+        story: "기본 테이블을 표시합니다.<br>https://ui.shadcn.com/docs/components/table",
       },
     },
   },

@@ -10,7 +10,7 @@ const meta: Meta<typeof AspectRatio> = {
     layout: "centered", // Changed from "fullscreen" to "centered" for better button display
     docs: {
       description: {
-        story: "https://ui.shadcn.com/docs/components/aspect-ratio",
+        story: "특정 비율을 유지하는 컨테이너입니다.<br>https://ui.shadcn.com/docs/components/aspect-ratio",
       },
     },
   },

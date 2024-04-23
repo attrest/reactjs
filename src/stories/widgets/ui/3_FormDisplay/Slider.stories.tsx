@@ -9,7 +9,7 @@ const meta: Meta<typeof Slider> = {
     layout: "centered", // Changed from "fullscreen" to "centered" for better button display
     docs: {
       description: {
-        story: "https://ui.shadcn.com/docs/components/slider",
+        story: "값을 범위 내에서 선택할 수 있는 슬라이드바입니다.<br>https://ui.shadcn.com/docs/components/slider",
       },
     },
   },

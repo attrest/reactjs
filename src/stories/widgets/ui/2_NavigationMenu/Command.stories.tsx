@@ -19,7 +19,7 @@ const meta: Meta<typeof Command> = {
     layout: "centered", // Changed from "fullscreen" to "centered" for better button display
     docs: {
       description: {
-        story: "https://ui.shadcn.com/docs/components/command",
+        story: "사용자 명령을 실행할 수 있는 메뉴 또는 버튼입니다.<br>https://ui.shadcn.com/docs/components/command",
       },
     },
   },
@@ -29,7 +29,8 @@ const meta: Meta<typeof Command> = {
 export default meta;
 
 export const Default: StoryObj<typeof Command> = {
-  render: () => {
+  args: {},
+  render: (args) => {
     return (
       <Command className="w-[20rem]">
         <CommandInput placeholder="Type a command or search..." />

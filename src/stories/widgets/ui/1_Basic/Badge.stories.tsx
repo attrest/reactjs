@@ -9,7 +9,7 @@ const meta: Meta<typeof Badge> = {
     layout: "centered", // Changed from "fullscreen" to "centered" for better button display
     docs: {
       description: {
-        story: "https://ui.shadcn.com/docs/components/badge",
+        story: "정보의 수량이나 상태를 간단히 보여 줍니다.<br>https://ui.shadcn.com/docs/components/badge",
       },
     },
   },

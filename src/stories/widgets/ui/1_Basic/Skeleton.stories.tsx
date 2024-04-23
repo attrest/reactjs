@@ -9,7 +9,7 @@ const meta: Meta<typeof Skeleton> = {
     layout: "centered", // Changed from "fullscreen" to "centered" for better button display
     docs: {
       description: {
-        story: "https://ui.shadcn.com/docs/components/skeleton",
+        story: "로딩 중인 요소의 플레이스홀더입니다.<br>https://ui.shadcn.com/docs/components/skeleton",
       },
     },
   },

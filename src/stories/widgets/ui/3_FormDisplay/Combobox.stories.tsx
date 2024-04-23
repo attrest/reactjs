@@ -9,7 +9,7 @@ const meta: Meta<typeof Combobox> = {
     layout: "centered", // Changed from "fullscreen" to "centered" for better button display
     docs: {
       description: {
-        story: "https://ui.shadcn.com/docs/components/combobox",
+        story: "드롭다운과 입력 필드의 조합입니다.<br>https://ui.shadcn.com/docs/components/combobox",
       },
     },
   },

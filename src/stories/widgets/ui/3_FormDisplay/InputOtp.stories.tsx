@@ -9,7 +9,7 @@ const meta: Meta<typeof InputOTP> = {
     layout: "centered", // Changed from "fullscreen" to "centered" for better button display
     docs: {
       description: {
-        story: "https://ui.shadcn.com/docs/components/input-otp",
+        story: "일회용 비밀번호 입력을 위한 필드입니다.<br>https://ui.shadcn.com/docs/components/input-otp",
       },
     },
   },
@@ -19,9 +19,7 @@ const meta: Meta<typeof InputOTP> = {
 export default meta;
 
 export const Default: StoryObj<typeof InputOTP> = {
-  args: {
-    placeholder: "Default",
-  },
+  args: {},
   render: (args) => {
     return (
       <InputOTP maxLength={6}>

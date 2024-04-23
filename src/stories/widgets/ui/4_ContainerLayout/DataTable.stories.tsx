@@ -30,7 +30,7 @@ const meta: Meta<typeof DataTable> = {
     layout: "centered", // Changed from "fullscreen" to "centered" for better button display
     docs: {
       description: {
-        story: "https://ui.shadcn.com/docs/components/data-table",
+        story: "데이터를 테이블 형태로 표시합니다.<br>https://ui.shadcn.com/docs/components/data-table",
       },
     },
   },

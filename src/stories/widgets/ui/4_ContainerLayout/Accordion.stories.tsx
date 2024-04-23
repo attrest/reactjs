@@ -9,7 +9,8 @@ const meta: Meta<typeof Accordion> = {
     layout: "centered", // Changed from "fullscreen" to "centered" for better button display
     docs: {
       description: {
-        story: "https://ui.shadcn.com/docs/components/accordion",
+        story:
+          "섹션별로 컨텐츠를 접었다 펼 수 있는 구조의 컨테이너입니다.<br>https://ui.shadcn.com/docs/components/accordion",
       },
     },
   },

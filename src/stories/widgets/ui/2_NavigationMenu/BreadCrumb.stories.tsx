@@ -18,7 +18,8 @@ const meta: Meta<typeof Breadcrumb> = {
     layout: "centered", // Changed from "fullscreen" to "centered" for better button display
     docs: {
       description: {
-        story: "https://ui.shadcn.com/docs/components/breadcrumb",
+        story:
+          "현재 위치를 나타내고, 이전 페이지로 돌아갈 수 있는 경로를 제공합니다.<br>https://ui.shadcn.com/docs/components/breadcrumb",
       },
     },
   },
@@ -28,9 +29,10 @@ const meta: Meta<typeof Breadcrumb> = {
 export default meta;
 
 export const Default: StoryObj<typeof Breadcrumb> = {
-  render: () => {
+  args: {},
+  render: (args) => {
     return (
-      <Breadcrumb>
+      <Breadcrumb {...args}>
         <BreadcrumbList>
           <BreadcrumbItem>
             <BreadcrumbLink href="/">Home</BreadcrumbLink>

@@ -9,7 +9,7 @@ const meta: Meta<typeof Card> = {
     layout: "centered", // Changed from "fullscreen" to "centered" for better button display
     docs: {
       description: {
-        story: "https://ui.shadcn.com/docs/components/card",
+        story: "정보를 그룹화하여 표시합니다.<br>https://ui.shadcn.com/docs/components/card",
       },
     },
   },

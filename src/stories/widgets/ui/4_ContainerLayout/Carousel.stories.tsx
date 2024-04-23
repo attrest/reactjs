@@ -9,7 +9,7 @@ const meta: Meta<typeof Carousel> = {
     layout: "centered", // Changed from "fullscreen" to "centered" for better button display
     docs: {
       description: {
-        story: "https://ui.shadcn.com/docs/components/carousel<br>https://www.embla-carousel.com/api/",
+        story: "여러 컨텐츠를 순환시켜 보여 주는 컴포넌트입니다.<br>https://ui.shadcn.com/docs/components/carousel",
       },
     },
   },

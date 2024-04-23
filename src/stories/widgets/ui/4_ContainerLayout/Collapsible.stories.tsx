@@ -9,7 +9,7 @@ const meta: Meta<typeof Collapsible> = {
     layout: "centered", // Changed from "fullscreen" to "centered" for better button display
     docs: {
       description: {
-        story: "https://ui.shadcn.com/docs/components/collapsible",
+        story: "접을 수 있는 섹션입니다.<br>https://ui.shadcn.com/docs/components/collapsible",
       },
     },
   },

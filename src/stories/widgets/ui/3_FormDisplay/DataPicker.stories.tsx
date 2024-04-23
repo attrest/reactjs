@@ -9,7 +9,7 @@ const meta: Meta<typeof DatePicker> = {
     layout: "centered", // Changed from "fullscreen" to "centered" for better button display
     docs: {
       description: {
-        story: "https://ui.shadcn.com/docs/components/date-picker",
+        story: "날짜를 선택할 수 있는 캘린더입니다.<br>https://ui.shadcn.com/docs/components/date-picker",
       },
     },
   },
