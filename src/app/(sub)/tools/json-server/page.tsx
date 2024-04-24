@@ -4,8 +4,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { cn } from "@/shared/utils/utils";
 
-import TwTag from "@/widgets/tw-tag/TwTag";
-import TextToHtml from "@/widgets/TextToHtml";
+import TwTag from "@/widgets/modules/container/TwTag";
+import TextToHtml from "@/widgets/modules/content/TextToHtml";
 import { contentHtml } from "@/features/fsd/designSystem/contentHtml";
 
 const baseUrl = `${process.env.NEXT_PUBLIC_TODOS}`;

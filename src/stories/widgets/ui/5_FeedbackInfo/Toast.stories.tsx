@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Toaster } from "@/widgets/ui/toaster";
 import { useToast } from "@/widgets/ui/use-toast";
-import { Button } from "@/widgets/ui/button";
+import { ToastSample } from "./ToastSample";
 
 const meta: Meta<typeof Toaster> = {
   title: "Widgets/UI/5. 피드백 및 정보/Toast",
@@ -30,20 +30,8 @@ const meta: Meta<typeof Toaster> = {
 export default meta;
 
 export const Default: StoryObj<typeof useToast> = {
-  args: {
-    title: "Scheduled: Catch up",
-    description: "Friday, February 10, 2023 at 5:57 PM",
-  },
+  args: {},
   render: (args) => {
-    const { toast } = useToast();
-    toast({ ...args });
-    return (
-      <>
-        <Button variant="outline" onClick={() => toast({ ...args })}>
-          Show Toast
-        </Button>
-        <Toaster />
-      </>
-    );
+    return <ToastSample {...args} />;
   },
 };

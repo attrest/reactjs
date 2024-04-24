@@ -1,15 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from "@/widgets/ui/alert-dialog";
+import { AlertDialog } from "@/widgets/ui/alert-dialog";
+import { AlertDialogSample } from "./AlertDialogSample";
 // If your directory structure is different, adjust the import path accordingly
 
 const meta: Meta<typeof AlertDialog> = {
@@ -50,25 +41,6 @@ export const Default: StoryObj<typeof AlertDialog> = {
     },
   },
   render: (args) => {
-    return (
-      <AlertDialog {...args}>
-        <AlertDialogTrigger asChild={true}>
-          <button className="border px-4 py-2 rounded-lg">Open</button>
-        </AlertDialogTrigger>
-        <AlertDialogContent>
-          <AlertDialogHeader>
-            <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
-            <AlertDialogDescription>
-              This action cannot be undone. This will permanently delete your account and remove your data from our
-              servers.
-            </AlertDialogDescription>
-          </AlertDialogHeader>
-          <AlertDialogFooter>
-            <AlertDialogCancel>Cancel</AlertDialogCancel>
-            <AlertDialogAction>Continue</AlertDialogAction>
-          </AlertDialogFooter>
-        </AlertDialogContent>
-      </AlertDialog>
-    );
+    return <AlertDialogSample {...args} />;
   },
 };

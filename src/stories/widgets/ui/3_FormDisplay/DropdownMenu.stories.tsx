@@ -1,13 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/widgets/ui/dropdown-menu";
-import { Button } from "@/widgets/ui/button";
+import { DropdownMenu } from "@/widgets/ui/dropdown-menu";
+import { DropdownMenuSample } from "./DropdownMenuSample";
 
 const meta: Meta<typeof DropdownMenu> = {
   title: "Widgets/UI/3. 데이터 입력 및 표시/DropdownMenu",
@@ -53,20 +46,6 @@ export default meta;
 export const Default: StoryObj<typeof DropdownMenu> = {
   args: {},
   render: (args) => {
-    return (
-      <DropdownMenu {...args}>
-        <DropdownMenuTrigger asChild>
-          <Button variant="outline">Open</Button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent>
-          <DropdownMenuLabel>My Account</DropdownMenuLabel>
-          <DropdownMenuSeparator />
-          <DropdownMenuItem>Profile</DropdownMenuItem>
-          <DropdownMenuItem>Billing</DropdownMenuItem>
-          <DropdownMenuItem>Team</DropdownMenuItem>
-          <DropdownMenuItem>Subscription</DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenu>
-    );
+    return <DropdownMenuSample {...args} />;
   },
 };

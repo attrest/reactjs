@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/widgets/ui/collapsible";
+import { Collapsible } from "@/widgets/ui/collapsible";
+import { CollapsibleSample } from "./CollapsibleSample";
 
 const meta: Meta<typeof Collapsible> = {
   title: "Widgets/UI/4. 컨테이너 및 레이아웃/Collapsible",
@@ -40,15 +41,10 @@ const meta: Meta<typeof Collapsible> = {
 export default meta;
 
 export const Default: StoryObj<typeof Collapsible> = {
-  args: {},
+  args: {
+    className: "border w-[20rem]",
+  },
   render: (args) => {
-    return (
-      <Collapsible {...args} className="border w-[20rem]">
-        <CollapsibleTrigger className="p-5">Can I use this in my project?</CollapsibleTrigger>
-        <CollapsibleContent className="p-5 bg-gray-100">
-          Yes. Free to use for personal and commercial projects. No attribution required.
-        </CollapsibleContent>
-      </Collapsible>
-    );
+    return <CollapsibleSample {...args} />;
   },
 };

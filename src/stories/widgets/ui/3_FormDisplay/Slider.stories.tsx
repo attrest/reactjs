@@ -36,8 +36,9 @@ export const Default: StoryObj<typeof Slider> = {
     defaultValue: [33],
     max: 100,
     step: 1,
+    className: "w-[20rem]",
   },
   render: (args) => {
-    return <Slider {...args} className="w-[20rem]" />;
+    return <Slider {...args} />;
   },
 };

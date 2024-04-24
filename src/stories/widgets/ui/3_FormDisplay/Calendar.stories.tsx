@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Calendar } from "@/widgets/ui/calendar";
-import React, { useState } from "react";
+import { CalendarSample } from "./CalendarSample";
 
 const meta: Meta<typeof Calendar> = {
   title: "Widgets/UI/3. 데이터 입력 및 표시/Calendar",
@@ -68,7 +68,6 @@ export const Default: StoryObj<typeof Calendar> = {
     mode: "single",
   },
   render: (args) => {
-    const [date, setDate] = React.useState<Date | undefined>(new Date("2024-04-22"));
-    return <Calendar {...args} mode="single" selected={date} className="rounded-md border" onSelect={setDate} />;
+    return <CalendarSample {...args} />;
   },
 };

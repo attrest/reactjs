@@ -28,7 +28,7 @@ export const Default: StoryObj<typeof Combobox> = {
   args: {
     items: [
       {
-        value: "next.js",
+        value: "nextjs",
         label: "Next.js",
       },
       {
@@ -36,7 +36,7 @@ export const Default: StoryObj<typeof Combobox> = {
         label: "SvelteKit",
       },
       {
-        value: "nuxt.js",
+        value: "nuxtjs",
         label: "Nuxt.js",
       },
       {

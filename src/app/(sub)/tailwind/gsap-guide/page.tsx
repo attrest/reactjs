@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import TextToHtml from "@/widgets/TextToHtml";
-import TwTag from "@/widgets/tw-tag/TwTag";
+import TextToHtml from "@/widgets/modules/content/TextToHtml";
+import TwTag from "@/widgets/modules/container/TwTag";
 import { contentHtml } from "@/features/tailwind/gsap/contentHtml";
 import { GsapBasic, GsapTextEffect } from "@/features/tailwind/gsap/GsapExample";
 import gsap from "gsap";

@@ -19,11 +19,13 @@ const meta: Meta<typeof Skeleton> = {
 export default meta;
 
 export const Default: StoryObj<typeof Skeleton> = {
-  args: {},
+  args: {
+    className: "w-full h-full rounded-xl",
+  },
   render: (args) => {
     return (
       <div className="w-[20rem] h-6">
-        <Skeleton className="w-full h-full rounded-xl" />
+        <Skeleton {...args} />
       </div>
     );
   },

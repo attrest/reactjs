@@ -36,7 +36,7 @@ export const Default: StoryObj<typeof Label> = {
   render: (args) => {
     return (
       <>
-        <Label {...args}>Your email address</Label>
+        <Label {...args}>Email Label</Label>
         <Input id="email" type="email" />
       </>
     );

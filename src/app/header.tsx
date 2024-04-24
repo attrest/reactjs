@@ -2,7 +2,7 @@
 
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon } from "@heroicons/react/20/solid";
-import { CloseIcon } from "@/widgets/Svg";
+import { CloseIcon } from "@/widgets/__deprecated/Svg";
 import clsx from "clsx";
 // import Link from "next/link";
 import { useRouter, useSelectedLayoutSegments } from "next/navigation";
@@ -10,7 +10,7 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 // import LogoSvg from "@/widgets/ui/logo";
 
-import TwTag from "@/widgets/tw-tag/TwTag";
+import TwTag from "@/widgets/modules/container/TwTag";
 import MenuItem from "../features/MenuItem";
 import { store } from "@/entities/store";
 

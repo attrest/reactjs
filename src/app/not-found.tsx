@@ -3,7 +3,7 @@
 import type { NextPage } from "next";
 import { useRouter } from "next/navigation";
 import { Button } from "@/widgets/ui/button";
-import { ErrorIcon } from "@/widgets/Svg";
+import { ErrorIcon } from "@/widgets/__deprecated/Svg";
 // import Footer from "./footer";
 
 const Error404: NextPage = () => {

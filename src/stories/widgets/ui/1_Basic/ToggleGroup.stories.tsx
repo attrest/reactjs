@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { ToggleGroup, ToggleGroupItem } from "@/widgets/ui/toggle-group";
+import { ToggleGroup } from "@/widgets/ui/toggle-group";
+import { ToggleGroupSample } from "./ToggleGroupSample";
 
 const meta: Meta<typeof ToggleGroup> = {
   title: "Widgets/UI/1. 기본 UI/ToggleGroup",
@@ -65,15 +66,9 @@ export default meta;
 
 export const Default: StoryObj<typeof ToggleGroup> = {
   args: {
-    type: "multiple",
+    type: "multiple", // "single" 또는 "multiple" 중 선택
   },
   render: (args) => {
-    return (
-      <ToggleGroup {...args}>
-        <ToggleGroupItem value="a">A</ToggleGroupItem>
-        <ToggleGroupItem value="b">B</ToggleGroupItem>
-        <ToggleGroupItem value="c">C</ToggleGroupItem>
-      </ToggleGroup>
-    );
+    return <ToggleGroupSample {...args} />;
   },
 };

@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { UseDispatch, useDispatch } from "react-redux";
 import { resetMenus } from "@/entities/store/subContentSlice";
-import TwTag from "@/widgets/tw-tag/TwTag";
+import TwTag from "@/widgets/modules/container/TwTag";
 
 interface MenuProps {
   menu: MenuItemProps[];

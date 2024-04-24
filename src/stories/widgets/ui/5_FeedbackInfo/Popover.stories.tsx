@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Popover, PopoverContent, PopoverTrigger } from "@/widgets/ui/popover";
-import { Button } from "@/widgets/ui/button";
+import { Popover } from "@/widgets/ui/popover";
+import { PopoverSample } from "./PopoverSample";
 
 const meta: Meta<typeof Popover> = {
   title: "Widgets/UI/5. 피드백 및 정보/Popover",
@@ -42,13 +42,6 @@ export default meta;
 export const Default: StoryObj<typeof Popover> = {
   args: {},
   render: (args) => {
-    return (
-      <Popover {...args}>
-        <PopoverTrigger asChild>
-          <Button variant="outline">Open</Button>
-        </PopoverTrigger>
-        <PopoverContent>Place content for the popover here.</PopoverContent>
-      </Popover>
-    );
+    return <PopoverSample {...args} />;
   },
 };

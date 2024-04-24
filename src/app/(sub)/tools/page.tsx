@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { tailwindToCss, cssToTailwind } from "@/features/tools/tailwindConverter";
 import twMappingJson from "@/features/tools/tailwindToCss.json";
-import TwTag from "@/widgets/tw-tag/TwTag";
+import TwTag from "@/widgets/modules/container/TwTag";
 import { CheckIcon } from "lucide-react";
 import { cn } from "@/shared/utils/utils";
 

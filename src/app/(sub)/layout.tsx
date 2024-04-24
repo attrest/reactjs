@@ -1,6 +1,6 @@
 "use client";
 
-import Breadcrumb from "@/widgets/Breadcrumb";
+import Breadcrumb from "@/widgets/modules/Breadcrumb";
 import { cn } from "@/shared/utils/utils";
 import clsx from "clsx";
 import { useSelectedLayoutSegment, useSelectedLayoutSegments } from "next/navigation";
@@ -9,13 +9,13 @@ import { usePathname } from "next/navigation";
 import SubMenu from "../../features/SubMenu";
 import SubContentMenu from "../../features/SubContentMenu";
 import Footer from "../footer";
-import TwDom from "@/widgets/tw-tag/TwTag";
+import TwDom from "@/widgets/modules/container/TwTag";
 import { useMobileCheck, useMobileDeviceCheck } from "@/entities/useHooks";
 import { EllipsisHorizontalIcon, EllipsisVerticalIcon, ListBulletIcon, XMarkIcon } from "@heroicons/react/20/solid";
 import { useSelector } from "react-redux";
 import { RootState } from "@/entities/store";
 import { SubInfoItemType } from "@/entities/store/globalSlice";
-import ProgressBar from "@/widgets/ProgressBar";
+import ProgressBar from "@/widgets/modules/ProgressBar";
 // import { jsPDF } from "jspdf";
 // import { malgunBase64, malgunBoldBase64 } from "@/shared/libs/font-base64";
 

@@ -5,7 +5,7 @@ import { cn } from "@/shared/utils/utils";
 import clsx from "clsx";
 import { useSelector } from "react-redux";
 import { RootState } from "@/entities/store";
-import TwTag from "@/widgets/tw-tag/TwTag";
+import TwTag from "@/widgets/modules/container/TwTag";
 
 interface SubContentMenuProps {
   className?: string;

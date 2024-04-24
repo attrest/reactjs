@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/widgets/ui/select";
+import { Select } from "@/widgets/ui/select";
+import { SelectSample } from "./SelectSample";
 
 const meta: Meta<typeof Select> = {
   title: "Widgets/UI/3. 데이터 입력 및 표시/Select",
@@ -66,17 +67,6 @@ export default meta;
 export const Default: StoryObj<typeof Select> = {
   args: {},
   render: (args) => {
-    return (
-      <Select {...args}>
-        <SelectTrigger className="w-[180px]">
-          <SelectValue placeholder="Theme" />
-        </SelectTrigger>
-        <SelectContent>
-          <SelectItem value="light">Light</SelectItem>
-          <SelectItem value="dark">Dark</SelectItem>
-          <SelectItem value="system">System</SelectItem>
-        </SelectContent>
-      </Select>
-    );
+    return <SelectSample {...args} />;
   },
 };

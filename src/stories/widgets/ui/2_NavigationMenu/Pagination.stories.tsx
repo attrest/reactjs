@@ -1,13 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import {
-  Pagination,
-  PaginationContent,
-  PaginationEllipsis,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from "@/widgets/ui/pagination";
+import { Pagination } from "@/widgets/ui/pagination";
+import { PaginationSample } from "./PaginationSample";
 
 const meta: Meta<typeof Pagination> = {
   title: "Widgets/UI/2. 네비게이션 및 메뉴/Pagination",
@@ -28,24 +21,7 @@ export default meta;
 
 export const Default: StoryObj<typeof Pagination> = {
   args: {},
-  render: () => {
-    return (
-      <Pagination>
-        <PaginationContent>
-          <PaginationItem>
-            <PaginationPrevious href="#" />
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink href="#">1</PaginationLink>
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationEllipsis />
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationNext href="#" />
-          </PaginationItem>
-        </PaginationContent>
-      </Pagination>
-    );
+  render: (args) => {
+    return <PaginationSample {...args} />;
   },
 };

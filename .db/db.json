@@ -16,10 +16,11 @@
       "isCompleted": false
     }
   ],
-  "react": [
+  "banners": [
     {
       "id": "1",
-      "title": "리액트 쿼리 테스트"
+      "src": "",
+      "link": ""
     }
   ]
 }

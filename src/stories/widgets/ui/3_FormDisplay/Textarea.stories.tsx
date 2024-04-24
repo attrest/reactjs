@@ -22,8 +22,9 @@ export const Default: StoryObj<typeof Textarea> = {
   args: {
     placeholder: "텍스트를 입력해주세요.",
     disabled: false,
+    className: "w-[20rem]",
   },
   render: (args) => {
-    return <Textarea {...args} className="w-[20rem]" />;
+    return <Textarea {...args} />;
   },
 };

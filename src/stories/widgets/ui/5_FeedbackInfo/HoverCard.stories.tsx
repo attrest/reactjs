@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/widgets/ui/hover-card";
-import { Button } from "@/widgets/ui/button";
+import { HoverCard } from "@/widgets/ui/hover-card";
 // If your directory structure is different, adjust the import path accordingly
 
 const meta: Meta<typeof HoverCard> = {
@@ -46,13 +45,6 @@ export default meta;
 export const Default: StoryObj<typeof HoverCard> = {
   args: {},
   render: (args) => {
-    return (
-      <HoverCard {...args}>
-        <HoverCardTrigger asChild>
-          <Button variant="outline">Hover</Button>
-        </HoverCardTrigger>
-        <HoverCardContent>The React Framework – created and maintained by @vercel.</HoverCardContent>
-      </HoverCard>
-    );
+    return <HoverCard {...args} />;
   },
 };

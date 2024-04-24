@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/widgets/ui/card";
+import { Card } from "@/widgets/ui/card";
+import { CardSample } from "./CardSample";
 
 const meta: Meta<typeof Card> = {
   title: "Widgets/UI/4. 컨테이너 및 레이아웃/Card",
@@ -19,21 +20,10 @@ const meta: Meta<typeof Card> = {
 export default meta;
 
 export const Default: StoryObj<typeof Card> = {
-  args: {},
+  args: {
+    className: "w-[20rem]",
+  },
   render: (args) => {
-    return (
-      <Card className="w-[20rem]">
-        <CardHeader>
-          <CardTitle>Card Title</CardTitle>
-          <CardDescription>Card Description</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <p>Card Content</p>
-        </CardContent>
-        <CardFooter>
-          <p>Card Footer</p>
-        </CardFooter>
-      </Card>
-    );
+    return <CardSample {...args} />;
   },
 };
