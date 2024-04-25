@@ -1,6 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Dialog } from "@/widgets/ui/dialog";
-import { DialogSample } from "./DialogSample";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/widgets/ui/dialog";
+import { Button } from "@/widgets/ui/button";
 
 const meta: Meta<typeof Dialog> = {
   title: "Widgets/UI/5. 피드백 및 정보/Dialog",
@@ -43,6 +50,21 @@ export const Default: StoryObj<typeof Dialog> = {
     defaultOpen: true,
   },
   render: (args) => {
-    return <DialogSample {...args} />;
+    return (
+      <Dialog {...args}>
+        <DialogTrigger asChild>
+          <Button variant="outline">Open</Button>
+        </DialogTrigger>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Are you absolutely sure?</DialogTitle>
+            <DialogDescription>
+              This action cannot be undone. This will permanently delete your account and remove your data from our
+              servers.
+            </DialogDescription>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
+    );
   },
 };

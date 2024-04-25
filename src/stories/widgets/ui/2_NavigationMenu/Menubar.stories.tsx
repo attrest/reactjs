@@ -1,6 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Menubar } from "@/widgets/ui/menubar";
-import { MenubarSample } from "./MenubarSample";
+import {
+  Menubar,
+  MenubarContent,
+  MenubarItem,
+  MenubarMenu,
+  MenubarSeparator,
+  MenubarShortcut,
+  MenubarTrigger,
+} from "@/widgets/ui/menubar";
 
 const meta: Meta<typeof Menubar> = {
   title: "Widgets/UI/2. 네비게이션 및 메뉴/Menubar",
@@ -55,6 +62,35 @@ export const Default: StoryObj<typeof Menubar> = {
     },
   },
   render: (args) => {
-    return <MenubarSample {...args} />;
+    return (
+      <Menubar {...args}>
+        <MenubarMenu>
+          <MenubarTrigger>File</MenubarTrigger>
+          <MenubarContent>
+            <MenubarItem>
+              New Tab <MenubarShortcut>⌘F</MenubarShortcut>
+            </MenubarItem>
+            <MenubarItem>New Window</MenubarItem>
+            <MenubarSeparator />
+            <MenubarItem>Share</MenubarItem>
+            <MenubarSeparator />
+            <MenubarItem>Print</MenubarItem>
+          </MenubarContent>
+        </MenubarMenu>
+        <MenubarMenu>
+          <MenubarTrigger>Edit</MenubarTrigger>
+          <MenubarContent>
+            <MenubarItem>
+              New Tab <MenubarShortcut>⌘E</MenubarShortcut>
+            </MenubarItem>
+            <MenubarItem>Cut</MenubarItem>
+            <MenubarSeparator />
+            <MenubarItem>Copy</MenubarItem>
+            <MenubarSeparator />
+            <MenubarItem>Paste</MenubarItem>
+          </MenubarContent>
+        </MenubarMenu>
+      </Menubar>
+    );
   },
 };

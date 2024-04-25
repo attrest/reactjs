@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Alert } from "@/widgets/ui/alert";
-import { AlertSample } from "./AlertSample";
-// If your directory structure is different, adjust the import path accordingly
+import { Alert, AlertDescription, AlertTitle } from "@/widgets/ui/alert";
+import { TerminalIcon } from "lucide-react";
 
 const meta: Meta<typeof Alert> = {
   title: "Widgets/UI/5. 피드백 및 정보/Alert",
@@ -29,6 +28,12 @@ export default meta;
 export const Default: StoryObj<typeof Alert> = {
   args: {},
   render: (args) => {
-    return <AlertSample {...args} />;
+    return (
+      <Alert {...args}>
+        <TerminalIcon className="h-4 w-4" />
+        <AlertTitle>Heads up!</AlertTitle>
+        <AlertDescription>You can add components and dependencies to your app using the cli.</AlertDescription>
+      </Alert>
+    );
   },
 };

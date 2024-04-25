@@ -1,6 +1,15 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Drawer } from "@/widgets/ui/drawer";
-import { DrawerSample } from "./DrawerSample";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/widgets/ui/drawer";
+import { Button } from "@/widgets/ui/button";
 
 const meta: Meta<typeof Drawer> = {
   title: "Widgets/UI/5. 피드백 및 정보/Drawer",
@@ -37,6 +46,24 @@ export default meta;
 export const Default: StoryObj<typeof Drawer> = {
   args: {},
   render: (args) => {
-    return <DrawerSample {...args} />;
+    return (
+      <Drawer {...args}>
+        <DrawerTrigger asChild>
+          <Button variant="outline">Open</Button>
+        </DrawerTrigger>
+        <DrawerContent>
+          <DrawerHeader>
+            <DrawerTitle>Are you absolutely sure?</DrawerTitle>
+            <DrawerDescription>This action cannot be undone.</DrawerDescription>
+          </DrawerHeader>
+          <DrawerFooter>
+            <Button>Submit</Button>
+            <DrawerClose>
+              <Button variant="outline">Cancel</Button>
+            </DrawerClose>
+          </DrawerFooter>
+        </DrawerContent>
+      </Drawer>
+    );
   },
 };

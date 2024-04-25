@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { HoverCard } from "@/widgets/ui/hover-card";
-// If your directory structure is different, adjust the import path accordingly
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/widgets/ui/hover-card";
+import { Button } from "@/widgets/ui/button";
 
 const meta: Meta<typeof HoverCard> = {
   title: "Widgets/UI/5. 피드백 및 정보/HoverCard",
@@ -45,6 +45,13 @@ export default meta;
 export const Default: StoryObj<typeof HoverCard> = {
   args: {},
   render: (args) => {
-    return <HoverCard {...args} />;
+    return (
+      <HoverCard {...args}>
+        <HoverCardTrigger asChild>
+          <Button variant="outline">Hover</Button>
+        </HoverCardTrigger>
+        <HoverCardContent>The React Framework – created and maintained by @vercel.</HoverCardContent>
+      </HoverCard>
+    );
   },
 };

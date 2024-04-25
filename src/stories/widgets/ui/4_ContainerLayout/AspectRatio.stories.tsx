@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { AspectRatio } from "@/widgets/ui/aspect-ratio";
-import { AspectRatioSample } from "./AspectRatioSample";
+import Image from "next/image";
 
 const meta: Meta<typeof AspectRatio> = {
   title: "Widgets/UI/4. 컨테이너 및 레이아웃/AspectRatio",
@@ -34,6 +34,18 @@ export const Default: StoryObj<typeof AspectRatio> = {
     ratio: 16 / 9,
   },
   render: (args) => {
-    return <AspectRatioSample {...args} className="w-[20rem]" />;
+    return (
+      <div className="w-[20rem]">
+        <AspectRatio {...args}>
+          <Image
+            src="/img/ratio_sample.jpg"
+            alt="Image"
+            layout="fill"
+            objectFit="cover"
+            className="rounded-md object-cover"
+          />
+        </AspectRatio>
+      </div>
+    );
   },
 };

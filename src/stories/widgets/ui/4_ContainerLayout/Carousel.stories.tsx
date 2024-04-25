@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Carousel } from "@/widgets/ui/carousel";
-import { CarouselSample } from "./CarouselSample";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/widgets/ui/carousel";
 
 const meta: Meta<typeof Carousel> = {
   title: "Widgets/UI/4. 컨테이너 및 레이아웃/Carousel",
@@ -42,6 +41,22 @@ export const Default: StoryObj<typeof Carousel> = {
     className: "w-[20rem]",
   },
   render: (args) => {
-    return <CarouselSample {...args} />;
+    return (
+      <Carousel {...args}>
+        <CarouselContent className="w-full h-full min-h-[10rem]">
+          <CarouselItem>
+            <div className="flex items-center justify-center border rounded-lg w-full h-full">1</div>
+          </CarouselItem>
+          <CarouselItem>
+            <div className="flex items-center justify-center border rounded-lg w-full h-full">2</div>
+          </CarouselItem>
+          <CarouselItem>
+            <div className="flex items-center justify-center border rounded-lg w-full h-full">3</div>
+          </CarouselItem>
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
+    );
   },
 };

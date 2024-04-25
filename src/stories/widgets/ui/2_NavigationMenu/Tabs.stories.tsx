@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Tabs } from "@/widgets/ui/tabs";
-import { TabsSample } from "./TabsSample";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/widgets/ui/tabs";
 
 const meta: Meta<typeof Tabs> = {
   title: "Widgets/UI/2. 네비게이션 및 메뉴/Tabs",
@@ -61,6 +60,15 @@ export const Default: StoryObj<typeof Tabs> = {
     className: "w-[400px]",
   },
   render: (args) => {
-    return <TabsSample {...args} />;
+    return (
+      <Tabs {...args}>
+        <TabsList>
+          <TabsTrigger value="account">Account</TabsTrigger>
+          <TabsTrigger value="password">Password</TabsTrigger>
+        </TabsList>
+        <TabsContent value="account">Make changes to your account here.</TabsContent>
+        <TabsContent value="password">Change your password here.</TabsContent>
+      </Tabs>
+    );
   },
 };

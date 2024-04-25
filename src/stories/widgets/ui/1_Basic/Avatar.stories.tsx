@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Avatar } from "@/widgets/ui/avatar";
-import { AvatarSample } from "./AvatarSample";
+import { Avatar, AvatarFallback, AvatarImage } from "@/widgets/ui/avatar";
 
 const meta: Meta<typeof Avatar> = {
   title: "Widgets/UI/1. 기본 UI/Avatar",
@@ -27,6 +26,11 @@ export default meta;
 export const Default: StoryObj<typeof Avatar> = {
   args: {},
   render: (args) => {
-    return <AvatarSample {...args} />;
+    return (
+      <Avatar {...args}>
+        <AvatarImage src="https://github.com/shadcn.png" />
+        <AvatarFallback>CN</AvatarFallback>
+      </Avatar>
+    );
   },
 };

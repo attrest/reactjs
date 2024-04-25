@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Breadcrumb } from "@/widgets/ui/breadcrumb";
-import { BreadcrumbSample } from "./BreadCrumbSample";
 
 const meta: Meta<typeof Breadcrumb> = {
   title: "Widgets/UI/2. 네비게이션 및 메뉴/Breadcrumb",

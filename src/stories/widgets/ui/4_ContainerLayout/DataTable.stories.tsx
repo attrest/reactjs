@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { useState, useEffect } from "react";
+import { ColumnDef } from "@tanstack/react-table";
 import { DataTable } from "@/widgets/ui/data-table";
-import { DataTableSample } from "./DataTableSample";
+import { PaymentProps, DropMenuSample, getData } from "./DataTableUtils";
 
 const meta: Meta<typeof DataTable> = {
   title: "Widgets/UI/4. 컨테이너 및 레이아웃/DataTable",
@@ -39,6 +41,49 @@ export default meta;
 export const Default: StoryObj<typeof DataTable> = {
   args: {},
   render: (args) => {
-    return <DataTableSample {...args} className="w-[35rem]" />;
+    const [data, setData] = useState<PaymentProps[]>([]);
+    const columns: ColumnDef<PaymentProps>[] = [
+      {
+        accessorKey: "status",
+        header: "Status",
+      },
+      {
+        accessorKey: "email",
+        header: "Email",
+      },
+      {
+        accessorKey: "amount",
+        header: () => <div className="text-right">Amount</div>,
+        cell: ({ row }) => {
+          const amount = parseFloat(row.getValue("amount"));
+          const formatted = new Intl.NumberFormat("en-US", {
+            style: "currency",
+            currency: "USD",
+          }).format(amount);
+
+          return <div className="text-right font-bold">{formatted}</div>;
+        },
+      },
+      {
+        id: "actions",
+        cell: ({ row }) => {
+          const payment = row.original;
+          return <DropMenuSample onClick={() => navigator.clipboard.writeText(payment.id)} />;
+        },
+      },
+    ];
+
+    useEffect(() => {
+      async function fetchData() {
+        const result = await getData();
+        setData(result);
+      }
+      fetchData();
+    }, []);
+    return (
+      <div className="w-[35rem]">
+        <DataTable {...args} columns={columns} data={data} paging={true} pagingSize={5} />
+      </div>
+    );
   },
 };

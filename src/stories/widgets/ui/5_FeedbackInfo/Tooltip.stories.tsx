@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Tooltip } from "@/widgets/ui/tooltip";
-import { TooltipSample } from "./TooltipSample";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/widgets/ui/tooltip";
+import { Button } from "@/widgets/ui/button";
 
 const meta: Meta<typeof Tooltip> = {
   title: "Widgets/UI/5. 피드백 및 정보/Tooltip",
@@ -44,6 +44,17 @@ export default meta;
 export const Default: StoryObj<typeof Tooltip> = {
   args: {},
   render: (args) => {
-    return <TooltipSample {...args} />;
+    return (
+      <TooltipProvider>
+        <Tooltip {...args}>
+          <TooltipTrigger asChild>
+            <Button variant="outline">Hover</Button>
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>Add to library</p>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
+    );
   },
 };

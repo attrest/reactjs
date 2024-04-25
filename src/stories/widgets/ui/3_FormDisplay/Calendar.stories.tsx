@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Calendar } from "@/widgets/ui/calendar";
-import { CalendarSample } from "./CalendarSample";
+import React from "react";
 
 const meta: Meta<typeof Calendar> = {
   title: "Widgets/UI/3. 데이터 입력 및 표시/Calendar",
@@ -64,10 +64,9 @@ const meta: Meta<typeof Calendar> = {
 export default meta;
 
 export const Default: StoryObj<typeof Calendar> = {
-  args: {
-    mode: "single",
-  },
+  args: {},
   render: (args) => {
-    return <CalendarSample {...args} />;
+    const [date, setDate] = React.useState<Date | undefined>(new Date("2024-04-22"));
+    return <Calendar {...args} mode="single" selected={date} className="rounded-md border" onSelect={setDate} />;
   },
 };

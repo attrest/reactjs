@@ -11,7 +11,6 @@ import {
   navigationMenuTriggerStyle, // Nextjs <Link /> 컴포넌트 사용시
 } from "@/widgets/ui/navigation-menu";
 import Link from "next/link";
-import { NavigationMenuSample } from "./NavigationMenuSample";
 
 const meta: Meta<typeof NavigationMenu> = {
   title: "Widgets/UI/2. 네비게이션 및 메뉴/NavigationMenu",
@@ -67,6 +66,24 @@ export default meta;
 export const Default: StoryObj<typeof NavigationMenu> = {
   args: {},
   render: (args) => {
-    return <NavigationMenuSample {...args} />;
+    return (
+      <NavigationMenu {...args}>
+        <NavigationMenuList>
+          <NavigationMenuItem>
+            <NavigationMenuTrigger>Item One</NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <NavigationMenuLink>Link 1</NavigationMenuLink>
+              <NavigationMenuLink>Link 2</NavigationMenuLink>
+              <NavigationMenuLink>Link 3</NavigationMenuLink>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <Link href="/docs" legacyBehavior passHref>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>Documentation</NavigationMenuLink>
+            </Link>
+          </NavigationMenuItem>
+        </NavigationMenuList>
+      </NavigationMenu>
+    );
   },
 };

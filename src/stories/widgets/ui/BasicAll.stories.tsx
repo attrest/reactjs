@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import StoryGrid from "@/stories/components/StoryGrid";
 
-import { AvatarSample } from "./1_Basic/AvatarSample";
+import { Avatar, AvatarFallback, AvatarImage } from "@/widgets/ui/avatar";
 import { Badge } from "@/widgets/ui/badge";
 import { Button } from "@/widgets/ui/button";
 import { Label } from "@/widgets/ui/label";
 import { Separator } from "@/widgets/ui/separator";
 import { Skeleton } from "@/widgets/ui/skeleton";
 import { Toggle } from "@/widgets/ui/toggle";
-import { ToggleGroupSample } from "./1_Basic/ToggleGroupSample";
+import { ToggleGroup, ToggleGroupItem } from "@/widgets/ui/toggle-group";
 
 const meta: Meta<typeof StoryGrid> = {
   title: "Widgets/UI/1. 기본 UI",
@@ -41,14 +41,21 @@ export const All: StoryObj<typeof StoryGrid> = {
       <StoryGrid
         {...args}
         items={[
-          <AvatarSample key="avatar" />,
+          <Avatar key="avatar">
+            <AvatarImage src="https://github.com/shadcn.png" />
+            <AvatarFallback>CN</AvatarFallback>
+          </Avatar>,
           <Badge key="badge">Badge</Badge>,
           <Button key="button">Button</Button>,
           <Label key="label">Label</Label>,
           <Separator key="separator" className="w-[10rem]" />,
           <Skeleton key="skeleton" className="w-[10rem] h-6" />,
           <Toggle key="toggle">Toggle</Toggle>,
-          <ToggleGroupSample key="toggleGroup" type="multiple" />,
+          <ToggleGroup key="toggleGroup" type="multiple">
+            <ToggleGroupItem value="a">A</ToggleGroupItem>
+            <ToggleGroupItem value="b">B</ToggleGroupItem>
+            <ToggleGroupItem value="c">C</ToggleGroupItem>
+          </ToggleGroup>,
         ]}
       />
     );

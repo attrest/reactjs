@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Sheet } from "@/widgets/ui/sheet";
-import { SheetSample } from "./SheetSample";
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/widgets/ui/sheet";
+import { Button } from "@/widgets/ui/button";
 
 const meta: Meta<typeof Sheet> = {
   title: "Widgets/UI/5. 피드백 및 정보/Sheet",
@@ -40,6 +40,21 @@ export default meta;
 export const Default: StoryObj<typeof Sheet> = {
   args: {},
   render: (args) => {
-    return <SheetSample {...args} />;
+    return (
+      <Sheet {...args}>
+        <SheetTrigger asChild>
+          <Button variant="outline">Open</Button>
+        </SheetTrigger>
+        <SheetContent>
+          <SheetHeader>
+            <SheetTitle>Are you absolutely sure?</SheetTitle>
+            <SheetDescription>
+              This action cannot be undone. This will permanently delete your account and remove your data from our
+              servers.
+            </SheetDescription>
+          </SheetHeader>
+        </SheetContent>
+      </Sheet>
+    );
   },
 };

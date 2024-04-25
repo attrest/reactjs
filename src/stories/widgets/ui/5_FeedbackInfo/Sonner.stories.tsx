@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Toaster } from "@/widgets/ui/sonner";
-import { SonnerSample } from "./SonnerSample";
+import { Button } from "@/widgets/ui/button";
+import { toast } from "sonner";
 
 const meta: Meta<typeof Toaster> = {
   title: "Widgets/UI/5. 피드백 및 정보/Sonner",
@@ -77,6 +78,13 @@ export default meta;
 export const Default: StoryObj<typeof Toaster> = {
   args: {},
   render: (args) => {
-    return <SonnerSample {...args} />;
+    return (
+      <>
+        <Button variant="outline" onClick={() => toast("Event has been created.")}>
+          Show Toast
+        </Button>
+        <Toaster {...args} />
+      </>
+    );
   },
 };
