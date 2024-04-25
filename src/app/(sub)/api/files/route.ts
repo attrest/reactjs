@@ -32,16 +32,16 @@ export async function GET(request: NextRequest) {
 
   try {
     if (reqType === "create") {
-      const folderName = request.nextUrl.searchParams.get("folderPath") || "newStory"; // 요청으로부터 폴더명 가져오기
-      const baseFileName = request.nextUrl.searchParams.get("fileName") || "new"; // 요청으로부터 파일명 가져오기
+      const folderName = request.nextUrl.searchParams.get("folderPath") || "NewStories"; // 요청으로부터 폴더명 가져오기
+      const baseFileName = request.nextUrl.searchParams.get("fileName") || "StoryComponent"; // 요청으로부터 파일명 가져오기
 
       const storyCreatePath = path.join(process.cwd(), ...defaultPaths, folderName);
-      const fileContent = `
+      const fileContent = (_fileName: string) => `
 import type { Meta, StoryObj } from "@storybook/react";
 const BlankComponent = ({...props}) => <></>;
 
 const meta: Meta<typeof BlankComponent> = {
-  title: "Widgets/UI/1. 기본 UI",
+  title: "NewStories/${_fileName}",
   component: BlankComponent,
   tags: ["autodocs"],
   parameters: {
@@ -82,15 +82,16 @@ export const All: StoryObj<typeof BlankComponent> = {
       // 파일 이름에 번호 추가
       let counter = 0;
       let filePath = path.join(storyCreatePath, `${baseFileName}.stories.tsx`);
+      let newFileName = "";
       while (true) {
         try {
           await stat(filePath);
           counter++;
-          const newFileName = `${baseFileName}_${counter}.stories.tsx`;
+          newFileName = `${baseFileName}_${counter}.stories.tsx`;
           filePath = path.join(storyCreatePath, newFileName);
         } catch (err: unknown) {
           if (err instanceof Error && (err as NodeJS.ErrnoException).code === "ENOENT") {
-            await writeFile(filePath, fileContent, "utf8");
+            await writeFile(filePath, fileContent(newFileName ? newFileName : baseFileName), "utf8");
             break;
           } else {
             throw err;

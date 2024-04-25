@@ -9,7 +9,7 @@ function FileCreator() {
   const [loading, setLoading] = useState<boolean>(false);
   const [isInit, setIsInit] = useState<boolean>(false);
 
-  const apiHandlerSubmit = async (event?: React.FormEvent, { type = "create" } = {}) => {
+  const apiHandlerSubmit = async (event?: React.FormEvent, { type = "default" } = {}) => {
     event?.preventDefault();
     console.log(`Handling a ${type} type form submission.`);
     setLoading(true);
@@ -57,7 +57,7 @@ function FileCreator() {
             placeholder="폴더명 입력"
             value={folderName}
             onChange={(e) => setFolderName(e.target.value)}
-            required
+            // required
           />
         </div>
         <div>
@@ -68,7 +68,7 @@ function FileCreator() {
             placeholder="파일명 입력"
             value={fileName}
             onChange={(e) => setFileName(e.target.value)}
-            required
+            // required
           />
         </div>
         <button type="submit" disabled={loading}>
