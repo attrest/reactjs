@@ -9,7 +9,7 @@ import { usePathname } from "next/navigation";
 import SubMenu from "../../features/SubMenu";
 import SubContentMenu from "../../features/SubContentMenu";
 import Footer from "../footer";
-import TwDom from "@/widgets/modules/container/TwTag";
+import TwDom from "@/widgets/modules/helper/TwTag";
 import { useMobileCheck, useMobileDeviceCheck } from "@/entities/useHooks";
 import { EllipsisHorizontalIcon, EllipsisVerticalIcon, ListBulletIcon, XMarkIcon } from "@heroicons/react/20/solid";
 import { useSelector } from "react-redux";

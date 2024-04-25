@@ -158,6 +158,11 @@ const initialState: InitialStateType = {
         id: "json-server",
         description: "개발 단계에서 프로토타입 데이터를 빠르게 생성하여 RESTful API를 테스트할 수 있습니다.",
       },
+      {
+        name: "유틸리티",
+        id: "utilities",
+        description: "테스트용...",
+      },
     ],
   },
 };

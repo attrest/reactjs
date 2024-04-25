@@ -4,7 +4,7 @@ export const ContextMenuSample = ({ ...args }) => {
   return (
     <ContextMenu {...args}>
       <ContextMenuTrigger>
-        <div className="flex items-center justify-center flex-col w-[20rem] h-[10rem] border">
+        <div className="flex items-center justify-center flex-col w-[15rem] h-[10rem] border">
           Right click<small className="block mt-2 text-gray-400">마우스 오른쪽 버튼을 눌러주세요.</small>
         </div>
       </ContextMenuTrigger>

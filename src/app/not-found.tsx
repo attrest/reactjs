@@ -3,7 +3,6 @@
 import type { NextPage } from "next";
 import { useRouter } from "next/navigation";
 import { Button } from "@/widgets/ui/button";
-import { ErrorIcon } from "@/widgets/__deprecated/Svg";
 // import Footer from "./footer";
 
 const Error404: NextPage = () => {
@@ -12,7 +11,7 @@ const Error404: NextPage = () => {
   return (
     <>
       <div className="flex flex-col justify-center items-center lg:block mx-auto px-6 lg:px-0 lg:pt-30 lg:w-full my-[170px] text-center">
-        <ErrorIcon className="w-[70px] lg:w-22 inline-block" />
+        <p>ERROR</p>
         <p className="mt-8 font-semibold text-2xl lg:text-4xl leading-[50px] text-black break-keep">
           주소를 다시 한번 확인해주세요.
         </p>

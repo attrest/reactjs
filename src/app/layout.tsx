@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import Header from "./header";
 import Container from "./container";
 import ReactQueryProvider from "@/features/reactQuery/Context";
-import { DialogProvider } from "@/widgets/__deprecated/modals/DialogContext";
+import { DialogProvider } from "@/widgets/modules/modals/DialogContext";
 import { Metadata } from "next";
 import { store } from "@/entities/store";
 import "@/style/globals.scss";

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import TwTag from "@/widgets/modules/container/TwTag";
+import TwTag from "@/widgets/modules/helper/TwTag";
 import Image from "next/image";
 
 const ResponsiveSync = () => {

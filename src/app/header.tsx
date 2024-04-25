@@ -2,7 +2,7 @@
 
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon } from "@heroicons/react/20/solid";
-import { CloseIcon } from "@/widgets/__deprecated/Svg";
+import { CrossIcon } from "lucide-react";
 import clsx from "clsx";
 // import Link from "next/link";
 import { useRouter, useSelectedLayoutSegments } from "next/navigation";
@@ -10,7 +10,7 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 // import LogoSvg from "@/widgets/ui/logo";
 
-import TwTag from "@/widgets/modules/container/TwTag";
+import TwTag from "@/widgets/modules/helper/TwTag";
 import MenuItem from "../features/MenuItem";
 import { store } from "@/entities/store";
 
@@ -67,7 +67,7 @@ const Header = ({ siteName }: headerProps) => {
             </a>
             <button type="button" className="-mr-1.5 text-white" onClick={() => setMobileMenuState(false)}>
               <span className="sr-only">Close menu</span>
-              <CloseIcon className="w-6 h-6" aria-hidden="true" />
+              <CrossIcon className="w-6 h-6" aria-hidden="true" />
             </button>
           </div>
           <div className="flow-root pt-10">
