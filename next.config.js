@@ -9,7 +9,7 @@ const nextConfig = {
     formats: ["image/webp"],
     minimumCacheTTL: 31536000,
   },
-  output: "export",
+  // output: "export",
   reactStrictMode: true, // 권장 설정
 };
 
