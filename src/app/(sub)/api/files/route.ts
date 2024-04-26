@@ -26,9 +26,12 @@ async function listDirectoryContents(dirPath: string): Promise<DirectoryContent[
 
 // 파라미터를 받아서 json 반환 처리
 export async function GET(request: NextRequest) {
-  const reqType = request.nextUrl.searchParams.get("type") || "default"; // 요청으로부터 type 가져오기
-  const defaultPaths = "src/stories".split("/");
+  const reqPath = request.nextUrl.searchParams.get("defaultPath") || "src/stories"; // 요청으로부터 defaultPath 가져오기
+  const reqType = request.nextUrl.searchParams.get("requestType") || "default"; // 요청으로부터 requestType 가져오기
+  const defaultPaths = reqPath.split("/");
   const storyDefaultPath = path.join(process.cwd(), ...defaultPaths);
+
+  console.log("defaultPaths => ", defaultPaths);
 
   try {
     if (reqType === "create") {
