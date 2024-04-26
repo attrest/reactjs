@@ -16,6 +16,7 @@ import { useRef } from "react";
 interface AcNavationMenuItemProps {
   title: string;
   href: string;
+  target?: string;
   items?: AcNavationMenuItemProps[];
 }
 
@@ -58,7 +59,9 @@ export const AcNavigationMenu = ({ items, className, unfoldType = "wide", ...arg
           <ul key={idx}>
             <NavigationMenuItem className="flex list-none whitespace-nowrap">
               <NavigationMenuLink className={navigationMenuTriggerStyle()} asChild={true}>
-                <Link href={item.href}>{item.title}</Link>
+                <Link href={item.href} {...(item.target && { target: item.target })}>
+                  {item.title}
+                </Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
           </ul>

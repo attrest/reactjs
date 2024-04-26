@@ -16,6 +16,9 @@ import TwTag from "@/widgets/modules/helper/TwTag";
 import MenuItem from "../features/MenuItem";
 import { store } from "@/entities/store";
 import Image from "next/image";
+import { AcNavigationMenu } from "@/widgets/modules/AcNavigationMenu";
+import { useMobileCheck } from "@/entities/useHooks";
+import { AlignJustify } from "lucide-react";
 
 interface headerProps {
   siteName: string;
@@ -28,6 +31,9 @@ const Header = ({ siteName }: headerProps) => {
   const isHome = pathname === "/"; // main page check
   const isError = pathname === "/not-found"; // error page check
   const menu = store.getState().global.mainMenu;
+  const menuList = store.getState().global.menu;
+  const isMobile = useMobileCheck();
+  const logoFile = !isMobile ? "logo.png" : "logo_w.png";
 
   return (
     <header
@@ -41,15 +47,20 @@ const Header = ({ siteName }: headerProps) => {
           <h1>
             <Link href="/" className="inline-flex items-center">
               <span className="sr-only">{siteName}</span>
-              <span className="w-[150px] h-[18px]">
-                <Image width={150} height={18} layout="responsive" priority alt="" src="/img/assets/logo.png" />
+              <span className="global-header-branding-logo">
+                <span className="w-[150px] h-[18px]">
+                  <Image width={150} height={18} layout="responsive" priority alt="" src={`/img/assets/${logoFile}`} />
+                </span>
               </span>
               <span className="text-[1.45rem] ml-2">FE DOCS</span>
             </Link>
           </h1>
         </div>
 
-        <div className={clsx(isError ? "hidden" : "block")}>
+        {!isMobile && <AcNavigationMenu items={menuList} unfoldType="sync" />}
+        {isMobile && <AlignJustify width={20} height={20} />}
+
+        {/* <div className={clsx(isError ? "hidden" : "block")}>
           <div className="flex lg:hidden">
             <button
               type="button"
@@ -66,10 +77,10 @@ const Header = ({ siteName }: headerProps) => {
               <MenuItem key={item.id} {...item} />
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
 
-      <Dialog as="div" className="lg:hidden" open={mobileMenuState} onClose={setMobileMenuState}>
+      {/* <Dialog as="div" className="lg:hidden" open={mobileMenuState} onClose={setMobileMenuState}>
         <div className="fixed inset-0 z-10 " />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-20 w-full overflow-y-auto bg-[#052010] px-6 py-5 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 ">
           <div className="flex items-center justify-between">
@@ -89,7 +100,7 @@ const Header = ({ siteName }: headerProps) => {
             ))}
           </div>
         </Dialog.Panel>
-      </Dialog>
+      </Dialog> */}
     </header>
   );
 };

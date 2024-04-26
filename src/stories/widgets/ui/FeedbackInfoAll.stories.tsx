@@ -107,6 +107,25 @@ export const 피드백_및_정보: StoryObj<typeof StoryGrid> = {
     };
     ToastComp.displayName = "Toast";
 
+    const DefaultDialog = () => {
+      return (
+        <Dialog key="dialog">
+          <DialogTrigger asChild>
+            <Button variant="outline">Dialog</Button>
+          </DialogTrigger>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>Are you absolutely sure?</DialogTitle>
+              <DialogDescription>
+                This action cannot be undone. This will permanently delete your account and remove your data from our
+                servers.
+              </DialogDescription>
+            </DialogHeader>
+          </DialogContent>
+        </Dialog>
+      );
+    };
+    DefaultDialog.displayName = "Dialog";
     Sheet.displayName = "Sheet";
     TooltipProvider.displayName = "Tooltip";
     return (
@@ -139,20 +158,7 @@ export const 피드백_및_정보: StoryObj<typeof StoryGrid> = {
               </AlertDialogContent>
             </AlertDialog>,
             //
-            <Dialog key="dialog">
-              <DialogTrigger asChild>
-                <Button variant="outline">Dialog</Button>
-              </DialogTrigger>
-              <DialogContent>
-                <DialogHeader>
-                  <DialogTitle>Are you absolutely sure?</DialogTitle>
-                  <DialogDescription>
-                    This action cannot be undone. This will permanently delete your account and remove your data from
-                    our servers.
-                  </DialogDescription>
-                </DialogHeader>
-              </DialogContent>
-            </Dialog>,
+            <DefaultDialog key="dialog" />,
             //
             <Drawer key="drawer">
               <DrawerTrigger asChild>

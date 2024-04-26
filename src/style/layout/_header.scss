@@ -2,6 +2,28 @@
 
 .global-header {
   padding: 0 $sidePadding;
+  $logoSimbolSize: 2rem;
+  @include media(sm) {
+    .global-header-branding-logo {
+      background-color: black;
+      width: $logoSimbolSize;
+      height: $logoSimbolSize;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      > span {
+        display: inline-block;
+        width: 17px;
+        overflow: hidden;
+        img {
+          width: 150px !important;
+          height: 18px !important;
+          max-width: none;
+        }
+      }
+    }
+  }
 }
 
 .global-header-home {
