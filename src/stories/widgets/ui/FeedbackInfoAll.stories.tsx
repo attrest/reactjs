@@ -35,11 +35,17 @@ import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/widgets/ui/hove
 import { Popover, PopoverContent, PopoverTrigger } from "@/widgets/ui/popover";
 import { Progress } from "@/widgets/ui/progress";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/widgets/ui/sheet";
-import { Toaster } from "@/widgets/ui/sonner";
-import { toast } from "sonner";
+import { Toaster as SonnerToaster } from "@/widgets/ui/sonner";
+import { toast as sonnerToast } from "sonner";
+
+import { Toaster } from "@/widgets/ui/toaster";
 import { useToast } from "@/widgets/ui/use-toast";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/widgets/ui/tooltip";
 import { Button } from "@/widgets/ui/button";
+
+// import { Toaster } from "@/widgets/ui/toaster";
+// import { useToast } from "@/widgets/ui/use-toast";
+// import { Button } from "@/widgets/ui/button";
 
 const meta: Meta<typeof StoryGrid> = {
   title: "Widgets/UI/5. 피드백 및 정보",
@@ -71,10 +77,10 @@ export const All: StoryObj<typeof StoryGrid> = {
     const SonnerComp = () => {
       return (
         <>
-          <Button variant="outline" onClick={() => toast("Event has been created.")}>
+          <Button key="sonner" variant="outline" onClick={() => sonnerToast("Event has been created.")}>
             Sonner
           </Button>
-          <Toaster />
+          <SonnerToaster />
         </>
       );
     };
@@ -93,124 +99,127 @@ export const All: StoryObj<typeof StoryGrid> = {
               })
             }
           >
-            Toast
+            Show Toast
           </Button>
           <Toaster />
         </>
       );
     };
     ToastComp.displayName = "Toast";
+
     Sheet.displayName = "Sheet";
     TooltipProvider.displayName = "Tooltip";
     return (
-      <StoryGrid
-        {...args}
-        items={[
-          <Alert key="alert">
-            <TerminalIcon className="h-4 w-4" />
-            <AlertTitle>Heads up!</AlertTitle>
-            <AlertDescription>You can add components and dependencies to your app using the cli.</AlertDescription>
-          </Alert>,
-          //
-          <AlertDialog key="alertDialog">
-            <AlertDialogTrigger asChild={true}>
-              <button className="border px-4 py-2 rounded-lg">Alert Dialog</button>
-            </AlertDialogTrigger>
-            <AlertDialogContent>
-              <AlertDialogHeader>
-                <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
-                <AlertDialogDescription>
-                  This action cannot be undone. This will permanently delete your account and remove your data from our
-                  servers.
-                </AlertDialogDescription>
-              </AlertDialogHeader>
-              <AlertDialogFooter>
-                <AlertDialogCancel>Cancel</AlertDialogCancel>
-                <AlertDialogAction>Continue</AlertDialogAction>
-              </AlertDialogFooter>
-            </AlertDialogContent>
-          </AlertDialog>,
-          //
-          <Dialog key="dialog">
-            <DialogTrigger asChild>
-              <Button variant="outline">Dialog</Button>
-            </DialogTrigger>
-            <DialogContent>
-              <DialogHeader>
-                <DialogTitle>Are you absolutely sure?</DialogTitle>
-                <DialogDescription>
-                  This action cannot be undone. This will permanently delete your account and remove your data from our
-                  servers.
-                </DialogDescription>
-              </DialogHeader>
-            </DialogContent>
-          </Dialog>,
-          //
-          <Drawer key="drawer">
-            <DrawerTrigger asChild>
-              <Button variant="outline">Drawer</Button>
-            </DrawerTrigger>
-            <DrawerContent>
-              <DrawerHeader>
-                <DrawerTitle>Are you absolutely sure?</DrawerTitle>
-                <DrawerDescription>This action cannot be undone.</DrawerDescription>
-              </DrawerHeader>
-              <DrawerFooter>
-                <Button>Submit</Button>
-                <DrawerClose>
-                  <Button variant="outline">Cancel</Button>
-                </DrawerClose>
-              </DrawerFooter>
-            </DrawerContent>
-          </Drawer>,
-          //
-          <HoverCard key="hoverCard">
-            <HoverCardTrigger asChild>
-              <Button variant="outline">Hover Card</Button>
-            </HoverCardTrigger>
-            <HoverCardContent>The React Framework – created and maintained by @vercel.</HoverCardContent>
-          </HoverCard>,
-          //
-          <Popover key="popover">
-            <PopoverTrigger asChild>
-              <Button variant="outline">Popover</Button>
-            </PopoverTrigger>
-            <PopoverContent>Place content for the popover here.</PopoverContent>
-          </Popover>,
-          //
-          <Progress key="progress" value={60} className="w-[10rem]" />,
-          //
-          <Sheet key="sheet">
-            <SheetTrigger asChild>
-              <Button variant="outline">Sheet</Button>
-            </SheetTrigger>
-            <SheetContent>
-              <SheetHeader>
-                <SheetTitle>Are you absolutely sure?</SheetTitle>
-                <SheetDescription>
-                  This action cannot be undone. This will permanently delete your account and remove your data from our
-                  servers.
-                </SheetDescription>
-              </SheetHeader>
-            </SheetContent>
-          </Sheet>,
-          //
-          <SonnerComp key="sonner" />,
-          //
-          <ToastComp key="toast" />,
-          //
-          <TooltipProvider key="Tooltip">
-            <Tooltip {...args}>
-              <TooltipTrigger asChild>
-                <Button variant="outline">Tooltip Hover</Button>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>Add to library</p>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>,
-        ]}
-      />
+      <>
+        <StoryGrid
+          {...args}
+          items={[
+            <Alert key="alert">
+              <TerminalIcon className="h-4 w-4" />
+              <AlertTitle>Heads up!</AlertTitle>
+              <AlertDescription>You can add components and dependencies to your app using the cli.</AlertDescription>
+            </Alert>,
+            //
+            <AlertDialog key="alertDialog">
+              <AlertDialogTrigger asChild={true}>
+                <button className="border px-4 py-2 rounded-lg">Alert Dialog</button>
+              </AlertDialogTrigger>
+              <AlertDialogContent>
+                <AlertDialogHeader>
+                  <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+                  <AlertDialogDescription>
+                    This action cannot be undone. This will permanently delete your account and remove your data from
+                    our servers.
+                  </AlertDialogDescription>
+                </AlertDialogHeader>
+                <AlertDialogFooter>
+                  <AlertDialogCancel>Cancel</AlertDialogCancel>
+                  <AlertDialogAction>Continue</AlertDialogAction>
+                </AlertDialogFooter>
+              </AlertDialogContent>
+            </AlertDialog>,
+            //
+            <Dialog key="dialog">
+              <DialogTrigger asChild>
+                <Button variant="outline">Dialog</Button>
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Are you absolutely sure?</DialogTitle>
+                  <DialogDescription>
+                    This action cannot be undone. This will permanently delete your account and remove your data from
+                    our servers.
+                  </DialogDescription>
+                </DialogHeader>
+              </DialogContent>
+            </Dialog>,
+            //
+            <Drawer key="drawer">
+              <DrawerTrigger asChild>
+                <Button variant="outline">Drawer</Button>
+              </DrawerTrigger>
+              <DrawerContent>
+                <DrawerHeader>
+                  <DrawerTitle>Are you absolutely sure?</DrawerTitle>
+                  <DrawerDescription>This action cannot be undone.</DrawerDescription>
+                </DrawerHeader>
+                <DrawerFooter>
+                  <Button>Submit</Button>
+                  <DrawerClose>
+                    <Button variant="outline">Cancel</Button>
+                  </DrawerClose>
+                </DrawerFooter>
+              </DrawerContent>
+            </Drawer>,
+            //
+            <HoverCard key="hoverCard">
+              <HoverCardTrigger asChild>
+                <Button variant="outline">Hover Card</Button>
+              </HoverCardTrigger>
+              <HoverCardContent>The React Framework – created and maintained by @vercel.</HoverCardContent>
+            </HoverCard>,
+            //
+            <Popover key="popover">
+              <PopoverTrigger asChild>
+                <Button variant="outline">Popover</Button>
+              </PopoverTrigger>
+              <PopoverContent>Place content for the popover here.</PopoverContent>
+            </Popover>,
+            //
+            <Progress key="progress" value={60} className="w-[10rem]" />,
+            //
+            <Sheet key="sheet">
+              <SheetTrigger asChild>
+                <Button variant="outline">Sheet</Button>
+              </SheetTrigger>
+              <SheetContent>
+                <SheetHeader>
+                  <SheetTitle>Are you absolutely sure?</SheetTitle>
+                  <SheetDescription>
+                    This action cannot be undone. This will permanently delete your account and remove your data from
+                    our servers.
+                  </SheetDescription>
+                </SheetHeader>
+              </SheetContent>
+            </Sheet>,
+            //
+            <SonnerComp key="sonner" />,
+            //
+            <ToastComp key="toast" />,
+            //
+            <TooltipProvider key="Tooltip">
+              <Tooltip {...args}>
+                <TooltipTrigger asChild>
+                  <Button variant="outline">Tooltip Hover</Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Add to library</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>,
+          ]}
+        />
+      </>
     );
   },
 };
