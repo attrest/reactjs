@@ -11,9 +11,9 @@ import { Toggle } from "@/widgets/ui/toggle";
 import { ToggleGroup, ToggleGroupItem } from "@/widgets/ui/toggle-group";
 
 const meta: Meta<typeof StoryGrid> = {
-  title: "Widgets/UI/1. 기본 UI",
+  title: "Widgets/UI/0. Preview/기본 UI",
   component: StoryGrid,
-  tags: ["autodocs"],
+  // tags: ["autodocs"],
   parameters: {
     layout: "fullscreen", // Changed from "fullscreen" to "centered" for better button display
     docs: {
@@ -32,7 +32,7 @@ const meta: Meta<typeof StoryGrid> = {
 
 export default meta;
 
-export const All: StoryObj<typeof StoryGrid> = {
+export const 기본_UI: StoryObj<typeof StoryGrid> = {
   args: {
     cols: 3,
   },

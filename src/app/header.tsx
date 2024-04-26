@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon } from "@heroicons/react/20/solid";
 import { CrossIcon } from "lucide-react";
@@ -13,6 +15,7 @@ import { usePathname } from "next/navigation";
 import TwTag from "@/widgets/modules/helper/TwTag";
 import MenuItem from "../features/MenuItem";
 import { store } from "@/entities/store";
+import Image from "next/image";
 
 interface headerProps {
   siteName: string;
@@ -22,21 +25,31 @@ const Header = ({ siteName }: headerProps) => {
   const [mobileMenuState, setMobileMenuState] = useState(false);
   const pathname = usePathname();
 
-  const isMainPage = pathname === "/"; // main page check
-  const isErrorPage = pathname === "/not-found"; // error page check
+  const isHome = pathname === "/"; // main page check
+  const isError = pathname === "/not-found"; // error page check
   const menu = store.getState().global.mainMenu;
 
   return (
-    <header className={clsx("w-full h-[80px] xl:h-[100px] transition bg-black")}>
-      <div className="flex items-center justify-between mx-auto py-5 lg:py-8 px-6">
-        <div className="flex lg:flex-1">
-          <a href="/">
-            <TwTag tag="h1" type="header-h1">
-              {siteName}
-            </TwTag>
-          </a>
+    <header
+      className={clsx({
+        "global-header w-full h-[80px] transition-all duration-300 bg-white text-black": true,
+        "global-header-home fixed top-0 left-0 right-0 z-50": isHome,
+      })}
+    >
+      <div className="global-header-inner-wrap flex items-center justify-between h-full">
+        <div className="global-header-branding">
+          <h1>
+            <Link href="/" className="inline-flex items-center">
+              <span className="sr-only">{siteName}</span>
+              <span className="w-[150px] h-[18px]">
+                <Image width={150} height={18} layout="responsive" priority alt="" src="/img/assets/logo.png" />
+              </span>
+              <span className="text-[1.45rem] ml-2">FE DOCS</span>
+            </Link>
+          </h1>
         </div>
-        <div className={clsx(isErrorPage ? "hidden" : "block")}>
+
+        <div className={clsx(isError ? "hidden" : "block")}>
           <div className="flex lg:hidden">
             <button
               type="button"

@@ -48,9 +48,9 @@ import { Button } from "@/widgets/ui/button";
 // import { Button } from "@/widgets/ui/button";
 
 const meta: Meta<typeof StoryGrid> = {
-  title: "Widgets/UI/5. 피드백 및 정보",
+  title: "Widgets/UI/0. Preview/피드백 및 정보",
   component: StoryGrid,
-  tags: ["autodocs"],
+  // tags: ["autodocs"],
   parameters: {
     layout: "fullscreen",
     docs: {
@@ -69,7 +69,7 @@ const meta: Meta<typeof StoryGrid> = {
 
 export default meta;
 
-export const All: StoryObj<typeof StoryGrid> = {
+export const 피드백_및_정보: StoryObj<typeof StoryGrid> = {
   args: {
     cols: 3,
   },

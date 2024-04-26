@@ -41,9 +41,9 @@ const formSchema = z.object({
 });
 
 const meta: Meta<typeof StoryGrid> = {
-  title: "Widgets/UI/3. 데이터 입력 및 표시",
+  title: "Widgets/UI/0. Preview/데이터 입력 및 표시",
   component: StoryGrid,
-  tags: ["autodocs"],
+  // tags: ["autodocs"],
   parameters: {
     layout: "fullscreen",
     docs: {
@@ -62,7 +62,7 @@ const meta: Meta<typeof StoryGrid> = {
 
 export default meta;
 
-export const All: StoryObj<typeof StoryGrid> = {
+export const 데이터_입력_및_표시: StoryObj<typeof StoryGrid> = {
   args: {
     cols: 3,
   },

@@ -56,9 +56,9 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/widgets/ui/tabs";
 
 const meta: Meta<typeof StoryGrid> = {
-  title: "Widgets/UI/2. 네비게이션 및 메뉴",
+  title: "Widgets/UI/0. Preview/네비게이션 및 메뉴",
   component: StoryGrid,
-  tags: ["autodocs"],
+  // tags: ["autodocs"],
   parameters: {
     layout: "fullscreen",
     docs: {
@@ -77,7 +77,7 @@ const meta: Meta<typeof StoryGrid> = {
 
 export default meta;
 
-export const All: StoryObj<typeof StoryGrid> = {
+export const 네비게이션_및_메뉴: StoryObj<typeof StoryGrid> = {
   args: {
     cols: 3,
   },

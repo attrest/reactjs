@@ -16,9 +16,9 @@ import { ScrollArea } from "@/widgets/ui/scroll-area";
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "@/widgets/ui/table";
 
 const meta: Meta<typeof StoryGrid> = {
-  title: "Widgets/UI/4. 컨테이너 및 레이아웃",
+  title: "Widgets/UI/0. Preview/컨테이너 및 레이아웃",
   component: StoryGrid,
-  tags: ["autodocs"],
+  // tags: ["autodocs"],
   parameters: {
     layout: "fullscreen",
     docs: {
@@ -37,7 +37,7 @@ const meta: Meta<typeof StoryGrid> = {
 
 export default meta;
 
-export const All: StoryObj<typeof StoryGrid> = {
+export const 컨테이너_및_레이아웃: StoryObj<typeof StoryGrid> = {
   args: {
     cols: 3,
   },
@@ -168,7 +168,7 @@ export const All: StoryObj<typeof StoryGrid> = {
           //
           <DataTableComp key="dataTable" />,
           //
-          <ResizablePanelGroup key="resizable" direction="horizontal">
+          <ResizablePanelGroup key="resizable" direction="horizontal" className="border">
             <ResizablePanel defaultSize={50}>
               <div className="flex h-[200px] items-center justify-center p-6">
                 <span className="font-semibold">One</span>

@@ -66,18 +66,7 @@
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
   }
-}
-
-$red: var(--border);
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-}
+} // End :: @layer base
 
 :root {
   --swiper-pagination-bottom: 27px;
@@ -90,7 +79,14 @@ $red: var(--border);
 }
 
 // define
+@import "./define/vars"; // 공통 클래스 추가 정의
 @import "./define/common"; // 공통 클래스 추가 정의
+
+// modules
+@import "./modules//navigationMenu";
+
+// layout
+@import "./layout/header";
 
 // features
 @import "./features/content"; // 콘텐츠 스타일
