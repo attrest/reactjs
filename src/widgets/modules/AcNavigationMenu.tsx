@@ -30,16 +30,14 @@ export const AcNavigationMenu = ({ items, className, unfoldType = "wide", ...arg
   const navMenuRef = useRef<HTMLElement>(null);
 
   const handleMouseOver = (e: React.MouseEvent<HTMLButtonElement>, index: number) => {
+    const navMenu = navMenuRef.current;
+    const subMenu = navMenu?.querySelector(".absolute.left-0.top-full.flex.justify-center") as HTMLElement;
     if (unfoldType === "sync") {
       const currentTarget = e.currentTarget;
       // console.log("currentTarget => ", currentTarget.offsetLeft);
-
-      const navMenu = navMenuRef.current;
-      if (navMenu) {
-        const subMenu = navMenu.querySelector(".absolute.left-0.top-full.flex.justify-center") as HTMLElement;
-        subMenu.style.left = `${currentTarget.offsetLeft + 10}px`;
-        // console.log("subMenu => ", subMenu);
-      }
+      subMenu.style.left = `${currentTarget.offsetLeft}px`;
+    } else {
+      subMenu.style.left = "0px";
     }
   };
 
@@ -71,15 +69,9 @@ export const AcNavigationMenu = ({ items, className, unfoldType = "wide", ...arg
   };
 
   return (
-    <>
-      <NavigationMenu
-        ref={navMenuRef}
-        {...args}
-        className={cn("ac-navigation-menu", className && className, unfoldType)}
-      >
-        <NavigationMenuList>{renderItems(items)}</NavigationMenuList>
-      </NavigationMenu>
-    </>
+    <NavigationMenu ref={navMenuRef} {...args} className={cn("ac-navigation-menu", className && className, unfoldType)}>
+      <NavigationMenuList>{renderItems(items)}</NavigationMenuList>
+    </NavigationMenu>
   );
 };
 AcNavigationMenu.displayName = "AcNavigationMenu";

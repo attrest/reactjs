@@ -1,39 +1,50 @@
 "use client";
 
 import Link from "next/link";
-
-import { Dialog } from "@headlessui/react";
-import { Bars3Icon } from "@heroicons/react/20/solid";
-import { CrossIcon } from "lucide-react";
 import clsx from "clsx";
-// import Link from "next/link";
-import { useRouter, useSelectedLayoutSegments } from "next/navigation";
-import { useState } from "react";
 import { usePathname } from "next/navigation";
-// import LogoSvg from "@/widgets/ui/logo";
-
-import TwTag from "@/widgets/modules/helper/TwTag";
-import MenuItem from "../features/MenuItem";
 import { store } from "@/entities/store";
 import Image from "next/image";
 import { AcNavigationMenu } from "@/widgets/modules/AcNavigationMenu";
 import { useMobileCheck } from "@/entities/useHooks";
-import { AlignJustify } from "lucide-react";
+import { AlignJustifyIcon } from "lucide-react";
+import { AcAccordion, AcAccordionItemProps } from "@/widgets/modules/AcAccordion";
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/widgets/ui/sheet";
 
 interface headerProps {
   siteName: string;
 }
 
 const Header = ({ siteName }: headerProps) => {
-  const [mobileMenuState, setMobileMenuState] = useState(false);
   const pathname = usePathname();
 
   const isHome = pathname === "/"; // main page check
-  const isError = pathname === "/not-found"; // error page check
-  const menu = store.getState().global.mainMenu;
   const menuList = store.getState().global.menu;
   const isMobile = useMobileCheck();
   const logoFile = !isMobile ? "logo.png" : "logo_w.png";
+
+  console.log("menuList => ", menuList);
+  const MoMenuList: AcAccordionItemProps[] = [];
+
+  menuList.forEach((elem) => {
+    const linkStyle = "flex py-1 hover:underline hover:decoration-1";
+    const accordionMenu: AcAccordionItemProps = {
+      id: elem.href.replace("/", ""),
+      title: elem.title,
+      content: elem.items ? (
+        elem.items.map((item) => (
+          <a href={item.href} key={item.href.replace("/", "")} className={linkStyle}>
+            {item.title}
+          </a>
+        ))
+      ) : (
+        <a href={elem.href} target="_blank" className={linkStyle}>
+          {elem.title} 바로가기
+        </a>
+      ),
+    };
+    MoMenuList.push(accordionMenu);
+  });
 
   return (
     <header
@@ -58,49 +69,20 @@ const Header = ({ siteName }: headerProps) => {
         </div>
 
         {!isMobile && <AcNavigationMenu items={menuList} unfoldType="sync" />}
-        {isMobile && <AlignJustify width={20} height={20} />}
-
-        {/* <div className={clsx(isError ? "hidden" : "block")}>
-          <div className="flex lg:hidden">
-            <button
-              type="button"
-              className={clsx("text-white inline-flex items-center justify-center -mr-1.5")}
-              onClick={() => setMobileMenuState(true)}
-            >
-              <span className="sr-only">Open menu</span>
-              <Bars3Icon className="h-6 w-6" aria-hidden="true" />
-            </button>
-          </div>
-
-          <div className={clsx("text-white hidden lg:flex lg:gap-x-[50px] pr-5")}>
-            {menu.map((item) => (
-              <MenuItem key={item.id} {...item} />
-            ))}
-          </div>
-        </div> */}
+        {isMobile && (
+          <Sheet>
+            <SheetTrigger asChild>
+              <AlignJustifyIcon width={20} height={20} className="cursor-pointer" />
+            </SheetTrigger>
+            <SheetContent>
+              <SheetHeader>
+                <SheetTitle className="text-left">Frontend Docs</SheetTitle>
+              </SheetHeader>
+              <AcAccordion type="single" collapsible={true} items={MoMenuList} />
+            </SheetContent>
+          </Sheet>
+        )}
       </div>
-
-      {/* <Dialog as="div" className="lg:hidden" open={mobileMenuState} onClose={setMobileMenuState}>
-        <div className="fixed inset-0 z-10 " />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-20 w-full overflow-y-auto bg-[#052010] px-6 py-5 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 ">
-          <div className="flex items-center justify-between">
-            <a href="/" className="outline-none outline-0">
-              <TwTag tag="h1" type="header-h1">
-                {siteName}
-              </TwTag>
-            </a>
-            <button type="button" className="-mr-1.5 text-white" onClick={() => setMobileMenuState(false)}>
-              <span className="sr-only">Close menu</span>
-              <CrossIcon className="w-6 h-6" aria-hidden="true" />
-            </button>
-          </div>
-          <div className="flow-root pt-10">
-            {menu.map((item) => (
-              <MenuItem key={item.id} {...item} type="mo" />
-            ))}
-          </div>
-        </Dialog.Panel>
-      </Dialog> */}
     </header>
   );
 };

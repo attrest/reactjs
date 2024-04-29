@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { AcNavigationMenu } from "@/widgets/modules/AcNavigationMenu";
 
 const meta: Meta<typeof AcNavigationMenu> = {
-  title: "Widgets/modules/AcNavigationMenuBar",
+  title: "Widgets/Modules/AcNavigationMenuBar",
   component: AcNavigationMenu,
   tags: ["autodocs"],
   parameters: {
