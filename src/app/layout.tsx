@@ -13,11 +13,11 @@ export const metadata: Metadata = {
   title: siteName,
 };
 
-const nanumMyeongjo = Nanum_Myeongjo({
-  subsets: ["latin"],
-  weight: ["400", "700", "800"],
-  variable: "--font-nanumMyeongjo",
-});
+// const nanumMyeongjo = Nanum_Myeongjo({
+//   subsets: ["latin"],
+//   weight: ["400", "700", "800"],
+//   variable: "--font-nanumMyeongjo",
+// });
 
 const pretendard = localFont({
   src: [

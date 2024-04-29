@@ -12,106 +12,132 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/entities/store";
 import MenuItem from "../features/MenuItem";
 import { useMobileCheck } from "@/entities/useHooks";
+import { AcCarousel } from "@/widgets/modules/AcCarousel";
+import { AcList, AcListHeader, AcListItem } from "@/widgets/modules/AcList";
+import { Badge } from "@/widgets/ui/badge";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/widgets/ui/card";
+import { ChevronRightIcon } from "lucide-react";
 
 export default function Main() {
-  const [mainSlide, setMainSlide] = useState<SwiperClass>();
-  const menu = useSelector((state: RootState) => state.global.mainMenu);
+  const menu = useSelector((state: RootState) => state.global.menu);
   const isMobile = useMobileCheck();
-
-  // const onSwiper = (swiper: SwiperClass) => {
-  //   setMainSlide(swiper);
-  // };
-
-  // const onChangePage = (origin: Item, destination: Item, direction: string) => {
-  //   if (mainSlide) {
-  //     if ((origin.index == 0 && direction == "down") || (destination.index !== 0 && direction == "down")) {
-  //       setTimeout(function () {
-  //         mainSlide.autoplay.stop();
-  //         mainSlide.slideToLoop(0);
-  //       }, 200);
-  //     }
-  //     if ((origin.index == 1 && direction == "up") || (destination.index == 0 && direction == "up")) {
-  //       mainSlide.slideToLoop(0);
-  //       mainSlide.autoplay.start();
-  //     }
-  //   }
-
-  //   if (origin.index == 4 && direction == "down") {
-  //     document.body.classList.add("group");
-  //     document.body.classList.add("footer-on");
-  //   }
-
-  //   if (origin.index == 5 && direction == "up") {
-  //     document.body.classList.remove("group");
-  //     document.body.classList.remove("footer-on");
-  //   }
-  // };
+  const carouselItemStyle = "flex items-center justify-center border w-full h-full";
+  const loadMapList = [
+    { title: "디자인 시스템", href: "https://roadmap.sh/design-system" },
+    { title: "자바스크립트", href: "https://roadmap.sh/javascript" },
+    { title: "타입스크립트", href: "https://roadmap.sh/typescript" },
+    { title: "프론트엔드 개발자", href: "https://roadmap.sh/frontend" },
+    { title: "백엔드 개발자", href: "https://roadmap.sh/backend" },
+    { title: "Node.js 개발자", href: "https://roadmap.sh/nodejs" },
+    { title: "개발운영", href: "https://roadmap.sh/devops" },
+    { title: "풀스택 개발자", href: "https://roadmap.sh/full-stack" },
+    { title: "UX 디자인", href: "https://roadmap.sh/ux-design" },
+    { title: "리액트 개발자", href: "https://roadmap.sh/react" },
+    { title: "리액트 네이티브 개발자", href: "https://roadmap.sh/react-native" },
+    { title: "뷰 개발자", href: "https://roadmap.sh/vue" },
+    { title: "플루터 개발자", href: "https://roadmap.sh/flutter" },
+  ];
 
   return (
-    <div id="mainFullPage" className="">
-      <div className={cn("w-screen h-screen", isMobile ? "h-screen-80" : "h-screen-100")}>
-        <div className="flex items-center justify-center h-full w-full">
-          <div className="flex flex-wrap max-w-[25rem] justify-center">
-            {menu.map((item) => (
-              <MenuItem key={item.id} className="p-10 w-[48%] text-center m-1 bg-black" {...item} />
-            ))}
+    <div id="mainHome">
+      <div className="main-home-inner-wrap pt-[80px]">
+        <div className="main-section visual-slider">
+          <AcCarousel
+            items={[
+              <div className={carouselItemStyle} key={1}>
+                1
+              </div>,
+              <div className={carouselItemStyle} key={2}>
+                2
+              </div>,
+            ]}
+            isPagination={true}
+            opts={{ loop: true }}
+          />
+        </div>
+        <div className="flex flex-col px-[1.5rem] w-full xl:flex-row xl:justify-between xl:px-[2rem]">
+          <div className="main-content flex-1">
+            <div className="main-content-section mt-10">
+              <AcList>
+                {menu.map((item, idx) => {
+                  const AcListContent = [];
+                  if (item.title !== "스토리북") {
+                    AcListContent.push(
+                      <AcListHeader title={item.title} description={item.description} href={item.href} key={idx} />
+                    );
+                    if (item.items) {
+                      const AcListItems = item.items.map((listItem, idx2) => (
+                        <AcListItem
+                          title={listItem.title}
+                          description={listItem.description}
+                          href={listItem.href}
+                          src="/img/ratio_sample.jpg"
+                          key={idx2}
+                        />
+                      ));
+                      AcListContent.push(AcListItems);
+                    }
+                    return AcListContent;
+                  }
+                })}
+              </AcList>
+            </div>
+          </div>
+          <div className="main-sidebar ml-10 xl:w-[25rem]">
+            <div className="main-sidebar-section">
+              <h3 className="mt-10 text-left text-lg font-bold mb-4">프론트엔드 주요 기술 스택</h3>
+              <div>
+                {"FSD/Atomic Design Pattern/html5/css3/scss/tailwind/javascript/typescript/nodejs/React/Vue/next.js/nuxt.js/ssg/ssr/csr/isr/react-query/redux/zustand/radix ui/shadcn ui/storybook/gsap/framer-motion/react-transition-group/prettier/eslint"
+                  .split("/")
+                  .map((item, idx) => (
+                    <Badge variant="default" className="mr-1 mb-1 text-sm" key={idx}>
+                      {item}
+                    </Badge>
+                  ))}
+              </div>
+            </div>
+
+            <div className="main-sidebar-section">
+              <h3 className="mt-10 text-left text-lg font-bold mb-4">주요 기술 로드맵</h3>
+              <div>
+                <AcCarousel
+                  isNavigation={true}
+                  items={loadMapList.map((item, idx) => (
+                    <Card key={idx}>
+                      <CardHeader>
+                        <CardTitle className="text-lg">
+                          <a href={item.href} target="_blank" className="flex justify-between items-center">
+                            {item.title}
+                            <ChevronRightIcon className="relative w-4 h-4 -right-2" />
+                          </a>
+                        </CardTitle>
+                      </CardHeader>
+                    </Card>
+                  ))}
+                />
+              </div>
+            </div>
+
+            <div className="main-sidebar-section">
+              <h3 className="mt-10 text-left text-lg font-bold mb-4">유용한 사이트</h3>
+              <ul>
+                <li>
+                  ㆍ{" "}
+                  <a href="https://picsum.photos/" target="_blank">
+                    더미 이미지 사이트
+                  </a>
+                </li>
+                <li>
+                  ㆍ{" "}
+                  <a href="https://readme.so/editor" target="_blank">
+                    마크다운 편집 에디터
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-
-        <h3 className="mt-10 text-left">로드맵</h3>
-        <ul>
-          <li>디자인 시스템: https://roadmap.sh/design-system</li>
-          <li>자바스크립트: https://roadmap.sh/javascript</li>
-          <li>타입스크립트: https://roadmap.sh/typescript</li>
-          <li>프론트엔드 개발자: https://roadmap.sh/frontend</li>
-          <li>백엔드 개발자: https://roadmap.sh/backend</li>
-          <li>Node.js 개발자: https://roadmap.sh/nodejs</li>
-          <li>개발운영: https://roadmap.sh/devops</li>
-          <li>풀스택 개발자: https://roadmap.sh/full-stack</li>
-          <li>UX 디자인: https://roadmap.sh/ux-design</li>
-          <li>리액트 개발자: https://roadmap.sh/react</li>
-          <li>리액트 네이티브 개발자: https://roadmap.sh/react-native</li>
-          <li>뷰 개발자: https://roadmap.sh/vue</li>
-          <li>플루터 개발자: https://roadmap.sh/flutter</li>
-        </ul>
-
-        <h3 className="mt-10 text-left">ADC에서 전천후 프론트엔드 개발자가 되기 위한 기술 스택</h3>
-        <ul>
-          <li>0. FSD/Atomic Design Pattern</li>
-          <li>1. html5/css3</li>
-          <li>2. scss/tailwind</li>
-          <li>3. javascript/typescript/nodejs</li>
-          <li>3. React/Vue</li>
-          <li>4. next.js/nuxt.js</li>
-          <li>5. ssg/ssr/csr/isr</li>
-          <li>6. react-query/redux/zustand</li>
-          <li>7. radix ui/shadcn ui</li>
-          <li>8. storybook</li>
-          <li>9. gsap/framer-motion/react-transition-group</li>
-          <li>10. prettier/eslint</li>
-        </ul>
-
-        <h3 className="mt-10 text-left">유용한 사이트</h3>
-        <ul>
-          <li>더미 이미지 사이트: https://picsum.photos/</li>
-          <li>마크다운 편집 에디터: https://readme.so/editor</li>
-        </ul>
-
-        {/* <div className="section group overflow-hidden fp-auto-height">
-          <Footer className="transition duration-1000 group-[.active]:duration-0 group-[.active]:translate-y-0" />
-        </div> */}
       </div>
     </div>
   );
 }
-
-const BgDiv = ({ url }: { url: string }) => {
-  return (
-    <div
-      className={clsx(
-        "bg w-full h-full top-0 absolute left-0 bottom-0 right-0 m-auto flex justify-center items-center bg-cover bg-center duration-1000 group-[.active]:duration-0",
-        url
-      )}
-    />
-  );
-};

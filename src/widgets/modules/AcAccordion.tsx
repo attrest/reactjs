@@ -30,13 +30,13 @@ export const AcAccordion = ({ items, className, ...args }: AcAccordionProps) => 
           key={item.id}
           value={item.id}
           {...(item.isOpen && { "data-state": "open" })}
-          className="border-b"
+          className="ac-accordion-item border-b"
         >
-          <AccordionTrigger className="flex flex-1 items-center justify-between w-full py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180">
+          <AccordionTrigger className="ac-accordion-trigger flex flex-1 items-center justify-between w-full py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180">
             {item.title}
             <ChevronDownIcon width={15} height={15} />
           </AccordionTrigger>
-          <AccordionContent className="overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
+          <AccordionContent className="ac-accordion-content overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
             <div className="pb-4 pt-0">{item.content}</div>
           </AccordionContent>
         </AccordionItem>
@@ -45,7 +45,7 @@ export const AcAccordion = ({ items, className, ...args }: AcAccordionProps) => 
   };
 
   return (
-    <Accordion {...(className && { className: className })} {...args}>
+    <Accordion className={cn("ac-accordion", className && className)} {...args}>
       {renderItems(items)}
     </Accordion>
   );

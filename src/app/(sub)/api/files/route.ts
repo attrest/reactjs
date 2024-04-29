@@ -39,12 +39,12 @@ export async function GET(request: NextRequest) {
       const baseFileName = request.nextUrl.searchParams.get("fileName") || "StoryComponent"; // 요청으로부터 파일명 가져오기
 
       const storyCreatePath = path.join(process.cwd(), ...defaultPaths, folderName);
-      const fileContent = (_fileName: string) => `
+      const fileContent = (_folderName: string, _fileName: string) => `
 import type { Meta, StoryObj } from "@storybook/react";
 const BlankComponent = ({...props}) => <></>;
 
 const meta: Meta<typeof BlankComponent> = {
-  title: "NewStories/${_fileName}",
+  title: "${_folderName}/${_fileName}",
   component: BlankComponent,
   tags: ["autodocs"],
   parameters: {
@@ -60,7 +60,7 @@ const meta: Meta<typeof BlankComponent> = {
 
 export default meta;
 
-export const All: StoryObj<typeof BlankComponent> = {
+export const Default: StoryObj<typeof BlankComponent> = {
   args: {},
   render: (args) => {
     return (
@@ -94,7 +94,7 @@ export const All: StoryObj<typeof BlankComponent> = {
           filePath = path.join(storyCreatePath, newFileName);
         } catch (err: unknown) {
           if (err instanceof Error && (err as NodeJS.ErrnoException).code === "ENOENT") {
-            await writeFile(filePath, fileContent(newFileName ? newFileName : baseFileName), "utf8");
+            await writeFile(filePath, fileContent(folderName, newFileName ? newFileName : baseFileName), "utf8");
             break;
           } else {
             throw err;

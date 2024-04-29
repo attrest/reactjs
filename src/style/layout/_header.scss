@@ -1,7 +1,6 @@
 @charset "UTF-8";
 
 .global-header {
-  padding: 0 $sidePadding;
   $logoSimbolSize: 2rem;
   @include media(sm) {
     .global-header-branding-logo {

@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import clsx from "clsx";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { store } from "@/entities/store";
-import Image from "next/image";
 import { AcNavigationMenu } from "@/widgets/modules/AcNavigationMenu";
 import { useMobileCheck } from "@/entities/useHooks";
 import { AlignJustifyIcon } from "lucide-react";
@@ -23,17 +23,15 @@ const Header = ({ siteName }: headerProps) => {
   const isMobile = useMobileCheck();
   const logoFile = !isMobile ? "logo.png" : "logo_w.png";
 
-  console.log("menuList => ", menuList);
   const MoMenuList: AcAccordionItemProps[] = [];
-
-  menuList.forEach((elem) => {
+  menuList.forEach((elem, idx) => {
     const linkStyle = "flex py-1 hover:underline hover:decoration-1";
     const accordionMenu: AcAccordionItemProps = {
-      id: elem.href.replace("/", ""),
+      id: idx.toString(),
       title: elem.title,
       content: elem.items ? (
-        elem.items.map((item) => (
-          <a href={item.href} key={item.href.replace("/", "")} className={linkStyle}>
+        elem.items.map((item, idx2) => (
+          <a href={item.href} key={idx2} className={linkStyle}>
             {item.title}
           </a>
         ))
@@ -49,7 +47,7 @@ const Header = ({ siteName }: headerProps) => {
   return (
     <header
       className={clsx({
-        "global-header w-full h-[80px] transition-all duration-300 bg-white text-black": true,
+        "global-header w-full h-[80px] transition-all duration-300 bg-white text-black px-[1.2rem] xl:px-[2rem]": true,
         "global-header-home fixed top-0 left-0 right-0 z-50": isHome,
       })}
     >
