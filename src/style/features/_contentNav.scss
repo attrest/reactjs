@@ -3,10 +3,11 @@
 // 페이지 콘텐츠 네이게이션 스타일
 .content-nav {
   $borderColor: #c5c5c5;
-  .ml-5 + .ml-10::before {
+  .h4 + .h5::before {
     top: 0;
   }
-  .ml-10 {
+  $h5Left: -12px;
+  .h5 {
     position: relative;
     &::before,
     &::after {
@@ -15,14 +16,14 @@
     }
     &::before {
       top: -23px;
-      left: -20px;
-      bottom: 13px;
+      left: $h5Left;
+      bottom: 10px;
       border-left: 1px dotted $borderColor;
     }
     &::after {
       top: 11px;
-      left: -20px;
-      width: 10px;
+      left: $h5Left;
+      width: 8px;
       border-bottom: 1px solid $borderColor;
     }
   }

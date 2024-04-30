@@ -1,12 +1,14 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import { Progress } from "@/widgets/ui/progress";
 
 interface ProgressBarProps {
   containerRef: React.RefObject<HTMLDivElement>;
+  className?: string;
 }
 
-const ProgressBar = ({ containerRef }: ProgressBarProps) => {
+const ProgressBar = ({ containerRef, className }: ProgressBarProps) => {
   const [scrollProgress, setScrollProgress] = useState(0);
   // const containerRef = useRef(null);  // 컨테이너 참조 생성
 
@@ -32,13 +34,7 @@ const ProgressBar = ({ containerRef }: ProgressBarProps) => {
     }
   }, []);
 
-  return (
-    <div className="absolute top-1 bottom-3 right-0 z-10 xl:top-6 xl:bottom-6">
-      <div className="bg-gray7 m-1 rounded-lg overflow-hidden h-full">
-        <div className="w-[1px] progress-bar bg-black" style={{ height: `${scrollProgress}%` }}></div>
-      </div>
-    </div>
-  );
+  return <Progress value={scrollProgress} {...(className && { className: className })} />;
 };
 
 export default ProgressBar;

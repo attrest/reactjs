@@ -59,7 +59,7 @@ const AcListItem = ({ title, href, description, src, className, thumbClassName, 
     <div className={cn("ac-list-item flex justify-between w-full border-b py-4", className && className)}>
       <div className="ac-list-item-header">
         <a href={href}>
-          <h3 className="ac-list-item-title text-xl">{title}</h3>
+          <h3 className="ac-list-item-title text-xl font-semibold">{title}</h3>
           {description && <p className="ac-list-item-description mt-1">{description}</p>}
         </a>
       </div>

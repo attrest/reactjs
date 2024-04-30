@@ -6,11 +6,7 @@ import TwTag from "@/widgets/modules/helper/TwTag";
 import { contentHtml } from "@/features/convention/htmlGuide/contentHtml";
 
 const HtmlGuide = () => {
-  return (
-    <TwTag className="lg:mb-[223px]">
-      <TextToHtml html={contentHtml} />
-    </TwTag>
-  );
+  return <TextToHtml html={contentHtml} />;
 };
 
 export default HtmlGuide;

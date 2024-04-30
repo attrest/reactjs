@@ -36,11 +36,17 @@ interface MenuType {
   items?: MenuType[];
 }
 
+interface RelatedLinksType {
+  title: string;
+  href: string;
+}
+
 interface InitialStateType {
   name: string;
   isMobile: boolean;
   menu: MenuType[];
-  mainMenu: MenuItemType[];
+  relatedLinks: RelatedLinksType[];
+  // mainMenu: MenuItemType[];
   subInfo: SubInfoItemType[];
   subMenu: SubMenuType;
 }
@@ -108,7 +114,7 @@ const initialState: InitialStateType = {
     },
     {
       title: "프레임워크 & 모션",
-      href: "tailwind",
+      href: "/tailwind",
       items: [
         {
           title: "테일윈드 CSS",
@@ -134,7 +140,7 @@ const initialState: InitialStateType = {
     },
     {
       title: "상태 관리",
-      href: "state",
+      href: "/state",
       items: [
         {
           title: "Redux 가이드",
@@ -155,7 +161,7 @@ const initialState: InitialStateType = {
     },
     {
       title: "개발 툴",
-      href: "tools",
+      href: "/tools",
       items: [
         {
           title: "Tailwind Converter",
@@ -185,14 +191,44 @@ const initialState: InitialStateType = {
       target: "_blank",
     },
   ],
-  mainMenu: [
-    { name: "코딩 컨벤션", id: "convention" },
-    { name: "디자인 설계", id: "fsd" },
-    { name: "프레임워크 & 모션", id: "tailwind" },
-    { name: "상태 관리", id: "state" },
-    { name: "개발 툴", id: "tools" },
-    { name: "스토리북", id: "components" },
+  relatedLinks: [
+    {
+      title: "테일윈드 CSS",
+      href: "https://tailwindcss.com/",
+    },
+    {
+      title: "Radix UI",
+      href: "https://www.radix-ui.com/primitives/docs/overview/introduction",
+    },
+    {
+      title: "Shadcn UI",
+      href: "https://ui.shadcn.com/",
+    },
+    {
+      title: "Shadcn UI 아이콘",
+      href: "https://lucide.dev/icons/",
+    },
+    {
+      title: "State of JavaScript(랭킹)",
+      href: "https://stateofjs.com/en-US",
+    },
+    {
+      title: "더미 이미지 사이트",
+      href: "https://picsum.photos/",
+    },
+    {
+      title: "마크다운 편집 에디터",
+      href: "https://readme.so/editor",
+    },
   ],
+  // mainMenu: [
+  //   { name: "코딩 컨벤션", id: "convention" },
+  //   { name: "디자인 설계", id: "fsd" },
+  //   { name: "프레임워크 & 모션", id: "tailwind" },
+  //   { name: "상태 관리", id: "state" },
+  //   { name: "개발 툴", id: "tools" },
+  //   { name: "스토리북", id: "components" },
+  // ],
   subInfo: [
     {
       id: "convention",

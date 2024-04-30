@@ -5,7 +5,7 @@ import clsx from "clsx";
 import { useSelectedLayoutSegments } from "next/navigation";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { UseDispatch, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { resetMenus } from "@/entities/store/subContentSlice";
 import TwTag from "@/widgets/modules/helper/TwTag";
 
@@ -71,6 +71,7 @@ const MenuItem = ({ name, id, subRoot = "", current, onClick, type = "pc" }: Men
       };
     });
 
+    console.log("newContentNav => ", newContentNav);
     dispatch(resetMenus(newContentNav)); // 콘텐츠 메뉴 업데이트
   }, [dispatch]);
 

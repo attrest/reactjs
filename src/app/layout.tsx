@@ -1,6 +1,7 @@
 import { Nanum_Myeongjo } from "next/font/google";
 import localFont from "next/font/local";
 import Header from "./header";
+import Footer from "./footer";
 import Container from "./container";
 import ReactQueryProvider from "@/features/reactQuery/Context";
 import { DialogProvider } from "@/widgets/modules/modals/DialogContext";
@@ -12,12 +13,6 @@ const siteName = store.getState().global.name;
 export const metadata: Metadata = {
   title: siteName,
 };
-
-// const nanumMyeongjo = Nanum_Myeongjo({
-//   subsets: ["latin"],
-//   weight: ["400", "700", "800"],
-//   variable: "--font-nanumMyeongjo",
-// });
 
 const pretendard = localFont({
   src: [
@@ -55,6 +50,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
           <DialogProvider>
             <Header siteName={siteName} />
             <Container>{children}</Container>
+            <Footer />
           </DialogProvider>
         </ReactQueryProvider>
       </body>

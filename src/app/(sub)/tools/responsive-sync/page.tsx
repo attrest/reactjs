@@ -7,7 +7,7 @@ import Image from "next/image";
 const ResponsiveSync = () => {
   const [gsapAni, setGaspAni] = useState<any>(null);
   return (
-    <TwTag className="lg:mb-[223px]">
+    <div>
       <div className="flex flex-col">
         <span className="text-xl">플러그인 다운로드:</span>
         <a className="text-3xl font-bold underline" href="/plugin/responsive-sync-browser.zip">
@@ -44,7 +44,7 @@ const ResponsiveSync = () => {
         </div>
         <p className="mt-2">** 동기화가 끊길 경우 다시 동기화를 시켜주세요.</p>
       </div>
-    </TwTag>
+    </div>
   );
 };
 

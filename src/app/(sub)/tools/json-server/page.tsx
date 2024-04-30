@@ -98,9 +98,7 @@ const JsonServer = () => {
           ))}
         </ul>
       </div>
-      <TwTag className="lg:mb-[223px]">
-        <TextToHtml html={contentHtml} />
-      </TwTag>
+      <TextToHtml html={contentHtml} />
     </>
   );
 };
