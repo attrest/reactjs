@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { Progress } from "@/widgets/ui/progress";
 
 interface ProgressBarProps {
@@ -8,7 +8,7 @@ interface ProgressBarProps {
   className?: string;
 }
 
-const ProgressBar = ({ containerRef, className }: ProgressBarProps) => {
+export const AcScrollProgressBar = ({ containerRef, className }: ProgressBarProps) => {
   const [scrollProgress, setScrollProgress] = useState(0);
   // const containerRef = useRef(null);  // 컨테이너 참조 생성
 
@@ -36,5 +36,4 @@ const ProgressBar = ({ containerRef, className }: ProgressBarProps) => {
 
   return <Progress value={scrollProgress} {...(className && { className: className })} />;
 };
-
-export default ProgressBar;
+AcScrollProgressBar.displayName = "AcScrollProgressBar";

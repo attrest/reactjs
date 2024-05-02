@@ -8,6 +8,7 @@ import { DialogProvider } from "@/widgets/modules/modals/DialogContext";
 import { Metadata } from "next";
 import { store } from "@/entities/store";
 import "@/style/globals.scss";
+import { setSubMenu } from "@/entities/store/globalSlice";
 
 const siteName = store.getState().global.name;
 export const metadata: Metadata = {

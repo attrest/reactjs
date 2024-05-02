@@ -6,6 +6,7 @@ import clsx from "clsx";
 import { useSelector } from "react-redux";
 import { RootState } from "@/entities/store";
 import { useMobileCheck } from "@/entities/useHooks";
+import { usePathname } from "next/navigation";
 
 interface SubContentMenuProps {
   className?: string;
@@ -23,7 +24,8 @@ const SubContentMenu = ({ className, containerRef }: SubContentMenuProps) => {
   const [contentMenuList, setContentMenuList] = useState<SubContentTreeMenuProps[]>([]);
   const [currentLinkId, setCurrentLinkId] = useState<string>("");
   const isMobile = useMobileCheck();
-  // console.log("contentMenuList => ", contentMenuList);
+  const pathname = usePathname();
+  // console.log("SubContentMenu isMobile => ", isMobile);
 
   const scrollHandler = (id: string | undefined) => (event: React.MouseEvent) => {
     if (id) {
@@ -55,7 +57,7 @@ const SubContentMenu = ({ className, containerRef }: SubContentMenuProps) => {
         if (scrollPx >= sectionTop && scrollPx < sectionTop + sectionHeight) {
           // const foundLink = Array.from(links).find((link) => link.getAttribute("href") === `#${id}`);
           setCurrentLinkId(id);
-          console.log("currentLinkId => ", id);
+          // console.log("currentLinkId => ", id);
         }
       });
     }
@@ -89,14 +91,14 @@ const SubContentMenu = ({ className, containerRef }: SubContentMenuProps) => {
         container.removeEventListener("scroll", positionDetect);
       };
     }
-  }, []);
+  }, [pathname]);
 
   return (
     <>
       <aside
         className={cn(
           className,
-          "content-nav w-full min-w-[18rem] max-w-[25rem] flex-1 overflow-y-auto fixed top-0 bottom-0 z-10 xl:static h-screen content-nav right-0"
+          "content-nav w-full min-w-[18rem] max-w-[25rem] flex-1 overflow-y-auto fixed top-0 bottom-0 z-50 xl:z-10 xl:static h-screen content-nav right-0"
         )}
       >
         <div className="flex flex-col pt-8 pb-8 pl-6 pr-6 bg-white min-h-full relative z-20">
@@ -116,7 +118,9 @@ const SubContentMenu = ({ className, containerRef }: SubContentMenuProps) => {
             </a>
           ))}
         </div>
-        {isMobile && <div className="dim fixed top-0 left-0 right-0 bottom-0 bg-[rgba(0,0,0,0.5)] z-10"></div>}
+        {isMobile && contentMenuList.length !== 0 && (
+          <div className="dim fixed top-0 left-0 right-0 bottom-0 bg-[rgba(0,0,0,0.5)] z-10"></div>
+        )}
       </aside>
     </>
   );

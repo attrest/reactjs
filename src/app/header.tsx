@@ -17,7 +17,6 @@ interface headerProps {
 
 const Header = ({ siteName }: headerProps) => {
   const pathname = usePathname();
-
   const isHome = pathname === "/"; // main page check
   const menuList = store.getState().global.menu;
   const isMobile = useMobileCheck();
