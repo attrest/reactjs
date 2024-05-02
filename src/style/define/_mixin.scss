@@ -10,10 +10,16 @@ $breakpoints: (
 );
 
 // 미디어 쿼리 mixin
-@mixin media($breakpoint) {
+@mixin media($breakpoint, $breakpointType: "max") {
   @if map-has-key($breakpoints, $breakpoint) {
-    @media (max-width: map-get($breakpoints, $breakpoint)) {
-      @content;
+    @if $breakpointType == "max" {
+      @media (max-width: map-get($breakpoints, $breakpoint)) {
+        @content;
+      }
+    } @else {
+      @media (min-width: map-get($breakpoints, $breakpoint)) {
+        @content;
+      }
     }
   } @else {
     @warn "Unknown breakpoint: #{$breakpoint}.";

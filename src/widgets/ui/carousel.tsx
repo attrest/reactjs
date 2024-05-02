@@ -248,7 +248,7 @@ const CarouselDots = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLD
     }
 
     return (
-      <div ref={ref} className={`flex justify-center space-x-2 ${className}`} {...props}>
+      <div ref={ref} className={cn("flex justify-center space-x-2", className && className)} {...props}>
         {dots}
       </div>
     );

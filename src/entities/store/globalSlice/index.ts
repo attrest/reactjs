@@ -47,7 +47,7 @@ interface InitialStateType {
   menu: MenuType[];
   relatedLinks: RelatedLinksType[];
   // mainMenu: MenuItemType[];
-  subInfo: SubInfoItemType[];
+  // subInfo: SubInfoItemType[];
   subMenu: SubMenuType;
 }
 
@@ -229,38 +229,38 @@ const initialState: InitialStateType = {
   //   { name: "개발 툴", id: "tools" },
   //   { name: "스토리북", id: "components" },
   // ],
-  subInfo: [
-    {
-      id: "convention",
-      title: "코딩 컨벤션",
-      description: "코드 작성 시 일관된 스타일 규칙을 적용해 가독성과 유지보수성을 향상시킵니다.",
-    },
-    {
-      id: "fsd",
-      title: "기능 분할 설계(FSD)",
-      description: "복잡한 시스템을 보다 관리하기 쉬운 작은 단위로 나누어 설계하는 방법입니다.",
-    },
-    {
-      id: "tailwind",
-      title: "테일윈드 CSS",
-      description: "유틸리티 중심의 CSS 프레임워크로, 빠르고 유연한 웹 디자인을 가능하게 합니다.",
-    },
-    {
-      id: "state",
-      title: "Redux",
-      description: "Redux는 React를 위해 설계된 예측 가능한 상태 컨테이너입니다.",
-    },
-    {
-      id: "tools",
-      title: "Tailwind Converter",
-      description: "Tailwind 클래스를 CSS 스타일로 변환하여 빠르게 스타일을 확인할 수 있습니다.",
-    },
-    {
-      id: "component",
-      title: "컴포넌트",
-      description: "독립적이고 재사용 가능한 코드의 단위로, UI를 구성하는 기본 요소입니다.",
-    },
-  ],
+  // subInfo: [
+  //   {
+  //     id: "convention",
+  //     title: "코딩 컨벤션",
+  //     description: "코드 작성 시 일관된 스타일 규칙을 적용해 가독성과 유지보수성을 향상시킵니다.",
+  //   },
+  //   {
+  //     id: "fsd",
+  //     title: "기능 분할 설계(FSD)",
+  //     description: "복잡한 시스템을 보다 관리하기 쉬운 작은 단위로 나누어 설계하는 방법입니다.",
+  //   },
+  //   {
+  //     id: "tailwind",
+  //     title: "테일윈드 CSS",
+  //     description: "유틸리티 중심의 CSS 프레임워크로, 빠르고 유연한 웹 디자인을 가능하게 합니다.",
+  //   },
+  //   {
+  //     id: "state",
+  //     title: "Redux",
+  //     description: "Redux는 React를 위해 설계된 예측 가능한 상태 컨테이너입니다.",
+  //   },
+  //   {
+  //     id: "tools",
+  //     title: "Tailwind Converter",
+  //     description: "Tailwind 클래스를 CSS 스타일로 변환하여 빠르게 스타일을 확인할 수 있습니다.",
+  //   },
+  //   {
+  //     id: "component",
+  //     title: "컴포넌트",
+  //     description: "독립적이고 재사용 가능한 코드의 단위로, UI를 구성하는 기본 요소입니다.",
+  //   },
+  // ],
   subMenu: {
     convention: [
       { name: "코딩 컨벤션이란?", id: "convention" },

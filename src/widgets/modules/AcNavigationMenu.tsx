@@ -1,3 +1,4 @@
+import React from "react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -26,6 +27,11 @@ interface AcNavationMenuProps extends NavigationMenuProps {
   unfoldType?: "wide" | "sync";
 }
 
+type NavigationMenuItemRenderProps = {
+  className?: string;
+  item: AcNavationMenuItemProps;
+};
+
 export const AcNavigationMenu = ({ items, className, unfoldType = "wide", ...args }: AcNavationMenuProps) => {
   const navMenuRef = useRef<HTMLElement>(null);
 
@@ -41,28 +47,39 @@ export const AcNavigationMenu = ({ items, className, unfoldType = "wide", ...arg
     }
   };
 
-  const renderItems = (itemList: AcNavationMenuItemProps[]) => {
+  const NavigationMenuItemRender = ({ item, className }: NavigationMenuItemRenderProps) => (
+    <NavigationMenuItem {...(className && { className: className })}>
+      <NavigationMenuLink className={navigationMenuTriggerStyle()} asChild={true}>
+        <Link href={item.href} {...(item.target && { target: item.target })}>
+          {item.title}
+        </Link>
+      </NavigationMenuLink>
+    </NavigationMenuItem>
+  );
+
+  const renderItems = (itemList: AcNavationMenuItemProps[], depth = 0) => {
     return itemList.map((item, idx) => {
+      const itemKey = `${depth}-${idx}`;
       if (item.items && item.items.length > 0) {
-        // console.log("item.label: ", item.title);
+        // console.log("item: ", item.title, "Depth: ", depth);
         return (
-          <NavigationMenuItem key={idx} className="ac-navigation-menu-item">
+          <NavigationMenuItem key={itemKey} className="ac-navigation-menu-item">
             <NavigationMenuTrigger onMouseOver={(e) => handleMouseOver(e, idx)}>{item.title}</NavigationMenuTrigger>
-            <NavigationMenuContent className="p-2">{renderItems(item.items)}</NavigationMenuContent>
+            <NavigationMenuContent className="p-2">{renderItems(item.items, depth + 1)}</NavigationMenuContent>
           </NavigationMenuItem>
         );
       } else {
-        // console.log("no children: ", item.title);
+        // console.log("no children => item: ", item.title, "Depth: ", depth);
         return (
-          <ul key={idx}>
-            <NavigationMenuItem className="flex list-none whitespace-nowrap">
-              <NavigationMenuLink className={navigationMenuTriggerStyle()} asChild={true}>
-                <Link href={item.href} {...(item.target && { target: item.target })}>
-                  {item.title}
-                </Link>
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-          </ul>
+          <React.Fragment key={itemKey}>
+            {depth === 0 ? (
+              <NavigationMenuItemRender item={item} className="ac-navigation-menu-item" />
+            ) : (
+              <ul>
+                <NavigationMenuItemRender item={item} className="flex list-none whitespace-nowrap" />
+              </ul>
+            )}
+          </React.Fragment>
         );
       }
     });

@@ -49,7 +49,7 @@ const Header = ({ siteName }: headerProps) => {
       className={clsx({
         "global-header w-full h-[80px] transition-all duration-300 bg-white text-black px-[1.2rem] xl:px-[2rem]": true,
         "global-header-home fixed top-0 left-0 right-0 z-50": isHome,
-        "border-b": !isHome,
+        "relative z-50 border-b": !isHome,
       })}
     >
       <div className="global-header-inner-wrap flex items-center justify-between h-full">

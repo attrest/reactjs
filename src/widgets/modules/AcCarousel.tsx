@@ -18,26 +18,43 @@ interface AcCarouselProps {
   plugins?: CarouselPlugin;
   orientation?: "horizontal" | "vertical";
   setApi?: (api: CarouselApi) => void;
+  itemClassName?: string;
+  containerClassName?: string;
   isPagination?: boolean;
+  pagingClassName?: string;
   isNavigation?: boolean;
   NavTag?: React.ComponentType<any> | keyof React.ReactHTML;
+  children?: React.ReactNode;
 }
 
-export const AcCarousel = ({ items, isPagination, isNavigation, NavTag = Fragment, ...args }: AcCarouselProps) => {
+export const AcCarousel = ({
+  items,
+  containerClassName,
+  itemClassName,
+  isPagination,
+  pagingClassName,
+  isNavigation,
+  NavTag = Fragment,
+  children,
+  ...args
+}: AcCarouselProps) => {
   return (
     <Carousel {...args}>
-      <CarouselContent className="w-full h-full">
+      <CarouselContent className={cn("w-full h-full", containerClassName && containerClassName)}>
         {items.map((item, idx) => (
-          <CarouselItem key={idx}>{item}</CarouselItem>
+          <CarouselItem key={idx} {...(itemClassName && { className: itemClassName })}>
+            {item}
+          </CarouselItem>
         ))}
       </CarouselContent>
-      {isPagination && <CarouselDots className="ac-carousel-dots mt-4" />}
+      {isPagination && <CarouselDots className={cn("ac-carousel-dots mt-4", pagingClassName && pagingClassName)} />}
       {isNavigation && (
         <>
           <CarouselPrevious />
           <CarouselNext />
         </>
       )}
+      {children && children}
     </Carousel>
   );
 };

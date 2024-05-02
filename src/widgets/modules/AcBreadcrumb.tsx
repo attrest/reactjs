@@ -25,8 +25,8 @@ interface AcBreadcrumbProps {
 export const AcBreadcrumb = ({ items, className }: AcBreadcrumbProps) => {
   const renderItems = (itemList: AcBreadcrumbItemsProps[]) => {
     return itemList.map((item, idx) => {
-      console.log("item => ", item);
-      console.log("idx => ", idx, "itemList.length => ", itemList.length - 1, idx === itemList.length - 1);
+      // console.log("item => ", item);
+      // console.log("idx => ", idx, "itemList.length => ", itemList.length - 1, idx === itemList.length - 1);
       if (item.items) {
         return (
           <React.Fragment key={idx}>

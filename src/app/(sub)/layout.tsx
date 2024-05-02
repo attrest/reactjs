@@ -19,7 +19,6 @@ const SubLayout = ({ children }: { children: React.ReactNode }) => {
   const isMobile = useMobileCheck();
   const isMobileDevice = useMobileDeviceCheck();
   const menu = useSelector((state: RootState) => state.global.menu);
-  const infoArray = useSelector((state: RootState) => state.global.subInfo);
   const subMenuList = useSelector((state: RootState) => state.global.subMenu);
 
   // const [subMenuState, setSubMenuState] = useState<string>("");
@@ -77,7 +76,7 @@ const SubLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="w-full">
       <div className="flex space-between">
-        {!isWide && <ProgressBar containerRef={containerRef} className="fixed top-0 left-0 right-0 h-1 z-20" />}
+        {!isWide && <ProgressBar containerRef={containerRef} className="fixed top-0 left-0 right-0 h-1" />}
         <div className={cn("section-container relative w-full scroll-hidden", isMobileDevice && "mobile-device")}>
           <div ref={containerRef} className="overflow-y-auto h-screen">
             <div className={cn("max-w-[960px] mx-auto px-6 pt-8 xl:px-16", isWide && "max-w-[1280px]")}>

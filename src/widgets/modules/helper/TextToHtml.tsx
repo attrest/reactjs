@@ -14,16 +14,16 @@ const TextToHtml = (props: TextToHtmlProps) => {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (ref.current) {
-      const codeBlocks = ref.current.querySelectorAll("pre");
-      codeBlocks.forEach((block) => {
-        hljs.highlightElement(block);
-      });
-    }
+    // if (ref.current) {
+    //   const codeBlocks = ref.current.querySelectorAll("pre");
+    //   codeBlocks.forEach((block) => {
+    //     hljs.highlightElement(block);
+    //   });
+    // }
 
     // 마운트 후 코드 하이라이트 적용
     document.querySelectorAll("pre").forEach((block) => {
-      hljs.highlightElement(block);
+      // hljs.highlightElement(block);
 
       // 복사 버튼 추가
       const parentDiv = block.parentNode; // 부모 요소 찾기

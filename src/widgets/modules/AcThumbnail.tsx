@@ -9,10 +9,19 @@ interface AcThumbnailProps {
   height?: string;
   title?: string;
   ratio?: number;
-  imageClassName?: string;
+  imgClassName?: string;
+  objectPosition?: "top" | "bottom" | "center" | "left" | "right";
 }
 
-export const AcThumbnail = ({ className, src, width, title = "", ratio = 9 / 6, imageClassName }: AcThumbnailProps) => {
+export const AcThumbnail = ({
+  className,
+  src,
+  width,
+  title = "",
+  ratio = 9 / 6,
+  imgClassName,
+  objectPosition,
+}: AcThumbnailProps) => {
   return (
     <div className={cn("ac-thumbnail", className && className)} style={{ width: width || "10rem" }}>
       <AspectRatio ratio={ratio}>
@@ -21,7 +30,8 @@ export const AcThumbnail = ({ className, src, width, title = "", ratio = 9 / 6, 
           alt={title}
           layout="fill"
           objectFit="cover"
-          className={cn("rounded-md object-cover", imageClassName)}
+          className={cn("rounded-md object-cover", imgClassName)}
+          {...(objectPosition && { objectPosition: objectPosition })}
         />
       </AspectRatio>
     </div>
