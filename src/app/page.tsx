@@ -117,7 +117,7 @@ export default function Main() {
                 <a
                   key={idx}
                   href={item.href}
-                  className={`flex items-center justify-center border w-full h-[200px] xl:h-[${bannerHeight}px]`}
+                  className="flex items-center justify-center border w-full h-[200px] xl:h-[320px]"
                   style={{
                     backgroundImage: `url(${item.src})`,
                     backgroundRepeat: "no-repeat",
