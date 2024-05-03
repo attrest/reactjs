@@ -13,6 +13,7 @@ import { AcScrollProgressBar } from "@/widgets/modules/AcScrollProgressBar";
 import { Button } from "@/widgets/ui/button";
 import { ListIcon, XIcon } from "lucide-react";
 import { AcBreadcrumb, AcBreadcrumbItemsProps } from "@/widgets/modules/AcBreadcrumb";
+import { AcThumbnail } from "@/widgets/modules/AcThumbnail";
 
 type subMenuListProps = {
   [key: string]: any;
@@ -22,6 +23,8 @@ const SubLayout = ({ children }: { children: React.ReactNode }) => {
   const isMobile = useMobileCheck();
   const isMobileDevice = useMobileDeviceCheck();
   const menu = useSelector((state: RootState) => state.global.menu);
+
+  // 서브 메뉴 생성
   const subMenuList: subMenuListProps = {};
   menu.forEach((item) => {
     if (item.items) {
@@ -31,6 +34,7 @@ const SubLayout = ({ children }: { children: React.ReactNode }) => {
           title: subItem.title,
           id: subItemIds[subItemIds.length - 1],
           description: subItem.description,
+          src: subItem.src,
         };
       });
       subMenuList[item.href.replace("/", "")] = subItems;
@@ -54,12 +58,14 @@ const SubLayout = ({ children }: { children: React.ReactNode }) => {
     // setSubMenuState(menuState);
     setSubTreeMenuState(menuState);
 
+    // infoArray 데이터 생성
     const infoArray = menu.map((item) => {
       return {
         id: item.title !== "스토리북" ? item.href.replace("/", "") : "storybook",
         title: item.title,
         href: item.href,
         description: item.items ? item.items[0].description : "",
+        src: item.items ? item.items[0].src : "",
         items: item.items ? item.items : [],
       };
     });
@@ -113,13 +119,25 @@ const SubLayout = ({ children }: { children: React.ReactNode }) => {
               {segment.length >= 1 && info && (
                 <div className="sub-header">
                   <AcBreadcrumb items={breadcrumbInfo} />
-                  <div className="bg-white py-10 xl:py-15">
-                    <h2 className="flex flex-col text-[44px] font-semibold tracking-tight text-black leading-none xl:flex-row xl:justify-between">
-                      {segment.length === 1 ? info.title : `${subData ? subData.title : ""}`}
-                    </h2>
-                    <p className="text-base mt-2 max-w-[76%] xl:max-w-none xl:mt-4 text-gray font-pretendard">
-                      {segment.length === 1 ? info.description : `${subData ? subData.description : ""}`}
-                    </p>
+                  <div className="bg-white py-10 xl:py-15 xl:flex xl:items-center">
+                    <div className="sub-header-thumbnail hidden mr-6 xl:inline-block">
+                      <AcThumbnail
+                        src={segment.length === 1 ? `${info ? info.src : ""}` : `${subData ? subData.src : ""}`}
+                        title={segment.length === 1 ? info.title : `${subData ? subData.title : ""}`}
+                        objectFit="contain"
+                        className="rounded-[0.75rem] overflow-hidden"
+                        width="8rem"
+                        style={{ boxShadow: "0 0.95rem 2.5rem -1rem rgba(0,0,0,0.5)" }}
+                      />
+                    </div>
+                    <div className="sub-header-content">
+                      <h2 className="flex flex-col text-[44px] font-semibold tracking-tight text-black leading-none xl:flex-row xl:justify-between">
+                        {segment.length === 1 ? info.title : `${subData ? subData.title : ""}`}
+                      </h2>
+                      <p className="text-base mt-2 max-w-[76%] xl:max-w-none xl:mt-4 text-gray font-pretendard">
+                        {segment.length === 1 ? info.description : `${subData ? subData.description : ""}`}
+                      </p>
+                    </div>
                   </div>
                 </div>
               )}

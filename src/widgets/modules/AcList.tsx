@@ -1,6 +1,6 @@
 import { cn } from "@/shared/utils/utils";
 import React from "react";
-import { AcThumbnail } from "./AcThumbnail";
+import { AcThumbnail } from "@/widgets/modules/AcThumbnail";
 
 interface AcListProps {
   items?: AcListItemProps[];
@@ -52,9 +52,11 @@ interface AcListItemProps extends AcListHeaderProps {
   src?: string;
   thumbClassName?: string;
   thumbSize?: string;
+  objectFit?: "cover" | "fill" | "contain" | "none" | "scale-down";
+  objectPosition?: "top" | "bottom" | "center" | "left" | "right";
 }
 
-const AcListItem = ({ title, href, description, src, className, thumbClassName, thumbSize }: AcListItemProps) => {
+const AcListItem = ({ title, href, description, src, className, thumbClassName, ...props }: AcListItemProps) => {
   return (
     <div className={cn("ac-list-item flex justify-between w-full border-b py-4", className && className)}>
       <div className="ac-list-item-header">
@@ -65,7 +67,7 @@ const AcListItem = ({ title, href, description, src, className, thumbClassName, 
       </div>
       {src && (
         <div className={cn("ac-list-item-thumb ml-4", thumbClassName && thumbClassName)}>
-          <AcThumbnail src={src} title={title} {...(thumbSize && { size: thumbSize })} />
+          <AcThumbnail src={src} title={title} {...props} />
         </div>
       )}
     </div>

@@ -153,7 +153,9 @@ export default function Main() {
                           title={listItem.title}
                           description={listItem.description}
                           href={listItem.href}
-                          src="/img/ratio_sample.jpg"
+                          src={listItem.src}
+                          thumbClassName="border rounded-lg"
+                          objectFit="contain"
                           key={idx2}
                         />
                       ));
@@ -173,7 +175,7 @@ export default function Main() {
                     slidesToScroll: isMobile ? 1 : 4,
                   }}
                   containerClassName="-mx-2 w-auto"
-                  itemClassName="xl:w-[25%] xl:basis-auto xl:px-2"
+                  itemClassName="xl:w-[33.33333%] xl:basis-auto xl:px-2"
                   isPagination={true}
                   pagingClassName="relative top-3 mt-0"
                   isNavigation={true}
