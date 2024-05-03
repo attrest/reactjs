@@ -119,7 +119,8 @@ const loadMapList = [
 ];
 
 export default function Main() {
-  const isMobile = useMobileCheck();
+  // const isMobile = useMobileCheck();
+  const [isMobile] = useState<boolean>(window.innerWidth < 1280);
   const menu = useSelector((state: RootState) => state.global.menu);
   const relatedLinks = useSelector((state: RootState) => state.global.relatedLinks);
 
@@ -215,11 +216,11 @@ export default function Main() {
             </div>
 
             <div className="main-content-section mb-10">
-              <h3 className="mt-10 text-left text-lg font-bold mb-4">주요 기술 로드맵</h3>
+              <h3 className="mt-10 text-left text-lg font-bold mb-4">주요 기술 로드맵{isMobile ? "(MO)" : "(PC)"}</h3>
               <div>
                 <AcCarousel
                   opts={{
-                    slidesToScroll: isMobile ? 1 : 3,
+                    slidesToScroll: !isMobile ? 3 : 1,
                   }}
                   containerClassName="-mx-2 w-auto"
                   itemClassName="xl:w-[33.33333%] xl:basis-auto xl:px-2"
@@ -235,7 +236,7 @@ export default function Main() {
                             <ChevronRightIcon className="relative w-4 h-4 -right-2" />
                           </a>
                         </CardTitle>
-                        <CardContent className="p-0">
+                        <CardContent className="p-0 pt-2">
                           <AcThumbnail src={item.src} width="100%" objectPosition="top" />
                         </CardContent>
                       </CardHeader>
