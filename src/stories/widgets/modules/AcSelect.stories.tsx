@@ -21,7 +21,7 @@ export default meta;
 
 export const Default: StoryObj<typeof AcSelect> = {
   args: {
-    set: [
+    items: [
       {
         label: "선택1",
         value: "1",
