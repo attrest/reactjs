@@ -5,6 +5,8 @@ export function useMobileCheck() {
   const [width, setWidth] = useState(0);
 
   useEffect(() => {
+    setWidth(window.innerWidth);
+
     const handleResize = debounce(() => {
       setWidth(window.innerWidth);
     }, 100); // 100ms 지연
