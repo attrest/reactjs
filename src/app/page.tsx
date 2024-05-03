@@ -12,29 +12,116 @@ import { ChevronRightIcon } from "lucide-react";
 import { AcThumbnail } from "@/widgets/modules/AcThumbnail";
 import TextToHtml from "@/widgets/modules/helper/TextToHtml";
 
+type bannerDataType = {
+  title: string;
+  description: string;
+  src: string;
+  href: string;
+};
+
+const bannerData: bannerDataType[] = [
+  {
+    title: "코딩 컨벤션",
+    description: "협업 및 프로젝트 관리를 간소화를 위한<br>일관성있는 코드 작성",
+    src: "/img/banners/convention.jpg",
+    href: "/convention",
+  },
+  {
+    title: "디자인 설계",
+    description: "견고하고 유지보수가 용이한 S/W 구축과<br>코드 효율성 극대화를 위한 방법론",
+    src: "/img/banners/design.jpg",
+    href: "/fsd",
+  },
+  {
+    title: "프레임워크 & 모션",
+    description: "빠르고 효율적인 웹 구축을 위한 프레임워크와<br>동적인 웹 경험 창출을 위한 라이브러리",
+    src: "/img/banners/framework.jpg",
+    href: "/tailwind",
+  },
+  {
+    title: "상태 관리",
+    description: "복잡한 애플리케이션의 상태를 예측 가능하고<br>쉽게 관리하게 해주는 유틸리티",
+    src: "/img/banners/state.jpg",
+    href: "/state",
+  },
+  {
+    title: "개발 관련 팁 & 도구들",
+    description: "작업 효율성과 빠른 프로젝트 구축을 위한<br>간단한 미니 도구들",
+    src: "/img/banners/tools.jpg",
+    href: "/tools",
+  },
+];
+
+const frontendStacks = [
+  {
+    title: "FSD",
+    href: "https://feature-sliced.design/",
+  },
+  { title: "Atomic Design Pattern", href: "https://atomicdesign.bradfrost.com/chapter-2/" },
+  { title: "html5", href: "https://www.w3schools.com/html/" },
+  { title: "css3", href: "https://www.w3schools.com/css/default.asp" },
+  { title: "scss", href: "https://sass-lang.com/" },
+  { title: "tailwind", href: "https://tailwindcss.com/" },
+  { title: "javascript", href: "https://www.w3schools.com/js/default.asp" },
+  { title: "typescript", href: "https://www.w3schools.com/typescript/index.php" },
+  { title: "nodejs", href: "https://nodejs.org/en/learn/getting-started/introduction-to-nodejs" },
+  { title: "React", href: "https://react.dev/learn" },
+  { title: "Vue", href: "https://ko.vuejs.org/guide/introduction" },
+  { title: "next.js", href: "https://nextjs.org/docs" },
+  { title: "nuxt.js", href: "https://nuxt.com/docs/getting-started/introduction" },
+  {
+    title: "ssg",
+    href: "https://tapajyoti-bose.medium.com/frontend-rendering-ssg-vs-isg-vs-ssr-vs-csr-when-to-use-which-1bf9f39ff07c",
+  },
+  {
+    title: "ssr",
+    href: "https://tapajyoti-bose.medium.com/frontend-rendering-ssg-vs-isg-vs-ssr-vs-csr-when-to-use-which-1bf9f39ff07c",
+  },
+  {
+    title: "csr",
+    href: "https://tapajyoti-bose.medium.com/frontend-rendering-ssg-vs-isg-vs-ssr-vs-csr-when-to-use-which-1bf9f39ff07c",
+  },
+  {
+    title: "isr",
+    href: "https://tapajyoti-bose.medium.com/frontend-rendering-ssg-vs-isg-vs-ssr-vs-csr-when-to-use-which-1bf9f39ff07c",
+  },
+  { title: "react-query", href: "https://tanstack.com/query/v5/docs/framework/react/overview" },
+  { title: "redux", href: "https://redux.js.org/introduction/getting-started" },
+  { title: "zustand", href: "https://docs.pmnd.rs/zustand/getting-started/introduction" },
+  { title: "radix ui", href: "https://www.radix-ui.com/primitives/docs/overview/introduction" },
+  { title: "shadcn ui", href: "https://ui.shadcn.com/docs" },
+  { title: "storybook", href: "https://storybook.js.org/docs/get-started" },
+  { title: "gsap", href: "https://gsap.com/docs/v3/" },
+  { title: "framer-motion", href: "https://www.framer.com/motion/" },
+  { title: "react-transition-group", href: "https://reactcommunity.org/react-transition-group/" },
+  { title: "prettier", href: "https://prettier.io/docs/en/integrating-with-linters.html" },
+  { title: "eslint", href: "https://eslint.org/docs/latest/" },
+];
+
+const loadMapList = [
+  { title: "디자인 시스템", href: "https://roadmap.sh/design-system", src: "/img/loadmaps/01-design-system.png" },
+  { title: "자바스크립트", href: "https://roadmap.sh/javascript", src: "/img/loadmaps/02-javascript.png" },
+  { title: "타입스크립트", href: "https://roadmap.sh/typescript", src: "/img/loadmaps/03-typescript.png" },
+  { title: "프론트엔드 개발자", href: "https://roadmap.sh/frontend", src: "/img/loadmaps/04-frontend.png" },
+  { title: "백엔드 개발자", href: "https://roadmap.sh/backend", src: "/img/loadmaps/05-backend.png" },
+  { title: "Node.js 개발자", href: "https://roadmap.sh/nodejs", src: "/img/loadmaps/06-nodejs.png" },
+  { title: "개발운영", href: "https://roadmap.sh/devops", src: "/img/loadmaps/07-devops.png" },
+  { title: "풀스택 개발자", href: "https://roadmap.sh/full-stack", src: "/img/loadmaps/08-full-stack.png" },
+  { title: "UX 디자인", href: "https://roadmap.sh/ux-design", src: "/img/loadmaps/09-ux-design.png" },
+  { title: "리액트 개발자", href: "https://roadmap.sh/react", src: "/img/loadmaps/10-react.png" },
+  {
+    title: "리액트 네이티브 개발자",
+    href: "https://roadmap.sh/react-native",
+    src: "/img/loadmaps/11-react-native.png",
+  },
+  { title: "뷰 개발자", href: "https://roadmap.sh/vue", src: "/img/loadmaps/12-vue.png" },
+  { title: "플루터 개발자", href: "https://roadmap.sh/flutter", src: "/img/loadmaps/13-flutter.png" },
+];
+
 export default function Main() {
   const isMobile = useMobileCheck();
   const menu = useSelector((state: RootState) => state.global.menu);
   const relatedLinks = useSelector((state: RootState) => state.global.relatedLinks);
-  const loadMapList = [
-    { title: "디자인 시스템", href: "https://roadmap.sh/design-system", src: "/img/loadmaps/01-design-system.png" },
-    { title: "자바스크립트", href: "https://roadmap.sh/javascript", src: "/img/loadmaps/02-javascript.png" },
-    { title: "타입스크립트", href: "https://roadmap.sh/typescript", src: "/img/loadmaps/03-typescript.png" },
-    { title: "프론트엔드 개발자", href: "https://roadmap.sh/frontend", src: "/img/loadmaps/04-frontend.png" },
-    { title: "백엔드 개발자", href: "https://roadmap.sh/backend", src: "/img/loadmaps/05-backend.png" },
-    { title: "Node.js 개발자", href: "https://roadmap.sh/nodejs", src: "/img/loadmaps/06-nodejs.png" },
-    { title: "개발운영", href: "https://roadmap.sh/devops", src: "/img/loadmaps/07-devops.png" },
-    { title: "풀스택 개발자", href: "https://roadmap.sh/full-stack", src: "/img/loadmaps/08-full-stack.png" },
-    { title: "UX 디자인", href: "https://roadmap.sh/ux-design", src: "/img/loadmaps/09-ux-design.png" },
-    { title: "리액트 개발자", href: "https://roadmap.sh/react", src: "/img/loadmaps/10-react.png" },
-    {
-      title: "리액트 네이티브 개발자",
-      href: "https://roadmap.sh/react-native",
-      src: "/img/loadmaps/11-react-native.png",
-    },
-    { title: "뷰 개발자", href: "https://roadmap.sh/vue", src: "/img/loadmaps/12-vue.png" },
-    { title: "플루터 개발자", href: "https://roadmap.sh/flutter", src: "/img/loadmaps/13-flutter.png" },
-  ];
 
   const sidebarRef = useRef<HTMLDivElement>(null);
   const [currentPosition, setCurrentPosition] = useState<number>(0);
@@ -66,44 +153,6 @@ export default function Main() {
     };
   }, []);
 
-  type bannerDataType = {
-    title: string;
-    description: string;
-    src: string;
-    href: string;
-  };
-  const bannerData: bannerDataType[] = [
-    {
-      title: "코딩 컨벤션",
-      description: "협업 및 프로젝트 관리를 간소화를 위한<br>일관성있는 코드 작성",
-      src: "/img/banners/convention.jpg",
-      href: "/convention",
-    },
-    {
-      title: "디자인 설계",
-      description: "견고하고 유지보수가 용이한 S/W 구축과<br>코드 효율성 극대화를 위한 방법론",
-      src: "/img/banners/design.jpg",
-      href: "/fsd",
-    },
-    {
-      title: "프레임워크 & 모션",
-      description: "빠르고 효율적인 웹 구축을 위한 프레임워크와<br>동적인 웹 경험 창출을 위한 라이브러리",
-      src: "/img/banners/framework.jpg",
-      href: "/tailwind",
-    },
-    {
-      title: "상태 관리",
-      description: "복잡한 애플리케이션의 상태를 예측 가능하고<br>쉽게 관리하게 해주는 유틸리티",
-      src: "/img/banners/state.jpg",
-      href: "/state",
-    },
-    {
-      title: "개발 관련 팁 & 도구들",
-      description: "작업 효율성과 빠른 프로젝트 구축을 위한<br>간단한 미니 도구들",
-      src: "/img/banners/tools.jpg",
-      href: "/tools",
-    },
-  ];
   return (
     <div id="mainHome">
       <div className="main-home-inner-wrap pt-[80px]">
@@ -206,13 +255,13 @@ export default function Main() {
               <div className="main-sidebar-section">
                 <h3 className="mt-10 text-left text-lg font-bold mb-4">프론트엔드 주요 기술 스택</h3>
                 <div>
-                  {"FSD/Atomic Design Pattern/html5/css3/scss/tailwind/javascript/typescript/nodejs/React/Vue/next.js/nuxt.js/ssg/ssr/csr/isr/react-query/redux/zustand/radix ui/shadcn ui/storybook/gsap/framer-motion/react-transition-group/prettier/eslint"
-                    .split("/")
-                    .map((item, idx) => (
-                      <Badge variant="default" className="mr-1 mb-1 text-sm" key={idx}>
-                        {item}
+                  {frontendStacks.map((item, idx) => (
+                    <a href={item.href} target="_blank" key={idx}>
+                      <Badge variant="default" className="mr-1 mb-1 text-sm">
+                        {item.title}
                       </Badge>
-                    ))}
+                    </a>
+                  ))}
                 </div>
               </div>
 
