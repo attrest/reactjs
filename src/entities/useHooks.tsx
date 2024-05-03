@@ -2,43 +2,55 @@ import { useState, useEffect } from "react";
 
 // 모바일 화면 체크
 export function useMobileCheck() {
-  const [width, setWidth] = useState(0);
+  const [width, setWidth] = useState(window ? window.innerWidth : 0);
 
   useEffect(() => {
-    function updateWidth() {
+    const handleResize = debounce(() => {
       setWidth(window.innerWidth);
-    }
+    }, 100); // 100ms 지연
 
-    updateWidth(); // 컴포넌트가 마운트될 때 현재 window 너비를 설정
-    window.addEventListener("resize", updateWidth);
-
+    window.addEventListener("resize", handleResize);
     return () => {
-      window.removeEventListener("resize", updateWidth);
+      window.removeEventListener("resize", handleResize);
     };
-  }, []); // 빈 의존성 배열을 사용하여 컴포넌트 마운트 및 언마운트 시에만 실행
+  }, []);
 
   return width < 1280;
 }
 
 // 모바일 디바이스 체크
-export function useMobileDeviceCheck() {
-  const [isMobileDevice, setIsMobileDevice] = useState<boolean>();
-
-  useEffect(() => {
-    setIsMobileDevice(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
-  }, []);
-
+export function useMobileDeviceCheck(): boolean {
+  // 초기 상태에서 사용자 에이전트를 체크하여 상태를 설정
+  const [isMobileDevice] = useState<boolean>(() =>
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+  );
   return isMobileDevice;
 }
 
 // 로컬 개발 환경 체크
-export function useLocalCheck() {
-  const [isLocal, setIsLocal] = useState<boolean>(true);
-
-  useEffect(() => {
-    const isLocalDomain = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
-    setIsLocal(isLocalDomain);
-  }, []);
+export function useLocalCheck(): boolean {
+  // 초기 상태 설정 시 바로 로컬 호스트를 체크하여 상태를 설정
+  const [isLocal] = useState<boolean>(() => {
+    const hostname = window.location.hostname;
+    return hostname === "localhost" || hostname === "127.0.0.1";
+  });
 
   return isLocal;
+}
+
+// debounce 로직 구현
+type Func = (...args: any[]) => void;
+function debounce(func: Func, wait: number): Func {
+  let timeout: NodeJS.Timeout | null = null;
+
+  return function executedFunction(...args: any[]) {
+    const later = () => {
+      clearTimeout(timeout!);
+      timeout = null;
+      func(...args);
+    };
+
+    clearTimeout(timeout!);
+    timeout = setTimeout(later, wait);
+  };
 }

@@ -9,10 +9,7 @@ import { AcList, AcListHeader, AcListItem } from "@/widgets/modules/AcList";
 import { Badge } from "@/widgets/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/widgets/ui/card";
 import { ChevronRightIcon } from "lucide-react";
-import { CarouselDots } from "@/widgets/ui/carousel";
-import { cn } from "@/shared/utils/utils";
 import { AcThumbnail } from "@/widgets/modules/AcThumbnail";
-import { url } from "inspector";
 import TextToHtml from "@/widgets/modules/helper/TextToHtml";
 
 export default function Main() {
@@ -84,7 +81,7 @@ export default function Main() {
     },
     {
       title: "디자인 설계",
-      description: "견고하고 유지보수가 용이한 소프트웨어 구축과<br>코드 효율성 극대화를 위한 방법론",
+      description: "견고하고 유지보수가 용이한 S/W 구축과<br>코드 효율성 극대화를 위한 방법론",
       src: "/img/banners/design.jpg",
       href: "/fsd",
     },
@@ -102,7 +99,7 @@ export default function Main() {
     },
     {
       title: "개발 관련 팁 & 도구들",
-      description: "작업 효율성 향상과 빠른 프로젝트 구축을 위한<br>간단한 미니 도구들",
+      description: "작업 효율성과 빠른 프로젝트 구축을 위한<br>간단한 미니 도구들",
       src: "/img/banners/tools.jpg",
       href: "/tools",
     },
@@ -125,7 +122,7 @@ export default function Main() {
                     backgroundPosition: "center",
                   }}
                 >
-                  <div className="banner-content text-center p-6 text-white">
+                  <div className="banner-content text-center p-4 text-white">
                     <h3 className="banner-title text-4xl xl:text-6xl font-bold">{item.title}</h3>
                     <TextToHtml html={item.description} className="banner-description mt-4 text-lg xl:text-2xl" />
                   </div>
@@ -154,6 +151,7 @@ export default function Main() {
                           description={listItem.description}
                           href={listItem.href}
                           src={listItem.src}
+                          thumbSize={isMobile ? "8rem" : "10rem"}
                           thumbClassName="border rounded-lg"
                           objectFit="contain"
                           key={idx2}
@@ -172,7 +170,7 @@ export default function Main() {
               <div>
                 <AcCarousel
                   opts={{
-                    slidesToScroll: isMobile ? 1 : 4,
+                    slidesToScroll: isMobile ? 1 : 3,
                   }}
                   containerClassName="-mx-2 w-auto"
                   itemClassName="xl:w-[33.33333%] xl:basis-auto xl:px-2"
