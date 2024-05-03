@@ -56,18 +56,27 @@ interface AcListItemProps extends AcListHeaderProps {
   objectPosition?: "top" | "bottom" | "center" | "left" | "right";
 }
 
-const AcListItem = ({ title, href, description, src, className, thumbClassName, ...props }: AcListItemProps) => {
+const AcListItem = ({
+  title,
+  href,
+  description,
+  src,
+  className,
+  thumbClassName,
+  thumbSize,
+  ...props
+}: AcListItemProps) => {
   return (
     <div className={cn("ac-list-item flex justify-between w-full border-b py-4", className && className)}>
       <div className="ac-list-item-header">
         <a href={href}>
-          <h3 className="ac-list-item-title text-xl font-semibold">{title}</h3>
-          {description && <p className="ac-list-item-description mt-1">{description}</p>}
+          <h3 className="ac-list-item-title text-xl font-semibold line-clamp-2">{title}</h3>
+          {description && <p className="ac-list-item-description mt-1 line-clamp-2">{description}</p>}
         </a>
       </div>
       {src && (
         <div className={cn("ac-list-item-thumb ml-4", thumbClassName && thumbClassName)}>
-          <AcThumbnail src={src} title={title} {...props} />
+          <AcThumbnail src={src} title={title} {...(thumbSize && { width: thumbSize })} {...props} />
         </div>
       )}
     </div>

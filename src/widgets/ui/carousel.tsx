@@ -235,6 +235,19 @@ const Dot: React.FC<DotProps> = ({ selected, onClick }) => (
 const CarouselDots = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
   ({ className, ...props }, ref) => {
     const { api } = useCarousel();
+    const [selectedSnap, setSelectedSnap] = React.useState(api?.selectedScrollSnap() || 0);
+
+    React.useEffect(() => {
+      const checkSnapChange = () => {
+        const currentSnap = api?.selectedScrollSnap() || 0;
+        if (selectedSnap !== currentSnap) {
+          setSelectedSnap(currentSnap);
+        }
+      };
+
+      const interval = setInterval(checkSnapChange, 100); // 100ms마다 체크
+      return () => clearInterval(interval);
+    }, [selectedSnap]);
 
     if (!api) {
       return null; // api가 없다면 컴포넌트를 렌더링하지 않습니다.
@@ -244,7 +257,19 @@ const CarouselDots = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLD
     const dots = [];
 
     for (let i = 0; i < slides; i++) {
-      dots.push(<Dot key={i} selected={api.selectedScrollSnap() === i} onClick={() => api.scrollTo(i)} />);
+      dots.push(
+        <Dot
+          key={i}
+          selected={api.selectedScrollSnap() === i}
+          onClick={() => {
+            api.scrollTo(i);
+            setTimeout(() => {
+              console.log("Selected Snap:", api.selectedScrollSnap());
+              setSelectedSnap(api.selectedScrollSnap());
+            }, 100);
+          }}
+        />
+      );
     }
 
     return (
