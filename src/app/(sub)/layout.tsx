@@ -124,7 +124,7 @@ const SubLayout = ({ children }: { children: React.ReactNode }) => {
                       <AcThumbnail
                         src={segment.length === 1 ? `${info ? info.src : ""}` : `${subData ? subData.src : ""}`}
                         title={segment.length === 1 ? info.title : `${subData ? subData.title : ""}`}
-                        objectFit="contain"
+                        objectFit="cover"
                         className="rounded-[0.75rem] overflow-hidden"
                         width="8rem"
                         style={{ boxShadow: "0 0.95rem 2.5rem -1rem rgba(0,0,0,0.5)" }}

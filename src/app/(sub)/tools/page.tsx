@@ -11,7 +11,7 @@ type TwMappingClassesType = {
   [key: string]: any[];
 };
 
-const Tools = () => {
+const ToolsPage = () => {
   const [currentClasses, setCurrentClasses] = useState<string[]>([]);
   const [currentActionType, setCurrentActionType] = useState<string>("");
   const exam1 = "text-[44px] font-semibold tracking-tight text-black";
@@ -178,4 +178,4 @@ const Tools = () => {
   );
 };
 
-export default Tools;
+export default ToolsPage;

@@ -5,8 +5,8 @@ import TextToHtml from "@/widgets/modules/helper/TextToHtml";
 import TwTag from "@/widgets/modules/helper/TwTag";
 import { contentHtml } from "@/features/fsd/contentHtml";
 
-const Fsd = () => {
+const FsdPage = () => {
   return <TextToHtml html={contentHtml} />;
 };
 
-export default Fsd;
+export default FsdPage;

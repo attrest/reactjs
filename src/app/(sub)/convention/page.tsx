@@ -5,8 +5,8 @@ import TextToHtml from "@/widgets/modules/helper/TextToHtml";
 import TwTag from "@/widgets/modules/helper/TwTag";
 import { contentHtml } from "@/features/convention/whyConvention/contentHtml";
 
-const Convention = () => {
+const ConventionPage = () => {
   return <TextToHtml html={contentHtml} />;
 };
 
-export default Convention;
+export default ConventionPage;
