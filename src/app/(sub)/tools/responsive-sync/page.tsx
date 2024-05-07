@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import TwTag from "@/widgets/modules/helper/TwTag";
 import Image from "next/image";
 
-const ResponsiveSync = () => {
+const ResponsiveSyncPage = () => {
   const [gsapAni, setGaspAni] = useState<any>(null);
   return (
     <div>
@@ -48,4 +48,4 @@ const ResponsiveSync = () => {
   );
 };
 
-export default ResponsiveSync;
+export default ResponsiveSyncPage;

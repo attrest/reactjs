@@ -4,9 +4,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { cn } from "@/shared/utils/utils";
 
-import TwTag from "@/widgets/modules/helper/TwTag";
 import TextToHtml from "@/widgets/modules/helper/TextToHtml";
-import { contentHtml } from "@/features/fsd/designSystem/contentHtml";
+import { contentHtml } from "@/features/tools/jsonServer/contentHtml";
 
 const baseUrl = `${process.env.NEXT_PUBLIC_TODOS}`;
 
@@ -16,7 +15,7 @@ type todoListProps = {
   isCompleted: boolean;
 };
 
-const JsonServer = () => {
+const JsonServerPage = () => {
   // 데이터 추가하기
   const [description, setDescription] = useState("");
   const handleSubmit = async () => {
@@ -103,4 +102,4 @@ const JsonServer = () => {
   );
 };
 
-export default JsonServer;
+export default JsonServerPage;

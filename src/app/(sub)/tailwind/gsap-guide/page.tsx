@@ -7,7 +7,7 @@ import { contentHtml } from "@/features/tailwind/gsap/contentHtml";
 import { GsapBasic, GsapTextEffect } from "@/features/tailwind/gsap/GsapExample";
 import gsap from "gsap";
 
-const GsapGuide = () => {
+const GsapGuidePage = () => {
   const [gsapAni, setGaspAni] = useState<any>(null);
   return (
     <section>
@@ -426,4 +426,4 @@ gsap.to(".horizontal-section", {
   );
 };
 
-export default GsapGuide;
+export default GsapGuidePage;

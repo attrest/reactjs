@@ -5,8 +5,8 @@ import TextToHtml from "@/widgets/modules/helper/TextToHtml";
 import TwTag from "@/widgets/modules/helper/TwTag";
 import { contentHtml } from "@/features/tailwind/radix/contentHtml";
 
-const Fsd = () => {
+const RadixPage = () => {
   return <TextToHtml html={contentHtml} />;
 };
 
-export default Fsd;
+export default RadixPage;

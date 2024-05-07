@@ -5,8 +5,8 @@ import TextToHtml from "@/widgets/modules/helper/TextToHtml";
 import TwTag from "@/widgets/modules/helper/TwTag";
 import { contentHtml } from "@/features/convention/cssGuide/contentHtml";
 
-const CssGuide = () => {
+const CssGuidePage = () => {
   return <TextToHtml html={contentHtml} />;
 };
 
-export default CssGuide;
+export default CssGuidePage;

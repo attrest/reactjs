@@ -24,7 +24,7 @@ const GsapBasic = ({ className = "gasp-square", gsapTest, gsapInit, containerCla
 
   return (
     <div className={cn("bg-black text-white w-full h-[10rem] flex items-center p-10 relative", containerClasses)}>
-      <div className={`${className} bg-gold w-16 h-16 rounded-lg`}></div>
+      <div className={`${className} bg-white w-16 h-16 rounded-lg`}></div>
       <button
         className={cn(
           "absolute bottom-4 right-12 border-white border rounded-md p-1",
