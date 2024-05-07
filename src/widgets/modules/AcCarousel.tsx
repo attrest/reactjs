@@ -23,6 +23,8 @@ interface AcCarouselProps {
   isPagination?: boolean;
   pagingClassName?: string;
   isNavigation?: boolean;
+  nextClassName?: string;
+  prevClassName?: string;
   NavTag?: React.ComponentType<any> | keyof React.ReactHTML;
   children?: React.ReactNode;
 }
@@ -34,6 +36,8 @@ export const AcCarousel = ({
   isPagination,
   pagingClassName,
   isNavigation,
+  nextClassName,
+  prevClassName,
   NavTag = Fragment,
   children,
   ...args
@@ -50,8 +54,8 @@ export const AcCarousel = ({
       {isPagination && <CarouselDots className={cn("ac-carousel-dots mt-4", pagingClassName && pagingClassName)} />}
       {isNavigation && (
         <>
-          <CarouselPrevious />
-          <CarouselNext />
+          <CarouselPrevious {...(prevClassName && { className: prevClassName })} />
+          <CarouselNext {...(nextClassName && { className: nextClassName })} />
         </>
       )}
       {children && children}
