@@ -119,8 +119,7 @@ const loadMapList = [
 ];
 
 export default function Main() {
-  // const isMobile = useMobileCheck();
-  const [isMobile] = useState<boolean>(window.innerWidth < 1280);
+  const isMobile = useMobileCheck();
   const menu = useSelector((state: RootState) => state.global.menu);
   const relatedLinks = useSelector((state: RootState) => state.global.relatedLinks);
 
@@ -180,6 +179,9 @@ export default function Main() {
               );
             })}
             isPagination={true}
+            isNavigation={true}
+            nextClassName="hidden xl:flex xl:mr-10"
+            prevClassName="hidden xl:flex xl:ml-10"
             opts={{ loop: true }}
           />
         </div>
@@ -203,7 +205,7 @@ export default function Main() {
                           src={listItem.src}
                           thumbSize={isMobile ? "8rem" : "10rem"}
                           thumbClassName="border rounded-lg"
-                          objectFit="contain"
+                          objectFit="cover"
                           key={idx2}
                         />
                       ));
@@ -216,11 +218,11 @@ export default function Main() {
             </div>
 
             <div className="main-content-section mb-10">
-              <h3 className="mt-10 text-left text-lg font-bold mb-4">주요 기술 로드맵{isMobile ? "(MO)" : "(PC)"}</h3>
+              <h3 className="mt-10 text-left text-lg font-bold mb-4">주요 기술 로드맵</h3>
               <div>
                 <AcCarousel
                   opts={{
-                    slidesToScroll: !isMobile ? 3 : 1,
+                    slidesToScroll: 1,
                   }}
                   containerClassName="-mx-2 w-auto"
                   itemClassName="xl:w-[33.33333%] xl:basis-auto xl:px-2"
