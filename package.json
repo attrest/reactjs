@@ -86,7 +86,8 @@
     "tailwind-merge": "^2.2.2",
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^0.9.0",
-    "zod": "^3.22.4"
+    "zod": "^3.22.4",
+    "jsonwebtoken": "^9.0.2"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "1.2.25",
@@ -98,10 +99,11 @@
     "@storybook/nextjs": "^8.0.5",
     "@storybook/react": "^8.0.5",
     "@storybook/test": "^8.0.5",
-    "@types/node": "^20",
     "@types/qs": "^6.9.11",
-    "@types/react": "^18.2.73",
-    "@types/react-dom": "^18",
+    "@types/jsonwebtoken": "^9.0.2",
+    "@types/node": "^18.7.14",
+    "@types/react": "^18.0.19",
+    "@types/react-dom": "^18.0.6",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.0.4",

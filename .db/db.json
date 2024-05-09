@@ -1,26 +1,4908 @@
 {
-  "todos": [
+  "users": [
+    { "id": 1, "username": "admin", "password": "admin123", "role": "admin" },
+    { "id": 2, "username": "user", "password": "user123", "role": "user" }
+  ],
+  "posts": [
+    { "id": 1, "title": "First Post", "content": "This is the first post.", "author": "admin" },
+    { "id": 2, "title": "Second Post", "content": "This is the second post.", "author": "user" }
+  ],
+  "promotions": {
+    "status": {
+      "code": "SUCCESS",
+      "message": "",
+      "errorStatusCode": null
+    },
+    "data": {
+      "data": [
+        {
+          "promotionId": 1,
+          "mainTitle": "",
+          "subTitle": "",
+          "fileName": "singapore",
+          "fileUrl": "https://d2l89qdhwowr9k.cloudfront.net/wontravel/promotion/pc_promotion_sq.png",
+          "mobileFileUrl": "https://d2l89qdhwowr9k.cloudfront.net/wontravel/promotion/mo_promotion_sq.png",
+          "promotionLink": "",
+          "mobilePromotionLink": ""
+        },
+        {
+          "promotionId": 2,
+          "mainTitle": "",
+          "subTitle": "",
+          "fileName": "airpremia",
+          "fileUrl": "https://d2l89qdhwowr9k.cloudfront.net/wontravel/promotion/pc_promotion_yp.png",
+          "mobileFileUrl": "https://d2l89qdhwowr9k.cloudfront.net/wontravel/promotion/mo_promotion_yp.png",
+          "promotionLink": "",
+          "mobilePromotionLink": ""
+        },
+        {
+          "promotionId": 3,
+          "mainTitle": "",
+          "subTitle": "",
+          "fileName": "EVERYMILE SKYPASS",
+          "fileUrl": "https://d2l89qdhwowr9k.cloudfront.net/wontravel/promotion/PC_HO_EVERYMILE SKYPASS.png",
+          "mobileFileUrl": "https://d2l89qdhwowr9k.cloudfront.net/wontravel/promotion/Mobile_HO_EVERYMILE%20SKYPASS.png",
+          "promotionLink": "https://pc.wooricard.com/dcpc/yh1/crd/crd01/H1CRD101S02.do?cdPrdCd=102488&canvasser=88801991&utm_source=wooricard_page&utm_medium=wontravel&utm_campaign=everymile&utm_content=wontravel_homepage&utm_term=wontravel_homepage",
+          "mobilePromotionLink": "https://m.wooricard.com/dcmw/yh1/crd/crd01/M1CRD101S02.do?cdPrdCd=102488&canvasser=88801991&utm_source=wooricard_page&utm_medium=wontravel&utm_campaign=everymile&utm_content=wontravel_homepage&utm_term=wontravel_homepage"
+        }
+      ]
+    }
+  },
+  "populars": [
     {
-      "id": "1",
-      "description": "Json Server 테스트하기",
-      "isCompleted": true
+      "TRAVEL": {
+        "status": {
+          "code": "SUCCESS",
+          "message": "",
+          "errorStatusCode": null
+        },
+        "data": {
+          "data": [
+            {
+              "popularId": 2,
+              "id": "KIX",
+              "countryId": "JP",
+              "countryName": "오사카",
+              "cityId": "OSA",
+              "cityName": "오사카",
+              "title": "오사카",
+              "price": "211,500",
+              "unit": "KRW",
+              "startMmddweek": "2024-05-13",
+              "endMmddweek": "2024-05-16",
+              "fileUrl": "https://d2l89qdhwowr9k.cloudfront.net/wontravel/flight/pc_flight_01.png",
+              "mobileFileUrl": "https://d2l89qdhwowr9k.cloudfront.net/wontravel/flight/m_flight_01.png",
+              "flightRange": "SHORT_HAUL"
+            },
+            {
+              "popularId": 4,
+              "id": "NRT",
+              "countryId": "JP",
+              "countryName": "도쿄",
+              "cityId": "TYO",
+              "cityName": "도쿄",
+              "title": "도쿄",
+              "price": "232,800",
+              "unit": "KRW",
+              "startMmddweek": "2024-05-13",
+              "endMmddweek": "2024-05-16",
+              "fileUrl": "https://d2l89qdhwowr9k.cloudfront.net/wontravel/flight/pc_flight_02.png",
+              "mobileFileUrl": "https://d2l89qdhwowr9k.cloudfront.net/wontravel/flight/m_flight_02.png",
+              "flightRange": "SHORT_HAUL"
+            },
+            {
+              "popularId": 3,
+              "id": "LAX",
+              "countryId": "US",
+              "countryName": "로스엔젤레스",
+              "cityId": "LAX",
+              "cityName": "로스엔젤레스",
+              "title": "로스엔젤레스",
+              "price": "1,187,100",
+              "unit": "KRW",
+              "startMmddweek": "2024-05-13",
+              "endMmddweek": "2024-05-16",
+              "fileUrl": "https://d2l89qdhwowr9k.cloudfront.net/wontravel/flight/pc_flight_03.png",
+              "mobileFileUrl": "https://d2l89qdhwowr9k.cloudfront.net/wontravel/flight/m_flight_03.png",
+              "flightRange": "LONG_HAUL"
+            },
+            {
+              "popularId": 1,
+              "id": "CDG",
+              "countryId": "FR",
+              "countryName": "파리",
+              "cityId": "PAR",
+              "cityName": "파리",
+              "title": "파리",
+              "price": "1,327,500",
+              "unit": "KRW",
+              "startMmddweek": "2024-05-13",
+              "endMmddweek": "2024-05-16",
+              "fileUrl": "https://d2l89qdhwowr9k.cloudfront.net/wontravel/flight/pc_flight_04.png",
+              "mobileFileUrl": "https://d2l89qdhwowr9k.cloudfront.net/wontravel/flight/m_flight_04.png",
+              "flightRange": "LONG_HAUL"
+            }
+          ]
+        }
+      }
     },
     {
-      "id": "2",
-      "description": "Next.js 셋팅 적용하기",
-      "isCompleted": true
-    },
-    {
-      "id": "3",
-      "description": "Zustand 학습하기",
-      "isCompleted": false
+      "HOTEL": {
+        "status": {
+          "code": "SUCCESS",
+          "message": "",
+          "errorStatusCode": null
+        },
+        "data": {
+          "data": [
+            {
+              "popularId": 6,
+              "id": "8715361811058680477",
+              "countryId": "JP",
+              "countryName": "일본",
+              "cityId": "KIX",
+              "cityName": "오사카",
+              "title": "스위소텔 난카이 오사카",
+              "price": "328,181",
+              "unit": "KRW",
+              "startMmddweek": "2024-05-20",
+              "endMmddweek": "2024-05-23",
+              "fileUrl": "https://d2l89qdhwowr9k.cloudfront.net/wontravel/hotel/pc_hotel_01.png",
+              "mobileFileUrl": "https://d2l89qdhwowr9k.cloudfront.net/wontravel/hotel/m_hotel_01.png",
+              "flightRange": "SHORT_HAUL"
+            },
+            {
+              "popularId": 7,
+              "id": "4247790980707148458",
+              "countryId": "JP",
+              "countryName": "일본",
+              "cityId": "HND",
+              "cityName": "도쿄",
+              "title": "더 낫 도쿄 신주쿠",
+              "price": "268,844",
+              "unit": "KRW",
+              "startMmddweek": "2024-05-20",
+              "endMmddweek": "2024-05-23",
+              "fileUrl": "https://d2l89qdhwowr9k.cloudfront.net/wontravel/hotel/pc_hotel_02.png",
+              "mobileFileUrl": "https://d2l89qdhwowr9k.cloudfront.net/wontravel/hotel/m_hotel_02.png",
+              "flightRange": "SHORT_HAUL"
+            },
+            {
+              "popularId": 5,
+              "id": "6481576395882914442",
+              "countryId": "TH",
+              "countryName": "태국",
+              "cityId": "BKK",
+              "cityName": "방콕",
+              "title": "아마리 방콕",
+              "price": "125,790",
+              "unit": "KRW",
+              "startMmddweek": "2024-05-20",
+              "endMmddweek": "2024-05-23",
+              "fileUrl": "https://d2l89qdhwowr9k.cloudfront.net/wontravel/hotel/pc_hotel_03.png",
+              "mobileFileUrl": "https://d2l89qdhwowr9k.cloudfront.net/wontravel/hotel/m_hotel_03.png",
+              "flightRange": "SHORT_HAUL"
+            },
+            {
+              "popularId": 8,
+              "id": "2014005565531382452",
+              "countryId": "HK",
+              "countryName": "홍콩",
+              "cityId": "HKG",
+              "cityName": "홍콩",
+              "title": "르네상스 홍콩 하버 뷰 호텔",
+              "price": "348,771",
+              "unit": "KRW",
+              "startMmddweek": "2024-05-20",
+              "endMmddweek": "2024-05-23",
+              "fileUrl": "https://d2l89qdhwowr9k.cloudfront.net/wontravel/hotel/pc_hotel_04.png",
+              "mobileFileUrl": "https://d2l89qdhwowr9k.cloudfront.net/wontravel/hotel/m_hotel_04.png",
+              "flightRange": "SHORT_HAUL"
+            }
+          ]
+        }
+      }
     }
   ],
-  "banners": [
-    {
-      "id": "1",
-      "src": "",
-      "link": ""
+  "notices": {
+    "status": {
+      "code": "SUCCESS",
+      "message": "",
+      "errorStatusCode": null
+    },
+    "data": {
+      "count": 6,
+      "data": [
+        {
+          "id": 7,
+          "type": 4,
+          "name": "항공",
+          "title": "2024년 5월 1일 부 유류할증료 안내",
+          "content": "안녕하세요. WON트래블입니다.\n\n주요 항공사 국제선 유류할증료를 아래와 같이 안내드리오니 이용에 참고 바랍니다.\n그외 항공사의 유류 할증료는 항공사 홈페이지를 통해 별도 확인 바랍니다.\n\n적용일자 : 2024년 5월 1일부 적용\n\n### 대한항공\n![ke](https://d2l89qdhwowr9k.cloudfront.net/wontravel/ke.png)\n\n### 아시아나\n![oz](https://d2l89qdhwowr9k.cloudfront.net/wontravel/oz.png)\n\n### 진에어\n![lj](https://d2l89qdhwowr9k.cloudfront.net/wontravel/lj.png)\n\n### 티웨이\n![tw](https://d2l89qdhwowr9k.cloudfront.net/wontravel/tw.png)\n\n### 제주항공\n![7c](https://d2l89qdhwowr9k.cloudfront.net/wontravel/7c.png)\n\n### 에어부산\n![bx](https://d2l89qdhwowr9k.cloudfront.net/wontravel/bx.png)\n\n### 에어서울\n![rs](https://d2l89qdhwowr9k.cloudfront.net/wontravel/rs.png)\n\n### 이스타항공\n![ze](https://d2l89qdhwowr9k.cloudfront.net/wontravel/ze.png)",
+          "datetime": "2024-04-30"
+        },
+        {
+          "id": 2,
+          "type": 4,
+          "name": "항공",
+          "title": "2024년 4월 1일 부 유류할증료 안내",
+          "content": "안녕하세요. WON트래블입니다.\n\n주요 항공사 국제선 유류할증료를 아래와 같이 안내드리오니 이용에 참고 바랍니다.\n\n그외 항공사의 유류 할증료는 항공사 홈페이지를 통해 별도 확인 바랍니다.\n\n### 대한항공\n\n한국 출발 국제선 노선별 유류할증료 금액 (단위: 원, 편도 기준)\n\n| 대권거리 | 주요노선 | 24년 3월 | 24년 4월 |\n| --- | --- | --- | --- |\n| ~ 499 | 인천-선양,칭다오,다롄,연길, 후쿠오카 | 21,000 | 21,000 |\n| 500 ~ 999 | 인천-상하이 푸동, 북경, 톈진, 창사, 난징, 항저우, 나고야, 나리타, 오사카, 타이베이, 톈진, 삿포로, 오키나와 / 김포-하네다 / 부산-나리타 | 35,000 | 35,000 |\n| 1,000 ~ 1,499 | 인천-광저우, 시안, 선전, 샤먼, 홍콩, 울란바토르 | 39,200 | 39,200 |\n| 1,500 ~ 1,999 | 인천-마닐라, 하노이, 세부, 다낭 | 50,400 | 50,400 |\n| 2,000 ~ 2,999 | 인천-방콕, 싱가포르, 양곤, 쿠알라룸푸르, 프놈펜, 호치민, 괌, 델리, 카트만두, 치앙마이, 푸켓, 나트랑 | 60,200 | 60,200 |\n| 3,000 ~ 3,999 | 인천-자카르타, 타슈켄트, 발리 | 61,600 | 61,600 |\n| 4,000 ~ 4,999 | 인천-모스크바, 두바이, 호놀룰루, 브리즈번, 이스탄불 | 105,000 | 105,000 |\n| 5,000 ~ 6,499 | 인천-런던, 로스앤젤레스, 라스베가스, 밴쿠버, 샌프란시스코, 시드니, 시애틀, 암스테르담, 오클랜드, 파리, 프랑크푸르트,밀라노, 비엔나, 바르셀로나, 로마, 부다페스트, 텔아비브, 프라하, 취리히, 마드리드 | 130,200 | 130,200 |\n| 6,500 ~ 9,999 | 인천-뉴욕, 댈러스, 보스톤, 시카고, 애틀랜타, 워싱턴, 토론토 | 161,000 | 161,000 |\n\n- 적용 기간 : 2024년 4월 1일 ~ 4월 30일 (발권일 기준)면제 대상 : 좌석을 점유하지 않는 유아 승객 (만 2세 미만)할인 대상 : 없음\n- 구매 후 탑승시점에 유류할증료가 인상되어도 차액을 징수하지 않으며 인하되어도 환급하지 않습니다.\n- 유류할증료는 1개월 단위로 사전 고지되며, 탑승일과 관계 없이 발권일 기준으로 적용됩니다.\n- 한국 출발 여정의 유류할증료는 미국 달러화(USD)로 정해진 금액을 기준 유가 산정 기간과 동일 기간의 평균 환율을 적용하여 원화(KRW)로 환산합니다.\n\n### 아시아나항공\n\n1. 한국 출발 국제선 유류할증료 (단위 : 원, 편도 기준)\n\n| 대권거리 (mile) | 서울출발 주요 노선 | 24년 3월 | 24년 4월 |\n| --- | --- | --- | --- |\n| ~ 499 | 후쿠오카, 옌지, 창춘, 옌청, 옌타이, 다롄, 웨이하이, 칭다오, 미야자키 | 22,700원 | 22,600원 |\n| 500 ~ 999 | 오사카, 나고야, 도쿄, 오키나와, 센다이, 삿포로, 상하이, 베이징, 톈진, 난징, 하얼빈, 항저우, 창사, 타이베이, 타이중 | 33,400원 | 33,200원 |\n| 1,000 ~ 1,499 | 시안, 광저우, 충칭, 선전, 구이린, 청두, 홍콩, 울란바타르, 가오슝 | 44,100원 | 43,900원 |\n| 1,500 ~ 1,999 | 클라크필드, 마닐라, 하노이, 다낭, 세부, 사이판, 하이커우 | 53,400원 |  |\n| 2,000 ~ 2,499 | 호찌민, 프놈펜, 방콕, 팔라우, 괌, 푸꾸옥, 나트랑 | 64,100원 | 63,800원 |\n| 2,500 ~ 2,999 | 푸껫, 싱가포르, 알마티, 델리 | 73,500원 | 73,100원 |\n| 3,000 ~ 3,999 | 자카르타, 타슈켄트 | 84,200원 | 83,800원 |\n| 4,000 ~ 4,999 | 이스탄불, 호놀룰루 | 104,200원 | 103,700원 |\n| 5,000 ~ | 로스앤젤레스, 샌프란시스코, 시애틀, 뉴욕, 시드니, 프랑크푸르트, 파리, 런던, 로마, 베네치아, 바르셀로나 | 124,200원 | 123,600원 |\n\n2. 부과대상 : 마일리지 항공권을 포함한 모든 유/무상 항공권\n\n3. 면제대상 : 좌석을 점유하지 않는 만 2세 미만의 유아 (Infant)\n\n4. 발권 적용일 : 2024년 4월 1일 ~ 2024년 4월 30일(발권일 기준)\n\n- ※ 편도운임 적용 기준이며, 유가에 따라 유류할증료는 변동될 수 있습니다.\n- ※ 유류할증료는 1개월 단위로 사전 고지되며, 탑승일과 관계없이 발권일 기준으로 적용됩니다.\n- ※ 구매 후 탑승시점에 유류할증료가 인상되어도 차액을 징수하지 않으며 인하되어도 환급하지 않습니다.\n\n### 진에어\n\n· 적용 대상 : 모든 유/무상 항공권\n\n· 적용 기간 : 2024. 4. 1 ~ 4. 30 (발권일 기준)\n\n· 면제 대상 : 좌석을 점유하지 않는 유아 (만 2세 미만)\n\n· 적용 기준 : 최초 출발지, 편도 기준\n\n| 운항거리\n(mile) | 노선 |  | 유류할증료 |  |\n| --- | --- | --- | --- | --- |\n|  | 출발지 | 도착지 | 24년 3월 | 24년 4월 |\n| 1~599 | 제주 | 상하이 | USD 14 | USD 14 |\n|  | 인천/부산 | 후쿠오카 |  |  |\n|  | 인천 | 기타큐슈 |  |  |\n|  | 인천/부산 | 오사카 |  |  |\n| 600~1199 | 인천/부산 | 오키나와 | USD 20 | USD 20 |\n|  | 인천/부산 | 도쿄 |  |  |\n|  | 인천 | 나고야 |  |  |\n|  | 인천 | 미야코지마 |  |  |\n|  | 인천/부산 | 삿포로 |  |  |\n|  | 인천/부산/대구 | 타이베이 |  |  |\n|  | 제주 | 시안 |  |  |\n| 1200~1799 | 인천 | 마카오 | USD 31 | USD 31 |\n|  | 인천/부산 | 클락 |  |  |\n|  | 부산 | 세부 |  |  |\n|  | 부산 | 괌 |  |  |\n|  | 무안 | 울란바토르 |  |  |\n| 1800~2399 | 인천/부산 | 다낭 | USD 34 | USD 34 |\n|  | 인천 | 세부 |  |  |\n|  | 인천 | 비엔티안 |  |  |\n|  | 인천 | 괌 |  |  |\n|  | 인천/부산 | 코타키나발루 |  |  |\n|  | 인천/부산 | 방콕 |  |  |\n|  | 인천 | 치앙마이 |  |  |\n|  | 인천/부산 | 나트랑 |  |  |\n|  | 인천 | 푸꾸옥 |  |  |\n| 2400~3600 | 인천 | 푸켓 | USD 42 | USD 42 |\n\n· 유류할증료는 1개월 단위로 사전 고지되며, 탑승일과 관계 없이 발권일 기준으로 적용됩니다.\n\n· 구매 후 탑승시점에 유류할증료가 인상되어도 차액을 징수하지 않으며, 인하되어도 환급하지 않습니다.\n\n### 티웨이항공\n\n**2024년 4월 한국발 국제선 유류할증료 안내**\n\n1. 기간 : 2024년 4월 1일 ~ 4월 30일까지 (발권일 기준)\n\n2. 대상 노선 및 유류할증료 (편도 기준으로 적용)\n\n| 부과군 | 운항거리 (miles) | 유류할증료 (KRW) |\n| --- | --- | --- |\n| 1군 | ~ 600 미만 | 14,600 원 |\n| 2군 | 600 ~ 1,200 미만 | 26,600 원 |\n| 3군 | 1,200 ~ 1,800 미만 | 33,200 원 |\n| 4군 | 1,800 ~ 2,400 미만 | 43,800 원 |\n| 5군 | 2,400 ~ 3,000 미만 | 46,500 원 |\n| 6군 | 3,000 ~ 4,000 미만 | - |\n| 7군 | 4,000 ~ 5,000 미만 | - |\n| 8군 | 5,000 이상 ~ | 105,000 원 |\n\n※ 한국발 국제선 유류할증료는 USD로 정해진 금액을 기준 유가 산정 기간과 동일한 기간의 평균 환율을 적용하여 KRW로 환산하여 공지합니다.\n\n| 부과군 | 취항 노선 |\n| --- | --- |\n| 1군 | 인천-후쿠오카, 대구-후쿠오카, 청주-후쿠오카, 인천-사가, 대구-사가, 인천-오이타, 인천-구마모토\n인천-오사카, 대구-오사카, 부산-오사카, 제주-오사카, 청주-오사카, 인천-가고시마, 제주-나고야, 인천-도야마\n인천-칭다오, 인천-지난, 인천-선양, 대구-옌지, 청주-옌지, 인천-다싱\n대구-블라디보스토크 |\n| 2군 | 인천-나고야, 인천-오키나와, 대구-오키나와, 인천-나리타, 대구-나리타, 제주-나리타\n인천-삿포로, 대구-삿포로, 인천-아사히가와, 청주-아사히가와\n김포-타이베이(송산), 대구-타이베이(타오위안), 부산-타이베이(타오위안), 제주-타이베이(타오위안)\n인천-타이중, 부산-타이중, 인천-가오슝, 김포-가오슝, 부산-가오슝\n인천-원저우, 인천-우한, 대구-장자제\n제주-홍콩\n인천-블라디보스토크, 인천-하바로브스크 |\n| 3군 | 인천-산야, 제주-난닝\n인천-홍콩, 대구-홍콩, 부산-홍콩, 인천-마카오\n인천-하노이, 대구-하노이, 부산-하노이\n대구-세부, 인천-칼리보, 대구-칼리보, 인천-클락, 대구-클락\n인천-울란바타르, 대구-울란바타르 |\n| 4군 | 인천-괌, 대구-괌, 인천-사이판\n인천-방콕(수완나폼), 인천-방콕(돈므앙), 대구-방콕(수완나폼), 청주-방콕(돈므앙) 인천-치앙마이\n인천-비엔티안, 대구-비엔티안, 부산-비엔티안\n인천-호치민, 인천-다낭, 대구-다낭, 부산-다낭, 청주-다낭, 인천-나트랑, 대구-나트랑, 청주-나트랑, 부산-나트랑\n인천-세부\n인천-코타키나발루 |\n| 5군 | 인천-푸켓\n인천-싱가포르\n인천-비슈케크 |\n| 6군 | - |\n| 7군 | - |\n| 8군 | 인천-시드니인천-자그레이브 |\n\n3. 주의사항\n\n1) 모든 유/무료 항공권에 적용2) 좌석을 점유하지 않는 만 2세 미만의 유아는 면제3) 국제선 유류할증료는 출발지를 기준으로 적용됩니다.4) 구매 후 탑승 시점에 유류할증료가 인상되어도 차액을 징수하지 않으며, 인하되어도 환급하지 않습니다.\n\n### 제주항공\n\n**편도운임 적용 기준이며 유가에 따라 유류할증료는 변동될 수 있습니다.유류할증료는 1개월 간격으로 사전 고지되며 탑승일과 관계없이 발권일 기준으로 적용됩니다.구매 후 탑승시점에 유류할증료가 인상되어도 차액을 징수하지 않으며 인하되어도 환급되지 않습니다.부과대상 : 모든 유/무상 항공권면제대상 : 좌석을 점유하지 않는 만 2세 미만의 유아 (Infant)**\n\n| 구간 | 현 행 (2024년 3월) | 변 경 (2024년 4월) |\n| --- | --- | --- |\n| 한국 - 후쿠오카, 오사카(부산발), 마쓰야마, 오이타, 웨이하이, 옌타이, 옌지, 히로시마, 칭다오 (운항거리 1~500mile 미만) | USD 16 | USD 16 |\n| 한국 -오사카(인천/김포발), 도쿄, 삿포로, 오키나와, 나고야, 시즈오카, 자무스, 하얼빈, 스자좡, 타이베이, 블라디보스토크, 베이징, 옌지(무안발) (운항거리 500~1000mile 미만) | USD 20 | USD 20 |\n| 한국 - 홍콩, 마카오, 가오슝, 울란바타르, 장자제 (운항거리 1000~1500mile 미만) | USD 24 | USD 24 |\n| 한국 - 마닐라, 세부, 클락, 보홀, 하노이, 다낭, 비엔티안, 괌(부산/무안발), 사이판 (운항거리 1500~2000mile 미만) | USD 29 | USD 29 |\n| 한국 - 방콕, 치앙마이, 달랏, 냐짱(나트랑), 호찌민, 푸꾸옥, 코타키나발루, 괌(인천발) (운항거리 2000~2500mile 미만) | USD 33 | USD 33 |\n| 한국 - 싱가포르 (운항거리 2500~3000mile 미만) | USD 37 | USD 37 |\n| 일본 - 한국 | JPY 5500 | JPY 4400 |\n| 홍콩 - 한국 | HKD 207 | HKD 207 |\n| 대만 - 한국 | USD 28 | USD 28 |\n| 태국 - 한국 | THB 2400 | THB 2400 |\n| 중국 (칭다오 제외)- 한국 | CNY 350 | CNY 350 |\n| 중국 (칭다오) - 한국 | CNY 230 | CNY 230 |\n| 대양주 (괌/사이판) - 한국 | USD 55 | USD 55 |\n| 베트남 - 한국 | USD 33 | USD 33 |\n| 마카오 - 한국 | MOP 217 | MOP 320 |\n| 말레이시아 - 한국 | USD 60 | USD 60 |\n| 러시아 - 한국 | EUR 30.79 | EUR 30.79 |\n| 라오스 - 한국 | USD 40 | USD 40 |\n| 필리핀 - 한국 | USD 16.5 | USD 16.5 |\n| 싱가포르 - 한국 | SGD 50 | SGD 50 |\n| 몽골 - 한국 | USD 30 | USD 30 |\n\n### 에어부산\n\n1. **적용 일자: 2024년 4월 1일 ~ 4월 30일 (발권일 기준)**\n\n2. 부과 대상: 한국발 전 항공권 (편도 기준)\n\n3. 면제 대상: 좌석을 점유하지 않는 만 2세 미만의 유아 (Infant)\n\n| 노선 | 현행 (3월) | 변경 (4월) |\n| --- | --- | --- |\n| 후쿠오카, 마쓰야마, 오사카(간사이),\n나리타(부산 출발), 칭다오 | USD 16 | USD 16 |\n| 나리타(인천 출발), 삿포로,\n\n시안, 옌지, 장자제,\n마카오, 타이베이, 가오슝, | USD 28 | USD 28 |\n| 싼야, 울란바토르, 칼리보, 다낭,\n냐쨩(나트랑), 비엔티안,\n코타키나발루(부산 출발),\n보홀(인천 출발) | USD 33 | USD 33 |\n| 방콕 | USD 38 | USD 38 |\n- 유류할증료는 유가 및 환율에 따라 변동될 수 있습니다.\n- 구매 후 탑승시점에 유류할증료가 인상되어도 차액을 징수하지 않으며 인하되어도 환급하지 않습니다.\n- 2024년 5월 적용 유류할증료는 2024년 4월 중 공지 예정입니다.\n\n### 이스타항공\n\n**1. 유류할증료**(편도/발권일 기준)\n\n| 구분 | 노선 | 24년 03월 | 24년 04월 |\n| --- | --- | --- | --- |\n| 1군 | 인천 - 후쿠오카 | USD 16 | USD 16 |\n| 2군 | 김포 - 타이베이(송산)\n인천 - 나리타\n인천 - 오사카\n인천 - 상하이(푸동)\n인천 - 타이베이(타오위안)\n청주 - 타이베이(타오위안)\n제주 - 타이베이(타오위안) | USD 20 | USD 20 |\n| 4군 | 인천 - 다낭 | USD 29 | USD 29 |\n| 5군 | 인천 - 방콕인천 - 나트랑 | USD 33 | USD 33 |\n\n**2. 적용 기간**\n\n2024년 04월 01일 ~ 2024년 04월 30일\n\n**3. 면제 대상**\n\n1) 좌석을 점유하지 않는 만 2세 미만 유아(Infant)\n\n※ 최초 출발지 기준으로 적용 되며, 유류할증료는 탑승일이 아닌 발권일을 기준으로  적용 됩니다.\n\n또한, 발권 후 탑승 시점에 인상되어도 차액을 징수하지 않으며, 인하되어도 환급하지 않습니다.",
+          "datetime": "2024-03-18"
+        },
+        {
+          "id": 3,
+          "type": 4,
+          "name": "항공",
+          "title": "고객상담 이용 안내",
+          "content": "안녕하세요.\n\nWON트래블을 이용해 주셔서 감사합니다.\n\n통화량이 많아 전화 연결이 어려울 시\n\n홈페이지 내 채널 톡을 이용하시면 보다 빠르게 답변 받으실 수 있습니다.\n\n[https://lh7-us.googleusercontent.com/BdJqONZT2zGoxz5OdVpvjtCUYiFxOfciHEgPkD8tA3KUq5c_XpBQXyaqRVpsn30QTpyk8lD9430GSvRjlFY3vm7mvM8yc22jRbw1LvmEivKEKEtLMYCfJVm_8hzh1ZAsoPGOT3-bA2cpOyZBOcpK3TU](https://lh7-us.googleusercontent.com/BdJqONZT2zGoxz5OdVpvjtCUYiFxOfciHEgPkD8tA3KUq5c_XpBQXyaqRVpsn30QTpyk8lD9430GSvRjlFY3vm7mvM8yc22jRbw1LvmEivKEKEtLMYCfJVm_8hzh1ZAsoPGOT3-bA2cpOyZBOcpK3TU)\n\n- WON트래블 채널톡 운영 시간\n\n일반문의 : 월~금 09:30 ~ 17:00 토,일/ 공휴일 휴무\n\n변경/환불 접수 시간: 월~금 09:30 ~ 15:00 토,일/ 공휴일 휴무\n\n운영시간 외 문의건은 다음 영업일 기준 처리 됩니다.\n\n감사합니다.",
+          "datetime": "2024-03-18"
+        },
+        {
+          "id": 4,
+          "type": 4,
+          "name": "항공",
+          "title": "국제선 결제(발권) 이후 24시간 이내 환불 처리 방침 안내",
+          "content": "안녕하세요.\n\nWON트래블을 이용해 주셔서 감사합니다.\n\n일부 항공사의 국제선 결제(발권) 이후 24시간 이내 환불 처리 방침이 아래와 같이 변경 되었습니다.\n\n아래 대상 항공사는 항공사 정책에 따라 수정 및 변경 될 수 있으며 환불 요청 시점에 최신 항공사 공지에 따라 환불 처리됩니다\n\n▶시행일시 : 2023년 12월 1일 부\n\n▶변경 내용 :\n\n아래 대상 항공사의 경우 결제(발권) 시점으로 부터  24시간 이내 취소 접수 시\n\n항공사 환불 수수료가 면제됩니다. *단, 결제하신 여행사 발권 수수료는 면제 불가입니다.\n\n▶대상 항공사 :\n\n아메리칸항공, 델타항공, 에어캐나다, 유나이티드항공, 루프트한자 독일항공, 에티하드항공, 제주항공, 에어서울, 에어프레미아, 에어프랑스,\n\nKLM네덜란드항공, 대한항공, 아시아나항공, 티웨이항공, 진에어, 폴란드항공, 에어뉴질랜드, 일본항공, 하와이안항공, ANA항공, 이스타항공, 에어부산\n\n▶예외사항\n\n- 항공권이 재발행된 경우에는 24시간 이내 취소 요청하더라도 환불 면제가 불가합니다.\n- 예약 부도(NO-SHOW) 시 항공권 구매 시점과 상관없이 환불 위약금 징수됩니다.\n- 최초 발권 후 미사용된 항공 대상으로 출발이 지난 항공권의 경우 면제 불가합니다.\n- 대상 항공사 중 일부 항공사는 출국 7일전 24시간 환불 시 정규 환불 수수료가 징수 될 수 있습니다.",
+          "datetime": "2024-03-18"
+        },
+        {
+          "id": 5,
+          "type": 4,
+          "name": "항공",
+          "title": "제3자 카드 결제시 주의사항",
+          "content": "항공권 결제 시 신용카드로 결제 하시는 경우 반드시 탑승객 본인 명의의 카드로만 결제가 원칙입니다.\n\n가족카드나 법인카드 등 본인 이외의 카드로 결제하신 경우, 결제 후 항공사에서 요청하는 증빙서류를 제출해 주셔야 합니다.\n\n일부 항공사는 증빙서류 제출하지 않는 경우 발권은 가능하나, 증빙서류 미제출로 인해 발생되는 문제에 대해 여행사는 책임지지 않습니다\n\n탑승객 본인카드로 결제 후 항공편 탑승 당일 결제하신 카드를 공항에서 확인할 수 있습니다.\n\n확인 시 결제하신 카드를 제시하지 못할 경우 탑승이 거부될 수 있습니다.\n\n반드시 항공사별 카드사용 규정을 참고 하시어 항공편 이용에 불편이 없도록 당부 드립니다.\n\n▶ 3자카드 결제 시 필요서류\n\n1) 가족카드 사용시 : 결제 신용카드 앞/뒷면 사본, 가족관계증명서 (주민등록증 또는 의료보험증 사본중 택 1 )\n\n2) 법인카드 사용시 : 결제 신용카드 앞/뒷면 사본, 사업자등록증, 재직증명서 또는 재직을 확인할 수 있는 명함\n\n3) 제 3자카드 사용시 : 결제 신용카드 앞/뒷면 사본, 카드 소유주 신분증 앞면 사본\n\n4) 공통 서류 : 신용카드사용 동의서(위임장)\n\n증빙서류와 동의서(위임장)을 원트래블 [채널톡]으로 전송 바랍니다.\n\n- WON트래블 채널톡 운영 시간\n\n일반문의 : 월~금 09:30 ~ 17:00 토,일/ 공휴일 휴무\n\n변경/환불 접수 시간: 월~금 09:30 ~ 15:00 토,일/ 공휴일 휴무\n\n운영시간 외 문의건은 다음 영업일 기준 처리 됩니다.\n\n감사합니다.",
+          "datetime": "2024-03-18"
+        },
+        {
+          "id": 6,
+          "type": 4,
+          "name": "항공",
+          "title": "* 주의 * 카보타지cabotage (자국내항공운송권리)",
+          "content": "카보타지(Cabotage)는 미 교통부에서 지정한 자국 내 항공운송권리입니다.\n\n미국법상 동일한 외국항공사가 미국본토와 미국령인 사이판,괌,하와이 등을 직접 연결하는 행위를 금지하고 있습니다.\n\n즉, 자국민 국내운송 혜택이니 여행 시 이를 위반하지 않도록 아래 내용을 참고하시기 바랍니다.\n\n[cabotage 에 해당하는 여행 불가사례]\n\n미국 국적기  A\n\n미국 국적기 외 항공사 B\n\n- 미국 출발 A 한국도착 B 괌/사이판 행 : 카보타지 적용 X → 입국 가능\n- 미국 출발 B 한국도착 A 괌/사이판 행 : 카보타지 적용 X → 입국 가능\n- 미국 출발 B 한국도착 B 괌/사이판 행 : 카보타지 적용 O → 입국 불가\n\n[주의 사항]\n\n위와같이 서울에서의 체류시간에 관계없이 한국을 경유하는\n\n미국내 지점간(미국본토와 미국본토 외 미국령지역)의 여행인경우는\n\n- 한국국적사(대한항공 아시아나등)의 전 구간운송\n\n- 미국편명이더라도 우리나라 국적사(대한항공,아시아나)와 공동운항일 경우\n\n두가지 모두 관계없이 cabotage 규정 위반 에 해당되므로 주의 하셔야 합니다.",
+          "datetime": "2024-03-18"
+        }
+      ]
     }
-  ]
+  },
+  "faqs": {
+    "status": {
+      "code": "SUCCESS",
+      "message": "",
+      "errorStatusCode": null
+    },
+    "data": {
+      "count": 78,
+      "data": [
+        {
+          "id": 2,
+          "type": 11,
+          "name": "예약",
+          "title": "[항공]항공사에서 예약 조회가 안돼요.",
+          "content": "항공사 홈페이지에서 예약 조회 시 WON트래블 주문번호가 아닌 항공사 예약번호(전자항공권 또는 마이페이지 내 예약 에서 확인 가능)를 입력하면 확인 가능합니다.<br><br>※ 항공사 주문번호는 ▶마이페이지 ▶해당 주문번호 클릭 ▶전자항공권 출력에서 확인이 가능합니다.    ",
+          "datetime": "2024-03-18"
+        },
+        {
+          "id": 63,
+          "type": 15,
+          "name": "환불",
+          "title": "[항공]항공권 결제/발권 당일 취소할 경우 수수료가 부과되나요?",
+          "content": "1. 결제/발권 당일 17:00까지 취소 요청 시<br>- WON트래블 수수료 : 무료<br>- 항공사 수수료 : 무료<br>- 발권대행료 : 환불 불가<br><br><br>2. 결제/발권 당일 17:00 이후 취소 요청 시<br>- WON트래블 수수료 : 30,000원 (성인/아동/유아 동일, 1인 기준)<br>- 항공사 수수료 : 항공사 규정에 따름<br>- 발권대행료 : 환불 불가<br><br><br>3. 결제/발권 24시간 이내 취소(22개 항공사)<br>- 하기 대상 항공사의 경우 결제/발권 24시간 이내 항공사 수수료 없이 취소 가능<br>(대상 항공사: 아메리칸항공, 델타항공, 에어캐나다, 유나이티드항공, 루프트한자 독일항공, 에티하드항공, 제주항공, 에어서울, 에어프레미아, 에어프랑스, KLM네덜란드항공, 대한항공, 아시아나항공, 티웨이항공, 진에어, 폴란드항공, 에어뉴질랜드, 일본항공, 하와이안항공, ANA항공, 이스타항공, 에어부산)<br><br>- 특정 항공사 (아시아나항공, 하와이안항공, ANA항공, 에티하드항공)는 출국 7일 전 24시간 이내 환불 시 정규 환불 수수료 징수<br><br>- WON트래블 수수료 : 30,000원 (성인/아동/유아 동일, 1인 기준)<br>- 항공사 수수료 : 무료<br>- 발권대행료 : 환불 불가<br><br><br><br>※ 예외사항<br>- 당일에 항공권이 재발행된 경우에는 24시간 이내 취소해도 환불 불가<br>- 예약 부도(NO-SHOW) 시 항공권 구매 시점과 상관없이 환불 위약금 징수<br>- 최초 발권 후 미사용된 항공 대상으로 출발이 지난 항공권의 경우 면제 불가<br>- 항공사 수수료만 무료, 여행사 수수료는 규정에 따라 별도 부과<br>- 아시아나항공, 하와이안항공, ANA항공, 에티하드항공의 경우 출국 7일 전에는 24시간 이내 환불 시에도 환불 수수료 징수",
+          "datetime": "1970-01-01"
+        },
+        {
+          "id": 1,
+          "type": 11,
+          "name": "예약",
+          "title": "[항공]항공권 예약은 어디에서 확인 가능한가요?",
+          "content": "예약 확인 방법 안내드립니다.<br><br>[회원]<br>홈페이지 상단 [로그인] ▶ 회원로그인 후 ▶ [마이페이지] ▶ 나의예약_항공에서 확인 가능 합니다. <br><br>[비회원]<br>홈페이지 상단 [로그인] ▶ 비회원 예약조회 ▶ 이메일 입력 인증 후 주문번호 조회 ▶ 나의예약_항공에서 확인 가능 합니다.",
+          "datetime": "2024-03-18"
+        },
+        {
+          "id": 69,
+          "type": 16,
+          "name": "부가서비스",
+          "title": "[항공]좌석지정은 언제부터 가능한가요?",
+          "content": "좌석지정은 출발 당일 공항의 항공사 카운터에서 탑승권을 받을때 배정되는 것이 일반적이나, 항공사에 따라 발권 후 사전 좌석 배정이 가능한 경우도 있습니다.<br><br>다만 동일 항공사의 경우라도 항공요금 등급에 따라 사전 지정이 불가한 경우가 있으며, 항공사에 따라 배정 가능한 시점이 상이 합니다.<br>(최대 363일 ~ 최소 1시간 전) 또한 사전 좌석지정이 가능한 좌석 수는 한정 되어 있으며, 전 좌석이 오픈 되지 않는 점 참고 부탁 드립니다.<br><br>현재 WON트래블 홈페이지에서는 사전좌석배정은 불가하며, 필요시 예약하신 항공사로 문의 및 항공사 홈페이지에서 항공사 주문번호로 확인 바랍니다.<br><br>✔️ 좌석 등급(클래스)에 따라 좌석배정에 제한이 따를 수 있습니다.<br>✔️좌석 지정 후에도 항공사의 사정으로 좌석배정이 취소되거나 변경 될 수 있으므로, 출발당일 공항에서 다시 한 번 확인 해 주시기 바랍니다.<br>✔️좌석지정을 제공하지 않는 항공사는 출발당일 공항에서 직접 배정받으셔야 합니다.<br><br>※ 항공사 주문번호는 ▶ 마이페이지 ▶상세 일정 및 E-티켓(전자항공권) 내에서 확인이 가능합니다. <br>※ 싱가포르항공(SQ)은 WON트래블 홈페이지에서 배정 가능하나, 예약과 동시에 좌석, 수화물등 유료서비스 구매가 동시에 이루어져야합니다.",
+          "datetime": "1970-01-01"
+        },
+        {
+          "id": 4,
+          "type": 11,
+          "name": "예약",
+          "title": "[항공]대기예약이 가능한가요? ",
+          "content": "WON트래블은 대기예약은 불가합니다.<br><br>실시간 좌석상황에 따라 확약된 예약으로만 예약가능합니다.<br><br>✔️ 대기예약이란 예약시점에 출국편이나 귀국편 또는 전여정 좌석을 확약(OK상태)받지 못한 예약을 말합니다.<br>\n",
+          "datetime": "2024-03-18"
+        },
+        {
+          "id": 3,
+          "type": 11,
+          "name": "예약",
+          "title": "[항공]귀국일 오픈예약이 가능한가요?",
+          "content": "WON트래블에서는 오픈예약(귀국일 미지정)이 불가합니다.<br><br>귀국일이 확정되지 않는경우 항공권 유효기간 이내 임의로 날짜 지정 후에만 예약이 가능합니다.<br><br>※발권 이후 귀국일이 확정될 시 좌석상황은 실시간으로 이용가능좌석이 없을 수 있으며, 좌석불가 시 당사는 책임지지 않습니다.<br>※귀국일 지정으로 인해 재발행이 필요한 경우 이용하시는 항공권의 요금규정 따라 운임추가요금, 항공사 변경 수수료 및 여행사 재발행 수수료가 발생될 수 있는 점 안내드립니다.<br>\n",
+          "datetime": "2024-03-18"
+        },
+        {
+          "id": 45,
+          "type": 13,
+          "name": "발권/티켓",
+          "title": "[항공]E-티켓(전자항공권)은 어디서 확인 및 출력하나요?",
+          "content": "[E_티켓 / 전자 항공권 발행 확인서]는 항공권 세부 내역, 법적 고지문, 영수증 등을 포함하고 있습니다.<br>발권된 E-티켓(전자항공권)은 WON트래블 홈페이지 마이페이지에서 확인 가능합니다. <br>WON트래블 마이페이지 ▶ 나의예약_항공 ▶ 예약상세 상단 [전자항공권 출력] / 하단 결제내역에서 [영수증 출력] 확인가능합니다.",
+          "datetime": "1970-01-01"
+        },
+        {
+          "id": 32,
+          "type": 12,
+          "name": "결제",
+          "title": "[항공]카드번호 입력 후 결제 진행이 되지 않는데 어떻게 해야하나요?",
+          "content": "✔️ 한도초과 및 잔액부족 등의 사유로 결제실패 시 카드 변경/확인이 필요합니다. 카드 확인 후 재진행 하시길 바랍니다.<br>✔️ 항공권은 결제되고, 발권 취급 수수료 결제 실패 시 추후 재승인시도 됩니다. 재진행시에도 동일하게 실패시 담당자 문의 바랍니다.<br><br>결제 실패 사유 (기타오류, 한도초과, 잔액부족, 불가 또는 정지카드 외 시스템 오류 발생 시 문의)",
+          "datetime": "1970-01-01"
+        },
+        {
+          "id": 5,
+          "type": 11,
+          "name": "예약",
+          "title": "[항공]홈페이지에서 어린이만 예약 할 수 있나요?",
+          "content": "성인이 동반하지 않는 12세 미만 어린이는 비동반 소아라 하여 일반적인 소아 운임과 다르게 부과됩니다. (항공사마다 규정 상이)<br>이에, WON트래블 홈페이지를 통해 단독예약은 불가하며, 성인과 함께 동시 예약을 해야합니다. (유아도 동일)<br><br>※ 보호자 없이 혼자 출국하는 만 12세~17세 미만인 경우 운송항공사에 따라 탑승이 제한될 수 있습니다.<br>※ WON트래블 홈페이지에서는 비동반 소아 (UM:Unaccompanied Minor) 서비스 예약은 불가하며, 항공사로 직접 예약만 가능합니다.",
+          "datetime": "2024-03-18"
+        },
+        {
+          "id": 52,
+          "type": 14,
+          "name": "변경",
+          "title": "[항공]발권완료 된 항공권을 변경할 수 있나요?",
+          "content": "마이페이지▶해외항공권▶주문번호 클릭. 해당 주문번호의 1:1 문의을 통해 문의 바랍니다.<br>문의 시 변경 원하시는 정확한 귀국날짜/구간/탑승객 이름을 기재해주셔야 하며<br>내용 확인 후, 변경 가능한 항공권인 경우 추가비용 및 수수료 안내 드립니다.<br><br>좌석상태는 실시간 변동되므로 변경 요청 후 변경 시까지 좌석이 있어야 최종 변경이 가능 합니다.<br>좌석상황에 따라 요금이 변동 될 수 있는 점 참고 해 주시기 바랍니다.",
+          "datetime": "1970-01-01"
+        },
+        {
+          "id": 47,
+          "type": 14,
+          "name": "변경",
+          "title": "[항공]여권에 이름은 띄어쓰기가 되어 있는데 수정해야 하나요?",
+          "content": "항공권의 영문명은 여권과 같은 철자로 성/이름만 구분하기 때문에<br>이름 중간에 띄어쓰기 또는 붙임표(-) 표시가 있어도 실제 항공권 예약 시에는 입력되지 않습니다. <br>입력하지 않으셔도 탑승에 문제되지 않으나, 영문 철자는 반드시 일치해야 하므로 예약 시여권 내 영문명 한번 더 확인 해주시기 바랍니다.<br><br>철자 기재 오류로 발생한 문제는 여행사가 책임지지 않으니 참고하시기 바랍니다.",
+          "datetime": "1970-01-01"
+        },
+        {
+          "id": 30,
+          "type": 12,
+          "name": "결제",
+          "title": "[항공]무이자 할부가 가능한가요?",
+          "content": "항공권 결제는 WON 트래블이 아닌 탑승하는 항공사로 승인됩니다.<br>신용카드 무이자 할부의 경우 항공사와 카드사의 제휴 내용에 따라 적용되는 요건이 상이하고, 항공사에 따라 적용이 불가할 수 있습니다.<br>또한 여행자님의 카드사 실적이나 여행자 등급에 따라 무이자 할부 여부가 달라질 수 있으므로 자세한 사항은 각 카드사에 문의 바랍니다.<br><br>※ 단, 싱가포르항공(SQ)의 경우 무이자 할부 적용 불가하오니 결제 전 참고해주시기 바랍니다.<br>취급수수료는 할부 불가합니다.",
+          "datetime": "1970-01-01"
+        },
+        {
+          "id": 73,
+          "type": 16,
+          "name": "부가서비스",
+          "title": "[항공]수하물이 포함되어 있나요?",
+          "content": "무료 수하물(수화물)은 항공사의 운항 노선, 회원 및 좌석 등급에 따라 허용량이 상이하며<br>기본 범위 초과 시 항공사 규정에 따라 별도 추가 요금이 부과됩니다.<br><br>저비용 항공사나 특가 요금인 경우 무료 수하물이 포함되지 않는 경우도 있으니<br>항공권 예약 시 수하물 규정을 반드시 확인하고 진행하시기 바랍니다.<br><br>수하물이 포함되어 있지 않거나 추가 수하물이 필요한 경우, 항공사에 따라 추가 수하물 구매도 가능합니다.<br>이용하시는 항공사마다 규정이 다르니 자세한 내용은 구매전 규정 확인 및 구매 후 이용하시는 항공사로 확인 부탁 드립니다.",
+          "datetime": "1970-01-01"
+        },
+        {
+          "id": 70,
+          "type": 16,
+          "name": "부가서비스",
+          "title": "[항공]좌석지정은 어떻게 하나요?",
+          "content": "사전 좌석 배정은 발권 이후 예약하신 항공사로 문의 및 항공사 홈페이지에서 항공사 주문번호로 확인 바랍니다.<br><br>※ 항공사 주문번호는 ▶ 마이페이지 ▶상세 일정 및 E-티켓(전자항공권) 내에서 확인이 가능합니다. <br>※ 일부 항공사의 경우 사전좌석배정이 불가한 항공사일 수 있습니다. 해당 항공사의 경우 웹체크인 또는 탑승 당일 카운터에서 가능합니다.",
+          "datetime": "1970-01-01"
+        },
+        {
+          "id": 40,
+          "type": 12,
+          "name": "결제",
+          "title": "[호텔]호텔 결제 무이자할부 어떻게 되나요?",
+          "content": "호텔 결제는 주식회사 누아로 결제되며, 무이자할부는 없습니다.",
+          "datetime": "1970-01-01"
+        },
+        {
+          "id": 9,
+          "type": 11,
+          "name": "예약",
+          "title": "[항공]중복(이중)예약 하면 어떻게 되나요?",
+          "content": "항공사 규정상 중복(이중)예약을 하는 경우 여행자님의 동의 및 사전 안내없이 모든 예약이 취소될 수 있습니다. <br><br>일부 항공사의 경우 중복 예약 수수료를 징수할 수 있으며, 항공사에 따라 날짜와 도시가 다르더라도 일부 구간이 중복되면 중복 예약으로 간주합니다.<br>중복예약이 다수 생성될 경우 예약진행도 제어 받을 수 있습니다.<br><br>동일 탑승객으로 동일 항공사/동일 한 여정(날짜,공항) 중 단 한가지라도 중복 되는 예약을 하셨다면 사전에 반드시 취소해 주시기 바랍니다.<br><br>※ 중복(이중) 예약으로 취소된 예약은 당사에서 책임지지 않습니다.<br>※ 결제된 항공권도 취소될 수 있으며, 타사에 동일예약도 항공사에서는 중복예약으로 간주합니다.",
+          "datetime": "2024-03-18"
+        },
+        {
+          "id": 64,
+          "type": 15,
+          "name": "환불",
+          "title": "[호텔]환불 가능한가요?",
+          "content": "호텔 취소/변경 규정은 객실 공급사 및 호텔에 따라 다릅니다.<br><br>로그인/비회원예약조회 ▶ 마이페이지 ▶ 나의예약_호텔 ▶ 예약상세에서 해당 호텔의 취소규정 및 취소 수수료에 대한 규정을 확인 가능하며, <br>호텔 예약의 취소 규정에 대한 더 자세한 내용은 여행자센터로 연락 부탁드립니다.<br><br>[주의] 취소 마감일이 지난 예약에 대해서는 취소 수수료가 발생하니 예약 신청 시 환불 및 취소 수수료 규정을 반드시 확인하신 후 진행부탁드립니다.<br><br><디다 여행자센터><br>South Korean Toll free number : +82 (00)79885211575 ; <br>Korean support Email address : serviceH@didatravel.com",
+          "datetime": "1970-01-01"
+        },
+        {
+          "id": 49,
+          "type": 14,
+          "name": "변경",
+          "title": "[항공]탑승자 이름 수정 또는 탑승자 변경 가능한가요 ?",
+          "content": "마이페이지▶나의예약_항공▶주문번호 클릭. 해당 주문번호의 1:1 문의을 통해 문의 바랍니다.<br>문의 시 변경 전, 후 영문명 기재 해주셔야 하며 변경 가능할 경우 항공사 수수료 발생될 수 있습니다.<br>*여행사 재발행 수수료 3만원은 기본 발생되니다.<br><br>영문명 변경은 항공사에서 승인 후 진행되며 거절될 경우 환불 후 새로 구매하셔야 합니다.<br>환불 시 수수료는 정상 수수료 발생 됩니다.",
+          "datetime": "1970-01-01"
+        },
+        {
+          "id": 62,
+          "type": 15,
+          "name": "환불",
+          "title": "[항공]항공권을 취소했는데, 다시 이용할 수 있나요?",
+          "content": "이미 취소완료 및 취소요청 하신 항공권은 다시 이용하실 수 없습니다. <br>새로 예약을 해 주시기 바랍니다.",
+          "datetime": "1970-01-01"
+        },
+        {
+          "id": 29,
+          "type": 12,
+          "name": "결제",
+          "title": "[항공]예약 후 결제 시한은 언제까지 인가요?",
+          "content": "항공권은 즉시결제로, 예약과 동시에 결제가 이루어지며 이후 마이페이지 내에서 전자항공권 확인이 가능합니다.<br>결제요청시 자동 발권 불가 및 한도초과, 정지카드 등 결제 실패되는 항공권은 여행사 직원이 평일 업무시간(토,일/공휴일 제외)내 순차적으로 결제 진행 됩니다.<br><br>※ 단, 업무시간 외에 결제 및 자동발권실패 되는 경우 항공사의 의해 예약이 취소될 수 있으니 이점 유의 바랍니다.",
+          "datetime": "1970-01-01"
+        }
+      ]
+    }
+  },
+  "boot": {
+    "channel": {
+      "id": "159287",
+      "welcomeMessage": {
+        "blocks": [
+          {
+            "type": "text",
+            "value": "안녕하세요. WON 트래블입니다.:smile:\n도움이 필요한 문의 사항을 선택해주세요.\n\n:large_blue_circle: [1:1 채널톡] 채팅 상담 운영시간 09:30~17:00 (주말 및 공휴일 제외)"
+          }
+        ]
+      },
+      "createdAt": 1705050382560,
+      "updatedAt": 1715214603636,
+      "name": "WON트래블",
+      "botName": "WON트래블",
+      "color": "#24a9ff",
+      "description": "운영시간보기\n🔵 [1:1 채널톡] 채팅 상담 운영시간\n      평일 09:30~17:00\n✈️ [항공]변경/환불 접수가능시간 평일 09:30~15:00 (주말 및 공휴일 제외)\n🏨 [호텔] 변경/환불 접수가능시간 평일 09:30~17:00 (주말 및 공휴일 제외)",
+      "country": "KR",
+      "homepageUrl": "https://won.travel/",
+      "timeZone": "Asia/Seoul",
+      "expectedResponseDelay": "normal",
+      "showOperatorProfile": false,
+      "inOperation": true,
+      "operationTimeScheduling": true,
+      "nextWorkingTime": 1715301000000,
+      "nextAwayTime": 1715241600000,
+      "operationTimeRanges": [
+        {
+          "dayOfWeeks": ["fri", "mon", "wed", "tue", "thu"],
+          "from": 570,
+          "to": 1020
+        }
+      ],
+      "awayOption": "active",
+      "blockReplyingAfterClosed": true,
+      "blockReplyingAfterClosedTime": "PT0S",
+      "trialSystemUsed": false,
+      "followUpTexting": true,
+      "followUpEmail": false,
+      "followUpAskName": true,
+      "followUpMandatory": false,
+      "state": "active",
+      "defaultPluginId": "165885",
+      "workingType": "always",
+      "bizCategory": "it",
+      "staffs": 10,
+      "hideAppMessenger": false,
+      "baseTutorialCompleted": true,
+      "bizCertificated": true,
+      "bizCertificatedCountries": ["KR"],
+      "whiteLabelFeature": false,
+      "limited": false,
+      "working": true,
+      "avatarUrl": "https://cf.channel.io/thumb/200x200/pub-file/159287/65f9546412ad3e56ff5d/tmp-1621360714",
+      "blocked": false,
+      "bright": false,
+      "borderColor": "#2098e5",
+      "gradientColor": "#2485ff",
+      "textColor": "white",
+      "usingFollowUp": true,
+      "initial": "W",
+      "utcOffset": "+09:00",
+      "systemDomain": "9lyyj",
+      "pluginIconColor": "#ffffff",
+      "brightness": 0.6117647
+    },
+    "plugin": {
+      "id": "165885",
+      "key": "c61557d4-a455-4de5-867d-d98ab8026339",
+      "channelId": "159287",
+      "state": "active",
+      "name": "WON트래블",
+      "createdAt": 1710839046114,
+      "appearance": "light",
+      "labelButton": false,
+      "labelButtonText": "궁금한 건 채팅으로 문의하세요",
+      "buttonType": "iconButton",
+      "iconButton": "headset",
+      "deskMarginX": 24,
+      "deskMarginY": 24,
+      "deskPosition": "right",
+      "mobileMarginX": 14,
+      "mobileMarginY": 70,
+      "mobilePosition": "right",
+      "mobileHideButton": false,
+      "mobileBubblePosition": "bottom",
+      "validLabelButtonText": true,
+      "validLabelButtonTextI18nMap": true
+    },
+    "user": {
+      "id": "663b22976e45686768df",
+      "channelId": "159287",
+      "memberId": "a9ff3764-55b0-4f3f-9b31-727d385f5c9d",
+      "veilId": "a9ff3764-55b0-4f3f-9b31-727d385f5c9d",
+      "mobileNumberQualified": false,
+      "emailQualified": false,
+      "alert": 0,
+      "unread": 0,
+      "unsubscribeEmail": false,
+      "unsubscribeTexting": false,
+      "language": "ko",
+      "country": "KR",
+      "timeZone": "Asia/Seoul",
+      "createdAt": 1715151511451,
+      "updatedAt": 1715227679278,
+      "version": 2,
+      "named": false,
+      "avatarUrl": "https://cf.channel.io/avatar/emoji/cloud.91a2dc.png",
+      "systemLanguage": "ko"
+    },
+    "sessionJWT": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzZXMiLCJrZXkiOiIxNTkyODctNjYzYjIyOTc2ZTQ1Njg2NzY4ZGYiLCJpYXQiOjE3MTUyMjc3MTksImV4cCI6MTcxNzgxOTcxOX0.0s6Pqa6bkjYVXDt3feB6Em8spaYFFITZs_XyneFVTqU",
+    "namespace": "/front-v6",
+    "routeInfo": {
+      "url": "https://front-ws.channel.io",
+      "channelId": "159287",
+      "type": "socket",
+      "subType": "clientFront"
+    },
+    "veilId": "a9ff3764-55b0-4f3f-9b31-727d385f5c9d",
+    "cookieDomain": ".won.travel"
+  },
+  "events": {
+    "userId": "663b22976e45686768df",
+    "id": "663c4c47c07207be7a60",
+    "channelId": "159287",
+    "name": "PageView",
+    "property": {
+      "country": "KR",
+      "os": "Android 8.0.0",
+      "city": "서울시 강동구",
+      "session": 1715227719000,
+      "ip": "106.243.145.213",
+      "title": "우리WON트래블 | 설레는 여행을 똑똑하게",
+      "url": "https://won.travel/",
+      "browser": "Chrome 116",
+      "page": "https://won.travel/",
+      "device": "Samsung SM-G955U"
+    },
+    "createdAt": 1715227719790,
+    "expireAt": 1723003719790,
+    "managed": true,
+    "version": 1
+  },
+  "main-city": {
+    "status": {
+      "code": "SUCCESS",
+      "message": "",
+      "errorStatusCode": null
+    },
+    "data": [
+      {
+        "code": "KR",
+        "name": "국내",
+        "mainCities": [
+          {
+            "code": "SEL",
+            "name": "인천/김포"
+          },
+          {
+            "code": "ICN",
+            "name": "인천"
+          },
+          {
+            "code": "GMP",
+            "name": "김포"
+          },
+          {
+            "code": "PUS",
+            "name": "부산"
+          },
+          {
+            "code": "TAE",
+            "name": "대구"
+          },
+          {
+            "code": "KWJ",
+            "name": "광주"
+          }
+        ]
+      },
+      {
+        "code": "JP",
+        "name": "일본",
+        "mainCities": [
+          {
+            "code": "KIX",
+            "name": "오사카"
+          },
+          {
+            "code": "FUK",
+            "name": "후쿠오카"
+          },
+          {
+            "code": "NRT",
+            "name": "도쿄"
+          },
+          {
+            "code": "OKA",
+            "name": "오키나와"
+          },
+          {
+            "code": "CTS",
+            "name": "삿포로"
+          }
+        ]
+      },
+      {
+        "code": "30",
+        "name": "동남아",
+        "mainCities": [
+          {
+            "code": "BKK",
+            "name": "방콕"
+          },
+          {
+            "code": "TPE",
+            "name": "타이페이"
+          },
+          {
+            "code": "SIN",
+            "name": "싱가포르"
+          },
+          {
+            "code": "BKI",
+            "name": "코타키나발루"
+          },
+          {
+            "code": "CEB",
+            "name": "세부"
+          },
+          {
+            "code": "KUL",
+            "name": "쿠알라룸푸르"
+          }
+        ]
+      },
+      {
+        "code": "40",
+        "name": "미주",
+        "mainCities": [
+          {
+            "code": "JFK",
+            "name": "뉴욕"
+          },
+          {
+            "code": "LAX",
+            "name": "로스엔젤레스"
+          },
+          {
+            "code": "SFO",
+            "name": "샌프란시스코"
+          },
+          {
+            "code": "YVR",
+            "name": "벤쿠버"
+          },
+          {
+            "code": "HNL",
+            "name": "하와이"
+          },
+          {
+            "code": "LAS",
+            "name": "라스베가스"
+          }
+        ]
+      },
+      {
+        "code": "50",
+        "name": "유럽",
+        "mainCities": [
+          {
+            "code": "CDG",
+            "name": "파리"
+          },
+          {
+            "code": "LON",
+            "name": "런던"
+          },
+          {
+            "code": "PRG",
+            "name": "프라하"
+          },
+          {
+            "code": "BCN",
+            "name": "바로셀로나"
+          },
+          {
+            "code": "FCO",
+            "name": "로마"
+          },
+          {
+            "code": "VIE",
+            "name": "비엔나"
+          }
+        ]
+      },
+      {
+        "code": "60",
+        "name": "대양주",
+        "mainCities": [
+          {
+            "code": "GUM",
+            "name": "괌"
+          },
+          {
+            "code": "SPN",
+            "name": "사이판"
+          },
+          {
+            "code": "AKL",
+            "name": "오클랜드"
+          },
+          {
+            "code": "SYD",
+            "name": "시드니"
+          },
+          {
+            "code": "BNE",
+            "name": "브리즈번"
+          },
+          {
+            "code": "MEL",
+            "name": "멜버른"
+          }
+        ]
+      },
+      {
+        "code": "70",
+        "name": "중화권",
+        "mainCities": [
+          {
+            "code": "PVG",
+            "name": "상해"
+          },
+          {
+            "code": "PEK",
+            "name": "북경"
+          },
+          {
+            "code": "TAO",
+            "name": "청도"
+          },
+          {
+            "code": "HKG",
+            "name": "홍콩"
+          },
+          {
+            "code": "MFM",
+            "name": "마카오"
+          },
+          {
+            "code": "SZX",
+            "name": "심천"
+          }
+        ]
+      }
+    ]
+  },
+  "locations": {
+    "status": {
+      "code": "SUCCESS",
+      "message": "",
+      "errorStatusCode": null
+    },
+    "data": [
+      {
+        "matchingType": "CITY",
+        "cityIataCode": "OKA",
+        "countryName": "일본",
+        "cityName": "오키나와",
+        "airports": [
+          {
+            "iataCode": "OKA",
+            "name": "오키나와"
+          }
+        ]
+      },
+      {
+        "matchingType": "CITY",
+        "cityIataCode": "YQA",
+        "countryName": "캐나다",
+        "cityName": "Muskoka",
+        "airports": [
+          {
+            "iataCode": "YQA",
+            "name": "Muskoka Arpt"
+          }
+        ]
+      },
+      {
+        "matchingType": "CITY",
+        "cityIataCode": "YIB",
+        "countryName": "캐나다",
+        "cityName": "Atikokan",
+        "airports": [
+          {
+            "iataCode": "YIB",
+            "name": "Atikokan Municipal Arpt"
+          }
+        ]
+      },
+      {
+        "matchingType": "AIRPORT",
+        "cityIataCode": "SPK",
+        "countryName": "일본",
+        "cityName": "삿포로",
+        "airports": [
+          {
+            "iataCode": "OKD",
+            "name": "Okadama Arpt"
+          }
+        ]
+      },
+      {
+        "matchingType": "AIRPORT",
+        "cityIataCode": "ACC",
+        "countryName": "가나",
+        "cityName": "아크라",
+        "airports": [
+          {
+            "iataCode": "ACC",
+            "name": "아크라"
+          }
+        ]
+      },
+      {
+        "matchingType": "AIRPORT",
+        "cityIataCode": "SBU",
+        "countryName": "남아프리카공화국",
+        "cityName": "Springbok",
+        "airports": [
+          {
+            "iataCode": "SBU",
+            "name": "Springbok Arpt"
+          }
+        ]
+      },
+      {
+        "matchingType": "AIRPORT",
+        "cityIataCode": "MON",
+        "countryName": "뉴질랜드",
+        "cityName": "마운트 쿡",
+        "airports": [
+          {
+            "iataCode": "MON",
+            "name": "마운트 쿡"
+          }
+        ]
+      },
+      {
+        "matchingType": "CITY",
+        "cityIataCode": "TKJ",
+        "countryName": "미국",
+        "cityName": "Tok Ak",
+        "airports": [
+          {
+            "iataCode": "TKJ",
+            "name": "Tok Arpt"
+          }
+        ]
+      },
+      {
+        "matchingType": "AIRPORT",
+        "cityIataCode": "MKK",
+        "countryName": "미국",
+        "cityName": "몰로카이",
+        "airports": [
+          {
+            "iataCode": "MKK",
+            "name": "몰로카이"
+          }
+        ]
+      },
+      {
+        "matchingType": "CITY",
+        "cityIataCode": "GEG",
+        "countryName": "미국",
+        "cityName": "스포케인",
+        "airports": [
+          {
+            "iataCode": "SFF",
+            "name": "Felts Field"
+          },
+          {
+            "iataCode": "GEG",
+            "name": "스포케인"
+          }
+        ]
+      },
+      {
+        "matchingType": "AIRPORT",
+        "cityIataCode": "GBK",
+        "countryName": "시에라리온",
+        "cityName": "Gbangbatok",
+        "airports": [
+          {
+            "iataCode": "GBK",
+            "name": "Gbangbatok Arpt"
+          }
+        ]
+      },
+      {
+        "matchingType": "AIRPORT",
+        "cityIataCode": "GSY",
+        "countryName": "영국",
+        "cityName": "Grimsby",
+        "airports": [
+          {
+            "iataCode": "GSY",
+            "name": "Binbrook Arpt"
+          }
+        ]
+      },
+      {
+        "matchingType": "AIRPORT",
+        "cityIataCode": "UDR",
+        "countryName": "인도",
+        "cityName": "Udaipur",
+        "airports": [
+          {
+            "iataCode": "UDR",
+            "name": "Dabok Airport"
+          }
+        ]
+      },
+      {
+        "matchingType": "CITY",
+        "cityIataCode": "HNA",
+        "countryName": "일본",
+        "cityName": "모리오카",
+        "airports": [
+          {
+            "iataCode": "HNA",
+            "name": "Hanamaki Arpt"
+          }
+        ]
+      },
+      {
+        "matchingType": "CITY",
+        "cityIataCode": "FSZ",
+        "countryName": "일본",
+        "cityName": "시즈오카",
+        "airports": [
+          {
+            "iataCode": "FSZ",
+            "name": "시즈오카"
+          }
+        ]
+      },
+      {
+        "matchingType": "CITY",
+        "cityIataCode": "OKJ",
+        "countryName": "일본",
+        "cityName": "오카야마",
+        "airports": [
+          {
+            "iataCode": "OKJ",
+            "name": "오카야마"
+          }
+        ]
+      },
+      {
+        "matchingType": "CITY",
+        "cityIataCode": "FUK",
+        "countryName": "일본",
+        "cityName": "후쿠오카",
+        "airports": [
+          {
+            "iataCode": "FUK",
+            "name": "후쿠오카"
+          }
+        ]
+      },
+      {
+        "matchingType": "AIRPORT",
+        "cityIataCode": "PHS",
+        "countryName": "태국",
+        "cityName": "Phitsanulok",
+        "airports": [
+          {
+            "iataCode": "PHS",
+            "name": "Phitsanulok Arpt"
+          }
+        ]
+      },
+      {
+        "matchingType": "CITY",
+        "cityIataCode": "GKA",
+        "countryName": "파푸아뉴기니아",
+        "cityName": "고로카",
+        "airports": [
+          {
+            "iataCode": "GKA",
+            "name": "고로카"
+          }
+        ]
+      }
+    ]
+  },
+  "search": {
+    "status": {
+      "code": "SUCCESS",
+      "message": "",
+      "errorStatusCode": null
+    },
+    "data": {
+      "offers": [
+        {
+          "offerId": "2158120753607293243",
+          "providerInfoType": "GDS",
+          "platingAirlineCode": "TW",
+          "offerExpirationLimitDatetime": "2024-05-09T04:50:37Z",
+          "offerAmount": {
+            "promotions": [
+              {
+                "cardCompanyId": 0,
+                "cardType": "",
+                "totalAmount": 504900,
+                "totalCurCode": "KRW"
+              },
+              {
+                "cardCompanyId": 15,
+                "cardType": "우리카드",
+                "totalAmount": 497500,
+                "totalCurCode": "KRW"
+              }
+            ]
+          },
+          "segments": [
+            {
+              "segmentId": "SEGMENT1",
+              "journeyId": "JOURNEY1",
+              "cabinType": "Economy",
+              "seatsRemaining": 3,
+              "departureScheduleDatetime": "2024-05-20T14:40:00",
+              "arrivalScheduleDatetime": "2024-05-20T16:55:00",
+              "segmentDuration": 135,
+              "departure": {
+                "countryIsoCode": "JP",
+                "countryName": "일본",
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와",
+                "airportTerminalName": "0"
+              },
+              "arrival": {
+                "countryIsoCode": "KR",
+                "countryName": "대한민국",
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천",
+                "airportTerminalName": "1"
+              },
+              "legs": [],
+              "segmentPassengers": [
+                {
+                  "passengerId": "ADT1",
+                  "fareBasisCode": "VFI",
+                  "baggageAllowances": [
+                    {
+                      "baggageType": "BAGGAGE",
+                      "maximumWeight": 15,
+                      "weightUnit": "KILOGRAMS",
+                      "totalQty": 0
+                    }
+                  ]
+                }
+              ],
+              "operatingCarrier": {
+                "carrierIataCode": "TW",
+                "carrierName": "티웨이항공",
+                "flightNumber": "272"
+              },
+              "marketingCarrier": {
+                "carrierIataCode": "TW",
+                "carrierName": "티웨이항공",
+                "flightNumber": "272"
+              },
+              "aircraft": {
+                "aircraftName": "Boeing 737Max"
+              }
+            },
+            {
+              "segmentId": "SEGMENT2",
+              "journeyId": "JOURNEY2",
+              "cabinType": "Economy",
+              "seatsRemaining": 9,
+              "departureScheduleDatetime": "2024-05-23T11:15:00",
+              "arrivalScheduleDatetime": "2024-05-23T13:40:00",
+              "segmentDuration": 145,
+              "departure": {
+                "countryIsoCode": "KR",
+                "countryName": "대한민국",
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천",
+                "airportTerminalName": "1"
+              },
+              "arrival": {
+                "countryIsoCode": "JP",
+                "countryName": "일본",
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와",
+                "airportTerminalName": "0"
+              },
+              "legs": [],
+              "segmentPassengers": [
+                {
+                  "passengerId": "ADT1",
+                  "fareBasisCode": "OFI",
+                  "baggageAllowances": [
+                    {
+                      "baggageType": "BAGGAGE",
+                      "maximumWeight": 15,
+                      "weightUnit": "KILOGRAMS",
+                      "totalQty": 0
+                    }
+                  ]
+                }
+              ],
+              "operatingCarrier": {
+                "carrierIataCode": "TW",
+                "carrierName": "티웨이항공",
+                "flightNumber": "271"
+              },
+              "marketingCarrier": {
+                "carrierIataCode": "TW",
+                "carrierName": "티웨이항공",
+                "flightNumber": "271"
+              },
+              "aircraft": {
+                "aircraftName": "Boeing 737Max"
+              }
+            }
+          ],
+          "passengers": [
+            {
+              "passengerId": "ADT1",
+              "passengerType": "ADULT",
+              "passengerAge": null,
+              "passengerAmount": [
+                {
+                  "cardCompanyId": 0,
+                  "cardType": "",
+                  "totalAmount": 504900,
+                  "totalCurCode": "KRW"
+                },
+                {
+                  "cardCompanyId": 15,
+                  "cardType": "우리카드",
+                  "totalAmount": 497500,
+                  "totalCurCode": "KRW"
+                }
+              ]
+            }
+          ],
+          "journey": [
+            {
+              "journeyId": "JOURNEY1",
+              "journeyDuration": 135,
+              "departure": {
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와"
+              },
+              "arrival": {
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천"
+              }
+            },
+            {
+              "journeyId": "JOURNEY2",
+              "journeyDuration": 145,
+              "departure": {
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천"
+              },
+              "arrival": {
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와"
+              }
+            }
+          ]
+        },
+        {
+          "offerId": "2014005565531437371",
+          "providerInfoType": "GDS",
+          "platingAirlineCode": "OZ",
+          "offerExpirationLimitDatetime": "2024-05-09T04:50:34Z",
+          "offerAmount": {
+            "promotions": [
+              {
+                "cardCompanyId": 0,
+                "cardType": "",
+                "totalAmount": 544600,
+                "totalCurCode": "KRW"
+              },
+              {
+                "cardCompanyId": 15,
+                "cardType": "우리카드",
+                "totalAmount": 536400,
+                "totalCurCode": "KRW"
+              }
+            ]
+          },
+          "segments": [
+            {
+              "segmentId": "SEGMENT1",
+              "journeyId": "JOURNEY1",
+              "cabinType": "Economy",
+              "seatsRemaining": 2,
+              "departureScheduleDatetime": "2024-05-20T15:55:00",
+              "arrivalScheduleDatetime": "2024-05-20T18:35:00",
+              "segmentDuration": 160,
+              "departure": {
+                "countryIsoCode": "JP",
+                "countryName": "일본",
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와",
+                "airportTerminalName": "I"
+              },
+              "arrival": {
+                "countryIsoCode": "KR",
+                "countryName": "대한민국",
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천",
+                "airportTerminalName": "1"
+              },
+              "legs": [],
+              "segmentPassengers": [
+                {
+                  "passengerId": "ADT1",
+                  "fareBasisCode": "QLAJK7",
+                  "baggageAllowances": [
+                    {
+                      "baggageType": "BAGGAGE",
+                      "maximumWeight": null,
+                      "weightUnit": null,
+                      "totalQty": 1
+                    },
+                    {
+                      "baggageType": "CARRY_ON",
+                      "maximumWeight": null,
+                      "weightUnit": null,
+                      "totalQty": 1
+                    }
+                  ]
+                }
+              ],
+              "operatingCarrier": {
+                "carrierIataCode": "OZ",
+                "carrierName": "아시아나항공",
+                "flightNumber": "1713"
+              },
+              "marketingCarrier": {
+                "carrierIataCode": "OZ",
+                "carrierName": "아시아나항공",
+                "flightNumber": "1713"
+              },
+              "aircraft": {
+                "aircraftName": "Airbus A330-300"
+              }
+            },
+            {
+              "segmentId": "SEGMENT2",
+              "journeyId": "JOURNEY2",
+              "cabinType": "Economy",
+              "seatsRemaining": 6,
+              "departureScheduleDatetime": "2024-05-23T09:30:00",
+              "arrivalScheduleDatetime": "2024-05-23T11:55:00",
+              "segmentDuration": 145,
+              "departure": {
+                "countryIsoCode": "KR",
+                "countryName": "대한민국",
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천",
+                "airportTerminalName": "1"
+              },
+              "arrival": {
+                "countryIsoCode": "JP",
+                "countryName": "일본",
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와",
+                "airportTerminalName": "I"
+              },
+              "legs": [],
+              "segmentPassengers": [
+                {
+                  "passengerId": "ADT1",
+                  "fareBasisCode": "ELAJK7",
+                  "baggageAllowances": [
+                    {
+                      "baggageType": "BAGGAGE",
+                      "maximumWeight": null,
+                      "weightUnit": null,
+                      "totalQty": 1
+                    },
+                    {
+                      "baggageType": "CARRY_ON",
+                      "maximumWeight": null,
+                      "weightUnit": null,
+                      "totalQty": 1
+                    }
+                  ]
+                }
+              ],
+              "operatingCarrier": {
+                "carrierIataCode": "OZ",
+                "carrierName": "아시아나항공",
+                "flightNumber": "172"
+              },
+              "marketingCarrier": {
+                "carrierIataCode": "OZ",
+                "carrierName": "아시아나항공",
+                "flightNumber": "172"
+              },
+              "aircraft": {
+                "aircraftName": "Airbus A321 NEO"
+              }
+            }
+          ],
+          "passengers": [
+            {
+              "passengerId": "ADT1",
+              "passengerType": "ADULT",
+              "passengerAge": null,
+              "passengerAmount": [
+                {
+                  "cardCompanyId": 0,
+                  "cardType": "",
+                  "totalAmount": 544600,
+                  "totalCurCode": "KRW"
+                },
+                {
+                  "cardCompanyId": 15,
+                  "cardType": "우리카드",
+                  "totalAmount": 536400,
+                  "totalCurCode": "KRW"
+                }
+              ]
+            }
+          ],
+          "journey": [
+            {
+              "journeyId": "JOURNEY1",
+              "journeyDuration": 160,
+              "departure": {
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와"
+              },
+              "arrival": {
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천"
+              }
+            },
+            {
+              "journeyId": "JOURNEY2",
+              "journeyDuration": 145,
+              "departure": {
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천"
+              },
+              "arrival": {
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와"
+              }
+            }
+          ]
+        },
+        {
+          "offerId": "2086063159569365307",
+          "providerInfoType": "GDS",
+          "platingAirlineCode": "OZ",
+          "offerExpirationLimitDatetime": "2024-05-09T04:50:34Z",
+          "offerAmount": {
+            "promotions": [
+              {
+                "cardCompanyId": 0,
+                "cardType": "",
+                "totalAmount": 575400,
+                "totalCurCode": "KRW"
+              },
+              {
+                "cardCompanyId": 15,
+                "cardType": "우리카드",
+                "totalAmount": 566600,
+                "totalCurCode": "KRW"
+              }
+            ]
+          },
+          "segments": [
+            {
+              "segmentId": "SEGMENT1",
+              "journeyId": "JOURNEY1",
+              "cabinType": "Economy",
+              "seatsRemaining": 9,
+              "departureScheduleDatetime": "2024-05-20T13:00:00",
+              "arrivalScheduleDatetime": "2024-05-20T15:25:00",
+              "segmentDuration": 145,
+              "departure": {
+                "countryIsoCode": "JP",
+                "countryName": "일본",
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와",
+                "airportTerminalName": "I"
+              },
+              "arrival": {
+                "countryIsoCode": "KR",
+                "countryName": "대한민국",
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천",
+                "airportTerminalName": "1"
+              },
+              "legs": [],
+              "segmentPassengers": [
+                {
+                  "passengerId": "ADT1",
+                  "fareBasisCode": "ELAJK7",
+                  "baggageAllowances": [
+                    {
+                      "baggageType": "BAGGAGE",
+                      "maximumWeight": null,
+                      "weightUnit": null,
+                      "totalQty": 1
+                    },
+                    {
+                      "baggageType": "CARRY_ON",
+                      "maximumWeight": null,
+                      "weightUnit": null,
+                      "totalQty": 1
+                    }
+                  ]
+                }
+              ],
+              "operatingCarrier": {
+                "carrierIataCode": "OZ",
+                "carrierName": "아시아나항공",
+                "flightNumber": "171"
+              },
+              "marketingCarrier": {
+                "carrierIataCode": "OZ",
+                "carrierName": "아시아나항공",
+                "flightNumber": "171"
+              },
+              "aircraft": {
+                "aircraftName": "Airbus A321 NEO"
+              }
+            },
+            {
+              "segmentId": "SEGMENT2",
+              "journeyId": "JOURNEY2",
+              "cabinType": "Economy",
+              "seatsRemaining": 6,
+              "departureScheduleDatetime": "2024-05-23T09:30:00",
+              "arrivalScheduleDatetime": "2024-05-23T11:55:00",
+              "segmentDuration": 145,
+              "departure": {
+                "countryIsoCode": "KR",
+                "countryName": "대한민국",
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천",
+                "airportTerminalName": "1"
+              },
+              "arrival": {
+                "countryIsoCode": "JP",
+                "countryName": "일본",
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와",
+                "airportTerminalName": "I"
+              },
+              "legs": [],
+              "segmentPassengers": [
+                {
+                  "passengerId": "ADT1",
+                  "fareBasisCode": "ELAJK7",
+                  "baggageAllowances": [
+                    {
+                      "baggageType": "BAGGAGE",
+                      "maximumWeight": null,
+                      "weightUnit": null,
+                      "totalQty": 1
+                    },
+                    {
+                      "baggageType": "CARRY_ON",
+                      "maximumWeight": null,
+                      "weightUnit": null,
+                      "totalQty": 1
+                    }
+                  ]
+                }
+              ],
+              "operatingCarrier": {
+                "carrierIataCode": "OZ",
+                "carrierName": "아시아나항공",
+                "flightNumber": "172"
+              },
+              "marketingCarrier": {
+                "carrierIataCode": "OZ",
+                "carrierName": "아시아나항공",
+                "flightNumber": "172"
+              },
+              "aircraft": {
+                "aircraftName": "Airbus A321 NEO"
+              }
+            }
+          ],
+          "passengers": [
+            {
+              "passengerId": "ADT1",
+              "passengerType": "ADULT",
+              "passengerAge": null,
+              "passengerAmount": [
+                {
+                  "cardCompanyId": 0,
+                  "cardType": "",
+                  "totalAmount": 575400,
+                  "totalCurCode": "KRW"
+                },
+                {
+                  "cardCompanyId": 15,
+                  "cardType": "우리카드",
+                  "totalAmount": 566600,
+                  "totalCurCode": "KRW"
+                }
+              ]
+            }
+          ],
+          "journey": [
+            {
+              "journeyId": "JOURNEY1",
+              "journeyDuration": 145,
+              "departure": {
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와"
+              },
+              "arrival": {
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천"
+              }
+            },
+            {
+              "journeyId": "JOURNEY2",
+              "journeyDuration": 145,
+              "departure": {
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천"
+              },
+              "arrival": {
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와"
+              }
+            }
+          ]
+        },
+        {
+          "offerId": "2230178347645221179",
+          "providerInfoType": "GDS",
+          "platingAirlineCode": "KE",
+          "offerExpirationLimitDatetime": "2024-05-09T04:50:37Z",
+          "offerAmount": {
+            "promotions": [
+              {
+                "cardCompanyId": 0,
+                "cardType": "",
+                "totalAmount": 589000,
+                "totalCurCode": "KRW"
+              },
+              {
+                "cardCompanyId": 15,
+                "cardType": "우리카드",
+                "totalAmount": 579900,
+                "totalCurCode": "KRW"
+              }
+            ]
+          },
+          "segments": [
+            {
+              "segmentId": "SEGMENT1",
+              "journeyId": "JOURNEY1",
+              "cabinType": "Economy",
+              "seatsRemaining": 9,
+              "departureScheduleDatetime": "2024-05-20T12:50:00",
+              "arrivalScheduleDatetime": "2024-05-20T15:20:00",
+              "segmentDuration": 150,
+              "departure": {
+                "countryIsoCode": "JP",
+                "countryName": "일본",
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와",
+                "airportTerminalName": "I"
+              },
+              "arrival": {
+                "countryIsoCode": "KR",
+                "countryName": "대한민국",
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천",
+                "airportTerminalName": "2"
+              },
+              "legs": [],
+              "segmentPassengers": [
+                {
+                  "passengerId": "ADT1",
+                  "fareBasisCode": "ELE0ZRJK",
+                  "baggageAllowances": [
+                    {
+                      "baggageType": "BAGGAGE",
+                      "maximumWeight": null,
+                      "weightUnit": null,
+                      "totalQty": 1
+                    }
+                  ]
+                }
+              ],
+              "operatingCarrier": {
+                "carrierIataCode": "KE",
+                "carrierName": "대한항공",
+                "flightNumber": "756"
+              },
+              "marketingCarrier": {
+                "carrierIataCode": "KE",
+                "carrierName": "대한항공",
+                "flightNumber": "756"
+              },
+              "aircraft": {
+                "aircraftName": "Airbus A220-300"
+              }
+            },
+            {
+              "segmentId": "SEGMENT2",
+              "journeyId": "JOURNEY2",
+              "cabinType": "Economy",
+              "seatsRemaining": 9,
+              "departureScheduleDatetime": "2024-05-23T09:10:00",
+              "arrivalScheduleDatetime": "2024-05-23T11:40:00",
+              "segmentDuration": 150,
+              "departure": {
+                "countryIsoCode": "KR",
+                "countryName": "대한민국",
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천",
+                "airportTerminalName": "2"
+              },
+              "arrival": {
+                "countryIsoCode": "JP",
+                "countryName": "일본",
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와",
+                "airportTerminalName": "I"
+              },
+              "legs": [],
+              "segmentPassengers": [
+                {
+                  "passengerId": "ADT1",
+                  "fareBasisCode": "HLE0ZRJK",
+                  "baggageAllowances": [
+                    {
+                      "baggageType": "BAGGAGE",
+                      "maximumWeight": null,
+                      "weightUnit": null,
+                      "totalQty": 1
+                    }
+                  ]
+                }
+              ],
+              "operatingCarrier": {
+                "carrierIataCode": "KE",
+                "carrierName": "대한항공",
+                "flightNumber": "755"
+              },
+              "marketingCarrier": {
+                "carrierIataCode": "KE",
+                "carrierName": "대한항공",
+                "flightNumber": "755"
+              },
+              "aircraft": {
+                "aircraftName": "Airbus A220-300"
+              }
+            }
+          ],
+          "passengers": [
+            {
+              "passengerId": "ADT1",
+              "passengerType": "ADULT",
+              "passengerAge": null,
+              "passengerAmount": [
+                {
+                  "cardCompanyId": 0,
+                  "cardType": "",
+                  "totalAmount": 589000,
+                  "totalCurCode": "KRW"
+                },
+                {
+                  "cardCompanyId": 15,
+                  "cardType": "우리카드",
+                  "totalAmount": 579900,
+                  "totalCurCode": "KRW"
+                }
+              ]
+            }
+          ],
+          "journey": [
+            {
+              "journeyId": "JOURNEY1",
+              "journeyDuration": 150,
+              "departure": {
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와"
+              },
+              "arrival": {
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천"
+              }
+            },
+            {
+              "journeyId": "JOURNEY2",
+              "journeyDuration": 150,
+              "departure": {
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천"
+              },
+              "arrival": {
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와"
+              }
+            }
+          ]
+        },
+        {
+          "offerId": "2302235941683149115",
+          "providerInfoType": "GDS",
+          "platingAirlineCode": "LJ",
+          "offerExpirationLimitDatetime": "2024-05-09T04:50:37Z",
+          "offerAmount": {
+            "promotions": [
+              {
+                "cardCompanyId": 0,
+                "cardType": "",
+                "totalAmount": 598600,
+                "totalCurCode": "KRW"
+              },
+              {
+                "cardCompanyId": 15,
+                "cardType": "우리카드",
+                "totalAmount": 589200,
+                "totalCurCode": "KRW"
+              }
+            ]
+          },
+          "segments": [
+            {
+              "segmentId": "SEGMENT1",
+              "journeyId": "JOURNEY1",
+              "cabinType": "Economy",
+              "seatsRemaining": 9,
+              "departureScheduleDatetime": "2024-05-20T14:00:00",
+              "arrivalScheduleDatetime": "2024-05-20T16:15:00",
+              "segmentDuration": 135,
+              "departure": {
+                "countryIsoCode": "JP",
+                "countryName": "일본",
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와",
+                "airportTerminalName": "I"
+              },
+              "arrival": {
+                "countryIsoCode": "KR",
+                "countryName": "대한민국",
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천",
+                "airportTerminalName": "2"
+              },
+              "legs": [],
+              "segmentPassengers": [
+                {
+                  "passengerId": "ADT1",
+                  "fareBasisCode": "TWRT",
+                  "baggageAllowances": [
+                    {
+                      "baggageType": "BAGGAGE",
+                      "maximumWeight": 15,
+                      "weightUnit": "KILOGRAMS",
+                      "totalQty": 0
+                    }
+                  ]
+                }
+              ],
+              "operatingCarrier": {
+                "carrierIataCode": "LJ",
+                "carrierName": "진에어",
+                "flightNumber": "342"
+              },
+              "marketingCarrier": {
+                "carrierIataCode": "LJ",
+                "carrierName": "진에어",
+                "flightNumber": "342"
+              },
+              "aircraft": {
+                "aircraftName": "Boeing 737-800"
+              }
+            },
+            {
+              "segmentId": "SEGMENT2",
+              "journeyId": "JOURNEY2",
+              "cabinType": "Economy",
+              "seatsRemaining": 9,
+              "departureScheduleDatetime": "2024-05-23T10:35:00",
+              "arrivalScheduleDatetime": "2024-05-23T13:00:00",
+              "segmentDuration": 145,
+              "departure": {
+                "countryIsoCode": "KR",
+                "countryName": "대한민국",
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천",
+                "airportTerminalName": "2"
+              },
+              "arrival": {
+                "countryIsoCode": "JP",
+                "countryName": "일본",
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와",
+                "airportTerminalName": "I"
+              },
+              "legs": [],
+              "segmentPassengers": [
+                {
+                  "passengerId": "ADT1",
+                  "fareBasisCode": "EWRT",
+                  "baggageAllowances": [
+                    {
+                      "baggageType": "BAGGAGE",
+                      "maximumWeight": 15,
+                      "weightUnit": "KILOGRAMS",
+                      "totalQty": 0
+                    }
+                  ]
+                }
+              ],
+              "operatingCarrier": {
+                "carrierIataCode": "LJ",
+                "carrierName": "진에어",
+                "flightNumber": "341"
+              },
+              "marketingCarrier": {
+                "carrierIataCode": "LJ",
+                "carrierName": "진에어",
+                "flightNumber": "341"
+              },
+              "aircraft": {
+                "aircraftName": "Boeing 737-800"
+              }
+            }
+          ],
+          "passengers": [
+            {
+              "passengerId": "ADT1",
+              "passengerType": "ADULT",
+              "passengerAge": null,
+              "passengerAmount": [
+                {
+                  "cardCompanyId": 0,
+                  "cardType": "",
+                  "totalAmount": 598600,
+                  "totalCurCode": "KRW"
+                },
+                {
+                  "cardCompanyId": 15,
+                  "cardType": "우리카드",
+                  "totalAmount": 589200,
+                  "totalCurCode": "KRW"
+                }
+              ]
+            }
+          ],
+          "journey": [
+            {
+              "journeyId": "JOURNEY1",
+              "journeyDuration": 135,
+              "departure": {
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와"
+              },
+              "arrival": {
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천"
+              }
+            },
+            {
+              "journeyId": "JOURNEY2",
+              "journeyDuration": 145,
+              "departure": {
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천"
+              },
+              "arrival": {
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와"
+              }
+            }
+          ]
+        },
+        {
+          "offerId": "68450526507383099",
+          "providerInfoType": "GDS",
+          "platingAirlineCode": "KE",
+          "offerExpirationLimitDatetime": "2024-05-09T04:50:37Z",
+          "offerAmount": {
+            "promotions": [
+              {
+                "cardCompanyId": 0,
+                "cardType": "",
+                "totalAmount": 619800,
+                "totalCurCode": "KRW"
+              },
+              {
+                "cardCompanyId": 15,
+                "cardType": "우리카드",
+                "totalAmount": 571400,
+                "totalCurCode": "KRW"
+              }
+            ]
+          },
+          "segments": [
+            {
+              "segmentId": "SEGMENT1",
+              "journeyId": "JOURNEY1",
+              "cabinType": "Economy",
+              "seatsRemaining": 9,
+              "departureScheduleDatetime": "2024-05-20T12:50:00",
+              "arrivalScheduleDatetime": "2024-05-20T15:20:00",
+              "segmentDuration": 150,
+              "departure": {
+                "countryIsoCode": "JP",
+                "countryName": "일본",
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와",
+                "airportTerminalName": "I"
+              },
+              "arrival": {
+                "countryIsoCode": "KR",
+                "countryName": "대한민국",
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천",
+                "airportTerminalName": "2"
+              },
+              "legs": [],
+              "segmentPassengers": [
+                {
+                  "passengerId": "ADT1",
+                  "fareBasisCode": "ELE0ZRJK",
+                  "baggageAllowances": [
+                    {
+                      "baggageType": "BAGGAGE",
+                      "maximumWeight": null,
+                      "weightUnit": null,
+                      "totalQty": 1
+                    }
+                  ]
+                }
+              ],
+              "operatingCarrier": {
+                "carrierIataCode": "KE",
+                "carrierName": "대한항공",
+                "flightNumber": "756"
+              },
+              "marketingCarrier": {
+                "carrierIataCode": "KE",
+                "carrierName": "대한항공",
+                "flightNumber": "756"
+              },
+              "aircraft": {
+                "aircraftName": "Airbus A220-300"
+              }
+            },
+            {
+              "segmentId": "SEGMENT2",
+              "journeyId": "JOURNEY2",
+              "cabinType": "Economy",
+              "seatsRemaining": 7,
+              "departureScheduleDatetime": "2024-05-23T10:35:00",
+              "arrivalScheduleDatetime": "2024-05-23T13:00:00",
+              "segmentDuration": 145,
+              "departure": {
+                "countryIsoCode": "KR",
+                "countryName": "대한민국",
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천",
+                "airportTerminalName": "2"
+              },
+              "arrival": {
+                "countryIsoCode": "JP",
+                "countryName": "일본",
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와",
+                "airportTerminalName": "I"
+              },
+              "legs": [],
+              "segmentPassengers": [
+                {
+                  "passengerId": "ADT1",
+                  "fareBasisCode": "YRTLJ",
+                  "baggageAllowances": [
+                    {
+                      "baggageType": "BAGGAGE",
+                      "maximumWeight": null,
+                      "weightUnit": null,
+                      "totalQty": 1
+                    }
+                  ]
+                }
+              ],
+              "operatingCarrier": {
+                "carrierIataCode": "LJ",
+                "carrierName": "진에어",
+                "flightNumber": "341"
+              },
+              "marketingCarrier": {
+                "carrierIataCode": "KE",
+                "carrierName": "대한항공",
+                "flightNumber": "5745"
+              },
+              "aircraft": {
+                "aircraftName": "Boeing 737-800"
+              }
+            }
+          ],
+          "passengers": [
+            {
+              "passengerId": "ADT1",
+              "passengerType": "ADULT",
+              "passengerAge": null,
+              "passengerAmount": [
+                {
+                  "cardCompanyId": 0,
+                  "cardType": "",
+                  "totalAmount": 619800,
+                  "totalCurCode": "KRW"
+                },
+                {
+                  "cardCompanyId": 15,
+                  "cardType": "우리카드",
+                  "totalAmount": 571400,
+                  "totalCurCode": "KRW"
+                }
+              ]
+            }
+          ],
+          "journey": [
+            {
+              "journeyId": "JOURNEY1",
+              "journeyDuration": 150,
+              "departure": {
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와"
+              },
+              "arrival": {
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천"
+              }
+            },
+            {
+              "journeyId": "JOURNEY2",
+              "journeyDuration": 145,
+              "departure": {
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천"
+              },
+              "arrival": {
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와"
+              }
+            }
+          ]
+        },
+        {
+          "offerId": "140508120545311035",
+          "providerInfoType": "GDS",
+          "platingAirlineCode": "KE",
+          "offerExpirationLimitDatetime": "2024-05-09T04:50:37Z",
+          "offerAmount": {
+            "promotions": [
+              {
+                "cardCompanyId": 0,
+                "cardType": "",
+                "totalAmount": 1151000,
+                "totalCurCode": "KRW"
+              },
+              {
+                "cardCompanyId": 15,
+                "cardType": "우리카드",
+                "totalAmount": 1049800,
+                "totalCurCode": "KRW"
+              }
+            ]
+          },
+          "segments": [
+            {
+              "segmentId": "SEGMENT1",
+              "journeyId": "JOURNEY1",
+              "cabinType": "Economy",
+              "seatsRemaining": 9,
+              "departureScheduleDatetime": "2024-05-20T12:50:00",
+              "arrivalScheduleDatetime": "2024-05-20T15:20:00",
+              "segmentDuration": 150,
+              "departure": {
+                "countryIsoCode": "JP",
+                "countryName": "일본",
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와",
+                "airportTerminalName": "I"
+              },
+              "arrival": {
+                "countryIsoCode": "KR",
+                "countryName": "대한민국",
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천",
+                "airportTerminalName": "2"
+              },
+              "legs": [],
+              "segmentPassengers": [
+                {
+                  "passengerId": "ADT1",
+                  "fareBasisCode": "ELE0ZRJK",
+                  "baggageAllowances": [
+                    {
+                      "baggageType": "BAGGAGE",
+                      "maximumWeight": null,
+                      "weightUnit": null,
+                      "totalQty": 1
+                    }
+                  ]
+                }
+              ],
+              "operatingCarrier": {
+                "carrierIataCode": "KE",
+                "carrierName": "대한항공",
+                "flightNumber": "756"
+              },
+              "marketingCarrier": {
+                "carrierIataCode": "KE",
+                "carrierName": "대한항공",
+                "flightNumber": "756"
+              },
+              "aircraft": {
+                "aircraftName": "Airbus A220-300"
+              }
+            },
+            {
+              "segmentId": "SEGMENT2",
+              "journeyId": "JOURNEY2",
+              "cabinType": "Economy",
+              "seatsRemaining": 7,
+              "departureScheduleDatetime": "2024-05-23T12:10:00",
+              "arrivalScheduleDatetime": "2024-05-23T13:30:00",
+              "segmentDuration": 80,
+              "departure": {
+                "countryIsoCode": "KR",
+                "countryName": "대한민국",
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천",
+                "airportTerminalName": "2"
+              },
+              "arrival": {
+                "countryIsoCode": "JP",
+                "countryName": "일본",
+                "cityIataCode": "FUK",
+                "cityName": "후쿠오카",
+                "airportIataCode": "FUK",
+                "airportName": "후쿠오카",
+                "airportTerminalName": "I"
+              },
+              "legs": [],
+              "segmentPassengers": [
+                {
+                  "passengerId": "ADT1",
+                  "fareBasisCode": "YRT",
+                  "baggageAllowances": [
+                    {
+                      "baggageType": "BAGGAGE",
+                      "maximumWeight": null,
+                      "weightUnit": null,
+                      "totalQty": 1
+                    }
+                  ]
+                }
+              ],
+              "operatingCarrier": {
+                "carrierIataCode": "LJ",
+                "carrierName": "진에어",
+                "flightNumber": "263"
+              },
+              "marketingCarrier": {
+                "carrierIataCode": "KE",
+                "carrierName": "대한항공",
+                "flightNumber": "5075"
+              },
+              "aircraft": {
+                "aircraftName": "Boeing 737Max"
+              }
+            },
+            {
+              "segmentId": "SEGMENT3",
+              "journeyId": "JOURNEY2",
+              "cabinType": "Economy",
+              "seatsRemaining": 9,
+              "departureScheduleDatetime": "2024-05-23T15:20:00",
+              "arrivalScheduleDatetime": "2024-05-23T17:05:00",
+              "segmentDuration": 105,
+              "departure": {
+                "countryIsoCode": "JP",
+                "countryName": "일본",
+                "cityIataCode": "FUK",
+                "cityName": "후쿠오카",
+                "airportIataCode": "FUK",
+                "airportName": "후쿠오카",
+                "airportTerminalName": "D"
+              },
+              "arrival": {
+                "countryIsoCode": "JP",
+                "countryName": "일본",
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와",
+                "airportTerminalName": "D"
+              },
+              "legs": [],
+              "segmentPassengers": [
+                {
+                  "passengerId": "ADT1",
+                  "fareBasisCode": "YRT",
+                  "baggageAllowances": [
+                    {
+                      "baggageType": "BAGGAGE",
+                      "maximumWeight": null,
+                      "weightUnit": null,
+                      "totalQty": 1
+                    }
+                  ]
+                }
+              ],
+              "operatingCarrier": {
+                "carrierIataCode": "NH",
+                "carrierName": "전일본공수",
+                "flightNumber": "1211"
+              },
+              "marketingCarrier": {
+                "carrierIataCode": "NH",
+                "carrierName": "전일본공수",
+                "flightNumber": "1211"
+              },
+              "aircraft": {
+                "aircraftName": "Boeing 767"
+              }
+            }
+          ],
+          "passengers": [
+            {
+              "passengerId": "ADT1",
+              "passengerType": "ADULT",
+              "passengerAge": null,
+              "passengerAmount": [
+                {
+                  "cardCompanyId": 0,
+                  "cardType": "",
+                  "totalAmount": 1151000,
+                  "totalCurCode": "KRW"
+                },
+                {
+                  "cardCompanyId": 15,
+                  "cardType": "우리카드",
+                  "totalAmount": 1049800,
+                  "totalCurCode": "KRW"
+                }
+              ]
+            }
+          ],
+          "journey": [
+            {
+              "journeyId": "JOURNEY1",
+              "journeyDuration": 150,
+              "departure": {
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와"
+              },
+              "arrival": {
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천"
+              }
+            },
+            {
+              "journeyId": "JOURNEY2",
+              "journeyDuration": 295,
+              "departure": {
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천"
+              },
+              "arrival": {
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와"
+              }
+            }
+          ]
+        },
+        {
+          "offerId": "212565714583238971",
+          "providerInfoType": "GDS",
+          "platingAirlineCode": "KE",
+          "offerExpirationLimitDatetime": "2024-05-09T04:50:37Z",
+          "offerAmount": {
+            "promotions": [
+              {
+                "cardCompanyId": 0,
+                "cardType": "",
+                "totalAmount": 1151000,
+                "totalCurCode": "KRW"
+              },
+              {
+                "cardCompanyId": 15,
+                "cardType": "우리카드",
+                "totalAmount": 1130800,
+                "totalCurCode": "KRW"
+              }
+            ]
+          },
+          "segments": [
+            {
+              "segmentId": "SEGMENT1",
+              "journeyId": "JOURNEY1",
+              "cabinType": "Economy",
+              "seatsRemaining": 9,
+              "departureScheduleDatetime": "2024-05-20T12:50:00",
+              "arrivalScheduleDatetime": "2024-05-20T15:20:00",
+              "segmentDuration": 150,
+              "departure": {
+                "countryIsoCode": "JP",
+                "countryName": "일본",
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와",
+                "airportTerminalName": "I"
+              },
+              "arrival": {
+                "countryIsoCode": "KR",
+                "countryName": "대한민국",
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천",
+                "airportTerminalName": "2"
+              },
+              "legs": [],
+              "segmentPassengers": [
+                {
+                  "passengerId": "ADT1",
+                  "fareBasisCode": "ELE0ZRJK",
+                  "baggageAllowances": [
+                    {
+                      "baggageType": "BAGGAGE",
+                      "maximumWeight": null,
+                      "weightUnit": null,
+                      "totalQty": 1
+                    }
+                  ]
+                }
+              ],
+              "operatingCarrier": {
+                "carrierIataCode": "KE",
+                "carrierName": "대한항공",
+                "flightNumber": "756"
+              },
+              "marketingCarrier": {
+                "carrierIataCode": "KE",
+                "carrierName": "대한항공",
+                "flightNumber": "756"
+              },
+              "aircraft": {
+                "aircraftName": "Airbus A220-300"
+              }
+            },
+            {
+              "segmentId": "SEGMENT2",
+              "journeyId": "JOURNEY2",
+              "cabinType": "Economy",
+              "seatsRemaining": 9,
+              "departureScheduleDatetime": "2024-05-23T13:55:00",
+              "arrivalScheduleDatetime": "2024-05-23T15:25:00",
+              "segmentDuration": 90,
+              "departure": {
+                "countryIsoCode": "KR",
+                "countryName": "대한민국",
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천",
+                "airportTerminalName": "2"
+              },
+              "arrival": {
+                "countryIsoCode": "JP",
+                "countryName": "일본",
+                "cityIataCode": "FUK",
+                "cityName": "후쿠오카",
+                "airportIataCode": "FUK",
+                "airportName": "후쿠오카",
+                "airportTerminalName": "I"
+              },
+              "legs": [],
+              "segmentPassengers": [
+                {
+                  "passengerId": "ADT1",
+                  "fareBasisCode": "YRT",
+                  "baggageAllowances": [
+                    {
+                      "baggageType": "BAGGAGE",
+                      "maximumWeight": null,
+                      "weightUnit": null,
+                      "totalQty": 1
+                    }
+                  ]
+                }
+              ],
+              "operatingCarrier": {
+                "carrierIataCode": "KE",
+                "carrierName": "대한항공",
+                "flightNumber": "789"
+              },
+              "marketingCarrier": {
+                "carrierIataCode": "KE",
+                "carrierName": "대한항공",
+                "flightNumber": "789"
+              },
+              "aircraft": {
+                "aircraftName": "Boeing 737-900"
+              }
+            },
+            {
+              "segmentId": "SEGMENT3",
+              "journeyId": "JOURNEY2",
+              "cabinType": "Economy",
+              "seatsRemaining": 9,
+              "departureScheduleDatetime": "2024-05-23T18:15:00",
+              "arrivalScheduleDatetime": "2024-05-23T19:55:00",
+              "segmentDuration": 100,
+              "departure": {
+                "countryIsoCode": "JP",
+                "countryName": "일본",
+                "cityIataCode": "FUK",
+                "cityName": "후쿠오카",
+                "airportIataCode": "FUK",
+                "airportName": "후쿠오카",
+                "airportTerminalName": "D"
+              },
+              "arrival": {
+                "countryIsoCode": "JP",
+                "countryName": "일본",
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와",
+                "airportTerminalName": "D"
+              },
+              "legs": [],
+              "segmentPassengers": [
+                {
+                  "passengerId": "ADT1",
+                  "fareBasisCode": "YRT",
+                  "baggageAllowances": [
+                    {
+                      "baggageType": "BAGGAGE",
+                      "maximumWeight": null,
+                      "weightUnit": null,
+                      "totalQty": 1
+                    }
+                  ]
+                }
+              ],
+              "operatingCarrier": {
+                "carrierIataCode": "NH",
+                "carrierName": "전일본공수",
+                "flightNumber": "1215"
+              },
+              "marketingCarrier": {
+                "carrierIataCode": "NH",
+                "carrierName": "전일본공수",
+                "flightNumber": "1215"
+              },
+              "aircraft": {
+                "aircraftName": "Boeing 767"
+              }
+            }
+          ],
+          "passengers": [
+            {
+              "passengerId": "ADT1",
+              "passengerType": "ADULT",
+              "passengerAge": null,
+              "passengerAmount": [
+                {
+                  "cardCompanyId": 0,
+                  "cardType": "",
+                  "totalAmount": 1151000,
+                  "totalCurCode": "KRW"
+                },
+                {
+                  "cardCompanyId": 15,
+                  "cardType": "우리카드",
+                  "totalAmount": 1130800,
+                  "totalCurCode": "KRW"
+                }
+              ]
+            }
+          ],
+          "journey": [
+            {
+              "journeyId": "JOURNEY1",
+              "journeyDuration": 150,
+              "departure": {
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와"
+              },
+              "arrival": {
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천"
+              }
+            },
+            {
+              "journeyId": "JOURNEY2",
+              "journeyDuration": 360,
+              "departure": {
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천"
+              },
+              "arrival": {
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와"
+              }
+            }
+          ]
+        },
+        {
+          "offerId": "284623308621166907",
+          "providerInfoType": "GDS",
+          "platingAirlineCode": "KE",
+          "offerExpirationLimitDatetime": "2024-05-09T04:50:37Z",
+          "offerAmount": {
+            "promotions": [
+              {
+                "cardCompanyId": 0,
+                "cardType": "",
+                "totalAmount": 1151000,
+                "totalCurCode": "KRW"
+              },
+              {
+                "cardCompanyId": 15,
+                "cardType": "우리카드",
+                "totalAmount": 1049800,
+                "totalCurCode": "KRW"
+              }
+            ]
+          },
+          "segments": [
+            {
+              "segmentId": "SEGMENT1",
+              "journeyId": "JOURNEY1",
+              "cabinType": "Economy",
+              "seatsRemaining": 9,
+              "departureScheduleDatetime": "2024-05-20T12:50:00",
+              "arrivalScheduleDatetime": "2024-05-20T15:20:00",
+              "segmentDuration": 150,
+              "departure": {
+                "countryIsoCode": "JP",
+                "countryName": "일본",
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와",
+                "airportTerminalName": "I"
+              },
+              "arrival": {
+                "countryIsoCode": "KR",
+                "countryName": "대한민국",
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천",
+                "airportTerminalName": "2"
+              },
+              "legs": [],
+              "segmentPassengers": [
+                {
+                  "passengerId": "ADT1",
+                  "fareBasisCode": "ELE0ZRJK",
+                  "baggageAllowances": [
+                    {
+                      "baggageType": "BAGGAGE",
+                      "maximumWeight": null,
+                      "weightUnit": null,
+                      "totalQty": 1
+                    }
+                  ]
+                }
+              ],
+              "operatingCarrier": {
+                "carrierIataCode": "KE",
+                "carrierName": "대한항공",
+                "flightNumber": "756"
+              },
+              "marketingCarrier": {
+                "carrierIataCode": "KE",
+                "carrierName": "대한항공",
+                "flightNumber": "756"
+              },
+              "aircraft": {
+                "aircraftName": "Airbus A220-300"
+              }
+            },
+            {
+              "segmentId": "SEGMENT2",
+              "journeyId": "JOURNEY2",
+              "cabinType": "Economy",
+              "seatsRemaining": 9,
+              "departureScheduleDatetime": "2024-05-23T18:35:00",
+              "arrivalScheduleDatetime": "2024-05-23T20:00:00",
+              "segmentDuration": 85,
+              "departure": {
+                "countryIsoCode": "KR",
+                "countryName": "대한민국",
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천",
+                "airportTerminalName": "2"
+              },
+              "arrival": {
+                "countryIsoCode": "JP",
+                "countryName": "일본",
+                "cityIataCode": "FUK",
+                "cityName": "후쿠오카",
+                "airportIataCode": "FUK",
+                "airportName": "후쿠오카",
+                "airportTerminalName": "I"
+              },
+              "legs": [],
+              "segmentPassengers": [
+                {
+                  "passengerId": "ADT1",
+                  "fareBasisCode": "YRT",
+                  "baggageAllowances": [
+                    {
+                      "baggageType": "BAGGAGE",
+                      "maximumWeight": null,
+                      "weightUnit": null,
+                      "totalQty": 1
+                    }
+                  ]
+                }
+              ],
+              "operatingCarrier": {
+                "carrierIataCode": "KE",
+                "carrierName": "대한항공",
+                "flightNumber": "781"
+              },
+              "marketingCarrier": {
+                "carrierIataCode": "KE",
+                "carrierName": "대한항공",
+                "flightNumber": "781"
+              },
+              "aircraft": {
+                "aircraftName": "Boeing 737-900"
+              }
+            },
+            {
+              "segmentId": "SEGMENT3",
+              "journeyId": "JOURNEY2",
+              "cabinType": "Economy",
+              "seatsRemaining": 9,
+              "departureScheduleDatetime": "2024-05-24T07:05:00",
+              "arrivalScheduleDatetime": "2024-05-24T08:45:00",
+              "segmentDuration": 100,
+              "departure": {
+                "countryIsoCode": "JP",
+                "countryName": "일본",
+                "cityIataCode": "FUK",
+                "cityName": "후쿠오카",
+                "airportIataCode": "FUK",
+                "airportName": "후쿠오카",
+                "airportTerminalName": "D"
+              },
+              "arrival": {
+                "countryIsoCode": "JP",
+                "countryName": "일본",
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와",
+                "airportTerminalName": "D"
+              },
+              "legs": [],
+              "segmentPassengers": [
+                {
+                  "passengerId": "ADT1",
+                  "fareBasisCode": "YRT",
+                  "baggageAllowances": [
+                    {
+                      "baggageType": "BAGGAGE",
+                      "maximumWeight": null,
+                      "weightUnit": null,
+                      "totalQty": 1
+                    }
+                  ]
+                }
+              ],
+              "operatingCarrier": {
+                "carrierIataCode": "EH",
+                "carrierName": "아나 윙즈",
+                "flightNumber": "1201"
+              },
+              "marketingCarrier": {
+                "carrierIataCode": "NH",
+                "carrierName": "전일본공수",
+                "flightNumber": "1201"
+              },
+              "aircraft": {
+                "aircraftName": "Boeing 737-800"
+              }
+            }
+          ],
+          "passengers": [
+            {
+              "passengerId": "ADT1",
+              "passengerType": "ADULT",
+              "passengerAge": null,
+              "passengerAmount": [
+                {
+                  "cardCompanyId": 0,
+                  "cardType": "",
+                  "totalAmount": 1151000,
+                  "totalCurCode": "KRW"
+                },
+                {
+                  "cardCompanyId": 15,
+                  "cardType": "우리카드",
+                  "totalAmount": 1049800,
+                  "totalCurCode": "KRW"
+                }
+              ]
+            }
+          ],
+          "journey": [
+            {
+              "journeyId": "JOURNEY1",
+              "journeyDuration": 150,
+              "departure": {
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와"
+              },
+              "arrival": {
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천"
+              }
+            },
+            {
+              "journeyId": "JOURNEY2",
+              "journeyDuration": 850,
+              "departure": {
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천"
+              },
+              "arrival": {
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와"
+              }
+            }
+          ]
+        },
+        {
+          "offerId": "356680902659094843",
+          "providerInfoType": "GDS",
+          "platingAirlineCode": "KE",
+          "offerExpirationLimitDatetime": "2024-05-09T04:50:37Z",
+          "offerAmount": {
+            "promotions": [
+              {
+                "cardCompanyId": 0,
+                "cardType": "",
+                "totalAmount": 1151000,
+                "totalCurCode": "KRW"
+              },
+              {
+                "cardCompanyId": 15,
+                "cardType": "우리카드",
+                "totalAmount": 1049800,
+                "totalCurCode": "KRW"
+              }
+            ]
+          },
+          "segments": [
+            {
+              "segmentId": "SEGMENT1",
+              "journeyId": "JOURNEY1",
+              "cabinType": "Economy",
+              "seatsRemaining": 9,
+              "departureScheduleDatetime": "2024-05-20T12:50:00",
+              "arrivalScheduleDatetime": "2024-05-20T15:20:00",
+              "segmentDuration": 150,
+              "departure": {
+                "countryIsoCode": "JP",
+                "countryName": "일본",
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와",
+                "airportTerminalName": "I"
+              },
+              "arrival": {
+                "countryIsoCode": "KR",
+                "countryName": "대한민국",
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천",
+                "airportTerminalName": "2"
+              },
+              "legs": [],
+              "segmentPassengers": [
+                {
+                  "passengerId": "ADT1",
+                  "fareBasisCode": "ELE0ZRJK",
+                  "baggageAllowances": [
+                    {
+                      "baggageType": "BAGGAGE",
+                      "maximumWeight": null,
+                      "weightUnit": null,
+                      "totalQty": 1
+                    }
+                  ]
+                }
+              ],
+              "operatingCarrier": {
+                "carrierIataCode": "KE",
+                "carrierName": "대한항공",
+                "flightNumber": "756"
+              },
+              "marketingCarrier": {
+                "carrierIataCode": "KE",
+                "carrierName": "대한항공",
+                "flightNumber": "756"
+              },
+              "aircraft": {
+                "aircraftName": "Airbus A220-300"
+              }
+            },
+            {
+              "segmentId": "SEGMENT2",
+              "journeyId": "JOURNEY2",
+              "cabinType": "Economy",
+              "seatsRemaining": 9,
+              "departureScheduleDatetime": "2024-05-23T18:35:00",
+              "arrivalScheduleDatetime": "2024-05-23T20:00:00",
+              "segmentDuration": 85,
+              "departure": {
+                "countryIsoCode": "KR",
+                "countryName": "대한민국",
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천",
+                "airportTerminalName": "2"
+              },
+              "arrival": {
+                "countryIsoCode": "JP",
+                "countryName": "일본",
+                "cityIataCode": "FUK",
+                "cityName": "후쿠오카",
+                "airportIataCode": "FUK",
+                "airportName": "후쿠오카",
+                "airportTerminalName": "I"
+              },
+              "legs": [],
+              "segmentPassengers": [
+                {
+                  "passengerId": "ADT1",
+                  "fareBasisCode": "YRT",
+                  "baggageAllowances": [
+                    {
+                      "baggageType": "BAGGAGE",
+                      "maximumWeight": null,
+                      "weightUnit": null,
+                      "totalQty": 1
+                    }
+                  ]
+                }
+              ],
+              "operatingCarrier": {
+                "carrierIataCode": "KE",
+                "carrierName": "대한항공",
+                "flightNumber": "781"
+              },
+              "marketingCarrier": {
+                "carrierIataCode": "KE",
+                "carrierName": "대한항공",
+                "flightNumber": "781"
+              },
+              "aircraft": {
+                "aircraftName": "Boeing 737-900"
+              }
+            },
+            {
+              "segmentId": "SEGMENT3",
+              "journeyId": "JOURNEY2",
+              "cabinType": "Economy",
+              "seatsRemaining": 9,
+              "departureScheduleDatetime": "2024-05-24T08:05:00",
+              "arrivalScheduleDatetime": "2024-05-24T09:50:00",
+              "segmentDuration": 105,
+              "departure": {
+                "countryIsoCode": "JP",
+                "countryName": "일본",
+                "cityIataCode": "FUK",
+                "cityName": "후쿠오카",
+                "airportIataCode": "FUK",
+                "airportName": "후쿠오카",
+                "airportTerminalName": "D"
+              },
+              "arrival": {
+                "countryIsoCode": "JP",
+                "countryName": "일본",
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와",
+                "airportTerminalName": "D"
+              },
+              "legs": [],
+              "segmentPassengers": [
+                {
+                  "passengerId": "ADT1",
+                  "fareBasisCode": "YRT",
+                  "baggageAllowances": [
+                    {
+                      "baggageType": "BAGGAGE",
+                      "maximumWeight": null,
+                      "weightUnit": null,
+                      "totalQty": 1
+                    }
+                  ]
+                }
+              ],
+              "operatingCarrier": {
+                "carrierIataCode": "EH",
+                "carrierName": "아나 윙즈",
+                "flightNumber": "1203"
+              },
+              "marketingCarrier": {
+                "carrierIataCode": "NH",
+                "carrierName": "전일본공수",
+                "flightNumber": "1203"
+              },
+              "aircraft": {
+                "aircraftName": "Boeing 737-800"
+              }
+            }
+          ],
+          "passengers": [
+            {
+              "passengerId": "ADT1",
+              "passengerType": "ADULT",
+              "passengerAge": null,
+              "passengerAmount": [
+                {
+                  "cardCompanyId": 0,
+                  "cardType": "",
+                  "totalAmount": 1151000,
+                  "totalCurCode": "KRW"
+                },
+                {
+                  "cardCompanyId": 15,
+                  "cardType": "우리카드",
+                  "totalAmount": 1049800,
+                  "totalCurCode": "KRW"
+                }
+              ]
+            }
+          ],
+          "journey": [
+            {
+              "journeyId": "JOURNEY1",
+              "journeyDuration": 150,
+              "departure": {
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와"
+              },
+              "arrival": {
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천"
+              }
+            },
+            {
+              "journeyId": "JOURNEY2",
+              "journeyDuration": 915,
+              "departure": {
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천"
+              },
+              "arrival": {
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와"
+              }
+            }
+          ]
+        },
+        {
+          "offerId": "428738496697022779",
+          "providerInfoType": "GDS",
+          "platingAirlineCode": "KE",
+          "offerExpirationLimitDatetime": "2024-05-09T04:50:37Z",
+          "offerAmount": {
+            "promotions": [
+              {
+                "cardCompanyId": 0,
+                "cardType": "",
+                "totalAmount": 1151000,
+                "totalCurCode": "KRW"
+              },
+              {
+                "cardCompanyId": 15,
+                "cardType": "우리카드",
+                "totalAmount": 1049800,
+                "totalCurCode": "KRW"
+              }
+            ]
+          },
+          "segments": [
+            {
+              "segmentId": "SEGMENT1",
+              "journeyId": "JOURNEY1",
+              "cabinType": "Economy",
+              "seatsRemaining": 9,
+              "departureScheduleDatetime": "2024-05-20T12:50:00",
+              "arrivalScheduleDatetime": "2024-05-20T15:20:00",
+              "segmentDuration": 150,
+              "departure": {
+                "countryIsoCode": "JP",
+                "countryName": "일본",
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와",
+                "airportTerminalName": "I"
+              },
+              "arrival": {
+                "countryIsoCode": "KR",
+                "countryName": "대한민국",
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천",
+                "airportTerminalName": "2"
+              },
+              "legs": [],
+              "segmentPassengers": [
+                {
+                  "passengerId": "ADT1",
+                  "fareBasisCode": "ELE0ZRJK",
+                  "baggageAllowances": [
+                    {
+                      "baggageType": "BAGGAGE",
+                      "maximumWeight": null,
+                      "weightUnit": null,
+                      "totalQty": 1
+                    }
+                  ]
+                }
+              ],
+              "operatingCarrier": {
+                "carrierIataCode": "KE",
+                "carrierName": "대한항공",
+                "flightNumber": "756"
+              },
+              "marketingCarrier": {
+                "carrierIataCode": "KE",
+                "carrierName": "대한항공",
+                "flightNumber": "756"
+              },
+              "aircraft": {
+                "aircraftName": "Airbus A220-300"
+              }
+            },
+            {
+              "segmentId": "SEGMENT2",
+              "journeyId": "JOURNEY2",
+              "cabinType": "Economy",
+              "seatsRemaining": 9,
+              "departureScheduleDatetime": "2024-05-23T18:35:00",
+              "arrivalScheduleDatetime": "2024-05-23T20:00:00",
+              "segmentDuration": 85,
+              "departure": {
+                "countryIsoCode": "KR",
+                "countryName": "대한민국",
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천",
+                "airportTerminalName": "2"
+              },
+              "arrival": {
+                "countryIsoCode": "JP",
+                "countryName": "일본",
+                "cityIataCode": "FUK",
+                "cityName": "후쿠오카",
+                "airportIataCode": "FUK",
+                "airportName": "후쿠오카",
+                "airportTerminalName": "I"
+              },
+              "legs": [],
+              "segmentPassengers": [
+                {
+                  "passengerId": "ADT1",
+                  "fareBasisCode": "YRT",
+                  "baggageAllowances": [
+                    {
+                      "baggageType": "BAGGAGE",
+                      "maximumWeight": null,
+                      "weightUnit": null,
+                      "totalQty": 1
+                    }
+                  ]
+                }
+              ],
+              "operatingCarrier": {
+                "carrierIataCode": "KE",
+                "carrierName": "대한항공",
+                "flightNumber": "781"
+              },
+              "marketingCarrier": {
+                "carrierIataCode": "KE",
+                "carrierName": "대한항공",
+                "flightNumber": "781"
+              },
+              "aircraft": {
+                "aircraftName": "Boeing 737-900"
+              }
+            },
+            {
+              "segmentId": "SEGMENT3",
+              "journeyId": "JOURNEY2",
+              "cabinType": "Economy",
+              "seatsRemaining": 1,
+              "departureScheduleDatetime": "2024-05-24T09:40:00",
+              "arrivalScheduleDatetime": "2024-05-24T11:25:00",
+              "segmentDuration": 105,
+              "departure": {
+                "countryIsoCode": "JP",
+                "countryName": "일본",
+                "cityIataCode": "FUK",
+                "cityName": "후쿠오카",
+                "airportIataCode": "FUK",
+                "airportName": "후쿠오카",
+                "airportTerminalName": "D"
+              },
+              "arrival": {
+                "countryIsoCode": "JP",
+                "countryName": "일본",
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와",
+                "airportTerminalName": "D"
+              },
+              "legs": [],
+              "segmentPassengers": [
+                {
+                  "passengerId": "ADT1",
+                  "fareBasisCode": "YRT",
+                  "baggageAllowances": [
+                    {
+                      "baggageType": "BAGGAGE",
+                      "maximumWeight": null,
+                      "weightUnit": null,
+                      "totalQty": 1
+                    }
+                  ]
+                }
+              ],
+              "operatingCarrier": {
+                "carrierIataCode": "EH",
+                "carrierName": "아나 윙즈",
+                "flightNumber": "1205"
+              },
+              "marketingCarrier": {
+                "carrierIataCode": "NH",
+                "carrierName": "전일본공수",
+                "flightNumber": "1205"
+              },
+              "aircraft": {
+                "aircraftName": "Boeing 737-800"
+              }
+            }
+          ],
+          "passengers": [
+            {
+              "passengerId": "ADT1",
+              "passengerType": "ADULT",
+              "passengerAge": null,
+              "passengerAmount": [
+                {
+                  "cardCompanyId": 0,
+                  "cardType": "",
+                  "totalAmount": 1151000,
+                  "totalCurCode": "KRW"
+                },
+                {
+                  "cardCompanyId": 15,
+                  "cardType": "우리카드",
+                  "totalAmount": 1049800,
+                  "totalCurCode": "KRW"
+                }
+              ]
+            }
+          ],
+          "journey": [
+            {
+              "journeyId": "JOURNEY1",
+              "journeyDuration": 150,
+              "departure": {
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와"
+              },
+              "arrival": {
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천"
+              }
+            },
+            {
+              "journeyId": "JOURNEY2",
+              "journeyDuration": 1010,
+              "departure": {
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천"
+              },
+              "arrival": {
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와"
+              }
+            }
+          ]
+        },
+        {
+          "offerId": "500796090734950715",
+          "providerInfoType": "GDS",
+          "platingAirlineCode": "NH",
+          "offerExpirationLimitDatetime": "2024-05-09T04:50:37Z",
+          "offerAmount": {
+            "promotions": [
+              {
+                "cardCompanyId": 0,
+                "cardType": "",
+                "totalAmount": 1805600,
+                "totalCurCode": "KRW"
+              },
+              {
+                "cardCompanyId": 15,
+                "cardType": "우리카드",
+                "totalAmount": 1638400,
+                "totalCurCode": "KRW"
+              }
+            ]
+          },
+          "segments": [
+            {
+              "segmentId": "SEGMENT1",
+              "journeyId": "JOURNEY1",
+              "cabinType": "Economy",
+              "seatsRemaining": 4,
+              "departureScheduleDatetime": "2024-05-20T13:00:00",
+              "arrivalScheduleDatetime": "2024-05-20T15:25:00",
+              "segmentDuration": 145,
+              "departure": {
+                "countryIsoCode": "JP",
+                "countryName": "일본",
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와",
+                "airportTerminalName": "I"
+              },
+              "arrival": {
+                "countryIsoCode": "KR",
+                "countryName": "대한민국",
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천",
+                "airportTerminalName": "1"
+              },
+              "legs": [],
+              "segmentPassengers": [
+                {
+                  "passengerId": "ADT1",
+                  "fareBasisCode": "MRCC1",
+                  "baggageAllowances": [
+                    {
+                      "baggageType": "BAGGAGE",
+                      "maximumWeight": null,
+                      "weightUnit": null,
+                      "totalQty": 2
+                    }
+                  ]
+                }
+              ],
+              "operatingCarrier": {
+                "carrierIataCode": "OZ",
+                "carrierName": "아시아나항공",
+                "flightNumber": "171"
+              },
+              "marketingCarrier": {
+                "carrierIataCode": "NH",
+                "carrierName": "전일본공수",
+                "flightNumber": "6993"
+              },
+              "aircraft": {
+                "aircraftName": "Airbus A321 NEO"
+              }
+            },
+            {
+              "segmentId": "SEGMENT2",
+              "journeyId": "JOURNEY2",
+              "cabinType": "Economy",
+              "seatsRemaining": 4,
+              "departureScheduleDatetime": "2024-05-23T09:30:00",
+              "arrivalScheduleDatetime": "2024-05-23T11:55:00",
+              "segmentDuration": 145,
+              "departure": {
+                "countryIsoCode": "KR",
+                "countryName": "대한민국",
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천",
+                "airportTerminalName": "1"
+              },
+              "arrival": {
+                "countryIsoCode": "JP",
+                "countryName": "일본",
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와",
+                "airportTerminalName": "I"
+              },
+              "legs": [],
+              "segmentPassengers": [
+                {
+                  "passengerId": "ADT1",
+                  "fareBasisCode": "MRCC1",
+                  "baggageAllowances": [
+                    {
+                      "baggageType": "BAGGAGE",
+                      "maximumWeight": null,
+                      "weightUnit": null,
+                      "totalQty": 2
+                    }
+                  ]
+                }
+              ],
+              "operatingCarrier": {
+                "carrierIataCode": "OZ",
+                "carrierName": "아시아나항공",
+                "flightNumber": "172"
+              },
+              "marketingCarrier": {
+                "carrierIataCode": "NH",
+                "carrierName": "전일본공수",
+                "flightNumber": "6994"
+              },
+              "aircraft": {
+                "aircraftName": "Airbus A321 NEO"
+              }
+            }
+          ],
+          "passengers": [
+            {
+              "passengerId": "ADT1",
+              "passengerType": "ADULT",
+              "passengerAge": null,
+              "passengerAmount": [
+                {
+                  "cardCompanyId": 0,
+                  "cardType": "",
+                  "totalAmount": 1805600,
+                  "totalCurCode": "KRW"
+                },
+                {
+                  "cardCompanyId": 15,
+                  "cardType": "우리카드",
+                  "totalAmount": 1638400,
+                  "totalCurCode": "KRW"
+                }
+              ]
+            }
+          ],
+          "journey": [
+            {
+              "journeyId": "JOURNEY1",
+              "journeyDuration": 145,
+              "departure": {
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와"
+              },
+              "arrival": {
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천"
+              }
+            },
+            {
+              "journeyId": "JOURNEY2",
+              "journeyDuration": 145,
+              "departure": {
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천"
+              },
+              "arrival": {
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와"
+              }
+            }
+          ]
+        },
+        {
+          "offerId": "572853684772878651",
+          "providerInfoType": "GDS",
+          "platingAirlineCode": "HX",
+          "offerExpirationLimitDatetime": "2024-05-09T04:50:37Z",
+          "offerAmount": {
+            "promotions": [
+              {
+                "cardCompanyId": 0,
+                "cardType": "",
+                "totalAmount": 1934700,
+                "totalCurCode": "KRW"
+              },
+              {
+                "cardCompanyId": 15,
+                "cardType": "우리카드",
+                "totalAmount": 1902200,
+                "totalCurCode": "KRW"
+              }
+            ]
+          },
+          "segments": [
+            {
+              "segmentId": "SEGMENT1",
+              "journeyId": "JOURNEY1",
+              "cabinType": "Economy",
+              "seatsRemaining": 9,
+              "departureScheduleDatetime": "2024-05-20T16:15:00",
+              "arrivalScheduleDatetime": "2024-05-20T18:00:00",
+              "segmentDuration": 165,
+              "departure": {
+                "countryIsoCode": "JP",
+                "countryName": "일본",
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와",
+                "airportTerminalName": null
+              },
+              "arrival": {
+                "countryIsoCode": "HK",
+                "countryName": "홍콩",
+                "cityIataCode": "HKG",
+                "cityName": "홍콩",
+                "airportIataCode": "HKG",
+                "airportName": "홍콩",
+                "airportTerminalName": "1"
+              },
+              "legs": [],
+              "segmentPassengers": [
+                {
+                  "passengerId": "ADT1",
+                  "fareBasisCode": "YRT",
+                  "baggageAllowances": [
+                    {
+                      "baggageType": "BAGGAGE",
+                      "maximumWeight": 30,
+                      "weightUnit": "KILOGRAMS",
+                      "totalQty": 0
+                    }
+                  ]
+                }
+              ],
+              "operatingCarrier": {
+                "carrierIataCode": "HX",
+                "carrierName": "홍콩 항공",
+                "flightNumber": "659"
+              },
+              "marketingCarrier": {
+                "carrierIataCode": "HX",
+                "carrierName": "홍콩 항공",
+                "flightNumber": "659"
+              },
+              "aircraft": {
+                "aircraftName": "Airbus A320"
+              }
+            },
+            {
+              "segmentId": "SEGMENT2",
+              "journeyId": "JOURNEY1",
+              "cabinType": "Economy",
+              "seatsRemaining": 9,
+              "departureScheduleDatetime": "2024-05-21T08:55:00",
+              "arrivalScheduleDatetime": "2024-05-21T13:45:00",
+              "segmentDuration": 230,
+              "departure": {
+                "countryIsoCode": "HK",
+                "countryName": "홍콩",
+                "cityIataCode": "HKG",
+                "cityName": "홍콩",
+                "airportIataCode": "HKG",
+                "airportName": "홍콩",
+                "airportTerminalName": "1"
+              },
+              "arrival": {
+                "countryIsoCode": "KR",
+                "countryName": "대한민국",
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천",
+                "airportTerminalName": "1"
+              },
+              "legs": [],
+              "segmentPassengers": [
+                {
+                  "passengerId": "ADT1",
+                  "fareBasisCode": "WA3FRHS",
+                  "baggageAllowances": [
+                    {
+                      "baggageType": "BAGGAGE",
+                      "maximumWeight": 30,
+                      "weightUnit": "KILOGRAMS",
+                      "totalQty": 0
+                    }
+                  ]
+                }
+              ],
+              "operatingCarrier": {
+                "carrierIataCode": "HX",
+                "carrierName": "홍콩 항공",
+                "flightNumber": "628"
+              },
+              "marketingCarrier": {
+                "carrierIataCode": "HX",
+                "carrierName": "홍콩 항공",
+                "flightNumber": "628"
+              },
+              "aircraft": {
+                "aircraftName": "Airbus A320"
+              }
+            },
+            {
+              "segmentId": "SEGMENT3",
+              "journeyId": "JOURNEY2",
+              "cabinType": "Economy",
+              "seatsRemaining": 9,
+              "departureScheduleDatetime": "2024-05-23T14:45:00",
+              "arrivalScheduleDatetime": "2024-05-23T17:35:00",
+              "segmentDuration": 230,
+              "departure": {
+                "countryIsoCode": "KR",
+                "countryName": "대한민국",
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천",
+                "airportTerminalName": "1"
+              },
+              "arrival": {
+                "countryIsoCode": "HK",
+                "countryName": "홍콩",
+                "cityIataCode": "HKG",
+                "cityName": "홍콩",
+                "airportIataCode": "HKG",
+                "airportName": "홍콩",
+                "airportTerminalName": "1"
+              },
+              "legs": [],
+              "segmentPassengers": [
+                {
+                  "passengerId": "ADT1",
+                  "fareBasisCode": "WA3FRHS",
+                  "baggageAllowances": [
+                    {
+                      "baggageType": "BAGGAGE",
+                      "maximumWeight": 30,
+                      "weightUnit": "KILOGRAMS",
+                      "totalQty": 0
+                    }
+                  ]
+                }
+              ],
+              "operatingCarrier": {
+                "carrierIataCode": "HX",
+                "carrierName": "홍콩 항공",
+                "flightNumber": "629"
+              },
+              "marketingCarrier": {
+                "carrierIataCode": "HX",
+                "carrierName": "홍콩 항공",
+                "flightNumber": "629"
+              },
+              "aircraft": {
+                "aircraftName": "Airbus A320"
+              }
+            },
+            {
+              "segmentId": "SEGMENT4",
+              "journeyId": "JOURNEY2",
+              "cabinType": "Economy",
+              "seatsRemaining": 5,
+              "departureScheduleDatetime": "2024-05-24T11:30:00",
+              "arrivalScheduleDatetime": "2024-05-24T15:15:00",
+              "segmentDuration": 165,
+              "departure": {
+                "countryIsoCode": "HK",
+                "countryName": "홍콩",
+                "cityIataCode": "HKG",
+                "cityName": "홍콩",
+                "airportIataCode": "HKG",
+                "airportName": "홍콩",
+                "airportTerminalName": "1"
+              },
+              "arrival": {
+                "countryIsoCode": "JP",
+                "countryName": "일본",
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와",
+                "airportTerminalName": null
+              },
+              "legs": [],
+              "segmentPassengers": [
+                {
+                  "passengerId": "ADT1",
+                  "fareBasisCode": "VA3FRJP",
+                  "baggageAllowances": [
+                    {
+                      "baggageType": "BAGGAGE",
+                      "maximumWeight": 30,
+                      "weightUnit": "KILOGRAMS",
+                      "totalQty": 0
+                    }
+                  ]
+                }
+              ],
+              "operatingCarrier": {
+                "carrierIataCode": "HX",
+                "carrierName": "홍콩 항공",
+                "flightNumber": "658"
+              },
+              "marketingCarrier": {
+                "carrierIataCode": "HX",
+                "carrierName": "홍콩 항공",
+                "flightNumber": "658"
+              },
+              "aircraft": {
+                "aircraftName": "Airbus A320"
+              }
+            }
+          ],
+          "passengers": [
+            {
+              "passengerId": "ADT1",
+              "passengerType": "ADULT",
+              "passengerAge": null,
+              "passengerAmount": [
+                {
+                  "cardCompanyId": 0,
+                  "cardType": "",
+                  "totalAmount": 1934700,
+                  "totalCurCode": "KRW"
+                },
+                {
+                  "cardCompanyId": 15,
+                  "cardType": "우리카드",
+                  "totalAmount": 1902200,
+                  "totalCurCode": "KRW"
+                }
+              ]
+            }
+          ],
+          "journey": [
+            {
+              "journeyId": "JOURNEY1",
+              "journeyDuration": 1290,
+              "departure": {
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와"
+              },
+              "arrival": {
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천"
+              }
+            },
+            {
+              "journeyId": "JOURNEY2",
+              "journeyDuration": 1470,
+              "departure": {
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천"
+              },
+              "arrival": {
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와"
+              }
+            }
+          ]
+        },
+        {
+          "offerId": "644911278810806587",
+          "providerInfoType": "GDS",
+          "platingAirlineCode": "HX",
+          "offerExpirationLimitDatetime": "2024-05-09T04:50:37Z",
+          "offerAmount": {
+            "promotions": [
+              {
+                "cardCompanyId": 0,
+                "cardType": "",
+                "totalAmount": 1987500,
+                "totalCurCode": "KRW"
+              },
+              {
+                "cardCompanyId": 15,
+                "cardType": "우리카드",
+                "totalAmount": 1954000,
+                "totalCurCode": "KRW"
+              }
+            ]
+          },
+          "segments": [
+            {
+              "segmentId": "SEGMENT1",
+              "journeyId": "JOURNEY1",
+              "cabinType": "Economy",
+              "seatsRemaining": 9,
+              "departureScheduleDatetime": "2024-05-20T16:15:00",
+              "arrivalScheduleDatetime": "2024-05-20T18:00:00",
+              "segmentDuration": 165,
+              "departure": {
+                "countryIsoCode": "JP",
+                "countryName": "일본",
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와",
+                "airportTerminalName": null
+              },
+              "arrival": {
+                "countryIsoCode": "HK",
+                "countryName": "홍콩",
+                "cityIataCode": "HKG",
+                "cityName": "홍콩",
+                "airportIataCode": "HKG",
+                "airportName": "홍콩",
+                "airportTerminalName": "1"
+              },
+              "legs": [],
+              "segmentPassengers": [
+                {
+                  "passengerId": "ADT1",
+                  "fareBasisCode": "YRT",
+                  "baggageAllowances": [
+                    {
+                      "baggageType": "BAGGAGE",
+                      "maximumWeight": 30,
+                      "weightUnit": "KILOGRAMS",
+                      "totalQty": 0
+                    }
+                  ]
+                }
+              ],
+              "operatingCarrier": {
+                "carrierIataCode": "HX",
+                "carrierName": "홍콩 항공",
+                "flightNumber": "659"
+              },
+              "marketingCarrier": {
+                "carrierIataCode": "HX",
+                "carrierName": "홍콩 항공",
+                "flightNumber": "659"
+              },
+              "aircraft": {
+                "aircraftName": "Airbus A320"
+              }
+            },
+            {
+              "segmentId": "SEGMENT2",
+              "journeyId": "JOURNEY1",
+              "cabinType": "Economy",
+              "seatsRemaining": 9,
+              "departureScheduleDatetime": "2024-05-21T08:55:00",
+              "arrivalScheduleDatetime": "2024-05-21T13:45:00",
+              "segmentDuration": 230,
+              "departure": {
+                "countryIsoCode": "HK",
+                "countryName": "홍콩",
+                "cityIataCode": "HKG",
+                "cityName": "홍콩",
+                "airportIataCode": "HKG",
+                "airportName": "홍콩",
+                "airportTerminalName": "1"
+              },
+              "arrival": {
+                "countryIsoCode": "KR",
+                "countryName": "대한민국",
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천",
+                "airportTerminalName": "1"
+              },
+              "legs": [],
+              "segmentPassengers": [
+                {
+                  "passengerId": "ADT1",
+                  "fareBasisCode": "WA3FRHS",
+                  "baggageAllowances": [
+                    {
+                      "baggageType": "BAGGAGE",
+                      "maximumWeight": 30,
+                      "weightUnit": "KILOGRAMS",
+                      "totalQty": 0
+                    }
+                  ]
+                }
+              ],
+              "operatingCarrier": {
+                "carrierIataCode": "HX",
+                "carrierName": "홍콩 항공",
+                "flightNumber": "628"
+              },
+              "marketingCarrier": {
+                "carrierIataCode": "HX",
+                "carrierName": "홍콩 항공",
+                "flightNumber": "628"
+              },
+              "aircraft": {
+                "aircraftName": "Airbus A320"
+              }
+            },
+            {
+              "segmentId": "SEGMENT3",
+              "journeyId": "JOURNEY2",
+              "cabinType": "Economy",
+              "seatsRemaining": 9,
+              "departureScheduleDatetime": "2024-05-23T14:45:00",
+              "arrivalScheduleDatetime": "2024-05-23T17:35:00",
+              "segmentDuration": 230,
+              "departure": {
+                "countryIsoCode": "KR",
+                "countryName": "대한민국",
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천",
+                "airportTerminalName": "1"
+              },
+              "arrival": {
+                "countryIsoCode": "HK",
+                "countryName": "홍콩",
+                "cityIataCode": "HKG",
+                "cityName": "홍콩",
+                "airportIataCode": "HKG",
+                "airportName": "홍콩",
+                "airportTerminalName": "1"
+              },
+              "legs": [],
+              "segmentPassengers": [
+                {
+                  "passengerId": "ADT1",
+                  "fareBasisCode": "WA3FRHS",
+                  "baggageAllowances": [
+                    {
+                      "baggageType": "BAGGAGE",
+                      "maximumWeight": 30,
+                      "weightUnit": "KILOGRAMS",
+                      "totalQty": 0
+                    }
+                  ]
+                }
+              ],
+              "operatingCarrier": {
+                "carrierIataCode": "HX",
+                "carrierName": "홍콩 항공",
+                "flightNumber": "629"
+              },
+              "marketingCarrier": {
+                "carrierIataCode": "HX",
+                "carrierName": "홍콩 항공",
+                "flightNumber": "629"
+              },
+              "aircraft": {
+                "aircraftName": "Airbus A320"
+              }
+            },
+            {
+              "segmentId": "SEGMENT4",
+              "journeyId": "JOURNEY2",
+              "cabinType": "Economy",
+              "seatsRemaining": 9,
+              "departureScheduleDatetime": "2024-05-24T07:25:00",
+              "arrivalScheduleDatetime": "2024-05-24T11:10:00",
+              "segmentDuration": 165,
+              "departure": {
+                "countryIsoCode": "HK",
+                "countryName": "홍콩",
+                "cityIataCode": "HKG",
+                "cityName": "홍콩",
+                "airportIataCode": "HKG",
+                "airportName": "홍콩",
+                "airportTerminalName": "1"
+              },
+              "arrival": {
+                "countryIsoCode": "JP",
+                "countryName": "일본",
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와",
+                "airportTerminalName": null
+              },
+              "legs": [],
+              "segmentPassengers": [
+                {
+                  "passengerId": "ADT1",
+                  "fareBasisCode": "SA3FRJP",
+                  "baggageAllowances": [
+                    {
+                      "baggageType": "BAGGAGE",
+                      "maximumWeight": 30,
+                      "weightUnit": "KILOGRAMS",
+                      "totalQty": 0
+                    }
+                  ]
+                }
+              ],
+              "operatingCarrier": {
+                "carrierIataCode": "HX",
+                "carrierName": "홍콩 항공",
+                "flightNumber": "676"
+              },
+              "marketingCarrier": {
+                "carrierIataCode": "HX",
+                "carrierName": "홍콩 항공",
+                "flightNumber": "676"
+              },
+              "aircraft": {
+                "aircraftName": "Airbus A320"
+              }
+            }
+          ],
+          "passengers": [
+            {
+              "passengerId": "ADT1",
+              "passengerType": "ADULT",
+              "passengerAge": null,
+              "passengerAmount": [
+                {
+                  "cardCompanyId": 0,
+                  "cardType": "",
+                  "totalAmount": 1987500,
+                  "totalCurCode": "KRW"
+                },
+                {
+                  "cardCompanyId": 15,
+                  "cardType": "우리카드",
+                  "totalAmount": 1954000,
+                  "totalCurCode": "KRW"
+                }
+              ]
+            }
+          ],
+          "journey": [
+            {
+              "journeyId": "JOURNEY1",
+              "journeyDuration": 1290,
+              "departure": {
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와"
+              },
+              "arrival": {
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천"
+              }
+            },
+            {
+              "journeyId": "JOURNEY2",
+              "journeyDuration": 1225,
+              "departure": {
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천"
+              },
+              "arrival": {
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와"
+              }
+            }
+          ]
+        },
+        {
+          "offerId": "716968872848734523",
+          "providerInfoType": "GDS",
+          "platingAirlineCode": "BR",
+          "offerExpirationLimitDatetime": "2024-05-09T04:50:37Z",
+          "offerAmount": {
+            "promotions": [
+              {
+                "cardCompanyId": 0,
+                "cardType": "",
+                "totalAmount": 2182700,
+                "totalCurCode": "KRW"
+              },
+              {
+                "cardCompanyId": 15,
+                "cardType": "우리카드",
+                "totalAmount": 1994600,
+                "totalCurCode": "KRW"
+              }
+            ]
+          },
+          "segments": [
+            {
+              "segmentId": "SEGMENT1",
+              "journeyId": "JOURNEY1",
+              "cabinType": "Economy",
+              "seatsRemaining": 9,
+              "departureScheduleDatetime": "2024-05-20T10:15:00",
+              "arrivalScheduleDatetime": "2024-05-20T10:55:00",
+              "segmentDuration": 100,
+              "departure": {
+                "countryIsoCode": "JP",
+                "countryName": "일본",
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와",
+                "airportTerminalName": "I"
+              },
+              "arrival": {
+                "countryIsoCode": "TW",
+                "countryName": "대만",
+                "cityIataCode": "TPE",
+                "cityName": "타이페이",
+                "airportIataCode": "TPE",
+                "airportName": "타이페이(대만)",
+                "airportTerminalName": "2"
+              },
+              "legs": [],
+              "segmentPassengers": [
+                {
+                  "passengerId": "ADT1",
+                  "fareBasisCode": "BLJP",
+                  "baggageAllowances": [
+                    {
+                      "baggageType": "BAGGAGE",
+                      "maximumWeight": null,
+                      "weightUnit": null,
+                      "totalQty": 2
+                    }
+                  ]
+                }
+              ],
+              "operatingCarrier": {
+                "carrierIataCode": "BR",
+                "carrierName": "에바항공",
+                "flightNumber": "113"
+              },
+              "marketingCarrier": {
+                "carrierIataCode": "BR",
+                "carrierName": "에바항공",
+                "flightNumber": "113"
+              },
+              "aircraft": {
+                "aircraftName": "Airbus A321"
+              }
+            },
+            {
+              "segmentId": "SEGMENT2",
+              "journeyId": "JOURNEY1",
+              "cabinType": "Economy",
+              "seatsRemaining": 4,
+              "departureScheduleDatetime": "2024-05-20T13:15:00",
+              "arrivalScheduleDatetime": "2024-05-20T17:05:00",
+              "segmentDuration": 170,
+              "departure": {
+                "countryIsoCode": "TW",
+                "countryName": "대만",
+                "cityIataCode": "TPE",
+                "cityName": "타이페이",
+                "airportIataCode": "TPE",
+                "airportName": "타이페이(대만)",
+                "airportTerminalName": "2"
+              },
+              "arrival": {
+                "countryIsoCode": "KR",
+                "countryName": "대한민국",
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천",
+                "airportTerminalName": "1"
+              },
+              "legs": [],
+              "segmentPassengers": [
+                {
+                  "passengerId": "ADT1",
+                  "fareBasisCode": "Y1TW",
+                  "baggageAllowances": [
+                    {
+                      "baggageType": "BAGGAGE",
+                      "maximumWeight": null,
+                      "weightUnit": null,
+                      "totalQty": 2
+                    }
+                  ]
+                }
+              ],
+              "operatingCarrier": {
+                "carrierIataCode": "OZ",
+                "carrierName": "아시아나항공",
+                "flightNumber": "712"
+              },
+              "marketingCarrier": {
+                "carrierIataCode": "BR",
+                "carrierName": "에바항공",
+                "flightNumber": "2148"
+              },
+              "aircraft": {
+                "aircraftName": "BOEING777-200LR"
+              }
+            },
+            {
+              "segmentId": "SEGMENT3",
+              "journeyId": "JOURNEY2",
+              "cabinType": "Economy",
+              "seatsRemaining": 9,
+              "departureScheduleDatetime": "2024-05-23T12:00:00",
+              "arrivalScheduleDatetime": "2024-05-23T13:35:00",
+              "segmentDuration": 155,
+              "departure": {
+                "countryIsoCode": "KR",
+                "countryName": "대한민국",
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천",
+                "airportTerminalName": "1"
+              },
+              "arrival": {
+                "countryIsoCode": "TW",
+                "countryName": "대만",
+                "cityIataCode": "TPE",
+                "cityName": "타이페이",
+                "airportIataCode": "TPE",
+                "airportName": "타이페이(대만)",
+                "airportTerminalName": "2"
+              },
+              "legs": [],
+              "segmentPassengers": [
+                {
+                  "passengerId": "ADT1",
+                  "fareBasisCode": "Y1TW",
+                  "baggageAllowances": [
+                    {
+                      "baggageType": "BAGGAGE",
+                      "maximumWeight": null,
+                      "weightUnit": null,
+                      "totalQty": 2
+                    }
+                  ]
+                }
+              ],
+              "operatingCarrier": {
+                "carrierIataCode": "BR",
+                "carrierName": "에바항공",
+                "flightNumber": "169"
+              },
+              "marketingCarrier": {
+                "carrierIataCode": "BR",
+                "carrierName": "에바항공",
+                "flightNumber": "169"
+              },
+              "aircraft": {
+                "aircraftName": "Airbus A321"
+              }
+            },
+            {
+              "segmentId": "SEGMENT4",
+              "journeyId": "JOURNEY2",
+              "cabinType": "Economy",
+              "seatsRemaining": 9,
+              "departureScheduleDatetime": "2024-05-23T16:25:00",
+              "arrivalScheduleDatetime": "2024-05-23T18:55:00",
+              "segmentDuration": 90,
+              "departure": {
+                "countryIsoCode": "TW",
+                "countryName": "대만",
+                "cityIataCode": "TPE",
+                "cityName": "타이페이",
+                "airportIataCode": "TPE",
+                "airportName": "타이페이(대만)",
+                "airportTerminalName": "2"
+              },
+              "arrival": {
+                "countryIsoCode": "JP",
+                "countryName": "일본",
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와",
+                "airportTerminalName": "I"
+              },
+              "legs": [],
+              "segmentPassengers": [
+                {
+                  "passengerId": "ADT1",
+                  "fareBasisCode": "BLJP",
+                  "baggageAllowances": [
+                    {
+                      "baggageType": "BAGGAGE",
+                      "maximumWeight": null,
+                      "weightUnit": null,
+                      "totalQty": 2
+                    }
+                  ]
+                }
+              ],
+              "operatingCarrier": {
+                "carrierIataCode": "BR",
+                "carrierName": "에바항공",
+                "flightNumber": "186"
+              },
+              "marketingCarrier": {
+                "carrierIataCode": "BR",
+                "carrierName": "에바항공",
+                "flightNumber": "186"
+              },
+              "aircraft": {
+                "aircraftName": "Airbus A321"
+              }
+            }
+          ],
+          "passengers": [
+            {
+              "passengerId": "ADT1",
+              "passengerType": "ADULT",
+              "passengerAge": null,
+              "passengerAmount": [
+                {
+                  "cardCompanyId": 0,
+                  "cardType": "",
+                  "totalAmount": 2182700,
+                  "totalCurCode": "KRW"
+                },
+                {
+                  "cardCompanyId": 15,
+                  "cardType": "우리카드",
+                  "totalAmount": 1994600,
+                  "totalCurCode": "KRW"
+                }
+              ]
+            }
+          ],
+          "journey": [
+            {
+              "journeyId": "JOURNEY1",
+              "journeyDuration": 410,
+              "departure": {
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와"
+              },
+              "arrival": {
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천"
+              }
+            },
+            {
+              "journeyId": "JOURNEY2",
+              "journeyDuration": 415,
+              "departure": {
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천"
+              },
+              "arrival": {
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와"
+              }
+            }
+          ]
+        },
+        {
+          "offerId": "789026466886662459",
+          "providerInfoType": "GDS",
+          "platingAirlineCode": "BR",
+          "offerExpirationLimitDatetime": "2024-05-09T04:50:37Z",
+          "offerAmount": {
+            "promotions": [
+              {
+                "cardCompanyId": 0,
+                "cardType": "",
+                "totalAmount": 2182700,
+                "totalCurCode": "KRW"
+              },
+              {
+                "cardCompanyId": 15,
+                "cardType": "우리카드",
+                "totalAmount": 2145100,
+                "totalCurCode": "KRW"
+              }
+            ]
+          },
+          "segments": [
+            {
+              "segmentId": "SEGMENT1",
+              "journeyId": "JOURNEY1",
+              "cabinType": "Economy",
+              "seatsRemaining": 9,
+              "departureScheduleDatetime": "2024-05-20T10:15:00",
+              "arrivalScheduleDatetime": "2024-05-20T10:55:00",
+              "segmentDuration": 100,
+              "departure": {
+                "countryIsoCode": "JP",
+                "countryName": "일본",
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와",
+                "airportTerminalName": "I"
+              },
+              "arrival": {
+                "countryIsoCode": "TW",
+                "countryName": "대만",
+                "cityIataCode": "TPE",
+                "cityName": "타이페이",
+                "airportIataCode": "TPE",
+                "airportName": "타이페이(대만)",
+                "airportTerminalName": "2"
+              },
+              "legs": [],
+              "segmentPassengers": [
+                {
+                  "passengerId": "ADT1",
+                  "fareBasisCode": "BLJP",
+                  "baggageAllowances": [
+                    {
+                      "baggageType": "BAGGAGE",
+                      "maximumWeight": null,
+                      "weightUnit": null,
+                      "totalQty": 2
+                    }
+                  ]
+                }
+              ],
+              "operatingCarrier": {
+                "carrierIataCode": "BR",
+                "carrierName": "에바항공",
+                "flightNumber": "113"
+              },
+              "marketingCarrier": {
+                "carrierIataCode": "BR",
+                "carrierName": "에바항공",
+                "flightNumber": "113"
+              },
+              "aircraft": {
+                "aircraftName": "Airbus A321"
+              }
+            },
+            {
+              "segmentId": "SEGMENT2",
+              "journeyId": "JOURNEY1",
+              "cabinType": "Economy",
+              "seatsRemaining": 9,
+              "departureScheduleDatetime": "2024-05-20T15:15:00",
+              "arrivalScheduleDatetime": "2024-05-20T18:45:00",
+              "segmentDuration": 150,
+              "departure": {
+                "countryIsoCode": "TW",
+                "countryName": "대만",
+                "cityIataCode": "TPE",
+                "cityName": "타이페이",
+                "airportIataCode": "TPE",
+                "airportName": "타이페이(대만)",
+                "airportTerminalName": "2"
+              },
+              "arrival": {
+                "countryIsoCode": "KR",
+                "countryName": "대한민국",
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천",
+                "airportTerminalName": "1"
+              },
+              "legs": [],
+              "segmentPassengers": [
+                {
+                  "passengerId": "ADT1",
+                  "fareBasisCode": "Y1TW",
+                  "baggageAllowances": [
+                    {
+                      "baggageType": "BAGGAGE",
+                      "maximumWeight": null,
+                      "weightUnit": null,
+                      "totalQty": 2
+                    }
+                  ]
+                }
+              ],
+              "operatingCarrier": {
+                "carrierIataCode": "BR",
+                "carrierName": "에바항공",
+                "flightNumber": "160"
+              },
+              "marketingCarrier": {
+                "carrierIataCode": "BR",
+                "carrierName": "에바항공",
+                "flightNumber": "160"
+              },
+              "aircraft": {
+                "aircraftName": "Boeing 787-9"
+              }
+            },
+            {
+              "segmentId": "SEGMENT3",
+              "journeyId": "JOURNEY2",
+              "cabinType": "Economy",
+              "seatsRemaining": 9,
+              "departureScheduleDatetime": "2024-05-23T12:00:00",
+              "arrivalScheduleDatetime": "2024-05-23T13:35:00",
+              "segmentDuration": 155,
+              "departure": {
+                "countryIsoCode": "KR",
+                "countryName": "대한민국",
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천",
+                "airportTerminalName": "1"
+              },
+              "arrival": {
+                "countryIsoCode": "TW",
+                "countryName": "대만",
+                "cityIataCode": "TPE",
+                "cityName": "타이페이",
+                "airportIataCode": "TPE",
+                "airportName": "타이페이(대만)",
+                "airportTerminalName": "2"
+              },
+              "legs": [],
+              "segmentPassengers": [
+                {
+                  "passengerId": "ADT1",
+                  "fareBasisCode": "Y1TW",
+                  "baggageAllowances": [
+                    {
+                      "baggageType": "BAGGAGE",
+                      "maximumWeight": null,
+                      "weightUnit": null,
+                      "totalQty": 2
+                    }
+                  ]
+                }
+              ],
+              "operatingCarrier": {
+                "carrierIataCode": "BR",
+                "carrierName": "에바항공",
+                "flightNumber": "169"
+              },
+              "marketingCarrier": {
+                "carrierIataCode": "BR",
+                "carrierName": "에바항공",
+                "flightNumber": "169"
+              },
+              "aircraft": {
+                "aircraftName": "Airbus A321"
+              }
+            },
+            {
+              "segmentId": "SEGMENT4",
+              "journeyId": "JOURNEY2",
+              "cabinType": "Economy",
+              "seatsRemaining": 9,
+              "departureScheduleDatetime": "2024-05-23T16:25:00",
+              "arrivalScheduleDatetime": "2024-05-23T18:55:00",
+              "segmentDuration": 90,
+              "departure": {
+                "countryIsoCode": "TW",
+                "countryName": "대만",
+                "cityIataCode": "TPE",
+                "cityName": "타이페이",
+                "airportIataCode": "TPE",
+                "airportName": "타이페이(대만)",
+                "airportTerminalName": "2"
+              },
+              "arrival": {
+                "countryIsoCode": "JP",
+                "countryName": "일본",
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와",
+                "airportTerminalName": "I"
+              },
+              "legs": [],
+              "segmentPassengers": [
+                {
+                  "passengerId": "ADT1",
+                  "fareBasisCode": "BLJP",
+                  "baggageAllowances": [
+                    {
+                      "baggageType": "BAGGAGE",
+                      "maximumWeight": null,
+                      "weightUnit": null,
+                      "totalQty": 2
+                    }
+                  ]
+                }
+              ],
+              "operatingCarrier": {
+                "carrierIataCode": "BR",
+                "carrierName": "에바항공",
+                "flightNumber": "186"
+              },
+              "marketingCarrier": {
+                "carrierIataCode": "BR",
+                "carrierName": "에바항공",
+                "flightNumber": "186"
+              },
+              "aircraft": {
+                "aircraftName": "Airbus A321"
+              }
+            }
+          ],
+          "passengers": [
+            {
+              "passengerId": "ADT1",
+              "passengerType": "ADULT",
+              "passengerAge": null,
+              "passengerAmount": [
+                {
+                  "cardCompanyId": 0,
+                  "cardType": "",
+                  "totalAmount": 2182700,
+                  "totalCurCode": "KRW"
+                },
+                {
+                  "cardCompanyId": 15,
+                  "cardType": "우리카드",
+                  "totalAmount": 2145100,
+                  "totalCurCode": "KRW"
+                }
+              ]
+            }
+          ],
+          "journey": [
+            {
+              "journeyId": "JOURNEY1",
+              "journeyDuration": 510,
+              "departure": {
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와"
+              },
+              "arrival": {
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천"
+              }
+            },
+            {
+              "journeyId": "JOURNEY2",
+              "journeyDuration": 415,
+              "departure": {
+                "cityIataCode": "SEL",
+                "cityName": "서울",
+                "airportIataCode": "ICN",
+                "airportName": "인천"
+              },
+              "arrival": {
+                "cityIataCode": "OKA",
+                "cityName": "오키나와",
+                "airportIataCode": "OKA",
+                "airportName": "오키나와"
+              }
+            }
+          ]
+        }
+      ],
+      "alliances": [
+        {
+          "allianceId": 1,
+          "name": "스카이팀"
+        },
+        {
+          "allianceId": 2,
+          "name": "스타 얼라이언스"
+        }
+      ],
+      "carriers": [
+        {
+          "airlineName": "홍콩 항공",
+          "airlineIataCode": "HX",
+          "allianceId": null
+        },
+        {
+          "airlineName": "에바항공",
+          "airlineIataCode": "BR",
+          "allianceId": 2
+        },
+        {
+          "airlineName": "티웨이항공",
+          "airlineIataCode": "TW",
+          "allianceId": null
+        },
+        {
+          "airlineName": "아나 윙즈",
+          "airlineIataCode": "EH",
+          "allianceId": null
+        },
+        {
+          "airlineName": "대한항공",
+          "airlineIataCode": "KE",
+          "allianceId": 1
+        },
+        {
+          "airlineName": "전일본공수",
+          "airlineIataCode": "NH",
+          "allianceId": 2
+        },
+        {
+          "airlineName": "아시아나항공",
+          "airlineIataCode": "OZ",
+          "allianceId": 2
+        },
+        {
+          "airlineName": "진에어",
+          "airlineIataCode": "LJ",
+          "allianceId": null
+        }
+      ],
+      "cities": [
+        {
+          "cityIataCode": "OKA",
+          "cityName": "오키나와"
+        },
+        {
+          "cityIataCode": "HKG",
+          "cityName": "홍콩"
+        },
+        {
+          "cityIataCode": "TPE",
+          "cityName": "타이페이"
+        },
+        {
+          "cityIataCode": "SEL",
+          "cityName": "서울"
+        },
+        {
+          "cityIataCode": "FUK",
+          "cityName": "후쿠오카"
+        }
+      ],
+      "airports": [
+        {
+          "airportIataCode": "OKA",
+          "airportName": "오키나와"
+        },
+        {
+          "airportIataCode": "ICN",
+          "airportName": "인천"
+        },
+        {
+          "airportIataCode": "HKG",
+          "airportName": "홍콩"
+        },
+        {
+          "airportIataCode": "TPE",
+          "airportName": "타이페이(대만)"
+        },
+        {
+          "airportIataCode": "FUK",
+          "airportName": "후쿠오카"
+        }
+      ]
+    }
+  }
 }
