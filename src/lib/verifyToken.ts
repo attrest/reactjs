@@ -1,6 +1,6 @@
-// ** JWT 검증용 미들웨어
+// JWT 토큰 검증을 위한 미들웨어 함수
 
-import { NextApiRequest, NextApiResponse } from "next";
+import { NextRequest } from "next/server";
 import jwt from "jsonwebtoken";
 
 const SECRET_KEY = "your_secret_key";
@@ -10,27 +10,23 @@ interface JwtPayload {
   role: string;
 }
 
-export interface CustomNextApiRequest extends NextApiRequest {
+export interface CustomNextApiRequest extends NextRequest {
   user?: JwtPayload;
 }
 
-export default function verifyToken(
-  req: CustomNextApiRequest,
-  res: NextApiResponse,
-  next: () => void
-) {
-  const authHeader = req.headers.authorization;
+export default async function verifyToken(req: CustomNextApiRequest): Promise<boolean> {
+  const authHeader = req.headers.get("authorization");
 
   if (authHeader && authHeader.startsWith("Bearer ")) {
     const token = authHeader.substring(7, authHeader.length); // "Bearer " 이후의 문자열을 추출
     try {
       const decoded = jwt.verify(token, SECRET_KEY) as JwtPayload;
       req.user = decoded;
-      next();
+      return true;
     } catch (err) {
-      res.status(403).json({ message: "Invalid or expired token" });
+      return false;
     }
   } else {
-    res.status(403).json({ message: "No token provided" });
+    return false;
   }
 }
