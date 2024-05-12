@@ -1,3 +1,7 @@
+# json-server 서버 설치
+
+pnpm install -g json-server
+
 # json-server api 목록
 
 http://localhost:3009/users
